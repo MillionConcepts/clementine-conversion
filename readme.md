@@ -83,7 +83,7 @@ IMG.
 It does not exhaustively explain every step of the conversion and labeling
 process. This is primarily because much of the process took place manually.
 Many products were unique and therefore not subject to systematic processing.
-In some cases (such as the basemap polar tiles), the software in this archive
+In some cases (such as the basemap polar tiles), the software in this repository
 was used in one-off ways to convert these products; notes on most of these
 cases are included in code comments. It also does not offer a complete
 discursive walkthrough of our thought processes, rationale, workflow, etc. 
