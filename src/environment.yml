@@ -15,4 +15,3 @@ dependencies:
   - toolz
   - python=3.9
   - jupyter
-prefix: /home/michael/anaconda3/envs/clem_conversion
