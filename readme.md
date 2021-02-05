@@ -34,9 +34,9 @@ is not), we have placed this repository on GitHub. It contains files necessary
 to understand, replicate, correct, and modify most of our process of
 converting these PDS3 data sets into a PDS4 bundle.
 
-For this reason, we strongly recommend that anyone who produces new versions
+For this reason, we strongly recommend that anyone who makes new versions
 of the Clementine Imaging Bundle publicly available also modify or fork this
-repository -- or at least clearly document what happened to the data products
+repository, or at least clearly document what happened to the data products
 after they were processed by the software in this repository. Otherwise, this
 repository will no longer be useful documentation; it could even become
 misleading.
