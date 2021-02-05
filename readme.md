@@ -75,7 +75,7 @@ several hundred gigabytes in volume and contains over 10 million files; GitHub
 is not an appropriate platform from which to serve the archive. Users who
 simply wish to access data in the bundle should go to IMG's servers: **TODO:
 LINK GOES HERE WHEN LIVE.**  Similarly, this repository is not a mirror of the
-input PDS3 data sets. Users looking for PDS3 products to use this software on
+input PDS3 data sets. PDS3 products to use this software on
 can be found on [volumes CL_0001 through CL_6022 in this
 directory](https://pds-imaging.jpl.nasa.gov/data/clementine/), also hosted by
 IMG.
@@ -105,8 +105,9 @@ ADD LINK TO OFFICIAL VERSION WHEN PUBLISHED**
 
 ### /readmes
 
-Copies of our readme files from the bundle to provide more context for this
-software.
+Copies of our readme files from the bundle to provide context for this
+software. The data and browse readmes can be considered informal  
+specifications for the outputs of this software.
 
 ### /src
 
@@ -116,11 +117,9 @@ Markdown cells within these modules and notebooks.
 
 ### /src/clemdcmp
 
-CLEMDCMP.EXE, the PC DOS version of Tracie Sucharski's '90s Clementine EDR Swiss 
-Army knife. Used by software in this repository to decompress Clementine EDR 
-files from CLEM-JPEG format prior to conversion to FITS. This is also used 
-as a default working directory for CLEMDCMP (feeding long file paths to 
-DOSBOX is an unreliable and therefore bad idea).
+CLEMDCMP.EXE, Tracie Sucharski's '90s Clementine EDR Swiss Army knife. Used 
+to decompress Clementine EDR files from CLEM-JPEG format prior to conversion
+to FITS.
 
 ### /src/directories
 
