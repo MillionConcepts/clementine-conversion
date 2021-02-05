@@ -1,0 +1,79 @@
+ OBJECT                           = DATA_SET_MAP_PROJECTION_INFO
+
+  MAP_PROJECTION_TYPE             = STEREOGRAPHIC
+
+  MAP_PROJECTION_DESC             = "
+
+    In the polar stereographic projection, parallels of latitude are
+    circles centered on the pole, and meridians of longitude are
+    straight lines radiating from the pole.
+
+    Images in this projection are centered on either the North or South
+    pole, with the central longitude (specified by the CENTER_LONGITUDE
+    value in the image label) running vertically from the pole to the
+    bottom of the image for the North Polar projection, and to the top
+    of the image for the South Polar projection.
+
+    The transformation from latitude and longitude (LAT, LON) in radians
+    to LINE and SAMPLE is given by the following equations.
+
+    SCALE = 1737.4/MAP_SCALE
+
+    North Polar Stereographic:
+
+        SAMPLE = SAMPLE_PROJECTION_OFFSET + 
+                 2*SCALE*SIN(LON-CENTER_LONGITUDE)*TAN(PI/4-LAT/2)+0.5
+
+        LINE = LINE_PROJECTION_OFFSET + 
+               2*SCALE*COS(LON-CENTER_LONGITUDE)*TAN(PI/4-LAT/2)+0.5
+
+    South Polar Stereographic:
+
+        SAMPLE = SAMPLE_PROJECTION_OFFSET + 
+                 2*SCALE*SIN(LON-CENTER_LONGITUDE)*TAN(PI/4+LAT/2)+0.5
+
+        LINE = LINE_PROJECTION_OFFSET - 
+               2*SCALE*COS(LON-CENTER_LONGITUDE)*TAN(PI/4+LAT/2)+0.5
+
+    In the above definitions, integral values of LINE and SAMPLE
+    correspond to the center of a pixel, and the top left image pixel
+    has LINE=1 and SAMPLE=1. LAT and LON are the latitude and longitude
+    of a given spot on the surface in radians.
+
+    LINE_PROJECTION_OFFSET
+
+      is the image line number minus one on which the map projection
+      origin occurs.  The map projection origin is the appropriate pole.
+
+    SAMPLE_PROJECTION_OFFSET
+
+      is the nearest image sample number to the left (west) of the
+      projection longitude CENTER_LONGITUDE.
+
+    CENTER_LONGITUDE
+
+      is the value of the projection longitude.  For this dataset, this
+      field is always 0.0.
+
+    MAP_SCALE
+
+      pixel spacing at the projection origin, which is the appropriate
+      pole for stereographic images.  The value is in units of
+      kilometers/pixel.
+
+    MAP_RESOLUTION
+
+      number of pixels per degree at the projection origin, which is
+      the appropriate pole for stereographic images."
+
+  ROTATIONAL_ELEMENT_DESC         = "See DAVIESETAL1989."
+
+  OBJECT                          = DS_MAP_PROJECTION_REF_INFO
+
+   REFERENCE_KEY_ID               = "SNYDER1987"
+
+  END_OBJECT                      = DS_MAP_PROJECTION_REF_INFO
+
+ END_OBJECT                       = DATA_SET_MAP_PROJECTION_INFO
+
+END

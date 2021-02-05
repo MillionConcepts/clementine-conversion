@@ -1,0 +1,74 @@
+PDS_VERSION_ID                          = PDS3
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = "N/A"
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Dr. Michael C. Malin"
+LAST_NAME                               = MALIN
+TELEPHONE_NUMBER                        = "6195522650"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "Malin Space Science Systems"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       =  "N/A"
+ADDRESS_TEXT                            = "Malin Space Science Systems
+  P.O. Box 9101148
+  San Diego, CA 92191-0148"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "info@msss.com"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = "N/A"
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Jeff Warren"
+LAST_NAME                               = WARREN
+TELEPHONE_NUMBER                        = "6195522650"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "Malin Space Science Systems"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       =  "N/A"
+ADDRESS_TEXT                            = "Malin Space Science Systems
+  P.O. Box 9101148
+  San Diego, CA 92191-0148"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "info@msss.com"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = "N/A"
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Rick Adair"
+LAST_NAME                               = ADAIR
+TELEPHONE_NUMBER                        = "6195522650"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "Malin Space Science Systems"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       =  "N/A"
+ADDRESS_TEXT                            = "Malin Space Science Systems
+  P.O. Box 9101148
+  San Diego, CA 92191-0148"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "info@msss.com"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+END

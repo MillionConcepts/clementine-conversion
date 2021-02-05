@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:clementine:document:edr_metadata_index</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>
+      Clementine EDR Metadata Index
+    </title>
+    <information_model_version>1.15.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Citation_Information>
+      <author_list>
+        Michael St. Clair
+      </author_list>
+      <publication_year>2021</publication_year>
+      <description>
+        This file concatenates metadata indices from the 88 archive volumes of
+        the PDS3 version of this data set. We have not rigorously validated some
+        of these fields, and some of them do not map transparently to fields in
+        the PDS4 labels of these products due to differences in standards.
+        Please use with caution.
+      </description>
+    </Citation_Information>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>1994-01-27T00:20:17.417000Z</start_date_time>
+      <stop_date_time>1994-05-07T23:56:31.288000Z</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>DEEP SPACE PROGRAM SCIENCE EXPERIMENT</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:investigation:mission.deep_space_program_science_experiment::1.1</lidvid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>CLEMENTINE 1</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lidvid_reference>urn:nasa:pds:context:instrument_host:spacecraft.clem1::1.1</lidvid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>MOON</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:target:satellite.earth.moon::1.1</lidvid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+  </Observation_Area>
+  <File_Area_Observational>
+    <File>
+      <file_name>edr_metadata_index.csv</file_name>
+      <records>1893718</records>
+    </File>
+    <Header>
+      <name>Header</name>
+      <offset unit="byte">0</offset>
+      <object_length unit="byte">1867</object_length>
+      <parsing_standard_id>UTF-8 Text</parsing_standard_id>
+    </Header>
+    <Table_Delimited>
+      <offset unit="byte">1867</offset>
+      <parsing_standard_id>PDS DSV 1</parsing_standard_id>
+      <description>
+        Concatenated metadata indices from the 88 archive volumes of the PDS3
+        version of this data set presented in a unified DSV table.We have not
+        rigorously validated some of these fields, and some of them do not map
+        transparently to fields in the PDS4 labels of these products due to
+        differences in standards. Please use with caution.
+      </description>
+      <records>1893717</records>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+      <field_delimiter>Comma</field_delimiter>
+      <Record_Delimited>
+        <fields>94</fields>
+        <groups>0</groups>
+        <Field_Delimited>
+          <name>pds4_path</name>
+          <field_number>1</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            Filepath relative to root directory of this bundle.
+          </description>
+        </Field_Delimited>
+        <Field_Delimited>
+          <name>pds4_product_id</name>
+          <field_number>2</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS4 LID for this product.
+          </description>
+        </Field_Delimited>
+        <Field_Delimited>
+          <name>pds3_product_id</name>
+          <field_number>3</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 product ID of this product's source product.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>volume_id</name>
+          <field_number>4</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+       </Field_Delimited>
+       <Field_Delimited>
+          <name>revolution_number</name>
+          <field_number>5</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>frame_sequence_number</name>
+          <field_number>6</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>original_frame_sequence_number</name>
+          <field_number>7</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>instrument_id</name>
+          <field_number>8</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>lines</name>
+          <field_number>9</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>samples</name>
+          <field_number>10</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>uncorrected_start_time</name>
+          <field_number>11</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>start_time</name>
+          <field_number>12</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>exposure_duration</name>
+          <field_number>13</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>gain_mode_id</name>
+          <field_number>14</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>mcp_gain_mode_id</name>
+          <field_number>15</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>offset_mode_id</name>
+          <field_number>16</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>filter_name</name>
+          <field_number>17</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>mean</name>
+          <field_number>18</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>standard_deviation</name>
+          <field_number>19</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>maximum</name>
+          <field_number>20</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>minimum</name>
+          <field_number>21</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>encoding_compression_ratio</name>
+          <field_number>22</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>original_product_id</name>
+          <field_number>23</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>download_id</name>
+          <field_number>24</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sequence_table_id</name>
+          <field_number>25</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>central_body_name</name>
+          <field_number>26</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>target_name</name>
+          <field_number>27</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>light_source_name</name>
+          <field_number>28</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>right_ascension</name>
+          <field_number>29</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>declination</name>
+          <field_number>30</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_ra_0</name>
+          <field_number>31</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_ra_1</name>
+          <field_number>32</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_ra_2</name>
+          <field_number>33</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_ra_3</name>
+          <field_number>34</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_declination_0</name>
+          <field_number>35</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_declination_1</name>
+          <field_number>36</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_declination_2</name>
+          <field_number>37</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_declination_3</name>
+          <field_number>38</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_target_position_vector_0</name>
+          <field_number>39</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_target_position_vector_1</name>
+          <field_number>40</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_target_position_vector_2</name>
+          <field_number>41</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_target_velocity_vector_0</name>
+          <field_number>42</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_target_velocity_vector_1</name>
+          <field_number>43</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_target_velocity_vector_2</name>
+          <field_number>44</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>target_center_distance</name>
+          <field_number>45</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>slant_distance</name>
+          <field_number>46</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>center_latitude</name>
+          <field_number>47</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>center_longitude</name>
+          <field_number>48</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_latitude_0</name>
+          <field_number>49</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_latitude_1</name>
+          <field_number>50</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_latitude_2</name>
+          <field_number>51</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_latitude_3</name>
+          <field_number>52</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_longitude_0</name>
+          <field_number>53</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_longitude_1</name>
+          <field_number>54</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_longitude_2</name>
+          <field_number>55</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>reticle_point_longitude_3</name>
+          <field_number>56</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>horizontal_pixel_scale</name>
+          <field_number>57</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>vertical_pixel_scale</name>
+          <field_number>58</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>smear_magnitude</name>
+          <field_number>59</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>smear_azimuth</name>
+          <field_number>60</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>north_azimuth</name>
+          <field_number>61</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_spacecraft_latitude</name>
+          <field_number>62</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_spacecraft_longitude</name>
+          <field_number>63</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>spacecraft_altitude</name>
+          <field_number>64</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_spacecraft_azimuth</name>
+          <field_number>65</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_sun_position_vector_0</name>
+          <field_number>66</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_sun_position_vector_1</name>
+          <field_number>67</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_sun_position_vector_2</name>
+          <field_number>68</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_sun_velocity_vector_0</name>
+          <field_number>69</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_sun_velocity_vector_1</name>
+          <field_number>70</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sc_sun_velocity_vector_2</name>
+          <field_number>71</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>spacecraft_solar_distance</name>
+          <field_number>72</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>solar_distance</name>
+          <field_number>73</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_solar_azimuth</name>
+          <field_number>74</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_solar_latitude</name>
+          <field_number>75</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_solar_longitude</name>
+          <field_number>76</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>twist_angle</name>
+          <field_number>77</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>incidence_angle</name>
+          <field_number>78</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>phase_angle</name>
+          <field_number>79</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>emission_angle</name>
+          <field_number>80</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>local_hour_angle</name>
+          <field_number>81</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>light_source_distance</name>
+          <field_number>82</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_light_source_azimuth</name>
+          <field_number>83</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_light_source_longitude</name>
+          <field_number>84</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>sub_light_source_latitude</name>
+          <field_number>85</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>light_solar_incidence_angle</name>
+          <field_number>86</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>light_source_phase_angle</name>
+          <field_number>87</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>path_name</name>
+          <field_number>88</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>mission_phase_name</name>
+          <field_number>89</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>encoding_type</name>
+          <field_number>90</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>lens_temperature</name>
+          <field_number>91</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>focal_plane_temperature</name>
+          <field_number>92</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>cryocooler_temperature</name>
+          <field_number>93</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+       <Field_Delimited>
+          <name>cryocooler_duration</name>
+          <field_number>94</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 metadata value taken from the index file on the
+            archive volume on which the PDS3 version of this product 
+            was originally stored.
+          </description>
+        </Field_Delimited>
+      </Record_Delimited>
+    </Table_Delimited>
+  </File_Area_Observational>
+</Product_Observational>

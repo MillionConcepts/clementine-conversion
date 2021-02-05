@@ -1,0 +1,2124 @@
+
+THE CLEMENTINE NIR GLOBAL LUNAR MOSAIC
+
+
+Lisa Gaddis, Chris Isbell, Matt Staid*, Eric Eliason**,
+Ella Mae Lee, Lynn Weller, and Tracie Sucharski
+United States Geological Survey
+Astrogeology Team
+2255 North Gemini Drive
+Flagstaff, AZ 86001
+
+
+Paul Lucey, Dave Blewett***, John Hinrichs***, Donovan Steutel
+Hawaii Institute of Geophysics and Planetology
+University of Hawaii
+Honolulu, Hawaii  96822
+
+
+May 1, 2007
+Version 0.1
+
+* Now at Planetary Sciences Institute
+1700 East Fort Lowell, Suite 106
+Tucson, AZ 85719
+
+** Now at Planetary Image Research Laboratory
+Lunar and Planetary Laboratory
+Department of Planetary Sciences
+The University of Arizona
+Tucson, AZ  85721
+
+*** Now at NovaSol
+733 Bishop Street
+Honolulu, HI  96813
+
+
+
+
+
+
+
+
+
+
+
+
+
+TABLE OF CONTENTS
+
+Return to CD Home Page
+
+1 - INTRODUCTION
+2 - CLEMENTINE MISSION
+3 - NEAR-INFRARED (NIR) CAMERA
+4 - LUNAR ORBIT SUMMARY
+5 - GEOMETRIC ACCURACY
+6 - DATA PROCESSING
+7 - RADIOMETRIC CALIBRATION
+8 - PHOTOMETRIC FUNCTION NORMALIZATION
+9 - EMPIRICAL FRAME-OFFSET CORRECTION
+10 - CONVERSION OF 16-BIT PIXEL VALUES TO FLOATING POINT NUMBERS
+11 - FILES, DIRECTORIES, AND DISK CONTENTS
+12 - IMAGE FILE ORGANIZATION
+13 - INDEX FILES
+14 - ACKNOWLEDGMENTS
+15 - REFERENCES
+
+APPENDIX A - KEYWORD ASSIGNMENTS
+APPENDIX B - GEOMETRIC DEFINITION OF A PIXEL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Go to Table of Contents.
+
+1 - INTRODUCTION
+
+The Clementine Near-Infrared (NIR) mosaic [Eliason et al., 2003; 
+Staid et al., 2003] of Earth's Moon is a radiometrically and 
+geometrically controlled, photometrically modeled global 
+mosaicked Digital Image Model (DIM) [Batson, 1987; Batson, 
+1990].  The NIR DIM was compiled using more than 400,000 images 
+from the Near-Infrared Camera onboard the Clementine orbiting 
+spacecraft.  The mosaic is produced in six wavelengths with band 
+centers at 1100, 1250, 1500, 2000, 2600, and 2780 nanometers 
+(nm).  Cartographic processing of the NIR mosaic resembles that 
+applied to the mosaic derived from data acquired by the five-
+band (415, 750, 900, 950, 1000 nm) Ultraviolet/Visible (UVVIS) 
+Camera that also flew onboard the Clementine orbiter [e.g., 
+Eliason et al., 1999].  The major lunar rock-forming minerals 
+plagioclase, pyroxene, and olivine have diagnostic absorptions 
+in this wavelength range, so the NIR data combined with UVVIS 
+data can be used to characterize aspects of the mineralogic and 
+lithologic diversity of the Moon [e.g., Le Mouelic et al., 1999; 
+Gillis et al., 2004).  These UVVIS and NIR multispectral data 
+are complemented by data acquired by two additional Clementine 
+science cameras, the High Resolution (HIRES) [e.g., Robinson et 
+al., 2003] and Long-Wavelength Infrared (LWIR) instruments 
+[e.g., Lawson et al., 2000].
+
+The NIR mosaic is mapped in the Sinusoidal Equal-Area Projection 
+[Snyder, 1987] at a resolution of 100 meters per pixel and 
+requires approximately 68 gigabytes of digital storage.  This 
+database is partitioned into 996 quadrangles (quads) or "tiles" 
+equivalent to those of the previously released Clementine 750 
+nanometer Basemap Mosaic (PDS volumes CL_3001 through CL_3015) 
+and the UVVIS DIM (PDS volumes CL_4001 through CL_4078; Eliason 
+et al., 1999).  This 100 m/pixel version of the NIR DIM is 
+presented on 13 DVD volumes (equivalent to 78 ‘virtual CD’ 
+volumes).  Tiles are stored as image files of approximately 2100 
+pixels on a side, covering approximately a 6-degree by 7-degree 
+quadrangle (303 pixels/degree).  Pixels are 16-bit signed 
+integers.  Reduced-resolution planet-wide NIR mosaics will be 
+made available online at the PDS Map-a-Planet Web site 
+(http://www.mapaplanet.org) along with the full-resolution NIR 
+mosaic.  Additional information in support of the NIR DIM, 
+including a frame number (colorset_id) image, empirical frame 
+offset values for each frame, and a source file index table 
+('srcindx.tab') will be made available online at 
+http://astrogeology.usgs.gov/Projects/ClementineNIR/.  The 
+source file index table contains information about the 
+Engineering Data Record (EDR) image collection used to assemble 
+the NIR DIM and the images that make up 6-band color sets.  This 
+file contains an entry for each EDR image that was used in this 
+database.  A phase angle image database does not accompany the 
+NIR DIM (recall that this information is available with the 
+UVVIS DIM archive).
+
+Although the tiling scheme is identical to the original basemap, 
+each 30-degree longitudinal section of the basemap now 
+represents one DVD volume (equivalent to 6 virtual CD volumes).  
+The full-resolution tiling and archive scheme is available in 
+graphical form in the 'scheme.pdf' (Portable Document Format 
+[PDF]) file found in the 'document' directory of each volume.
+
+PDS standards require inclusion of "catalog" files that describe 
+aspects of the mission, spacecraft, instrument, and dataset.  
+These files are located in the 'catalog' directory of each CD 
+volume.  To minimize the amount of redundant information we 
+reference these files throughout this document.  The catalog 
+files, ending with the '.cat' extension, are organized as ASCII 
+text files and contain PDS labels for automatically ingesting 
+the documents into a catalog system.
+
+The DVD volume set contains ancillary data files that support 
+the NIR mosaic.  These files include browse images stored in a 
+'JPEG' format, 'HTML' documents that support a web browser 
+interface to the volumes, image index files that tabulate the 
+contents of the volume set, and documentation files that 
+describe the archive collection.  For more information on the 
+contents and organization of the volume set, refer to the 
+"Files, Directories, and Disk Contents" section of this 
+document.
+
+Using a web browser application (e.g., Netscape or MS Internet 
+Explorer), open the 'index.htm' file located in the 'root' 
+directory of each CD.  The html document will direct you to 
+other informational documents and the image browser for rapidly 
+viewing the image collection.
+
+The browse image consists of false color and color ratio images 
+for each Clementine NIR DIM product.  Three browse image 
+renditions are available to the user: false color, color ratio, 
+and black-and-white 2000 nm images.  The false color images use 
+the 1100 nm (blue), 1500 nm (green), and 2000 nm (red) spectral 
+bands to portray the Moon in enhanced color.  The color ratio 
+browse images use the 1500/1100 (blue), 1500/2000 (green), and 
+1500 (red).  The ratio rendition enhances color differences 
+related to soil mineralogy as measured by reflectance at the 
+given wavelengths.  At NIR wavelengths, the ratios measure 
+strength of absorption bands of common lunar minerals such as 
+orthopyroxene, clinopyroxene, olivine, and plagioclase [e.g., 
+Pieters, 1993].  In particular, the 1500/1100 nm ratio is 
+sensitive to the abundance of clinopyroxene and olivine, as well 
+as plagioclase, and the 1500/2000 nm ratio is related to the 
+abundance of pyroxene in lunar soil.  The NIR data are 
+particularly useful for discriminating between olivine and 
+pyroxene because pyroxene has two absorptions in the UVVIS and 
+NIR (near 1 and 2 microns, or 1000 and 2000 nm) and olivine has 
+only one (near 1 micron, or 1000 nm).
+
+Software tools for viewing and accessing the image collection 
+are available through the Planetary Data System (PDS) Internet 
+services.  Refer to the 'aareadme.txt' located in the 'root' for 
+more information on these tools.  The program NASAView can be 
+used to display the full resolution NIR image products.  
+NASAView is a PDS product display tool that runs on multiple 
+platforms with a common graphical user interface.  The current 
+version (version 2.13, 2006) supports the display of multi-band 
+image cubes (up to three selected bands).  See the PDS Software 
+Download page 
+(http://pds.jpl.nasa.gov/tools/software_download.cfm) for 
+information on NASAView and its availability.
+
+Another tool, Map-a-Planet (MAP), provides online access to the 
+NIR data via the MapMaker software.  Map-a-Planet allows users 
+to generate seamless image maps for any latitude-longitude 
+region of the Moon at a variety of scales and map projections.  
+For more information on Map-a-Planet and the MapMaker system, 
+refer to the USGS Astrogeology Program Web page at 
+http://www.mapaplanet.org/ .
+
+Additionally, each image file is associated with an Integrated 
+Software for Imagers and Spectrometers (ISIS) [Eliason, 1997; 
+Gaddis et al., 1997; Torson and Becker, 1997; Anderson et al., 
+2004] detached label.  The detached ISIS label allows for images 
+to be accessed and processed within the ISIS system (available 
+through the USGS, Flagstaff, AZ at 
+http://isis.astrogeology.usgs.gov/ ).
+
+Go to Table of Contents.
+
+2 - CLEMENTINE MISSION
+
+The Clementine Mission [Nozette et al., 1994; McEwen and 
+Robinson, 1997], officially known as the Deep Space Program 
+Science Experiment (DSPSE), was the first in a planned series of 
+technology demonstrations jointly sponsored by the Ballistic 
+Missile Defense Organization (BMDO) of the Department of Defense 
+and the National Aeronautics and Space Administration (NASA).  
+The spacecraft was known as Clementine because, as in the song 
+of the same name, it would be 'lost and gone forever' after 
+completing its short mission.  Clementine was launched on 1994-
+01-25 onboard a Titan IIG rocket from Vandenburg Air Force Base 
+in California.  The mission included two months of systematic 
+lunar mapping (1994-02-26 through 1994-04-21), which was to have 
+been followed by a flyby of the near-Earth asteroid Geographos 
+(1994-08-31).  An onboard software error combined with 
+improbable hardware conditions, on 1994-05-07 led to accidental 
+spin-up of the spacecraft and loss of attitude control gas.  
+These events precluded the flyby of asteroid Geographos.
+
+Clementine's primary objective was to qualify lightweight 
+imaging sensors and component technologies (including a star 
+tracker, inertial measurement unit, reaction wheel, nickel 
+hydrogen battery, and solar panel) for the next generation of 
+Department of Defense spacecraft.  DSPSE represented a new class 
+of small, low cost, and highly capable spacecraft that embraced 
+emerging lightweight technologies to enable future long-duration 
+deep space missions.  A second objective of Clementine was the 
+return of scientific data about the Moon and asteroid Geographos 
+to the international civilian space community.
+
+The NIR mosaic was created using data from Clementine EDR Image 
+Archive [e.g., Eliason et al., 1995] produced by the Clementine 
+mission.  The EDR (Engineering Data Record) data are raw images 
+that contain the inherent properties of unprocessed and 
+uncorrected data [Lewis, 1995].  The Clementine EDR Image 
+Archive contains more than 1.9 million images acquired during 
+active mission operations.  For information on how to obtain 
+this archive contact NSSDC 
+(http://nssdc.gsfc.nasa.gov/database/MasterCatalog?ds=PSPG-
+00309) or the PDS Imaging Node Clementine Mission pages 
+(http://pdsimg.jpl.nasa.gov/Missions/Clementine_mission.html).
+
+Go to Table of Contents.
+
+3 - NEAR-INFRARED (NIR) CAMERA
+
+The Clementine Near-Infrared (NIR) camera was a framing camera 
+built jointly by Lawrence Livermore National Laboratory (LLNL) 
+and Amber Engineering of Goleta, GA.  The NIR camera obtained 
+images of nearly the entire lunar surface at six wavelengths and 
+its coverage was essentially identical to that of the UVVIS 
+camera.  The center wavelengths [and full-width half maximum 
+(FWHM) bandpass widths] of the six filters were:  1100 nm (30 
+nm), 1250 nm (30 nm), 1500 nm (30 nm), 2000 nm (30 nm), 2600 nm 
+(30 nm), and 2780 nm (60 nm) [e.g., Nozette et al., 1994].  
+[Note that the wavelength of NIR band 6 has been reported as 
+2690 nm in places, but that value is the cuton wavelength of the 
+band 6 filter.  2780 nm is the more accurate wavelength of the 
+center of NIR band 6.]  Each image frame was 256 by 256 pixel 
+elements, with a field of view of 5.6 degrees and an IFOV of 
+0.38 mrad.  The NIR camera angular resolution (equivalent to 
+spatial resolution) was lower than that of the UVVIS camera at 
+0.25 mrad, with a maximum spatial sampling of about 135 
+meters/pixel.  The camera was based on an indium antimonide 
+(InSb) CCD detector array produced by Amber which offers 
+sensitivity from 1 to >5 microns.  The NIR camera is described 
+in detail by Priest et al. [1995] and online at the LLNL 
+(http://www.llnl.gov/sensor_technology/STR42.html) and NSSDC 
+(http://nssdc.gsfc.nasa.gov/database/MasterCatalog?sc=1994-
+004A&ex=2) Web sites.  For more information on the NIR camera 
+refer to the 'nirinst.cat' file in the 'catalog' directory.
+
+Go to Table of Contents.
+
+4 - LUNAR ORBIT SUMMARY
+
+The Clementine spacecraft maintained a polar orbit during the 
+systematic mapping of the surface of the Moon [McEwen and 
+Robinson, 1997].  Mapping of the lunar surface was done in two 
+Earth months, or two lunar days.  To obtain full coverage during 
+these two months, the image overlap for both the UVVIS and NIR 
+cameras was ~15% in the down-track and ~10% in the cross-track 
+directions.  This mapping scheme required an inclination of the 
+orbit of 90 degrees plus-or-minus 1.0 degree with reference to 
+the lunar equator; the periselene of the lunar orbit was 
+maintained at an altitude of 425 plus-or-minus 25 km.  To 
+provide the necessary cross-track separation for the alternating 
+imaging strips to cover the entire surface of the Moon, the 
+orbital period was approximately 5 hours, during which the Moon 
+rotated approximately 2.7 degrees beneath the spacecraft.  
+Images were taken and recorded only in the region of periselene, 
+leaving sufficient time to replay the data to Earth.
+
+The best data for lunar mineral mapping are obtained if both 
+high and low solar phase angles are avoided, nominally at angles 
+less than 30 and greater than 0 degrees.  The solar phase angle 
+is defined as the angle between the vector to the Sun and the 
+vector to the spacecraft from a point on the Moon's surface.  To 
+maximize the time in which the solar phase angle is less than 30 
+degrees, the plane of the lunar orbit should contain the Moon-
+Sun line halfway through the two-month lunar mapping period.  
+Therefore, insertion into the lunar orbit was selected so that, 
+as the Moon-Sun line changes with Earth's motion about the Sun, 
+the Moon-Sun line will initially close on the orbital plane, and 
+then lie in the orbital plane halfway through the mapping 
+mission.  The angle between the Moon-Sun line and the orbital 
+plane was near-zero (less than 5 degrees) for approximately five 
+weeks before becoming zero.  The table below lists Clementine's 
+orbital parameters.  For more information on the lunar orbit 
+refer to the 'mission.cat' file located in the 'catalog' 
+directory.
+
+Clementine Orbital Parameters
+================================================================
+Orbital Period:           4.970 hr < P < 5.003 hr
+Altitude of Periselene:   401 km < radius < 451 km
+Eccentricity:             0.35821 < e < 0.37567
+Right Ascension:         -3 deg < Omega < +3 deg (J2000)
+Inclination:              89 deg < i < 91 deg
+Argument of Periselene:  -28.4 deg < w < -27.9 deg (1st month)
+                          29.2 deg < w < 29.6 deg (2nd month)
+
+Go to Table of Contents.
+
+5 - GEOMETRIC ACCURACY
+
+Both the Clementine NIR and UVVIS mosaics were geometrically 
+controlled to the previously published 750-nm Clementine Basemap 
+Mosaic [PDS volumes CL_3001 through CL_3015] by tying individual 
+NIR images that make up a color set to the corresponding image 
+used to produce the basemap mosaic.  The 750-nm basemap mosaic 
+was geometrically controlled using the methods described below.
+Although shortcomings have since been identified [e.g., Cook et 
+al., 2002], the 750-nm basemap mosaic significantly improved the 
+geometric control of the Moon from previous maps and ground 
+control points.  On the basis of best-effort measurements of the 
+spacecraft orbit and pointing, UVVIS geometric distortions, and 
+time tags for each observation, the Clementine Spacecraft, 
+Planet Instrument, C-matrix, and Event kernels [SPICE; Acton, 
+1996] data alone provide positional accuracy better than 1 
+kilometer over most of the Moon.
+
+The geometric processing goal of the basemap was for 95% of the 
+Moon (excluding the oblique observation gap fills) to have 
+better than 0.5 km/pixel absolute positional accuracy and to 
+adjust the camera angles so that all frames match neighboring 
+frames to within an accuracy of 2 pixels [e.g., Lee et al., 
+1997; Eliason et al., 1998, Isbell et al., 1999].  To achieve 
+these goals, camera alignment and pointing data were required to 
+be accurate to a few hundredths of a degree.  The absolute 
+alignment of the UVVIS was determined with respect to 
+spacecraft-fixed axes (A and B Star Tracker Camera quaternions) 
+by analyzing a major subset of the over 17,000 images of Vega, 
+over 6,000 images of the Southern Cross, and a few hundred 
+images of the Pleiades, taken during the approach to the Moon 
+and throughout the lunar mapping phase of the Clementine 
+mission.  Multiple star images within a single picture were used 
+to determine the UVVIS focal length and optical distortion 
+parameter values.
+
+Approximately 265,000 match points were collected at the USGS 
+from ~43,000 UVVIS 750 nm images providing global coverage 
+[e.g., Lee et al., 1997].  Approximately 80% of these points 
+were collected via autonomous procedures, and the remaining 20% 
+were collected manually.  Streamlined procedures for the 
+supervised collection of match points were developed and 
+applied, and these procedures saved several person-years of 
+effort.  The automated success rate exceeded 90% along each 
+spacecraft orbit track, where the overlap regions of successive 
+images are highly correlated, but failed when the overlap region 
+is narrow and/or nearly featureless.  ('Failure' is defined as 
+less than 3 points per image with correlation coefficients 
+greater than 0.85; thus, many good match points were rejected 
+because we could not be certain that the matches were valid 
+without verification.) Across-track matching was more difficult 
+due to changes in scale and illumination angle, but a fair 
+success rate (~60%) was achieved via the use of 'window-shaping' 
+(local geometric reprojections).  The oblique gap-fill images 
+were the most difficult to match and required substantial human 
+intervention.  Matching the polar regions was time-consuming 
+because each frame overlaps many other frames.  Most match point 
+locations were found to a precision of 0.2 pixel.
+
+The USGS match points were provided to Tim Colvin and Mert 
+Davies of the RAND Corporation for analytical triangulations.  
+Using these match points, control points from the Apollo region, 
+and the latest SPICE kernels from Navigation and Ancillary 
+Information Facility (NAIF) at JPL [Acton, 1996], RAND 
+determined improved camera orientation angles for the global set 
+of UVVIS images.  A constant lunar radius of 1737.4 kilometers 
+was assumed, and this was later found to be a significant source 
+of error near the oblique gap fills.  The analytical 
+triangulation is a least-squares formulation designed to adjust 
+the latitude and longitude of the control points and the camera 
+orientation angles to best fit the match points.  The 
+triangulation was first computed on 'packets' of match points 
+(each covering about one-eighth of the Moon), then checked and 
+rechecked at the USGS via plots and test mosaics to fix and add 
+match points as needed.  The final (global) analytical 
+triangulation required the solution of ~660,000 normal 
+equations.  The mean error is less than 1 pixel.  This effort 
+was by far the largest analytical triangulation ever applied to 
+a planetary body other than Earth.  The results defined the 
+planimetric geometry of the 750-nm basemap, to which all 
+systematic Clementine mosaic products have been tied.
+
+Go to Table of Contents.
+
+6 - DATA PROCESSING
+
+As was the case for the UVVIS mosaic, the U.S. Geological Survey 
+Integrated Software for Imagers and Spectrometers (ISIS) 
+processing system [Eliason, 1997; Gaddis et al., 1997; Torson 
+and Becker, 1997; Anderson et al., 2004] was used to generate 
+the NIR mosaic.  Because the final steps of the NIR data 
+processing followed the UVVIS processing by several years, the 
+same version of ISIS (v.2.0, or 'Old ISIS') was frozen in place 
+and used for both datasets.  ISIS cartographic processing for 
+the NIR mosaic includes radiometric correction, geometric 
+control to the Clementine 750-nm basemap mosaic, spectral 
+registration, photometric normalization, and image mosaicking to 
+produce near-seamless, uniformly illuminated views of the 
+surface of the Moon at 6 wavelengths.  Radiometric correction 
+applies 'flat fielding,' dark current subtraction, non-linearity 
+correction, and conversion to radiometric units (usually 
+radiance).  Geometric transformations tie each raw image with 
+the ground control network from the basemap mosaic and convert 
+from raw image coordinates to the Sinusoidal Equal-Area 
+projection.  Photometric normalization is applied to balance 
+brightness variations due to illumination differences among the 
+images in a mosaic.  The first four NIR bands (1100 to 2000 nm) 
+have also been normalized to reflectance based on the approach 
+previously applied to the calibrated UVVIS global mosaics 
+[Pieters et al., 1999].  Images are then mosaicked together to 
+form a global map of continuous image coverage for the entire 
+planetary body.
+
+Basic cartographic processing of the NIR mosaic was performed in 
+five stages or "levels".  The processing sequence was designed 
+to start with corrections with highest probability of accuracy 
+to those with the lowest.  The first level of processing, Level 
+0, ingests raw data and prepares it for processing by ISIS.  The 
+raw images are converted to ISIS format and ancillary data such 
+as viewing geometry are added to the labels of the image file.  
+Level 1 processing applies radiometric corrections and removes 
+artifacts from the image.  Level 2 performs geometric processing 
+to remove optical distortions and convert the image geometry to 
+a standard map projection.  Level 3 performs photometric 
+processing for normalizing the solar illumination geometry of an 
+image scene.  Level 4 performs mosaicking of individual images 
+to create global or regional views of the planetary surface.
+More information on the general character of these cartographic 
+processing steps for the NIR data is provided below.  Further 
+details on the calibration, photometric normalization, and 
+empirical frame-offset correction required for the NIR mosaics 
+have been described in several publications [e.g., Lucey et al., 
+1997; Lucey et al., 1998; Lucey et al., 2000; Eliason et al., 
+2003; Staid et al., 2003] and are summarized in the next 
+sections.
+
+Level 0
+
+The Level 0 processing step ingests the raw image data and 
+associated metadata and prepares them for processing by the ISIS 
+system.  Level 0 processing consists of two program steps.  The 
+first step reads the format of the raw image, extracts the 
+metadata from the input image labels, and creates an ISIS file.  
+The metadata may contain information such as the instrument 
+operating modes, temperature of the camera focal plane, UTC time 
+of observation, and other information necessary to rectify an 
+image.  The second step extracts navigation and pointing data 
+("SPICE" kernel data) for inclusion in the ISIS file.
+
+Level 1
+
+The next level of processing, Level 1, performs radiometric 
+correction and cosmetic enhancement ("clean-up") on an image.  
+Level 1 consists of a series of programs to correct or remove 
+image artifacts such as 1) camera shading inherent in imaging 
+systems, 2) brightness anomalies caused by dust specks in the 
+optical path, 3) microphonic noise introduced by operation of 
+other instruments on the spacecraft during image observations, 
+and 4) data drop-outs and spikes due to missing or bad data from 
+malfunctioning detectors or missing telemetry data.  Level 1 
+processing results in an "ideal" image that would have been 
+recorded by a camera system with perfect radiometric properties.  
+In practice, residual artifacts and camera shading effects 
+remain at a very low level.  The density number (DN) values of a 
+radiometrically corrected image are proportional to the 
+brightness of the scene.  The details for radiometric correction 
+are described in section 7 below.
+
+Level 2
+
+Production of both the Clementine UVVIS and NIR mosaics required 
+geometric processing to be performed on the individual, single-
+band images.  The images are geometrically transformed from 
+spacecraft camera orientation to a common map coordinate system 
+of a specific resolution.  Before geometric transformation, 
+images must first be geometrically matched to each other to 
+establish relative geometric control among the multiband images 
+in a single "color set" and then the image set must be tied to a 
+ground control net to establish absolute ground truth.  The 
+process of matching images and tying the image set to ground 
+truth minimizes the spatial misregistration along image 
+boundaries.  The 750-nm basemap provided the geometric control 
+for the NIR multispectral DIM.  This base map underwent rigorous 
+cartographic processing to tie the imaging to a lunar geodetic 
+network resulting in an absolute positional accuracy of better 
+than 0.5 km/pixel for 95% of the surface.  The six NIR spectral 
+bands are coregistered to a precision of 0.2 pixel.
+
+Level 2 geometric processing also includes correcting camera 
+distortions.  This image transformation is based on the original 
+viewing geometry of the observation (including the optical 
+distortion model of the camera), relative position of the 
+target, and the mathematical definition of the map projection.  
+An additional resampling step is used to perform sub-pixel 
+registration of the 6 bands in the color set.  Using the ISIS 
+system, the Sinusoidal Equal-Area projection NIR data can be 
+transformed to other map projections as needed.
+
+Level 3
+
+Photometric normalization is applied to images that make up the 
+NIR DIM to balance brightness levels among images that were 
+acquired under different lighting conditions.  To illustrate, 
+consider two images of the same area on the Moon where one image 
+was acquired with the Sun directly overhead and the second with 
+the Sun lower to the horizon.  The image with the higher sun 
+angle would be significantly brighter than the image with the 
+low sun angle.  Photometric normalization causes the two images 
+to be adjusted to the same brightness level.
+
+Radiometrically calibrated spacecraft images display the 
+brightness of a scene under specific angles of illumination, 
+emission, and phase.  Photometric normalization is effective 
+only to the extent that all geometric parameters can be modeled.  
+For an object (such as the Moon) without an optically 
+significant atmosphere, this brightness is controlled by two 
+major influences: 1) the intrinsic properties of the surface 
+materials, including composition, grain size, roughness, and 
+porosity; and 2) variations in brightness due to the local 
+topography of the surface.  For both Clementine UVVIS and NIR 
+photometric processing [e.g., McEwen et al., 1996; Lucey et al., 
+1998, 2000; Eliason et al., 2003] the planetary surface is 
+assumed to be a smooth sphere, so the effects of local 
+topography are not included in the photometric correction.  
+However, it is understood that illumination geometry at each 
+pixel depends on local topography.  This means that the 
+topographic slope within a pixel is not accurately known and 
+compensated in either the UVVIS or NIR mosaics, so the 
+photometric correction cannot be perfect.  Section 8 describes 
+the photometric normalization.
+
+Level 4
+
+Compilation of an accurate digital mosaic of the individual 
+images is the final stage in the construction of the NIR DIM.  
+The DIM is created by first generating a blank (or null) image 
+that represents the regional or global image map of the Moon.  
+The individual images are then mosaicked into the initially 
+blank image map.  The order in which individual images are 
+placed into the mosaic is an important consideration.  Because 
+images are mosaicked one on top of the other, images that get 
+laid down first are overwritten in the area of overlap by 
+subsequent images that are added to the mosaic.  Images that 
+have the lowest data quality or resolution are laid down first, 
+followed by images with highest quality.  With this method the 
+areas of image overlap contain the highest quality images.
+
+Go to Table of Contents.
+
+7 - RADIOMETRIC CALIBRATION
+
+Radiometric calibration for the NIR data [Lucey et al., 1987; 
+1998] provides correction for camera gain and offset operating 
+modes, pixel dependent nonuniformity in bias, dark current rate, 
+and responsivity, dark-current dependence on temperature, 
+removal of thermal background contamination, and conversion to 
+radiometric units of radiance and/or reflectance.  Details of 
+these steps are provided below.  Before radiometric processing 
+could begin, two calibration issues specific to the NIR data 
+were addressed [Eliason et al., 2003]: 1) characterization of 
+the instrument operating modes, and 2) characterization of the 
+instrument thermal background changes during an orbital 
+observation pass over the Moon.
+
+Instrument Operating Modes
+
+The goal of this step was to determine an optimum set of 
+calibration constants to minimize the difference between 
+calibrated values for portions of the Moon imaged sequentially 
+with different camera settings [Lucey et al., 2000].  Statistics 
+were acquired for all images collected during systematic mapping 
+that straddled camera-state boundaries (~19,800 cases).  The 
+calibration equation from Lucey et al. [1998] was applied to the 
+entire set of data, an error function was refined iteratively, 
+calibration constants were updated, and the process was repeated 
+until little change occurred in the error function.  In this 
+manner the gain, exposure duration, digital offset, offset 
+multiplier, and global bias were simultaneously optimized.
+
+Thermal Background
+
+Instrument thermal background problems were first observed when 
+the initial pre-launch calibration algorithms were not 
+satisfactorily modeling the NIR deep-space observations during 
+cool-down tests [Lucey et al., 1998].  The goal of this step was 
+to characterize the thermal background changes during an orbital 
+pass and to define a set of corrections for each orbit.  To 
+characterize these effects, the NIR 1100 nm data were compared 
+to the highly correlated UVVIS 1000 nm data held as "truth".  
+The UVVIS and NIR images were radiometrically corrected (with 
+the thermal background remaining in the NIR imaging) and 
+geometrically coregistered.  UVVIS radiance values were scaled 
+to the NIR data, and the averages of the UVVIS and NIR images in 
+areas of overlap were computed for all color sets and plotted as 
+a function of the cryocooler duration.  A simple difference of 
+the NIR and UVVIS bands (NIR/1100 band subtracted by the scaled 
+UVVIS/1000 band) characterizes the change in thermal background 
+in an orbit, and a 3rd order least-squares fit to the data is a 
+valid model of time-dependent thermal background for each orbit.
+
+Compensation for the two effects above was incorporated into the 
+radiometric calibration steps, and residual effects were removed 
+in later processing.  The radiometric calibration process for 
+the NIR data (performed by the ISIS program NIRCAL) converts raw 
+density-number (pixel brightness) values to radiance, and these 
+steps are described below.  For all equations provided in the 
+document the asterisk character (*) is used to denote a 
+multiplication and the double asterisk (**) is used to denote 
+exponentiation.
+
+EQUATIONS
+
+Term1 = (DR(x,y) - digital_offset ) / Gfact(gm)
+Term2 = Term1 - bias_global - BIAS(x,y) - (om * V)
+Term3 = Term2 / t
+Term4 = Term3 - global_dc - DC(x,y)
+
+Iterative for each background radiance coefficient (ncoef) which 
+is orbit/filter dependent:
+background_radiance = background_radiance +
+                      background_radiance_coefficient(icoef) *
+                      ((cryocooler_duration/cryo_norm) **
+                      (icoef-1))
+
+Term5 = Term4 - background_radiance - THERMAL(x,y)
+R(x,y) = ( (Term5 / (FF(x,y) * OF(x,y)) ) -  AF(x,y) ) * abscoef
+
+Let:
+  x,y     = line and sample position of pixel in an image
+  R(x,y)  = Result of correction in absolute radiance.
+  DR(x,y) = Raw input density number
+  FF(x,y) = Flat-field as a function of filter and line, sample
+            position.  This will be read from an ISIS cube file.
+  OF(x,y) = Orbit dependent flat file correction.
+  AF(x,y) = Additive component of flat field correction.
+  DC(x,y) = Dark current as a function of compression type,
+            line, sample position.
+  BIAS(x,y) = Bias correction as a function of compression type,
+              line, sample position.
+  THERMAL(x,y) = Thermal shade correction based on thermal shade
+                 file at the north and south pole.
+  digital_offset = 8.30690
+  bias_global    = 2.15547
+  V              = -0.954194
+  global_dc      = 0.730
+  cryo_norm      = 1.0
+  abscoef        = 1.0
+  Gfact(gm)= Gain factor as a function of instrument gain_mode
+           = 32.0235  (gm=0)
+           = 28.2755  (gm=1)
+           = 24.9144  (gm=2)
+           = 10.9443  (gm=5)
+           = 24.1835  (gm=8)
+           = 21.3530  (gm=9)
+           = 15.9844  (gm=11)
+           = 7.77177  (gm=13)
+           = 28.1618  (gm=16)
+           = 24.8658  (gm=17)
+           = 21.9100  (gm=18)
+           = 18.6140  (gm=19)
+           = 6.83130  (gm=22)
+           = 3.48425  (gm=23)
+           = 20.3218  (gm=24)
+           = 17.9433  (gm=25)
+           = 15.8104  (gm=26)
+           = 13.4320  (gm=27)
+           = 9.32361  (gm=28)
+           = 6.95951  (gm=29)
+           = 4.75472  (gm=30)
+           = 2.43896  (gm=31)
+           = 13.9238  (gm=33)
+           = 12.2687  (gm=34)
+           = 7.23501  (gm=36)
+           = 7.04438  (gm=41)
+           = 6.16495  (gm=42)
+           = 3.57405  (gm=44)
+           = 2.73995  (gm=45)
+           = 1.88595  (gm=46)
+           = 11.9078  (gm=48)
+           = 9.26433  (gm=50)
+           = 5.39513  (gm=52)
+           = 4.08125  (gm=53)
+           = 1.40899  (gm=61)
+           = 0.964975  (gm=62)
+  gm       = Gain_mode of instrument(gm = 0,1,2,5,...,62)
+  om       = Offset_mode of instrument(om = 1,2,3,4,...,31)
+  t        = Optimal integration duration of observation in 
+             seconds (A function of EXPOSURE_DURATION on labels 
+             in milliseconds.)
+
+PROGRAM STRATEGY
+
+NIRCAL reads the keyword label area from the input file to 
+obtain processing parameters to radiometrically correct the 
+image.  The following keywords are extracted from the keyword 
+label area:
+
+TABLE OF IMAGE KEYWORDS USED BY NIRCAL
+--------------------------------------
+
+INSTRUMENT_ID           -    Camera (Should be NIR)
+GAIN_MODE_ID            -    Instrument gain mode
+OFFSET_MODE_ID          -    Instrument offset mode
+CRYOCOOLER_DURATION     -    Cryocooler duration
+EXPOSURE_DURATION       -    Exposure time of camera
+BAND_BIN_FILTER_NAME    -    Instrument filter name 
+                             (A,B,C,D,E,F) for (1100, 1250,
+                              1500, 2000, 2600, 2780 nm,
+                              respectively)
+
+After obtaining the image keywords from the image label area and 
+determining all processing parameters, NIRCAL opens the 
+appropriate calibration files and processes the image.  
+
+Go to Table of Contents.
+
+8 - PHOTOMETRIC FUNCTION NORMALIZATION
+
+The Clementine data have large changes in brightness because 
+they were acquired under a broad range of viewing conditions, 
+with phase, emission, and incidence angles varying from 0 to 90 
+degrees.  To create NIR mosaics with uniform scene brightness, a 
+photometric normalization procedure was applied [McEwen, 1996; 
+McEwen et al., 1998] to the individual images before compiling 
+the global mosaic.  The data are normalized to R30, the 
+reflectance expected at an incidence angle (i) and phase angle 
+(p) of 30.0 degrees and an emission angle (e) of 0.0 degrees 
+matching the photometric geometry of lunar samples measured at 
+the reflectance laboratory at Brown University [Pieters et al., 
+1991].  Differences in phase behavior, especially near 0.0 
+degrees, as a function of terrain type were observed in the 
+resulting mosaics.  A second-order correction to the phase 
+function for near zero phase observations was developed and 
+applied to the data.  This procedure compared areas of overlap 
+among low and high-phase imaging for determining a 
+multiplicative correction to the low-phase imaging which forced 
+overlapping areas to match.  The resulting multiplicative 
+corrections were then applied to the low-phase imaging in non-
+overlap areas.
+
+The modified Lunar-Lambert function used in the processing 
+[McEwen, 1996; McEwen et al., 1998] is as follows:
+
+XL(i,e,p) = 2*L(p)*u0/(u+u0) + (1-L(p))*u0
+
+where:
+i = incidence angle
+e = emission angle
+p = phase angle
+u = cos(e)
+u0 = cos(i)
+L = variation of the limb-darkening parameter expressed
+    as a third-order polynomial:
+    L(p) =  1.0 + A*p + B*(p**2) + C*(p**3)
+    A = -0.019
+    B =  0.242E-3
+    C = -1.46E-6
+
+The phase function correction based on work from Helfenstein is 
+defined as follows:
+
+F(p) = B(p,h,b0)*[(1-f)*P(p,g1) + f*P(p,g2)]
+
+B(p,h,b0) = 1 + b0/(1+tan(p/2)/h) (Backscatter function)
+
+P(p,g) = (1-g**2)/(1+g**2+2*g*cos(p)**1.5)
+
+b0 = wave length dependent constant (see table below)
+
+The g1 parameter is expected to vary with albedo, modeled as:
+g1 = d*R30 + e (however, d=0 for Clementine processing, thus 
+eliminating any correction for albedo).
+
+R30 = normalized albedo
+
+To describe the backscatter function at less than 2 degrees 
+phase angle, the following linear functions are used based on 
+results from Burratii [McEwen, 1996]:
+
+   F(p) = 1.0 + xb
+   xb = xb0 + xb1 * wave_length 
+   where:
+   xb0 = -0.0817
+   xb1 = 0.0081
+
+Final normalization to the RELAB geometry is given by:
+
+R30 = R(i,e,p)*[XL(30,0,30)/XL(i,e,p)]*[F(30)/F(p)]
+
+where: f,g2,b0,h are parameters determined by fits to a dataset.
+
+Values applied to the Clementine NIR data were derived for the 
+UVVIS E filter (1000 nm) and these have been applied to all six 
+NIR wavelengths.  Note that d=0 means that we do not attempt to 
+vary the photometric correction as a function of albedo.
+
+Filter           b0     h    d    e     f    g2
+--------------------------------------------------
+ NUA (1100 nm)  1.35  0.052  0 -0.226  0.5  0.36
+
+Go to Table of Contents.
+
+9 - EMPIRICAL FRAME OFFSET CORRECTIONS
+
+Processing of the NIR data based on the radiometric and 
+photometric procedures described above resulted in global 
+mosaics, which had achieved a "standard" level of processing and 
+calibration.  Examples of these data have been released on the 
+USGS Clementine NIR data Web site: 
+http://astrogeology.usgs.gov/Projects/ClementineNIR/ .In 
+addition to this standard radiometric and photometric 
+processing, empirically derived frame offset corrections were 
+applied to produce a second version of the mosaics with reduced 
+variability across camera modes and adjacent orbits [Staid et 
+al., 2003].  This additional processing resulted in "frame 
+offset corrected" mosaics extending from 70 degrees N to 70 
+degrees S and is described in more detail below.  Note that 
+polar regions above 70 degrees were not included in this 
+additional processing (see also page 22).
+
+Frame Offset Corrections
+
+After radiometric and photometric calibrations were applied to 
+the NIR data [e.g., Eliason et al., 2003], additional 
+corrections were derived to adjust for remaining problems in the 
+characterization of specific camera modes and the drift of 
+radiometric properties over the two month Clementine observation 
+period.  Problems in the existing NIR calibrations (standard 
+processing version) were apparent in both NIR albedo images and 
+ratio images of NIR and NIR to UVVIS bands.  Though such problem 
+areas were typically associated with ten degree latitude strips 
+where specific camera settings were poorly characterized, no 
+systematic correction for these residual errors was apparent 
+based on comparisons of image means with gain and offset camera 
+mode values.  As a result, a set of empirical corrections was 
+developed to reduce within- and between-orbit variations for 
+each NIR band as described below.
+
+To identify Clementine NIR frames with residual calibration 
+errors, ratio images were created by dividing each 
+radiometrically and photometrically calibrated NIR band to the 
+USGS calibrated 750 nm UVVIS data.  To make computational 
+processing more efficient, the NIR data were divided by 
+longitude into twelve 30-degree wide strips at a resolution of 1 
+km/pixel.  Several thousand "truth" image frames were then 
+selected for each NIR band of each strip based on orbits and 
+camera mode states that demonstrated the least amount of 
+radiometric variability across NIR/UVVIS ratio images.  Image 
+frames that were not included in the selected truth sets were 
+then adjusted by computing an offset for each frame based on 
+color ratio differences in overlapping regions of the frame 
+being corrected and the surrounding truth-set frames.  This 
+procedure was applied to each longitude strip to derive a global 
+set of offset frame corrections for each NIR band.
+
+Derived frame offset corrections for each NIR band were then 
+applied to a global mosaic of Clementine NIR data at 2 km/pixel 
+resolution.  New ratio images of the NIR channels over the UVVIS 
+750 nm data were created from the frame offset-corrected NIR 
+data to evaluate results.  Uniformity across camera mode 
+settings and orbits was improved in the resulting ratio images 
+for most regions.  Offset correction values for NIR frames that 
+had not been improved by the automated offset correction 
+algorithm due to within-image gradients or lack of adequate 
+surrounding truth images were either eliminated from the offset 
+corrections or adjusted manually based on visually matching 
+values with surrounding frames in the ratio images.
+
+After applying the best set of frame offset corrections derived 
+through the above steps, a final small offset correction was 
+then computed for every image frame in the Clementine global 
+mosaic to correct for residual between-orbit variations.  This 
+was carried out by differencing the global ratio of each NIR 
+band over the 750 nm band by the same data after applying a 
+longitudinal median filter.  The width of the longitudinal 
+median filter was varied until a filter was identified that 
+captured albedo offsets across orbits while minimizing the 
+influence of geologic albedo and color boundaries on the 
+subsequently derived offset corrections.  The mean difference of 
+the pre- and post-filter ratio images was derived for all six 
+bands of each Clementine frame, smoothed as a function of 
+latitude within each orbit and added to the previous offset 
+correction values.
+
+The final result of the offset deviation processing described 
+above was a single text file containing an offset correction by 
+NIR band for every frame in the Clementine mosaic (see 
+nir_mosaic_frameoffset.txt).  A file containing the 
+corresponding area of Clementine frames is included along with 
+the 0.5 km NIR mosaics available online at 
+http://astrogeology.usgs.gov/Projects/ClementineNIR/ .  These 
+offset values were then subtracted from the radiometrically 
+corrected NIR data to create the offset-corrected, full-
+resolution (100 m/pixel) mosaics.
+
+A final multiplicative correction equivalent to the month1-to-
+month2 correction applied to the calibrated global UVVIS data 
+was also applied to the offset corrected NIR mosaic (frame-based 
+NIR calibrations were made relative to the 750 nm UVVIS data 
+before this final multiplicative correction had been applied.) 
+Orbit-to-orbit multiplicative corrections as a function of 
+Clementine frame color-set number are included in 
+nir_mosaic_framemult.txt available at this Web site: 
+http://astrogeology.usgs.gov/Projects/ClementineNIR/ .
+
+Apollo 16 Normalization
+
+Apollo 16 soil measurements previously used to normalize and 
+calibrate the UVVIS data [Pieters et al., 1999] to units of 
+reflectance were convolved through the first four NIR filter 
+transmission curves.  Values obtained from the soil spectra were 
+then compared with DN values from the NIR data of the same 
+Apollo 16 landing site location used to calibrate the UVVIS 
+data.  Multiplicative ‘reflectance normalization’ correction 
+factors were derived for the first four bands of the NIR data 
+(1100 - 2000 nm), and the data from NIR these bands were 
+calibrated to reflectance.  Multiplicative correction factors 
+derived from the ‘standard’ data and the offset-corrected NIR 
+data were consistent to ~2% or better for all four bands.  Due 
+to a decrease in orbit-to-orbit variability around the Apollo 16 
+landing site used for normalizations, correction values derived 
+from the final offset-corrected mosaics were used for the final 
+normalizations and are presented in the table below.  The 
+longest NIR wavelengths (2600 and 2780 nm bands) were not 
+normalized to these soil measurements because reflectance 
+information was not available at these wavelengths and their 
+brightness’s may have been complicated by the additional 
+presence of thermal emission signatures.
+
+Apollo 16 Coefficients for Calibration to Reflectance
+NIR Band       Coefficient
+1100 nm        0.127860
+1250 nm        0.116715
+1500 nm        0.158662
+2000 nm        0.295333
+
+Polar Regions
+
+The processing steps described above for the NIR mosaics were 
+applied to data from 70 degrees N to 70 degrees S only.  The 
+polar regions were processed through 'standard' processing steps 
+only, and the later empirical frame offset and multiplicative 
+corrections were not applied.  This was due to multiple 
+overlapping frame coverage and the difficulty in selecting 
+optimal image coverage and deriving a single representative 
+offset correction value for a given frame to be corrected.
+
+Sources of Error
+
+These global Clementine NIR mosaics represent a large 
+improvement in radiometric calibrations over the original 
+mission calibrations [Lucey et al., 1998, 2000].  More recent 
+work illustrates the utility of these NIR mosaics [Cahill et 
+al., 2004; Staid et al., 2004; Gillis et al., 2005].  However, 
+residual errors remain and these influence usage of the data.  
+The presence and approximate magnitudes of such errors can be 
+identified in ratio images of various bands of the global NIR 
+data where color variations change across orbits and camera 
+modes that cannot be attributed to surface materials.  Though 
+such color variations are less apparent in the frame corrected 
+version of the NIR data, some residual patterns due to imperfect 
+calibrations are known to exist in this latter version of the 
+data as well.  As a result, it may be useful to compare both 
+sets of global data when conducting regional-scale analyses to 
+identify local variations introduced by imperfect radiometric 
+calibrations and empirical corrections.  Due to the potential 
+for such local variations in radiometric calibrations, it is 
+advantageous to conduct spectral analyses of the data over 
+relatively large regions that include several different orbits 
+and camera modes.
+
+Possible sources of error in the Clementine NIR data include 
+variations in photometric properties of materials within a 
+scene, stray and/or scattered light and unknown and uncorrected 
+phase and photometric effects for NIR wavelengths.  Scattered 
+light is possible anomalous brightness in which high-albedo 
+units influence the measured values of low-albedo units (and 
+vice versa) to varying degrees at different wavelengths.  There 
+is good evidence that the NIR camera suffered from stray light 
+effects, but to a lesser and qualitatively different degree than 
+the UVVIS camera [e.g., Lucey et al., 1998].  Other sources of 
+error include the assumption that the Apollo 16 sample 
+measurements are representative of (1) the larger lunar surface 
+region used for normalization to reflectance, and (2) other 
+lunar terrain types such as maria.  Cahill et al. [2004] note 
+that the noise levels in the corrected NIR data are near 1% 
+(compared to ~0.5% for the UVVIS calibrated data) and that 
+comparisons between Earth-based spectra and those derived from a 
+dozen sites on the nearside generally correspond to within 1-
+sigma standard deviation.
+
+Go to Table of Contents.
+
+10 - CONVERSION OF 16-BIT PIXEL VALUES TO FLOATING POINT NUMBERS
+
+To convert the 16-bit integer values found in the image arrays 
+of the NIR multispectral mosaic to radiance and/or fractional 
+reflectance an offset and scaling factor need to be applied as 
+shown: 
+
+FRACTIONAL_REFLECTANCE = (SCALING_FACTOR * DN) + OFFSET
+        where: DN = 16-bit pixel value of NIR DIM image array.
+               SCALING_FACTOR = 1.3500E-04
+               OFFSET = 0.00
+
+The ISIS system automatically converts the 16-bit integer values 
+to floating point values by applying the scaling factor and 
+offset values.
+
+Go to Table of Contents.
+
+11 - FILES, DIRECTORIES, AND DISK CONTENTS
+
+The files on each CD volume are organized starting at the root 
+or 'parent' directory. Below the parent directory is a directory 
+tree containing data, documentation, and index files. In the 
+table below directory names are indicated by brackets (<...>), 
+upper-case letters indicate an actual directory or file name, 
+and lower-case letters indicate the general form of a set of 
+directory or file names.
+
+DIRECTORY/FILE CONTENTS
+<root>
+|
+|-AAREADME.TXT          Introduction to the CD volume (ASCII Text)
+|
+|-INDEX.HTM             Hypertext Markup Language (HTML) file for use
+|                       as a user-interface to files on this volume.
+|
+|-ERRATA.TXT            Description of known anomalies and errors
+|                       present on the volume set (optional file).
+|
+|-VOLDESC.CAT           A description of the contents of this
+|                       CD volume in a format readable by
+|                       both humans and computers.
+|
+|-<CATALOG>             Catalog Directory
+|  |
+|  |-CATINFO.TXT        Describes Contents of the Catalog directory
+|  |
+|  |-DATASET.CAT        Clementine NIR DIM Mosaic description
+|  |
+|  |-DSMAP.CAT          Map Projection description
+|  |
+|  |-INSTHOST.CAT       Clementine Spacecraft description
+|  |
+|  |-MISSION.CAT        Clementine Mission description
+|  |
+|  |-PERSON.CAT         Contributors to Clementine NIR Mosaic
+|  |
+|  |-REF.CAT            References for Clementine NIR Mosaic
+|  |
+|  |-NIRINST.CAT        NIR Camera description
+|
+|-<DOCUMENT>            Documentation Directory. The files in this
+|  |                    directory provide detailed information
+|  |                    regarding the Clementine NIR Mosaic.
+|  |
+|  |-DOCINFO.TXT        Description of files in the DOCUMENT
+|  |                    directory.
+|  |
+|  |-VOLINFO.TXT        Documentation regarding the
+|  |                    contents of this CD Volume.
+|  |
+|  |-VOLINFO.HTM        HTML document for VOLINFO.TXT
+|  |
+|  |-VOLINFO.LBL        PDS Label file describing the VOLINFO
+|  |                    documents.
+|  |
+|  |-SCHEME.PDF         Adobe Acrobat Portable Document Format file
+|                       showing NIR tiling and volume scheme.
+|
+|-<INDEX>               Directory for the image index files.
+|  |
+|  |-INDXINFO.TXT       Description of files in <INDEX> directory.
+|  |
+|  |-INDEX.TAB          Image Index table specific to each volume.
+|  |
+|  |-INDEX.LBL          PDS label for INDEX.TAB
+|  |
+|  |-CUMINDEX.TAB       Image Index table for entire CD collection.
+|  |
+|  |-CUMINDEX.LBL       PDS label for CUMINDEX.TAB.
+|
+|-<DATA>                Data directory containing NIR DIM tiles.
+|  |
+|  |-<tsppymmm.xxx>     Data filenames where;
+|                               (For this NIR Volume Set)
+|                           t = N (Clementine NIR Mosaic)
+|
+|                               (For past or future Volumes)
+|                             = B (Clementine Basemap Mosaic)
+|                             = U (UVVIS Cube)
+|                             = N (NIR Cube)
+|                             = L (LWIR Image Data)
+|                             = H (Hi-res Image Data)
+|
+|                           s = (Resolution - km/pixel)
+|                             = A   (0.004 km/pixel - future mapping)
+|                             = B-D (For future mapping as needed)
+|                             = E   (0.02 km/pixel - future mapping)
+|                             = F-H (For future mapping as needed)
+|                             = I   (0.1 km/pixel)
+|                             = J   (0.15 km/pixel)
+|                             = K-L (For future mapping as needed)
+|                             = M   (0.5 km/pixel)
+|                             = N-P (For future mapping as needed)
+|                             = Q   (2.5 km/pixel)
+|                             = R-T (For future mapping as needed)
+|                             = U   (12.5 km/pixel)
+|                             = V-Z (For future mapping as needed)
+|
+|                          pp = (00-90) Center latitude of Image File.
+|                               (Two digit truncated integer)
+|
+|                           y = N (Positive latitude)
+|                             = S (Negative latitude)
+|                             = <none> (Not used for full latitude
+|                                       coverage. i.e. -90 to 90)
+|
+|                         mmm = (000-360) Center longitude of Image.
+|                               (Three digit truncated integer)
+|                         xxx = IMG (PDS Labeled Image File)
+|                             = LAB (ISIS Detached Label File)
+|                             = JPG (JPEG small, medium, and
+|                               large Browse Images) <BROWSE>
+|                               Directory Tree only
+|                             = HTM (<BROWSE> Directory Tree only)
+|
+|
+|-<BROWSE>              Directory tree containing enhanced color,
+   |                    color ratio, and b/w (2000nm) “Browse”
+   |                    (reduced resolution) JPEG images for each
+   |                    image data product on the volume.
+   |
+   |-BROWINFO.TXT       Description of <BROWSE> content.
+   |
+   |-BRCOLOR.HTM        Graphics (map)-based HTML interface to
+   |                    enhanced color browse data
+   |                    (Accessed by INDEX.HTM file).
+   |
+   |-BRRATIO.HTM        Graphics (map)-based HTML interface to
+   |                    color ratio browse data
+   |                    (Accessed by INDEX.HTM file).
+   |
+   |-BRBW.HTM           Graphics (map)-based HTML interface to
+   |                    b/w (2000 nm) browse data
+   |                    (Accessed by INDEX.HTM file).
+   |
+   |-LOCATOR.HTM        Volume/Quad Locator Map.
+   |
+   |-CLEMLOGO.GIF       Various icons, logos, and images
+   |-USGSLOGO.GIF       used by HTML documents on the volume.
+   |-CLEMGRID.GIF
+   |-GR17.GIF
+   |-GR38.GIF
+   |
+   |
+   |-<COLOR>
+   |  |-<SMALL>
+   |  |-<MEDIUM>        Directory tree containing small, medium,
+   |  |-<LARGE>         and large sized JPEG images (enhanced color,
+   |                    color ratio, and b/w (2000nm)) for each
+   |-<RATIO>            DIM product. These JPEG images are primarily
+   |  |-<SMALL>         used by the HTML documents on the volume.
+   |  |-<MEDIUM>        small images are ~60x60 pixels
+   |  |-<LARGE>         medium images are ~400x400 pixels
+   |                    large images are ~1000x1000 pixels
+   |-<2000nm>
+      |-<SMALL>
+      |-<MEDIUM>
+      |-<LARGE>
+
+
+Go to Table of Contents.
+
+12 - IMAGE FILE ORGANIZATION
+
+The image files are stored in a PDS compliant format. An image 
+file contains a label area (header) at the beginning of the file 
+followed by the image data. The number of bytes of the label 
+area is a multiple of the number of bytes that make up an image 
+line (number of samples * 2 bytes/pixel). The image label area 
+contains ASCII text data that describing the image file (see 
+Image Labels section below). The label area can be viewed with a 
+simple ASCII editor on most computer systems.
+
+ISIS access to NIR DIM
+
+Each NIR image file (*.img filename extension) is associated 
+with an Integrated Software for Imagers and Spectrometers (ISIS) 
+'qube object' detached label (.lab filename extension). This 
+detached label allows for images to be accessed and processed 
+within the ISIS system (available through the USGS, Flagstaff, 
+AZ). Within ISIS, users should reference the detached label file 
+when accessing image files. The ISIS detached label contains a 
+pointer to the actual image file so both files (.img and .lab) 
+should remain in the same directory if transferring data to 
+other media.
+
+Pixel Storage Order
+
+The Clementine NIR mosaic is stored as image files with 16-bit 
+signed integer pixels. The storage order of the pixels is "most 
+significant byte order first." This is the storage order for 
+Unix/Sun and Macintosh systems. For other systems such as IBM-
+compatible PC, Dec/Alpha, and VAX systems, the high and low 
+order bytes of the pixels will need to be swapped before the 
+data can be used. The ISIS program "convert" will automatically 
+convert the data to the proper storage order.
+
+Special Pixel Values
+
+Pixels in an image array can contain special values to denote a 
+special condition about a pixel. The following values designate 
+a special pixel:
+
+-32768 - NULL - The pixel is "empty" and no data were acquired 
+for this pixel location in the image array. This condition 
+typically occurs when a gap exists in the image map such as when 
+an image was not acquired for an area of the Moon.
+
+-32767 - Low Processing Saturation - Processing on the pixel 
+caused its value to go outside the low-end dynamic range of the 
+16-bit signed integer.
+
+-32766 - Low Instrument Saturation - The pixel of the raw image 
+was "bit clipped" and did not contain a valid value. For 
+example, if the bias of the camera was set so that the low DN 
+values could not be stored in the dynamic range of the raw 
+image. 
+
+-32765 - High Instrument Saturation - The pixel of the raw image 
+was high-end saturated and could not be stored in the dynamic 
+range of the raw image. For example, if part of an image scene 
+was too bright to be recorded by the imaging instrument. 
+
+-32764 - High Processing Saturation - Processing on the pixel 
+caused its value to go outside the high-end dynamic range of the 
+16-bit signed integer.
+
+Image Labels
+
+The label area of an image file contains descriptive information 
+about the image. The label consists of keyword statements that 
+conform to version 3 of the Object Description Language (ODL) 
+developed by NASA's PDS project. There are three types of ODL 
+statements within a label: structural statements, keyword 
+assignment statements, and pointer statements.
+
+Structural statements provide a shell around keyword assignment 
+statements to delineate which data object the assignment 
+statements are describing. The structural statements are: 
+
+1) OBJECT = object_name
+2) END_OBJECT
+3) END
+
+The OBJECT statement begins the description of a particular data 
+object and the END_OBJECT statement signals the end of the 
+object's description. All keyword assignment statements between 
+an OBJECT and its corresponding END_OBJECT statement describe 
+the particular object named in the OBJECT statement. The END 
+statement terminates a label. A keyword assignment statement 
+contains the name of an attribute and the value of that 
+attribute. Keyword assignment statements are described in more 
+detail in Appendix A of this document. These statements have the 
+following format:
+
+name = value
+
+Values of keyword assignment statements can be numeric values, 
+literals, and text strings.
+
+Pointer statements are a special class of keyword assignment 
+statements. These pointers are expressed in the ODL using the 
+following notation:
+
+^object_name = location
+
+If the object is in the same file as the label, the location of 
+the object is given as an integer representing the starting 
+record number of the object, measured from the beginning of the 
+file. The first label record in a file is record 1. Pointers are 
+useful for describing the location of individual components of a 
+data object. Pointer statements are also used for pointing to 
+data or label information stored in separate files. An example 
+of a detached label (i.e., label information stored in a 
+separate file) is shown below: By convention, detached labels 
+are found in the LABEL directory.
+
+^STRUCTURE = 'logical_file_name'
+
+The value of 'logical_file_name' is the name of the detached 
+label file containing the description.
+
+The keyword statements in the label are packed into the fixed-
+length records that make up the keyword label area. Each keyword 
+statement is terminated by a carriage-return and line-feed 
+character sequence. An example of a Clementine NIR DIM image 
+label is shown below. Descriptions of the keywords used in the 
+NIR label are found in Appendix A.
+
+Example PDS Label for Clementine NIR DIM Image files
+PDS_VERSION_ID                 = PDS3
+
+/*          FILE FORMAT AND LENGTH */
+
+RECORD_TYPE                    = FIXED_LENGTH
+RECORD_BYTES                   = 3688
+FILE_RECORDS                   = 10637
+LABEL_RECORDS                  = 2
+INTERCHANGE_FORMAT             = BINARY
+
+/*          POINTERS TO START RECORDS OF OBJECTS IN FILE */
+
+^IMAGE                         = 3
+
+/*          IMAGE DESCRIPTION */
+
+DATA_SET_ID                    = "CLEM1-L-N-5-DIM-NIR-V1.0"
+PRODUCT_ID                     = "NI03N003"
+PRODUCER_INSTITUTION_NAME      = "UNITED STATES GEOLOGICAL 
+SURVEY"
+PRODUCT_TYPE                   = MDIM
+MISSION_NAME                   = "DEEP SPACE PROGRAM SCIENCE 
+                                  EXPERIMENT"
+SPACECRAFT_NAME                = "CLEMENTINE 1"
+INSTRUMENT_NAME                = "NEAR INFRARED CAMERA"
+INSTRUMENT_ID                  = "NIR"
+TARGET_NAME                    = "MOON"
+FILTER_NAME                    = ("A","B","C","D","E","F")
+CENTER_FILTER_WAVELENGTH       = (1110.000,1250.000,1500.000,
+                                  2000.000,2600.000,2780.00)
+BANDWIDTH                      = (60.000,60.000,60.000,
+                                  60.000,60.000,120.000)
+START_TIME                     = "N/A"
+STOP_TIME                      = "N/A"
+SPACECRAFT_CLOCK_START_COUNT   = "N/A"
+SPACECRAFT_CLOCK_STOP_COUNT    = "N/A"
+PRODUCT_CREATION_TIME          = 2006-05-25T13:30:03
+NOTE                           = "NIR 6-BAND MOSAIC"
+
+/*          DESCRIPTION OF OBJECTS CONTAINED IN FILE */
+
+OBJECT                         = IMAGE
+  BANDS                        = 6
+  BAND_STORAGE_TYPE            = BAND_SEQUENTIAL
+  BAND_NAME                    = "N/A"
+  LINES                        = 2127
+  LINE_SAMPLES                 = 1844
+  SAMPLE_TYPE                  = MSB_INTEGER
+  SAMPLE_BITS                  = 16
+  SAMPLE_BIT_MASK              = 2#1111111111111111#
+  OFFSET                       = 0.0
+  SCALING_FACTOR               = 1.350000E-04
+  VALID_MINIMUM                = -32752
+  NULL                         = -32768
+  LOW_REPR_SATURATION          = -32767
+  LOW_INSTR_SATURATION         = -32766
+  HIGH_INSTR_SATURATION        = -32765
+  HIGH_REPR_SATURATION         = -32764
+  MINIMUM                      = 878
+  MAXIMUM                      = 11120
+  CHECKSUM                     = 3245986915
+END_OBJECT                     = IMAGE
+
+OBJECT                         = IMAGE_MAP_PROJECTION
+  ^DATA_SET_MAP_PROJECTION     = "DSMAP.CAT"
+  COORDINATE_SYSTEM_TYPE       = "BODY-FIXED ROTATING"
+  COORDINATE_SYSTEM_NAME       = "PLANETOGRAPHIC"
+  MAP_PROJECTION_TYPE          = "SINUSOIDAL"
+  MAP_RESOLUTION               = 303.2334900
+  MAP_SCALE                    = 0.1000000
+  MAXIMUM_LATITUDE             = 7.0000000
+  MINIMUM_LATITUDE             = -0.0132000
+  EASTERNMOST_LONGITUDE        = 6.0131998
+  WESTERNMOST_LONGITUDE        = 0.0000000
+  LINE_PROJECTION_OFFSET       = 2123.6345297
+  SAMPLE_PROJECTION_OFFSET     = 4549.5024429
+  A_AXIS_RADIUS                = 1737.4000000
+  B_AXIS_RADIUS                = 1737.4000000
+  C_AXIS_RADIUS                = 1737.4000000
+  FIRST_STANDARD_PARALLEL      = "N/A"
+  SECOND_STANDARD_PARALLEL     = "N/A"
+  POSITIVE_LONGITUDE_DIRECTION = EAST
+  CENTER_LATITUDE              = 0.0
+  CENTER_LONGITUDE             = 15.0000000
+  REFERENCE_LATITUDE           = "N/A"
+  REFERENCE_LONGITUDE          = "N/A"
+  LINE_FIRST_PIXEL             = 1
+  SAMPLE_FIRST_PIXEL           = 1
+  LINE_LAST_PIXEL              = 2127
+  SAMPLE_LAST_PIXEL            = 1844
+  MAP_PROJECTION_ROTATION      = 0.0000000
+  VERTICAL_FRAMELET_OFFSET     = "N/A"
+  HORIZONTAL_FRAMELET_OFFSET   = "N/A"
+END_OBJECT                     = IMAGE_MAP_PROJECTION
+END
+
+Go to Table of Contents.
+
+13 - INDEX FILES
+
+Each CD volume in the Clementine NIR mosaic contains an image 
+index table ('index.tab') with catalog information specific to 
+each volume.  A cumulative index table ('cumindex.tab') is also 
+provided. It contains entries for the entire NIR DVD collection. 
+The image index files and their associated PDS label files 
+('index.lbl' and 'cumindex.lbl') are located in the 'index' 
+directory. The index table includes the file names, CD volumes, 
+and mapping parameter information.
+
+Go to Table of Contents.
+
+14 - ACKNOWLEDGMENTS
+
+The National Aeronautics and Space Administration is charged 
+with the responsibility for coordination of a program of 
+systematic exploration of the planets by U.S. spacecraft.  To 
+this end, it finances spaceflight missions and data analysis and 
+research programs administered and performed by numerous 
+institutions. The Astrogeology Program of the Geological Survey 
+of the U.S. Department of Interior performs digital cartographic 
+mapping in support of NASA's program of planetary exploration 
+and scientific research.
+
+The Clementine NIR DIM was compiled for the National Aeronautics 
+and Space Administration (NASA) by the United States Geological 
+Survey (USGS) under the direction of Lisa Gaddis (USGS) and Eric 
+M. Eliason (USGS, now at The University of Arizona).  Paul 
+Lucey, Donovan Steutel, Dave Blewett, and John Hinrichs (the 
+latter two are now at NovaSol, Honolulu, HI) of the University 
+of Hawaii characterized the behavior of the NIR camera and 
+developed the radiometric calibration methods.  Matt Staid 
+(USGS, now at Planetary Sciences Institute, Tucson, AZ) provided 
+expertise in the empirical correction of the NIR following 
+standard processing of the NIR mosaic.  Ella Mae Lee and Lynn 
+Weller headed the USGS technical group responsible for 
+processing the NIR image files through standard processing.  
+Cartographic and archive design, data conversion for PDS 
+compliance, and production of DVDs was performed by Chris 
+Isbell.  The Lunar Geometric Control network was derived by Mert 
+Davies and Tim Colvin (both from the RAND Corporation).  
+External validation and review were provided by Carle Pieters 
+(Brown University) and Brad Jolliff (Washington University).
+
+Generation of the NIR DIM is a very complex process that 
+involves and depends on an extended number of people. In 
+Completion of this product is the result of contributions by the 
+following individuals and groups in Astrogeology at 
+USGS/Flagstaff:
+
+Data Processing:  Ella Mae Lee, Lynn Weller, Bob Sucharski, 
+Janet Richie, Ana Grecu, Alicyn Gitlin
+
+Data Review:  Ella Mae Lee, Lynn Weller, Annie Bennett
+
+Scripting:  Eric Eliason, Ella Mae Lee, Lynn Weller, Tammy 
+Becker, Tracie Sucharski, John Shinaman, and Bob Sucharski
+
+Database:  Janet Barrett, Ella Mae Lee, Bob Sucharski
+
+Data Management:  Annie Bennett, Lynn Weller
+
+A variety of developers and programmers within the ISIS 
+programming group of USGS/Flagstaff, AZ were also involved in 
+the development of this archive.
+
+Go to Table of Contents.
+
+15 - REFERENCES
+
+Anderson, J.A., S.C. Sides, D.L. Soltesz, T.L. Sucharski, K.J. 
+Becker, Modernization of the Integrated Software for Imagers and 
+Spectrometers, Lunar and Planetary Science Conference XXXV, 
+abstract #2039, 2004.
+
+Acton, C.H., Ancillary Data Services of NASA's Navigation and 
+Ancillary Information Facility: Planetary and Space Sciences, 
+Vol. 44, No. 1, pp. 65-70, 1996.
+
+Batson, R.M., Cartography: in Greeley, Ronald, and Batson, eds. 
+Planetary Mapping: New York, Cambridge University Press, pp. 60-
+95, 1990.
+
+Batson, R.M., Digital Cartography of the Planets: New Methods, 
+Its Status, and Its Future: Photogrammetric Engineering and 
+Remote Sensing, Vol. 53, No. 9, p.1211-1281, 1987.
+
+Cahill, J.T., P.G. Lucey, J.J. Gillis, D. Steutel, Verification 
+of quality and compatibility for the newly calibrated Clementine 
+NIR Data Set, Lunar and Planetary Science Conference XXXV, 
+abstract #1469, 2004.
+
+Cook, A.C., B. Semenov, M.S. Robinson, and T.R. Watters, 
+Assessing the Absolute Positional Accuracy of the Clementine 
+UVVIS Mosaic, Proceedings of the 36th Vernadsky-Brown 
+Microsymposium, Moscow, Russia, CDROM abstract #ms107, 2002.
+
+Eliason, E.M., Production of Digital Image Models Using the ISIS 
+System: Lunar and Planetary Science Conference 28th, pp. 331-
+332, 1997.
+
+Eliason, E., C. Isbell, E. Lee, T. Becker, L. Gaddis, A. McEwen, 
+M. Robinson, Mission to the Moon: The Clementine UVVIS Global 
+Lunar Mosaic, PDS Volumes USA_NASA_PDS_CL_4001 through 4078, 
+produced by the U.S. Geological Survey and distributed on CD 
+media by the Planetary Data System, 1999.
+
+Eliason, E.M., E.M. Lee, T.L. Becker, L.A. Weller, C.E. Isbell, 
+M.I. Staid, L.R. Gaddis, A.S. McEwen, M.S. Robinson, T. Duxbury, 
+D. Steutel, D.T. Blewett, and P.G. Lucey, A Near-Infrared (NIR) 
+global multispectral map of the Moon from Clementine, Lunar and 
+Planetary Science Conference XXXIV, abstract #2093, 2003.
+
+Eliason, E.M., E.R. Malaret, and G. Woodward, Clementine 
+Mission, The Archive of Image Data Products and Data Processing 
+Capabilities: Lunar and Planetary Science Conference 26th, pp. 
+369-370, 1995.
+
+Eliason, E.M., A.S. McEwen, M.S. Robinson, E.M. Lee, T.L. 
+Becker, L. Gaddis, L.A. Weller, C.E. Isbell, J.R. Shinaman, T. 
+Duxbury, E. Malaret, Clementine: A Global Multi-Spectral Map of 
+the Moon from the Clementine UVVIS Imaging Instrument: Lunar and 
+Planetary Science Conference 30th, pp. 1933-1934, 1999.
+
+Eliason, E., A. McEwen, M. Robinson, P. Lucey, T. Duxbury, E. 
+Malaret, C. Pieters, T. Becker, C. Isbell, E. Lee, Multispectral 
+Mapping of the Moon by Clementine, New Views of the Moon 1998, 
+abstract #6006, 1998.
+
+Gaddis, L.R., Anderson, J., Becker, K., Becker, T., Cook, D., 
+Edwards, K., Eliason, E., Hare, T., Kieffer, H., Lee, E.M., 
+Mathews, J., Soderblom, L., Sucharski, T., and Torson, J., An 
+overview of the Integrated Software for Imaging Spectrometers 
+(ISIS), Lunar and Planetary Science Conference XVIII, 387-388, 
+1997.
+
+Gillis, J.J., P.G. Lucey, B.A. Campbell, and B.R. Hawke, 
+Clementine 2.7 micron data and 70-cm Earth-based radar data 
+provide additional constraints for UVVIS-based estimates of TiO2 
+content for lunar mare basalts, Lunar and Planetary Science 
+Conference XXVI, abstract #2254, 2005.
+
+Isbell, C.E., E.M. Eliason, K.C. Adams, T.L. Becker, A.L. 
+Bennett, E.M. Lee, A.S. McEwen, M.S. Robinson, J.R. Shinaman, 
+and L.A. Weller, Clementine: A Multi-Spectral Digital Image 
+Model Archive of the Moon: Lunar and Planetary Science 
+Conference 30th, pp. 1812-1813, 1999.
+
+Isbell, C.E., E.M. Eliason, E.M. Lee, K.C. Adams, T.L. Becker, 
+A.L. Bennett, A.S. McEwen, Clementine: Reduced Resolution 
+Digital Image Model of the Moon: Lunar and Planetary Science 
+Conference 32nd, abstract #2076, 2001.
+
+Jet Propulsion Laboratory, Planetary Data System Standards 
+Reference: JPL Document D-7669, Part 2, Jet Propulsion 
+Laboratory, Pasadena, California, 2006.
+
+Lawson, S.L., B.M. Jakosky, H.-S. Park, and M.T. Mellon, 
+Brightness temperatures of the lunar surface: Calibration and 
+global analysis of the Clementine long-wave infrared camera 
+data, J. Geophys. Res., 105, No. E2, 4273-4290, 2000.
+
+Lee, E.M., K.E. Edwards, T.L. Becker, D. Cook, E. Eliason, M.S. 
+Robinson, A.S. McEwen, T. Colvin, M. Davies, T. Duxbury, T. 
+Sorenson, 1997, Clementine UVVIS Multispectral Processing, Lunar 
+and Planetary Science Conference XXVIII, abstract #1705, 1997.
+
+Le Mouelic, S., Y. Langevin, and S. Erard, A new data reduction 
+approach for the Clementine NIR data set:  Application to 
+Aristillus, Aristarchus, and Kepler, Journal of Geophysical 
+Research, v. 104, No. E2, pp. 3833-3843, 1999.
+
+Lewis, I., Clementine NIR and LWIR Cameras:  Comments on Raw 
+Data Sets, online document, 
+http://astrogeology.usgs.gov/Projects/Clementine/nasaclem/sensor
+s/nir/nir_lwir_lewis_comments.html, 1995.
+
+Li, Lin, J.F. Mustard, and C.M. Pieters, The Effects of 
+Scattered Light in the Clementine UVVIS Camera on Mixture 
+Analysis, Lunar and Planetary Science Conference 30th, pp. 1356-
+1357, 1999.
+
+Lucey, P.G., J.L. Hinrichs, and E. Malaret, Progress Toward 
+Calibration of the Clementine Near Infrared Camera Data Set, 
+Lunar and Planetary Science Conference XXXVIII, Abstract #1401, 
+1997.
+
+Lucey, P.G., J. Hinrichs, C. Budney, G. Smith, C. Frost, B.R. 
+Hawke, E. Malaret, M.S. Robinson, B. Bussey, T. Duxbury, D. 
+Cook, P. Coffin, E. Eliason, T. Sucharski, A. McEwen, C.M. 
+Pieters, Calibration of the Clementine Near Infrared Camera:  
+Ready for Prime Time, Lunar and Planetary Science Conference 
+XXXI, Abstract #1576, 1998.
+
+Lucey, P.G., D.T. Blewett, E. Eliason, L.A. Weller, R. 
+Sucharski, E. Malaret, J.L. Hinrichs, and P.D. Owensby, 
+Optimized calibration constants for the Clementine NIR camera, 
+Lunar and Planetary Science Conference XXIX, #1273, 2000.
+
+McEwen, A.S., E. Eliason, P. Lucey, E. Malaret, C. Pieters, M. 
+Robinson, T. Sucharski, Summary of Radiometric Calibration and 
+Photometric Normalization Steps for the Clementine UVVIS Images: 
+Lunar and Planetary Science Conference 29th, pp. 1466-1467, 
+1998.
+
+McEwen, A.S., M. Robinson, Mapping of the Moon by Clementine: 
+Adv. Space Research, Vol. 19, No. 10, pp. 1523-1533, 1997.
+
+McEwen, A.S., A Precise Lunar Photometric Function: Lunar and 
+Planetary Science Conference 27th, pp. 841-842, 1996.
+
+Nozette, S., P. Rustan, L.P. Pleasance, D.M. Horan, P. Regeon, 
+E.M. Shoemaker, P.D. Spudis, C.H. Acton, D.N. Baker, J.E. 
+Blamont, B.J. Buratti, M.P. Corson, M.E. Davies, T.C. Duxbury, 
+E.M. Eliason, B.M. Jakosky, J.F. Kordas, I.T. Lewis, C.L. 
+Lichtenberg, P.G. Lucey, E. Malaret, M.A. Massie, J.H. Resnick, 
+C.J. Rollins, H.S. Park, A.S. McEwen, R.E. Priest, C.M. Pieters, 
+R.A. Reisse, M.S. Robinson, D.E. Smith, T.C. Sorenson, R.W. 
+Vorder Breugge, and M.T. Zuber, The Clementine Mission to the 
+Moon: Scientific Overview: Science, Vol. 266, pp. 1835-1839, 
+1994.
+
+Pieters, C., Compositional diversity and stratigraphy of the 
+lunar crust derived from reflectance spectroscopy, Chap. 14 in 
+Remote Geochemical Analysis: Elemental and Mineralogical 
+Composition, C. Pieters and P. Englert (ed.), University of 
+Cambridge, Cambridge, England, 167-198, 1993.
+
+Pieters, C.M., The Moon as a Spectral Calibration Standard 
+Enabled by Lunar Samples:  The Clementine Example, in New Views 
+of the Moon II: Understanding the Moon Through the Integration 
+of Diverse Datasets, September 22-24, 1999, Flagstaff, Arizona, 
+abstract 8025 
+(http://www.planetary.brown.edu/pds/Pieters_NV99_8025.pdf), 
+1999.
+
+Pieters, C.M., S. Pratt, H. Hoffmann, P. Helfenstein, and J. 
+Mustard, Bi-directional Spectroscopy of Returned Lunar Soils: 
+Detailed "Ground Truth" for Planetary Remote Sensors: Lunar and 
+Planetary Science Conference 22nd, pp. 1069-1070, 1991.
+
+Priest, R.E., I.T. Lewis, N.R. Sewall, H. Park, M.J. Shannon, 
+A.G. Ledebuhr, L.D. Pleasance, M.A. Massie, and K. Metschuleit, 
+Near-infrared Camera for the Clementine Mission, Proceedings of 
+the Society of Photo-optical Instrumentation Engineers (SPIE), 
+2475, pp. 393-404, 1995.
+
+Robinson, M.S., A.S. McEwen, E.M. Eliason, E.M. Lee, E. Malaret, 
+P. Lucey, Clementine UVVIS Global Mosaic: A New Tool for 
+Understanding the Lunar Crust: Lunar and Planetary Science 
+Conference 30th, pp. 1931-1932, 1999.
+
+Robinson, M.S., E. Malaret, and T. White, A calibration for the 
+Clementine HIRES Camera, Jour. Geophys. Res., 108, No. E4, 5028, 
+2003.
+
+Snyder, J.P, Map Projections - A Working Manual: U.S. Geological 
+Survey Professional Paper 1395, United States Government 
+Printing Office, 1987.
+
+Staid, M.I., C. Isbell, L. Gaddis, E. Eliason, E.M. Lee, T. 
+Becker, L. Weller, J. Shinaman, D. Steutel, P. Lucey, J. Gillis, 
+A. McEwen, M. Robinson, T. Duxbury, E. Malaret, B. Jolliff, C. 
+Pieters, Clementine Near-Infrared Global Multispectral Map, 
+First Release,  Online document and images 
+(http://astrogeology.usgs.gov/Projects/ClementineNIR/), 2003.
+
+Staid, M.I., L.R. Gaddis, C.E. Isbell, Global comparisons of 
+mare volcanism from Clementine NIR data, Lunar and Planetary 
+Science Conference XXXV, abstract #1925, 2004.
+
+Torson, J.M. and K.J. Becker, ISIS - A Software Architecture for 
+Processing Planetary Images: Lunar and Planetary Science 
+Conference 28th, pp. 1443-1444, 1997.
+
+Go to Table of Contents.
+
+APPENDIX A - KEYWORD ASSIGNMENTS
+
+This section defines the keywords used in the image label area 
+of the Clementine NIR mosaic.
+
+PDS_VERSION_ID                 = PDS3
+This dataset conforms to version 3 of the PDS standards.
+
+RECORD_TYPE                    = FIXED_LENGTH
+This keyword defines the record structure of the file as fixed-
+length 
+record files.
+
+RECORD_BYTES                   = xxxx
+Record length in bytes for fixed-length records (number of 
+samples *2).
+
+FILE_RECORDS                   = xxxx
+Total number of fixed-length records contained in the file.
+
+LABEL_RECORDS                  = x
+Number of fixed-length label records in the file.
+
+INTERCHANGE_FORMAT             = BINARY
+Data are organized as BINARY values.
+
+^IMAGE                         = x
+Pointer to the first record that contains image data. (The first 
+record in the file is designated as record 1.).
+
+DATA_SET_ID                    = "CLEM1-L-N-5-DIM-NIR-V1.0"
+The PDS defined dataset identifier for the Clementine NIR 
+mosaic.
+
+PRODUCT_ID                     = "NI03N003"
+Unique product identifier for this image file. This value is the 
+same as 
+the file name. (Format described in the "FILES, DIRECTORIES, AND 
+DISK 
+CONTENTS" section above.) 
+
+PRODUCER_INSTITUTION_NAME      = "UNITED STATES GEOLOGICAL 
+SURVEY"
+Identifies the producer organization of this data product.
+
+PRODUCT_TYPE                   = MDIM
+This keyword identifies the image product as a Mosaicked Digital 
+Image 
+Model (MDIM).
+
+MISSION_NAME                   = "DEEP SPACE PROGRAM SCIENCE 
+                                  EXPERIMENT"
+The keyword identifies the product name of the mission. (This is 
+the 
+official name of the Clementine Mission.)
+
+SPACECRAFT_NAME                = "CLEMENTINE 1"
+Name of the spacecraft that acquired the data.
+
+INSTRUMENT_NAME                = "NEAR INFRARED CAMERA"
+Name of the instrument that acquired the image data.
+
+INSTRUMENT_ID                  = "NIR"
+Abbreviated name of the instrument that acquired the image data.
+
+TARGET_NAME                    = "MOON"
+Target of the data product.
+
+FILTER_NAME                    = ("A","B","C","D","E","F")
+Images acquired from each filter of the NIR camera were used to 
+complete the Clementine NIR DIM mosaic.
+
+CENTER_FILTER_WAVELENGTH       = (1100.000,1250.000,1500.000,
+                                  2000.000,2600.000,2780.000)
+The center filter wavelength (nanometers) of each NIR filter.
+
+BANDWIDTH                      = (60.000,60.000,60.000,
+                                  60.000,60.000,120.00)
+The bandwidth (nanometers) of each NIR filter.
+
+START_TIME                     = "N/A"
+STOP_TIME                      = "N/A"
+SPACECRAFT_CLOCK_START_COUNT   = "N/A"
+SPACECRAFT_CLOCK_STOP_COUNT    = "N/A"
+Start_Time, Stop_Time, and clock counts are not applicable (N/A) 
+for 
+this data product but are required keywords.
+
+PRODUCT_CREATION_TIME          = 2006-05-25T13:30:03
+Time at which the image product was produced.
+
+NOTE                           = "NIR 6-BAND MOSAIC"
+Note field always says NIR 6-BAND MOSAIC.
+
+OBJECT                         = IMAGE
+BANDS                          = 6
+There are five spectral bands in the NIR DIM mosaic.
+
+BAND_STORAGE_TYPE            = BAND_SEQUENTIAL
+Storage order is band sequential.
+
+BAND_NAME                    = "N/A"
+Band name keyword is not applicable.
+
+LINES                        = xxxx
+Number of lines (rows) in image array.
+
+LINE_SAMPLES                 = xxxx
+Number of samples (columns) in image array.
+
+SAMPLE_TYPE                  = MSB_INTEGER
+Data are stored in "Most Significant Byte" order 
+first format. This is the storage order of Sun workstations and 
+Macintosh computers. Other systems, such as IBM/PC compatible 
+computers 
+and DEC/VAX systems will need to reverse the byte order of the 
+16-bit 
+pixels before the data can be used.
+
+ 
+SAMPLE_BITS                  = 16
+There are 16 bits per sample (2 bytes).
+
+SAMPLE_BIT_MASK              = 2#1111111111111111#
+This keyword indicates all bits within a 16-bit word are used in 
+the 
+expression of the value.
+
+OFFSET                       = 0.0
+SCALING_FACTOR               = 1.350000E-04
+The OFFSET and SCALING_FACTOR keywords contain values used to 
+convert 
+the 16-bit integer pixel value to radiometric units. 
+
+FRACTIONAL_REFLECTANCE = (PIXEL* SCALING_FACTOR) + OFFSET
+
+VALID_MINIMUM                = -32752
+Lowest valid value that can be stored in pixel (always -32752).
+
+NULL                         = -32768
+Value of empty pixels or missing data (always -32768).
+
+LOW_REPR_SATURATION          = -32767
+Value of pixel if processing caused a low-end value pixel to go 
+outside  
+dynamic range of a 16-bit signed integer (always -32767).
+
+LOW_INSTR_SATURATION         = -32766
+Value if pixel was low-end saturated (always -32766). For 
+example, if 
+the bias of the camera was set so that low DN values could not 
+be 
+stored in the pixel.
+
+HIGH_INSTR_SATURATION        = -32765
+Value of pixel if processing caused a high-end value pixel to go 
+outside 
+dynamic range of a 16-bit signed integer (always -32765).
+
+HIGH_REPR_SATURATION         = -32764
+Value if pixel was high-end saturated (always -32764). For 
+example, if 
+the scene was too bright for the image to record at the pixel 
+value 
+became saturated.
+
+MINIMUM                      = xxxx
+Minimum value in image array.
+
+MAXIMUM                      = xxxx
+Maximum value in image array.
+
+CHECKSUM                     = xxxxxxxx
+Sum of all bytes in the image object. Used to validate that an 
+image 
+file was properly stored on the media.
+
+END_OBJECT                     = IMAGE
+
+OBJECT                         = IMAGE_MAP_PROJECTION
+
+^DATA_SET_MAP_PROJECTION     = "DSMAP.CAT"
+Name of file containing additional information about the map 
+projection.
+DSMAP.CAT is located in the 'catalog' directory.
+
+COORDINATE_SYSTEM_TYPE       = "BODY-FIXED ROTATING"
+COORDINATE_SYSTEM_NAME       = "PLANETOGRAPHIC"
+Coordinate system used in the map projection.
+
+MAP_PROJECTION_TYPE          = "SINUSOIDAL"
+Name of map projection. 
+
+MAP_RESOLUTION               = xxx.xxxxx
+Map resolution (pixels per degree) at the reference point of the 
+projection.
+
+MAP_SCALE                    = x.xxxxxx
+Map scale (kilometers per pixel) at the reference point of the 
+projection.
+
+MAXIMUM_LATITUDE             = xx.xxxxxxx
+Maximum latitude of the image file
+
+MINIMUM_LATITUDE             = xx.xxxxxxx
+Minimum latitude of the image file.
+
+EASTERNMOST_LONGITUDE        = xxx.xxxxxxx
+Easternmost longitude of the image file.
+
+WESTERNMOST_LONGITUDE        = xxx.xxxxxxx
+Westernmost longitude of the image file
+
+LINE_PROJECTION_OFFSET       = xxxxx.xxxxxxx
+SAMPLE_PROJECTION_OFFSET     = xxxxx.xxxxxxx
+Projection offsets are used to define the relationship between 
+line 
+and sample of the image array and the latitude and longitude 
+coordinate 
+on the surface of the planet. See 'dsmap.cat' file located in 
+the 'catalog' directory for information on these keywords.
+
+A_AXIS_RADIUS                = 1737.4000000
+B_AXIS_RADIUS                = 1737.4000000
+C_AXIS_RADIUS                = 1737.4000000
+Three-axis radius of the Moon used in the derivation of the map 
+products 
+that make up the NIR 6-band mosaic.
+
+FIRST_STANDARD_PARALLEL      = "N/A"
+SECOND_STANDARD_PARALLEL     = "N/A"
+Standard parallels of map, not used in this Sinusoidal Equal-
+Area 
+projection.
+
+POSITIVE_LONGITUDE_DIRECTION = EAST
+The Moon coordinate system uses a positive longitude direction 
+of east. 
+Longitude values increase in the eastern direction.
+
+CENTER_LATITUDE              = 0.0
+Center latitude of the map projection.
+
+CENTER_LONGITUDE             = xxxx.xxxx
+Center longitude of the map projection.
+
+REFERENCE_LATITUDE           = "N/A"
+REFERENCE_LONGITUDE          = "N/A"
+Reference latitude and longitudes are not used in the Sinusoidal 
+Equal-Area projection.
+
+LINE_FIRST_PIXEL             = 1
+SAMPLE_FIRST_PIXEL           = 1
+The first pixel (upper left) in the image array is defined as 
+line 1, 
+sample 1.
+
+LINE_LAST_PIXEL              = xxxx
+SAMPLE_LAST_PIXEL            = xxxx
+The last pixel (lower right) in the image arrays is defined by 
+these 
+keywords.
+
+MAP_PROJECTION_ROTATION      = 0.0000000
+Map projection rotation always 0 for the Clementine NIR DIM.
+
+VERTICAL_FRAMELET_OFFSET     = "N/A"
+HORIZONTAL_FRAMELET_OFFSET   = "N/A"
+These keywords are not applicable for the Sinusoidal Equal-Area 
+projection.
+
+END_OBJECT                     = IMAGE_MAP_PROJECTION
+END
+
+Go to Table of Contents.
+
+APPENDIX B - GEOMETRIC DEFINITION OF A PIXEL
+
+The purpose here is to describe the spatial or geometric 
+definition of a pixel used in the generation and utilization of 
+the digital image products. A broad range of factors enters into 
+this question. For example, is a pixel to be conceived of as a 
+point or as an area? The point definition would be most 
+convenient, for instance, when dealing with coordinate grid 
+overlays. This results in an odd number of pixels across a map 
+that has an even number of spatial increments. For changing 
+scales (for instance by even powers of 2) this definition 
+becomes a problem. In this case it makes more sense to treat a 
+pixel as a finite area. Then an even number of pixels covers an 
+even number of spatial increments and decreasing/increasing 
+scales by a power of 2 becomes trivial. However, grids now fall 
+between pixels, at least in a mathematical sense. Their 
+treatment in the generation of hardcopy therefore becomes an 
+issue. 
+It was decided that the area concept of a pixel was the better 
+choice; we would have to live with the asymmetries introduced in 
+things like cartographic grids. There are various solutions: (1) 
+use two pixels for the width of a grid line, (2) stagger grid 
+pixels back-and-forth across the mathematical position, (3) use 
+a convention whereby grid lines are systematically drawn offset 
+from their mathematical position. 
+
+The next issue is the conversion between integer coordinates and 
+real coordinates of the pixel mesh. We adopt the convention that 
+pixels are numbered (or named if you like) beginning in the 
+upper left corner with line 1, sample 1 (pixel 1,1); lines 
+increase downward; samples increase to the right.  (Even this is 
+not a universal standard; some astronomical systems begin, 
+perhaps more logically, in the lower left corner.) There are 
+three reasonable possibilities for aligning a real, or floating 
+point, coordinate system with the pixel mesh: the coordinate 
+1.0, 1.0 could be the upper left, the center, or the lower right 
+of pixel 1,1.  The convention historically used for geometric 
+calibration files (Reseau positions) and also used in the 
+Multimission Image Processing Laboratory at the Jet Propulsion 
+Laboratory, is that the center of the pixel is defined as its 
+location in real coordinates. In other words, the real 
+coordinates of the center of pixel 1,1 are 1.0, 1.0.  The top 
+left corner of the pixel is 0.5, 0.5 and the bottom right corner 
+is 1.49999...,1.499999.  The bottom and right edge of a pixel is 
+the mathematically open boundary. This is the standard adopted 
+in the image products.
+
+Cartographic conventions must also be defined. The map 
+projection representation of a pixel is mathematically open at 
+the increasing (right and lower) boundaries, and mathematically 
+closed at its left and upper boundaries. An exception occurs at 
+the physical limits of the projection; the lower boundary of the 
+lowest pixel is closed to include the limit of the projection 
+(e.g. the south pole).  The figure below shows the coordinates 
+of Pixel 1,1.
+
+
+
+
+
+
+Coordinates of Pixel 1,1
+
+               longitude  180.0         179.00001
+                           |               |
+               latitude    |               |   line
+                  90.0  -- ----------------- -- 0.5
+                           |               |
+                           |               |
+                           |               |
+                           |               |
+                           |       +       |
+                           |   (1.0,1.0)   |
+                           |               |
+                           |               |
+                           |               |
+               89.00001 -- ----------------- -- 1.49999
+                           |               |
+                           |               |
+                  sample  0.5            1.49999
+
+We must also select a convention for drawing grid lines for 
+various cartographic coordinates on planetary images and maps. 
+The convention used for image products is that a grid line is 
+drawn in the pixels that contain its floating point value until 
+the open boundary is reached and then an exception is made so 
+the outer range of latitude and longitude will always appear on 
+the image. This means, in the example above, a 10 degree grid 
+would start on pixel 1 and be drawn on every tenth pixel (11, 
+21, 31,...) until the open boundary is reached. Then the line 
+would be drawn on the pixel previous to the open boundary (line 
+180 instead of line 181, or sample 360 instead of 361).
+
+To summarize, the conventions are:
+1) Pixels are treated as areas, not as points.
+2) The integer coordinates begin with 1,1 (read, "line 1, sample 
+1") for the upper-left-most pixel; lines increase downward; 
+samples increase to the right.
+3) Integer and floating point image coordinates are the same at 
+the center of a pixel.
+4) Grids will be drawn in the pixels that contain the floating 
+point location of the grid lines except for open boundaries, 
+which will be drawn to the left or above the open boundary.
+
+Go to Table of Contents.
+04/25/07 final??
+
+
+2
+

@@ -1,0 +1,2004 @@
+PDS_VERSION_ID      = PDS3                                                    
+RECORD_TYPE         = FIXED_LENGTH                                            
+RECORD_BYTES        = 80                                                      
+SPACECRAFT_NAME     = "CLEMENTINE 1"                                          
+TARGET_NAME         = {EARTH, MOON, SKY}                                      
+OBJECT              = TEXT                                                    
+ INTERCHANGE_FORMAT = ASCII                                                   
+ PUBLICATION_DATE   = 1995-05-1                                               
+ NOTE               = "ERRATA - DISCOVERED ERRORS AND ANOMALIES"              
+END_OBJECT          = TEXT                                                    
+END                                                                           
+                                                                              
+                                                                              
+                                                                              
+DOCUMENT : ERRATA.TXT - This is the final errata information for the entire   
+                        Clementine EDR CD-ROM volume set (CL_0001 through     
+                        CL_0088). This final 'errata.txt' file exists only on 
+                        this final volume (CL_0088) and not on the first      
+                        volume as referenced in earlier 'errata.txt' files.   
+                                                                              
+This document is intended to provide an account of discovered errors or       
+anomalies associated with the Clementine CD-ROM volume set. Also, many of     
+the comments below are a clarification of potentially confusing issues that   
+are not necessarily errors or anomalies.                                      
+                                                                              
+The following section contains comments of a general nature and is            
+followed by detailed comments related to specific volumes and orbits.         
+                                                                              
+                                                                              
+-------------------------- General Comments ----------------------------------
+                                                                              
+                                                                              
+CD Content Summary:                                                           
+-------------------                                                           
+CL_0001 through CL_0069 - Lunar systematic mapping orbits 032 through 297     
+CL_0070 through CL_0081 - Lunar Post-mapping orbits 298 through 348           
+CL_0081 through CL_0084 - Lunar Pre-systematic mapping orbits 001 through 027 
+CL_0085                 - Lunar Pre-systematic mapping orbits 028 through 030 
+                        - Low Earth Orbit (Groups 1 through 18)               
+CL_0086                 - Earth Phasing Loop A (Groups  1 through 25)         
+CL_0087                 - Earth Phasing Loop A (Groups 26 through 43)         
+CL_0088                 - Earth Phasing Loop A (Groups 44 through 49)         
+                        - Earth Phasing Loop B (Groups  1 through  8)         
+                                                                              
+                                                                              
+                                                                              
+SUPPLIED SOFTWARE                                                             
+  This CD volume (CL_0088) contains the most up-to-date software for the      
+  entire volume set. Earlier volumes may contain software errors (as          
+  documented in each volume's "errata.txt" file). Please use software from    
+  this final volume to ensure you are using the most up to data programs.     
+  This up-to-date software exists only on this final volume and not on the    
+  first volume as referenced in earlier volume's 'errata.txt' file. Further   
+  software updates may exist after the release of the Clementine data product.
+  Please contact the PDS Imaging Node for the most up-to-date software (Eric  
+  Eliason, eeliason@sirius.wr.usgs.gov, (520) 556-7113).                      
+                                                                              
+Compressed EDR Image Files                                                    
+  A problem was discovered with the MINIMUM keyword value found in the        
+  labels of the image files. The MINIMUM value contains the minimum density   
+  number (DN) value of the image array. The value is not always correct.      
+  If the minimum value of the image array is located in the upper-left corner 
+  pixel of the array (row 1, column 1) then the minimum value is not properly 
+  reported. The MINIMUM value reported will be the next larger minimum value  
+  in the image array. The problem exists for all volumes in the archive.      
+                                                                              
+Compressed EDR Image Files                                                    
+  Inconsistencies may exist between the histogram statistics found in the     
+  image histogram object and the actual image that is decompressed on your    
+  computer platform. Subtle differences in the floating point hardware among  
+  computer platforms may cause the Density Number (DN) values of a resulting  
+  decompressed image to be occasionally different (within 1 DN) than the      
+  decompressed image used to generate the image histogram object. This        
+  problem exists for all volumes in the archive.                              
+                                                                              
+VOLDESC.CAT                                                                   
+  The VOLDESC.CAT file on some CD-ROM volumes may have records (lines) which  
+  are not 80 characters in length. This problem exists because the file was   
+  updated by hand to reflect the current volume number and orbits included on 
+  the volume. Because of the hand input some lines may not be 80 characters   
+  in length.                                                                  
+                                                                              
+RETICLE_POINT KEYWORDS DEFINITIONS                                            
+     The definitions in the "EDRSIS" documents have problems for the          
+     following keywords found in the labels of the Clementine images:         
+     RETICLE_POINT_RA, RETICLE_POINT_DECLINATION, RETICLE_POINT_LATITUDE,     
+     RETICLE_POINT_LONGITUDE. The part of the definition that describes       
+     the order in which the vector values are listed is incorrect. The        
+     ordering should be: "For the Clementine cameras the principal points are 
+     defined as the upper-left pixel of the camera (line 1, sample 1), the    
+     upper-right pixel (line 1, last sample), lower-right (last line, last    
+     sample), and the lower-left (last line, sample 1)".                      
+                                                                              
+FILE NAMING CONVENTION FOR STAR TRACKER A AND B CAMERAS                       
+     For EDRs associated with Star Tracker A and B cameras there is an        
+     inconsistency with the actual EDR filename and the file naming convention
+     as described in the EDRSIS and ARCSIS files found in the 'document'      
+     directory. For example, EDR laa0055u.137 is a Star Tracker A image       
+     and the third letter ('a') in the filename implies FILTER_NAME='A'.      
+     However, the header label for this image correctly has the entry         
+     FILTER_NAME='N/A'. This is the situation for all Star Tracker A and B    
+     images.                                                                  
+                                                                              
+FILE NAMING CONVENTION FOR IMAGES INDICATING FILTER_NAME='UNK'                
+     For EDRs where FILTER_NAME='UNK', the underscore (_) character is used   
+     as the third character (FILTER_NAME indicator) of the EDR filename. For  
+     example, EDR 'lh_5868y.188' has a FILTER_NAME='UNK' in the header label. 
+     For those EDRs with this situation, the 'UNK" value is used because the  
+     filter status is truly unknown due to missing or unavailable data.       
+                                                                              
+IMAGES WITH LARGE SMEAR_MAGNITUDE                                             
+     Images acquired at the beginning and end of each orbit may have a large  
+     SMEAR_MAGNITUDE (greater than 2.0 seconds) due to the slew maneuvering   
+     required to observe Vega, the Moon, and Earth.                           
+                                                                              
+                                                                              
+-------------------------- Specific Comments ---------------------------------
+                                                                              
+CL_0001 - ORBIT 033 - INVALID UNK VALUES                                      
+      Image files lhf3693s.033 through lne3705s.033 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0002 - ORBIT 038 - INVALID UNK VALUES                                      
+      Image files lhf5054s.038 have "UNK" values for TARGET_NAME,             
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE related  
+      keywords.  SPICE kernels are unavailable.                               
+                                                                              
+CL_0003 - ORBIT 042 - INVALID UNK VALUES                                      
+      Image files lhf4735s.042, lhf4736s.042, lhf5390s.042 have "UNK" values  
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0004 - ORBIT 043 - TEMPERATURE VALUES = "UNK"                              
+      Approximately 4253 images between sequence numbers 0803 and 5148        
+      contain a value of "UNK" (unknown) for FOCAL_PLANE_TEMPERATURE,         
+      LENS_TEMPERATURE, and/or CRYOCOOLER_TEMPERATURE. This does not          
+      necessarily include all images within this sequence range.              
+                                                                              
+CL_0005 - ORBIT 046 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Image lla5529p.046 was acquired during 
+      slew maneuver for Earth observations and are not part of the systematic 
+      lunar observations.                                                     
+                                                                              
+CL_0005 - ORBIT 046 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~29 seconds occurred starting at time 20:14:25.567 hours.   
+      Time gap exists between lla5523r.046 and lla5526p.046. End of slew -    
+      wait before imaging to allow s/c to settle.                             
+                                                                              
+CL_0005 - ORBIT 046 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~68 seconds occurred starting at time 20:14:54.008 hours.   
+      Time gap exists between lla5526p.046 and lla5529p.046. End of slew -    
+      wait before imaging to allow s/c to settle.                             
+                                                                              
+CL_0006 - ORBIT 050 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~1.0 minutes occurred starting at time 14:57:53.326 hours.  
+      Time gap exists between lhd1672e.050 and lhd1673e.050. Cause unknown.   
+                                                                              
+CL_0007 - ORBIT 052 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~46 seconds occurred starting at time 00:56:12.413 hours.   
+      Time gap exists between lhd1858e.052 and lhd1859f.052. Cause unknown.   
+                                                                              
+CL_0007 - ORBIT 052 - INVALID UNK VALUES                                      
+      Image files lhd3499s.052 through lue3506s.052 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0007 - ORBIT 053 - LARGE SMEAR MAGNITUDE                                   
+      Image lnf4674j.053 has a large SMEAR_MAGNITUDE (greater than 2 seconds).
+      Slew maneuvers are the likely cause.                                    
+                                                                              
+CL_0007 - ORBIT 053 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. For images lhd4680j.053 through        
+      lub5151j.053 a majority of images were acquired during slew or other    
+      maneuvers and are not part of the systematic lunar observations.        
+                                                                              
+CL_0007 - ORBIT 054 - ALL DNs ARE VALUE 7                                     
+      The image array are all value 7 for images lud0036a.054 and             
+      luc0040a.054.                                                           
+                                                                              
+CL_0008 - ORBIT 055 - INVALID UNK VALUES                                      
+      Image files lhd4835s.055 through lub4841s.055 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0009 - ORBIT 058 - INVALID UNK VALUES                                      
+      Image files lnb4765s.058 and lhd4766s.058 have "UNK" values             
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0010 - OK                                                                  
+                                                                              
+CL_0011 - ORBIT 065 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping.  The images lhd4743m.065 through       
+      lla4804m.065 and lhd5354h.065 through lla5396h.065 were acquired        
+      during slew or other maneuvers and are not part of the systematic       
+      lunar observations.                                                     
+                                                                              
+CL_0012 - ORBIT 067 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5699o.067 through            
+      lhd5705o.067 were acquired during slew maneuver for Vega star           
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0013 - ORBIT 072 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Image lhd5708p.072 was acquired        
+      during slew maneuver for Vega star observations and are not part        
+      of the systematic lunar observations.                                   
+                                                                              
+CL_0013 - ORBIT 073 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Image lhd5705p.073 was acquired        
+      during slew maneuver for Vega star observations and are not part        
+      of the systematic lunar observations.                                   
+                                                                              
+CL_0014 - ORBIT 074 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5702o.074 through            
+      lhd57080.074 were acquired during slew maneuver for Vega star           
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0014 - ORBIT 075 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Image lhd5705p.075 was acquired        
+      during slew maneuver for Vega star observations and are not part        
+      of the systematic lunar observations.                                   
+                                                                              
+CL_0014 - ORBIT 076 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5702o.076 through            
+      lhd5708o.076 were acquired during slew maneuver for Vega star           
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0015 - ORBIT 078 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5703o.078 through            
+      lhd5708o.078 were acquired during slew maneuver for Vega star           
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0015 - ORBIT 080 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5715p.080 through            
+      lhd5721p.080 were acquired during slew maneuver for Vega star           
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0015 - ORBIT 080 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      Images with frame sequence numbers 0124 - 0746 (all cameras, 623        
+      images total) have targets of SKY. Spacecraft started tumbling at       
+      19:51:00 hours and stablized at 20:02:00. Tumbling caused camera        
+      pointing to go off lunar target.                                        
+                                                                              
+CL_0015 - ORBIT 080 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0088 and 3863 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0016 - ORBIT 081 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      During oblique viewing a time gap of ~24 seconds occurred starting      
+      at time 01:49:47 hours. Time gap exists between lhf5023p.081 and        
+      lhf5024p.081. Cause unknown.                                            
+                                                                              
+CL_0017 - ORBIT 085 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5746p.085 through            
+      lhd5752p.085 were acquired during slew maneuver for Vega star           
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0018 - ORBIT 090 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      A time gap of ~28  seconds occurred due to filter wheel change          
+      starting at time 21:54:04 hours. Imaging resumed at 21:54:30 hours.     
+      Time gap exist between lhd1720e.090 and lhf1721e.090.                   
+                                                                              
+CL_0019 - ORBIT 094 - ALL DNs ARE VALUE 7                                     
+      The image array are all value 7 for images lud0120a.094 and             
+      luc0124a.094.                                                           
+                                                                              
+CL_0019 - ORBIT 094 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhf5314o.094 through            
+      lud5318o.094 were acquired during slew maneuver for Vega star           
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0019 - ORBIT 094 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Spacecraft and instrumentation command activities resulted in a time    
+      gap of ~8 minutes between image acquisition. This gap occurred between  
+      images lhf5316o.094 and lue5317o.094 (during slew to Vega).             
+                                                                              
+CL_0020 - OK                                                                  
+                                                                              
+CL_0021 - ORBIT 102 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired during     
+      systematic lunar mapping. For images lhd5354p.102 through lhd6510m.102, 
+      a significant number (417) were acquired during slew or other maneuvers 
+      and are not part of the systematic lunar observations.                  
+                                                                              
+CL_0022 - OK                                                                  
+                                                                              
+CL_0023 - ORBIT 108 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Image lhd5638p.108 was acquired        
+      during slew maneuver for Vega star observations and is not part of      
+      the systematic lunar observations.                                      
+                                                                              
+CL_0023 - ORBIT 110 - ALL DNs ARE VALUE 8                                     
+      The image array are all value 8 for images lhd4629l.110 and             
+      lhd4694m.110.                                                           
+                                                                              
+CL_0024                                                                       
+      'voldesc.cat' has a record with length 81 (should be 80).               
+      (Extra character remained after editing the VOLUME_NAME field)          
+                                                                              
+CL_0025 - OK                                                                  
+                                                                              
+CL_0026 - ORBIT 120 - ALL DNs ARE VALUE 7                                     
+      The image array are all value 7 for images lud0057a.120 and             
+      lue0086a.120.                                                           
+                                                                              
+CL_0026 - ORBIT 120 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Image lhd5707p.120 was acquired        
+      during slew maneuver for Vega star observations and is not part of      
+      the systematic lunar observations.                                      
+                                                                              
+CL_0027 - OK                                                                  
+                                                                              
+CL_0028 - ORBIT 131 - NO DATA AVAILABLE                                       
+      Orbit 131 is missing. (Data Handling Unit crash)                        
+                                                                              
+CL_0028 - ORBIT 132 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0013 and 0021 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0029 - ORBIT 136 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0033 and 0053 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0029 - ORBIT 136 - NIR IMAGES WITH LARGE CRYOCOOLER DURATION               
+      CRYOCOOLER_DURATION values (~15 hours) are assumed to be incorrect      
+      for NIR images for this orbit. True time lapses between revolutions     
+      make these large values inconsistent with durations recorded for the    
+      previous orbit.                                                         
+                                                                              
+CL_0030 - OK                                                                  
+                                                                              
+CL_0031 - OK                                                                  
+                                                                              
+CL_0032 - ORBIT 145 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5863o.145 through            
+      lhd5868o.145 were acquired during slew maneuver for Earth               
+      observations and are not part of the systematic lunar                   
+      observations.                                                           
+                                                                              
+CL_0033 - ORBIT 148 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5690o.148 through            
+      lhd5695o.148 were acquired during slew maneuver for Earth               
+      observations and are not part of the systematic lunar                   
+      observations.                                                           
+                                                                              
+CL_0033 - ORBIT 150 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5721m.150 through            
+      lhd5724m.150 were acquired during slew maneuver for Earth               
+      observations and are not part of the systematic lunar                   
+      observations.                                                           
+                                                                              
+CL_0034 - ORBIT 155 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd6143m.155 through            
+      lhd6149m.155 were acquired during slew maneuver for Earth               
+      observations and are not part of the systematic lunar                   
+      observations.                                                           
+                                                                              
+CL_0035 - ORBIT 157 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5982o.157 through            
+      lhd5987o.157 were acquired during slew maneuver for Earth               
+      observations and are not part of the systematic lunar                   
+      observations.                                                           
+                                                                              
+CL_0035 - ORBIT 157 - INVALID UNK VALUES                                      
+      Image files lhd0174s.157 has "UNK" values for TARGET_NAME,              
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE          
+      related keywords.  SPICE kernels are unavailable.                       
+                                                                              
+CL_0035 - ORBIT 158 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5764p.158 through            
+      lhd5769p.158 were acquired during slew maneuver for Earth               
+      observations and are not part of the systematic lunar                   
+      observations.                                                           
+                                                                              
+CL_0036 - ORBIT 160 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0048 and 0062 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0037 - ORBIT 165 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      A time gap of 65 seconds between lhd0093d.165 and lhd0094e.165.         
+      Cause unknown.                                                          
+                                                                              
+CL_0037 - ORBIT 167 - FILES IN INCORRECT DIRECTORY BIN                        
+      Images between sequence numbers 2775 and 4116 were incorrectly placed   
+      in the "z" directory bin. The following table shows the correct latitude
+      bin that should contain these images.                                   
+                                                                              
+          Sequence Range     Latitude Range    BIN LETTER                     
+           2775 - 3069         10 to 20            k                          
+           3070 - 3514         20 to 30            l                          
+           3515 - 3960         30 to 40            m                          
+           3961 - 4116         40 to 50            n                          
+                                                                              
+      A description of the directory bin organization for the Clementine CD   
+      volume set can be found in 'arcsis' documents in the 'document'         
+      directory on each disk.                                                 
+                                                                              
+CL_0038 - OK                                                                  
+                                                                              
+CL_0039 - ORBIT 177 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 0373 and 5787 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers to the  
+      South Pole are the likely cause.                                        
+                                                                              
+CL_0039 - ORBIT 177 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired during     
+      systematic lunar mapping. Images lhd0390f.177 and lhd0392f.177          
+      through lla1076f.177 were acquired during slew maneuver for Earth       
+      observations and are not part of the systematic lunar observations.     
+                                                                              
+CL_0040 - OK                                                                  
+                                                                              
+CL_0041 - ORBIT 184 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 2997 and 6763 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers         
+      are the likely cause.                                                   
+                                                                              
+CL_0042 - OK                                                                  
+                                                                              
+CL_0043 - ORBIT 191 - INVALID UNK VALUES                                      
+      Image files lhd5017s.191 through lhd5026s.191 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0043 - ORBIT 194 - INVALID UNK VALUES                                      
+      Image files lhd3139s.194, lla3140s.194, lhd3141s.194, lhd3142s.194,     
+      lla3143s.194, lnf3144s.194, lue3145s.194, lue3146s.194, lna3147s.194,   
+      lud3148s.194, lud3149s.194, and lhd3150s.194 have "UNK" values for      
+      TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other   
+      SPICE related keywords.  SPICE kernels are unavailable.                 
+                                                                              
+CL_0044 - ORBIT 196 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5617w.196, luf5621w.196,
+      luf5647w.196, luf5651w.196, luf5677w.196, and luf5681w.196.             
+                                                                              
+CL_0044 - ORBIT 197 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5770w.197 and           
+      luf5800w.197.                                                           
+                                                                              
+CL_0044 - ORBIT 197 - INVALID UNK VALUES                                      
+      Image files lhd2765s.197, lne2766s.197, luc2767s.197, luc2768s.197,     
+      lnc2769s.197, lub2770s.197, lub2771s.197, lhd2772s.197, lla2773s.197,   
+      lnd2774s.197, lua2775s.197, lua2776s.197, lnb2777s.197, lhd2778s.197,   
+      lhd2779s.197, and lla2780s.197 have "UNK" values for TARGET_NAME,       
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE related  
+      keywords.  SPICE kernels are unavailable.                               
+                                                                              
+CL_0044 - ORBIT 198 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5615w.198, luf5619w.198,
+      luf5645w.198, and luf5649w.198.                                         
+                                                                              
+CL_0045 - ORBIT 199 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5733w.199, luf5737w.199,
+      luf5763w.199, and luf5767w.199.                                         
+                                                                              
+CL_0045 - ORBIT 200 - INVALID UNK VALUES                                      
+      Image files lhd2057s.200, lla2058s.200, lnf2059s.200, lue2060s.200,     
+      lue2061s.200, lna2062s.200, lud2063s.200, lud2064s.200, lhd2065s.200,   
+      lne2066s.200, luc2067s.200, luc2068s.200, lnc2069s.200, lub2070s.200,   
+      lub2071s.200, lhd2072s.200, lla2073s.200, and lnd2074s.200, have "UNK"  
+      values for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE,  
+      and other SPICE related keywords.  SPICE kernels are unavailable.       
+                                                                              
+CL_0045 - ORBIT 200 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5616w.200, luf5620w.200,
+      luf5646w.200, luf5650w.200, luf5676w.200, and luf5680w.200.             
+                                                                              
+CL_0045 - ORBIT 201 - NO DATA                                                 
+                                                                              
+CL_0045 - ORBIT 202 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5889w.202, luf5893w.202,
+      luf5919w.202, and luf5923w.202.                                         
+                                                                              
+CL_0045 - ORBIT 203 - NIR IMAGES WITH LARGE CRYOCOOLER DURATION               
+      CRYOCOOLER_DURATION values (~15 hours) are assumed to be incorrect      
+      for NIR images for this orbit. True time lapses between revolutions     
+      make these large values inconsistent with durations recorded for the    
+      previous orbit.                                                         
+                                                                              
+CL_0045 - ORBIT 203 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5734w.203, luf5738w.203,
+      luf5764w.203, luf5768w.203, luf5794w.203, and luf5798w.203.             
+                                                                              
+CL_0046 - ORBIT 204 - INVALID UNK VALUES                                      
+      Image files lha1374s.204, lhb1375s.204, lhc1376s.204, lhd1377s.204,     
+      lla1378s.204, and lhd1379s.204, have "UNK" values for TARGET_NAME,      
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE related  
+      keywords.  SPICE kernels are unavailable.                               
+                                                                              
+CL_0046 - ORBIT 204 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5738w.204, luf5742w.204,
+      luf5768w.204, luf5772w.204, luf5798w.204, and luf5802w.204.             
+                                                                              
+CL_0046 - ORBIT 205 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5735w.205, luf5739w.205,
+      luf5765w.205, luf5769w.205, luf5795w.205, and luf5799w.205.             
+                                                                              
+CL_0046 - ORBIT 206 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5766w.206, luf5770w.206,
+      luf5796w.206, and luf5800w.206.                                         
+                                                                              
+CL_0046 - ORBIT 207 - INVALID UNK VALUES                                      
+      Image files lhd0829s.207 and lla0830s.207 have "UNK" values for         
+      TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other   
+      SPICE related keywords.  SPICE kernels are unavailable.                 
+                                                                              
+CL_0046 - ORBIT 207 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5795w.207, luf5799w.207,
+      luf5825w.207, luf5829w.207, luf5855w.207, and luf5859w.207.             
+                                                                              
+CL_0047 - OK                                                                  
+                                                                              
+CL_0048 - ORBIT 212 - INVALID UNK VALUES                                      
+      Image files lhd4553s.212, lhd4554s.212, lla4555s.212, and lhd4556s.212  
+      have "UNK" values for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and    
+      TWIST_ANGLE, and other SPICE related keywords. SPICE kernels are        
+      unavailable.                                                            
+                                                                              
+CL_0048 - ORBIT 212 - INVALID UNK VALUES                                      
+      Image files lub5955w.212, lua5956w.212, luf5957w.212, lub5958w.212,     
+      lua5959w.212, and luf5960w.212 have "UNK" values for SEQUENCE_TABLE_ID. 
+                                                                              
+CL_0048 - ORBIT 212 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5957w.212 and           
+      luf5960w.212.                                                           
+                                                                              
+CL_0048 - ORBIT 213 - INVALID UNK VALUES                                      
+      Image files lub5772w.213, lua5773w.213, luf5774w.213, lub5775w.213,     
+      lua5776w.213, and luf5777w.213 have "UNK" values for SEQUENCE_TABLE_ID. 
+                                                                              
+CL_0048 - ORBIT 213 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5774w.213 and           
+      luf5777w.213.                                                           
+                                                                              
+CL_0048 - ORBIT 214 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5878w.214, luf5882w.214,
+      luf5908w.214, luf5912w.214, luf5938w.214, and luf5942w.214.             
+                                                                              
+CL_0048 - ORBIT 215 - INVALID UNK VALUES                                      
+      Image files lhd3031s.215, lhd3032s.215, lla3033s.215, lhd3034s.215,     
+      lhd3035s.215, lla3036s.215, and lnf3037s.215, have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords. SPICE kernels are unavailable.            
+                                                                              
+CL_0048 - ORBIT 215 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5797w.215, luf5801w.215,
+      luf5827w.215, and luf5831w.215.                                         
+                                                                              
+CL_0049 - ORBIT 216 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 117 images between  
+      sequence numbers 4946 and 5782. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0049 - ORBIT 217 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 322 images between  
+      sequence numbers 0431 and 5811. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0049 - ORBIT 218 - INCONSISTENT REVOLUTION NUMBER INDICATION               
+      For each image within this orbit, the ORIGINAL_PRODUCT_ID incorrectly   
+      indicates a revolution number of 217. The PRODUCT_ID and                
+      REVOLUTION_NUMBER reflect the correct value of 218. Data entry at time  
+      of downloads involving revolutions 217 and 218 indicated revolution     
+      217 for the entire download. This was corrected as shown by accurate    
+      entries for PRODUCT_ID and REVOLUTION_NUMBER.                           
+                                                                              
+CL_0049 - ORBIT 218 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      0054 and 5795.                                                          
+                                                                              
+CL_0049 - ORBIT 218 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 666 images between  
+      sequence numbers 0002 and 5795. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0049 - ORBIT 218 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~3.0 minutes occurred starting at time 14:10:55.336 hours.  
+      Time gap exists between lhd5715r.218 and lue5716j.218. End of slew -    
+      wait before imaging to allow s/c to settle.                             
+                                                                              
+CL_0049 - ORBIT 218 - INVALID UNK VALUES                                      
+      Image files lhd0035s.218, lla0036s.218, lnf0037s.218, lna0038s.218,     
+      lhd0039s.218, lnc0041s.218, lhd0042s.218, lla0043s.218, lnd0044s.218,   
+      lnb0045s.218, lhd0046s.218, lhd0047s.218, lla0048s.218, lhd0049s.218,   
+      lhd0050s.218, lla0051s.218, and lhd0052s.218 have "UNK" values for      
+      TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other   
+      SPICE related keywords.  SPICE kernels are unavailable.                 
+                                                                              
+CL_0049 - ORBIT 219 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      0028 and 6132.                                                          
+                                                                              
+CL_0049 - ORBIT 219 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 796 images between  
+      sequence numbers 0002 and 6132. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0050 - ORBIT 220 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      0028 and 5941.                                                          
+                                                                              
+CL_0050 - ORBIT 220 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 693 images between  
+      sequence numbers 0002 and 5941. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0050 - ORBIT 221 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5776w.221, luf5780w.221,
+      luf5806w.221, luf5810w.221, luf5836w.221, and luf5840w.221.             
+                                                                              
+CL_0050 - ORBIT 222 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      0028 and 5789.                                                          
+                                                                              
+CL_0050 - ORBIT 222 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 686 images between  
+      sequence numbers 0002 and 5789. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0050 - ORBIT 223 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      0029 and 5861.                                                          
+                                                                              
+CL_0050 - ORBIT 223 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 724 images between  
+      sequence numbers 0002 and 5861. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0050 - ORBIT 223 - INVALID UNK VALUES                                      
+      Image files lub5976s.223, lua5977s.223, luf5978s.223, lub5979s.223,     
+      lua5980s.223, and luf5981s.223 have "UNK" values for TARGET_NAME,       
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE related  
+      keywords.  SPICE kernels are unavailable.                               
+                                                                              
+CL_0051 - ORBIT 224 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5798w.224, luf5802w.224,
+      luf5828w.224, luf5832w.224, luf5858w.224, and luf5862w.224.             
+                                                                              
+CL_0051 - ORBIT 225 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      5360 and 5850.                                                          
+                                                                              
+CL_0051 - ORBIT 225 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 132 images between  
+      sequence numbers 5297 and 5850. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0051 - ORBIT 226 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      0028 and 5701.                                                          
+                                                                              
+CL_0051 - ORBIT 226 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 682 images between  
+      sequence numbers 0001 and 5701. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0051 - ORBIT 227 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      0029 and 5737.                                                          
+                                                                              
+CL_0051 - ORBIT 227 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 712 images between  
+      sequence numbers 0002 and 5737. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0052 - ORBIT 228 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5879w.228, luf5883w.228,
+      luf5909w.228, and luf5913w.228.                                         
+                                                                              
+CL_0052 - ORBIT 229 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5674w.229, luf5678w.229,
+      luf5704w.229, and luf5708w.229.                                         
+                                                                              
+CL_0052 - ORBIT 230 - INVALID UNK VALUES                                      
+      Image files lna0002s.230, lnc0004s.230, lnd0005s.230, lnb0006s.230,     
+      lnf0007s.230, lna0008s.230, lne0009s.230, lnc0010s.230, lnb0012s.230,   
+      lna0014s.230, lne0015s.230, lnc0016s.230, lnd0017s.230, lnb0018s.230,   
+      have "UNK" values for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and    
+      TWIST_ANGLE, and other SPICE related keywords.  SPICE kernels are       
+      unavailable.                                                            
+                                                                              
+CL_0052 - ORBIT 230 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5789w.230, luf5793w.230,
+      luf5819w.230, luf5823w.230, luf5849w.230, and luf5853w.230.             
+                                                                              
+CL_0052 - ORBIT 231 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      Due to GNC lockup, no MOON images were taken for orbit 231.  The        
+      majority of images from this orbit are in the 'd' directory bin         
+      for each sensor.  This has resulted in an unusually large number        
+      of files within these directories.                                      
+                                                                              
+CL_0053 - ORBIT 232 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5203w.232, luf5207w.232,
+      luf5233w.232, and luf5237w.232.                                         
+                                                                              
+CL_0053 - ORBIT 232 - INVALID UNK VALUES                                      
+      Most images (440) between sequence numbers 5238 and 5724 contain        
+      an "UNK" value for SEQUENCE_TABLE_ID.                                   
+                                                                              
+CL_0053 - ORBIT 233 - INVALID UNK VALUES                                      
+      Image files lhd6093s.233 through lhd6095s.233 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0053 - ORBIT 234 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd5238k.234, lhd5244k.234,     
+      lhd5245k.234, lhd5247k.234, and lhd5248k.234 were acquired during       
+      slew maneuver for Earth observations and are not part of the            
+      systematic lunar observations.                                          
+                                                                              
+CL_0053 - ORBIT 234 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      During slew state a time gap of ~3.5 minutes occurred starting          
+      at time 21:44:22 hours. Time gap exists between lhd7527r.234 and        
+      lhd7528j.234.                                                           
+                                                                              
+CL_0053 - ORBIT 235 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      lhd0019v.235 lhd0027b.235 lhd0034b.235 lhd0040b.235 lhd0041b.235        
+      lhd0043b.235 lhd0044b.235 lhd0046b.235 lhd0047b.235 lhd0049b.235        
+      luf4883w.235 luf4879w.235 luf4883w.235                                  
+                                                                              
+CL_0053 - ORBIT 235 - INVALID UNK VALUES                                      
+      Image files lhd3761s.235 through lhd3766s.235 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0054 - ORBIT 236 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for images luf5037w.236 and           
+      luf5041w.236.                                                           
+                                                                              
+CL_0054 - ORBIT 237 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5440w.237 luf5444w.237 luf5470w.237 luf5474w.237                     
+                                                                              
+CL_0054 - ORBIT 237 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Stop imaging to select ST-B; slew sensors to nadir (inertial            
+      pointing).  Time gap of ~6.5 minutes occurred starting                  
+      at time 11:21:20 hours. Time gap exists between lnf0018u.237 and        
+      lhd0019d.237.                                                           
+                                                                              
+CL_0054 - ORBIT 238 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 319 images between  
+      sequence numbers 0532 and 5646. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0054 - ORBIT 239 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5643w.239 luf5647w.239 luf5673w.239 luf5677w.239 luf5703w.239        
+      luf5707w.239                                                            
+                                                                              
+CL_0055 - ORBIT 240 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5608w.240 luf5612w.240 luf5638w.240 luf5642w.240                     
+                                                                              
+CL_0055 - ORBIT 241 - INVALID UNK VALUES                                      
+      Image files lhd0351s.241 and lla0352s.241 have "UNK" values             
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0055 - ORBIT 241 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      End of slew - wait before imaging to allow s/c to settle.  A time       
+      gap of ~3.0 minutes occurred starting at time 08:34:58 hours. Time      
+      gap exists between lhd5617r.241 and lue5618j.241.                       
+                                                                              
+CL_0055 - ORBIT 241 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5643w.241 luf5647w.241 luf5673w.241 luf5677w.241                     
+                                                                              
+CL_0055 - ORBIT 242 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5484w.242 luf54882.242                                               
+                                                                              
+CL_0055 - ORBIT 242 - ALL DNs ARE VALUE 15                                    
+      The image array are all value 15 for images lhb5830w.242 and            
+      lhb5855w.242                                                            
+                                                                              
+CL_0055 - ORBIT 243 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5934w.243 luf5938w.243 luf5964w.243 luf5968w.243                     
+                                                                              
+CL_0056 - ORBIT 244 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. The following images were              
+      acquired during slew maneuver for Earth observations and are            
+      not part of the systematic lunar observations.                          
+      lhd2082e.244 lhd2083e.244 lla2084e.244 lhd2085e.244 lhd2086e.244        
+      lla2087e.244 lhd2094e.244 lhd2101e.244 lla2102e.244 lhd2107e.244        
+      lhd2108e.244 lla2109e.244 lhd2110e.244 lhd2111e.244 lla2112e.244        
+      lhd2113e.244 lhd2114e.244 lla2115e.244 lhd2116e.244 lhd2117e.244        
+      lla2118e.244 lhd2125e.244 lhd2132e.244 lla2133e.244 lhd2138e.244        
+      lhd2139e.244 lla2140e.244 lhd2141e.244 lhd2142e.244 lla2143e.244        
+      lhd2144e.244 lhd2145e.244 lla2146e.244 lhd2147e.244 lhd2148e.244        
+      lla2149e.244 lhd2156e.244 lhd2163e.244 lla2164e.244 lhd2169e.244        
+      lhd2170e.244 lla2171e.244 lhd2178e.244 lhd2185e.244 lla2186e.244        
+      lhd2191e.244 lhd2192e.244 lla2193e.244 lhd2200e.244 lhd2207e.244        
+      lla2208e.244 lhd2213e.244 lhd2214e.244 lla2215e.244 lhd2222e.244        
+      lhd2229e.244 lla2230e.244 lhd2235e.244 lhd2236e.244 lla2237e.244        
+      lhd2244e.244 lhd2251e.244 lla2252e.244 lhd2257e.244 lhd2258e.244        
+      lla2259e.244 lhd2266e.244 lhd2273e.244 lla2274e.244 lhd2279e.244        
+      lhd2280e.244 lla2281e.244 lhd2288e.244 lhd2295e.244 lla2296e.244        
+      lhd2301e.244 lhd2302e.244 lla2303e.244 lhd2310e.244 lhd2317e.244        
+      lla2318e.244 lhd2323e.244 lhd2324e.244 lhd2332e.244 lhd2339e.244        
+      lhd2345e.244 lhd2346e.244 lhd2354e.244                                  
+                                                                              
+CL_0056 - ORBIT 244 - INVALID UNK VALUES                                      
+      Image files lhd0983s.244 through lnc0995s.244 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0056 - ORBIT 244 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf7318w.244 luf7322w.244 luf7348w.244 luf7352w.244                     
+                                                                              
+CL_0056 - ORBIT 245 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf8075w.245 luf8079w.245 luf8105w.245 luf8109w.245 luf8135w.245        
+      luf8139w.245                                                            
+                                                                              
+CL_0056 - ORBIT 246 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5670w.246 luf5674w.246 luf5700w.246 luf5704w.246 luf5730w.246        
+      luf5734w.246                                                            
+                                                                              
+CL_0057 - ORBIT 247 - INVALID UNK VALUES                                      
+      Image files luc3718s.247 through lla3731s.247 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0057 - ORBIT 247 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5726w.247 luf5730w.274 luf5756w.247 luf5760w.247 luf5786w.247        
+      luf5790w.247                                                            
+                                                                              
+CL_0057 - ORBIT 248 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5880w.248 luf5884w.248 luf5910w.248 luf5914w.248                     
+                                                                              
+CL_0057 - ORBIT 249 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5705w.249 luf5709w.249 luf5735w.249 luf5739w.249 luf5765w.249        
+      luf5769w.249                                                            
+                                                                              
+CL_0057 - ORBIT 250 - INVALID UNK VALUES                                      
+      Image files lla1517s.250 through lla1520s.250 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0057 - ORBIT 250 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5701w.250 luf5705w.250 luf5731w.250 luf5735w.250                     
+                                                                              
+CL_0058 - ORBIT 251 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5175w.251 luf5179w.251 luf5205w.251 luf5209w.251 luf5235w.251        
+      luf5239w.251                                                            
+                                                                              
+CL_0058 - ORBIT 252 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5692w.252 luf5696w.252 luf5722w.252 luf5726w.252 luf5752w.252        
+      luf5756w.252                                                            
+                                                                              
+CL_0058 - ORBIT 253 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5079w.253 luf5083w.253 luf5109w.253 luf5113w.253                     
+                                                                              
+CL_0058 - ORBIT 254 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5841w.254 luf5845w.254 luf5871w.254 luf5875w.254 luf5901w.254        
+      luf5905w.254                                                            
+                                                                              
+CL_0059 - ORBIT 255 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd0534h.255 through            
+      lhd0556h.255 were acquired during slew maneuver for Earth               
+      observations and are not part of the systematic lunar                   
+      observations.                                                           
+                                                                              
+CL_0059 - ORBIT 255 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5910w.255 luf5914w.255 luf5940w.255 luf5944w.255                     
+                                                                              
+CL_0059 - ORBIT 256 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0010 and 0169 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0059 - ORBIT 256 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 238 images between  
+      sequence numbers 1608 and 5693. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0059 - ORBIT 257 - INVALID UNK VALUES                                      
+      Image files lhd0092s.257 have "UNK" values for TARGET_NAME,             
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE          
+      related keywords.  SPICE kernels are unavailable.                       
+                                                                              
+CL_0059 - ORBIT 257 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 241 images between  
+      sequence numbers 0077 and 5693. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0059 - ORBIT 258 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 44 images between   
+      sequence numbers 1267 and 5693. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0060 - ORBIT 259 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 52 images between   
+      sequence numbers 0079 and 5730. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0060 - ORBIT 260 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      luf5766w.260 luf5792w.260                                               
+                                                                              
+CL_0060 - ORBIT 260 - INVALID UNK VALUES                                      
+      Image files lhd3909s.260 through lla3913s.260 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0060 - ORBIT 261 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0008 and 5734 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0060 - ORBIT 261 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 709 images between  
+      sequence numbers 0023 and 5734. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0060 - ORBIT 262 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0008 and 5717 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0060 - ORBIT 262 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 675 images between  
+      sequence numbers 0015 and 5717. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0061 - ORBIT 263 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 246 images between  
+      sequence numbers 1200 and 5688. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0061 - ORBIT 264 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 520 images between  
+      sequence numbers 0208 and 7441. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0061 - ORBIT 265 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 416 images between  
+      sequence numbers 2844 and 8163. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0062 - ORBIT 266 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 322 images between  
+      sequence numbers 0314 and 5689. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0062 - ORBIT 266 - INVALID UNK VALUES                                      
+      Image files lud5763s.266 through lue5774s.266 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0062 - ORBIT 267 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 128 images between  
+      sequence numbers 0099 and 5947. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0062 - ORBIT 268 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 323 images between  
+      sequence numbers 0144 and 6024. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0062 - ORBIT 269 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 5762 and 5808 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0062 - ORBIT 269 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 330 images between  
+      sequence numbers 0091 and 5687. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0062 - ORBIT 269 - DUPLICATE IMAGES                                        
+      Their are several pairs of duplicate images between sequence numbers    
+      5654 and 5819. For these situations one image label reflects an EARTH   
+      or MOON target and the second image shows a SKY target. This occurs     
+      for 26 pair (42 images) for this sequence range. The image data and     
+      histograms match for each image pair, however the labels show different 
+      time parameters.                                                        
+                                                                              
+CL_0063 - ORBIT 270 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 319 images between  
+      sequence numbers 0343 and 5871. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0063 - ORBIT 271 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 321 images between  
+      sequence numbers 0091 and 5713. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0063 - ORBIT 272 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 323 images between  
+      sequence numbers 0316 and 5772. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0063 - ORBIT 272 - INVALID UNK VALUES                                      
+      Image files lhc4169s.272 through lla4173s.272 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0063 - ORBIT 273 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      approximately 331 images:  lla0014a.273, luf0092a.273 through           
+      luf5744w.273 not necessarily consecutive.                               
+                                                                              
+CL_0064 - ORBIT 274 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      approximately 328 images:  luf0326d.274 through luf5692w.274            
+      not necessarily consecutive.                                            
+                                                                              
+CL_0064 - ORBIT 275 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      approximately 324 images:  luf0098a.275 through luf5958w.275            
+      not necessarily consecutive.                                            
+                                                                              
+CL_0064 - ORBIT 275 - INVALID UNK VALUES                                      
+      Image files lua5155s.275 through lhf5167s.275 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0064 - ORBIT 276 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      approximately 330 images:  luf0324d.276 through luf6146w.276            
+      not necessarily consecutive                                             
+                                                                              
+CL_0064 - ORBIT 277 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for the following images:             
+      approximately 328 images luf0098a.277 through luf6002w.277              
+      not necessarily consecutive.                                            
+                                                                              
+CL_0065 - ORBIT 278 - LARGE FOCAL PLANE TEMPERATURE                           
+      Image lla6151y.278 contains a large value (greater than 400) for        
+      FOCAL_PLANE_TEMPERATURE. Cause unknown.                                 
+                                                                              
+CL_0065 - ORBIT 278 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 331 images between  
+      sequence numbers 0326 and 6072. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0065 - ORBIT 279 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 306 images between  
+      sequence numbers 0106 and 6003. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0065 - ORBIT 280 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 300 images between  
+      sequence numbers 0226 and 5999. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0065 - ORBIT 280 - TEMPERATURE VALUES = "UNK"                              
+      Approximately 5695 images between sequence numbers 0364 and 6061        
+      contain a value of "UNK" (unknown) for FOCAL_PLANE_TEMPERATURE,         
+      LENS_TEMPERATURE, and/or CRYOCOOLER_TEMPERATURE. This does not          
+      necessarily include all images within this sequence range.              
+                                                                              
+CL_0065 - ORBIT 281 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 287 images between  
+      sequence numbers 0091 and 5893. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0066 - ORBIT 282 - INVALID UNK VALUES                                      
+      Image file lnc0132s.282 have "UNK" values for TARGET_NAME,              
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE related  
+      keywords.  SPICE kernels are unavailable.                               
+                                                                              
+CL_0066 - ORBIT 282 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 305 images between  
+      sequence numbers 0227 and 6004. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0066 - ORBIT 283 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 271 images between  
+      sequence numbers 0091 and 5078. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0066 - ORBIT 284 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 315 images between  
+      sequence numbers 0225 and 6254. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0066 - ORBIT 285 - INVALID UNK VALUES                                      
+      Image files lhd2095s.285 through lua2114s.285 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0066 - ORBIT 285 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 283 images between  
+      sequence numbers 0091 and 4955. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0067 - ORBIT 286 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 333 images between  
+      sequence numbers 0226 and 5705. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0067 - ORBIT 287 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 317 images between  
+      sequence numbers 0091 and 5318. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0067 - ORBIT 288 - INVALID UNK VALUES                                      
+      Image files lhd4367s.288 through lla4371s.288 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0067 - ORBIT 288 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 334 images between  
+      sequence numbers 0227 and 5949. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0067 - ORBIT 289 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 319 images between  
+      sequence numbers 0091 and 5879. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0067 - ORBIT 289 - TARGET_NAME = "SKY" DURING SYSTEMATIC MAPPING           
+      SKY images exist in directories reserved for images acquired            
+      during systematic lunar mapping. Images lhd0048d.289 through            
+      lhd0203d.289 were acquired during slew maneuver for Earth observations  
+      and are not part of the systematic lunar observations.                  
+                                                                              
+CL_0067 - ORBIT 289 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~5.0 minutes occurred starting at time 05:46:25.679 hours.  
+      Time gap exists between lnb0018u.289 and lhd0019b.289. Slew sensors     
+      to nadir at south pole.                                                 
+                                                                              
+CL_0068 - ORBIT 290 - LARGE SMEAR MAGNITUDE                                   
+      Image lu_1230g.290 has a large SMEAR_MAGNITUDE (greater than 2 seconds).
+      Cause unknown.                                                          
+                                                                              
+CL_0068 - ORBIT 290 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 329 images between  
+      sequence numbers 0225 and 5740. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0068 - ORBIT 291 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 317 images between  
+      sequence numbers 0091 and 5348. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0068 - ORBIT 292 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 340 images between  
+      sequence numbers 0174 and 5902. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0068 - ORBIT 293 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 356 images between  
+      sequence numbers 0091 and 5872. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0069 - ORBIT 294 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 334 images between  
+      sequence numbers 0227 and 5916. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0069 - ORBIT 295 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 338 images between  
+      sequence numbers 0091 and 5649. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0069 - ORBIT 296 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 334 images between  
+      sequence numbers 0225 and 5704. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0069 - ORBIT 297 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 338 images between  
+      sequence numbers 0091 and 5645. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0070 - ORBIT 298 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 234 images between  
+      sequence numbers 0091 and 3932. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0070 - ORBIT 299 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 328 images between  
+      sequence numbers 0040 and 4312. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0070 - ORBIT 300 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 0891 and 0901 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.         
+                                                                              
+CL_0070 - ORBIT 300 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 355 images between  
+      sequence numbers 0040 and 4964. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0070 - ORBIT 300 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~6.0 minutes occurred starting at time 13:18:15.944 hours.  
+      Time gap exists between lnc0018u.300 and lhd0019h.300.  Slew sensors    
+      to nadir @ S50A flying backwards (-X forward).                          
+                                                                              
+CL_0070 - ORBIT 301 - NO DATA                                                 
+                                                                              
+CL_0070 - ORBIT 302 - NO DATA                                                 
+                                                                              
+CL_0070 - ORBIT 303 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 336 images between  
+      sequence numbers 0097 and 5619. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0070 - ORBIT 304 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 3897 and 3948 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.         
+                                                                              
+CL_0070 - ORBIT 304 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 287 images between  
+      sequence numbers 0040 and 4760. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0070 - ORBIT 304 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~6.0 minutes occurred starting at time 08:53:36.864 hours.  
+      Time gap exists between lnb0018u.304 and lhd0019d.304. Slew sensors to  
+      nadir at S50A (inertial pointing).                                      
+                                                                              
+CL_0071 - ORBIT 305 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 305 images between  
+      sequence numbers 0040 and 5256. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0071 - ORBIT 305 - INVALID UNK VALUES                                      
+      Image files lua5027s.305 and luf5028s.305 have "UNK" values             
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0071 - ORBIT 305 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 5045 and 5105 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Excessive slewing      
+      is likely cause.                                                        
+                                                                              
+CL_0071 - ORBIT 305 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~6.5 minutes occurred starting at time 13:52:40.154 hours.  
+      Time gap exists between lnb0018u.305 and lhd0019d.305. Slew sensors to  
+      nadir at S50A (inertial pointing).                                      
+                                                                              
+CL_0071 - ORBIT 306 - INVALID UNK VALUES                                      
+      Image files lna4733s.306 and lha4768s.306 have "UNK" values             
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0071 - ORBIT 306 - ALL DNs ARE VALUE 255                                   
+      The image array are all value for approximately 284 images between      
+      sequence numbers 0040 and 4694. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0071 - ORBIT 306 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~6.0 minutes occurred starting at time 18:50:40.624 hours.  
+      Time gap exists between lnb0018u.306 and lhd0019g.306. Slew sensors     
+      to nadir at S50A (inertial pointing).                                   
+                                                                              
+CL_0071 - ORBIT 307 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 3802 and 3834 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers         
+      are likely cause.                                                       
+                                                                              
+CL_0071 - ORBIT 307 - CRYOCOOLER_DURATION = UNK                               
+      Image labels show CRYOCOOLER_DURATION = "UNK" for 1346 images between   
+      sequence number 0002 and 3920.                                          
+                                                                              
+CL_0071 - ORBIT 307 - ALL DNs ARE VALUE 255                                   
+      The image array are all value for approximately 227 images between      
+      sequence numbers 0023 and 3752. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0071 - ORBIT 308 - ALL DNs ARE VALUE 255                                   
+      The image array are all value for approximately 310 images between      
+      sequence numbers 0040 and 5870. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0071 - ORBIT 308 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~6.0 minutes occurred starting at time 04:45:14.740 hours.  
+      Time gap exists between lnd0017u.308 and lhd0019d.308. Slew sensors     
+      to nadir at S50A (inertial pointing).                                   
+                                                                              
+CL_0071 - ORBIT 309 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 2461 and 2569 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.         
+                                                                              
+CL_0071 - ORBIT 309 - ALL DNs ARE VALUE 255                                   
+      The image array are all value for approximately 155 images between      
+      sequence numbers 0022 and 2564. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0071 - ORBIT 309 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~2.0 minutes occurred starting at time 10:22:47.383 hours.  
+      Time gap exists between lha2574l.309 and lue2575m.309. Wrong SEQT       
+      loaded -- no data.                                                      
+                                                                              
+CL_0071 - ORBIT 309 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~4.5 minutes occurred starting at time 10:25:20.426 hours.  
+      Time gap exists between lue2816m.309 and lue2817l.309. S/C started      
+      to oscillate -- RW3 reached 2400 rpm.                                   
+                                                                              
+CL_0072 - ORBIT 310 - INVALID UNK VALUES                                      
+      Image files lue0001s.310 through luf0030s.310 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0072 - ORBIT 310 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 349 images between  
+      sequence numbers 0024 and 5423. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0072 - ORBIT 311 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 172 images between  
+      sequence numbers 0269 and 3075. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0072 - ORBIT 312 - LARGE SMEAR MAGNITUDE                                   
+      Image lua2977k.312 has a large SMEAR_MAGNITUDE (greater than 2 seconds).
+      Cause unknown.                                                          
+                                                                              
+CL_0072 - ORBIT 312 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 370 images between  
+      sequence numbers 0091 and 5915. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0072 - ORBIT 313 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 3188 and 3203 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers         
+      are likely cause.                                                       
+                                                                              
+CL_0072 - ORBIT 313 - INVALID UNK VALUES                                      
+      Image files lhd2005s.313 through luf2019s.313 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0072 - ORBIT 313 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 303 images between  
+      sequence numbers 0091 and 7115. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0073 - ORBIT 314 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 3365 and 3417 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.         
+                                                                              
+CL_0073 - ORBIT 314 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 330 images between  
+      sequence numbers 0036 and 5548. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0073 - ORBIT 314 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~1.21 hours occurred starting at time 09:23:37.189 hours.   
+      Time gap exists between lba0014u.314 and lhd0015g.314. Cause unknown.   
+                                                                              
+CL_0073 - ORBIT 315 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 412 images between  
+      sequence numbers 0091 and 6212. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0073 - ORBIT 316 - LARGE SMEAR MAGNITUDE                                   
+      Image lua4882o.316 has a large SMEAR_MAGNITUDE (greater than 2 seconds).
+      Cause unknown.                                                          
+                                                                              
+CL_0073 - ORBIT 316 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 398 images between  
+      sequence numbers 0124 and 6173. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0073 - ORBIT 317 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 410 images between  
+      sequence numbers 0124 and 6211. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0073 - ORBIT 317 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0020 and 0053 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0074 - ORBIT 318 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 286 images between  
+      sequence numbers 0148 and 6771. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0074 - ORBIT 319 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 174 images between  
+      sequence numbers 0124 and 2954. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0074 - ORBIT 319 - INVALID UNK VALUES                                      
+      Image files lhd0085s.319 through luf0158s.319 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0074 - ORBIT 320 - INVALID UNK VALUES                                      
+      Image files lhd1460s.320 through lhd1463s.320 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0074 - ORBIT 320 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 410 images between  
+      sequence numbers 0124 and 6213. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0074 - ORBIT 321 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 389 images between  
+      sequence numbers 0124 and 5898. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0075 - ORBIT 322 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0020 and 0200 May contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0075 - ORBIT 322 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 4355 and 6027 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers to Vega 
+      are likely cause.                                                       
+                                                                              
+CL_0075 - ORBIT 322 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 400 images between  
+      sequence numbers 0040 and 5977. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0075 - ORBIT 323 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 3173 and 3223 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.         
+                                                                              
+CL_0075 - ORBIT 323 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 302 images between  
+      sequence numbers 0238 and 3502. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0075 - ORBIT 323 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~7.0 minutes occurred starting at time 07:43:06.188 hours.  
+      Time gap exists between lnb0018u.323 and lnf0019k.323. Cause unknown.   
+                                                                              
+CL_0076 - ORBIT 324 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 434 images between  
+      sequence numbers 0124 and 6434. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0076 - ORBIT 324 - INVALID UNK VALUES                                      
+      Image files lna4085s.324 through lnd4097s.324 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0076 - ORBIT 325 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 436 images between  
+      sequence numbers 0124 and 6463. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0076 - ORBIT 326 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 434 images between  
+      sequence numbers 0091 and 6578. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0076 - ORBIT 327 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 438 images between  
+      sequence numbers 0091 and 6469. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0077 - ORBIT 328 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 2278 and 2883 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.         
+                                                                              
+CL_0077 - ORBIT 328 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~5.3 minutes occurred starting at time 08:32:01.795 hours.  
+      Time gap exists between lnb0012u.328 and lnd0013g.328.  Stop imaging -  
+      select ST-B                                                             
+                                                                              
+CL_0077 - ORBIT 328 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~4.0 minutes occurred starting at time 08:59:58.997 hours.  
+      Time gap exists between lha2915n.328 and lla2947o.328.  T/L ERROR:      
+      Initialization failed because duration too short.                       
+                                                                              
+CL_0077 - ORBIT 330 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0020 and 0635 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0077 - ORBIT 330 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Time gap of ~5.0 minutes occurred starting at time 18:47:17.649 hours.  
+      Time gap exists between lnb0018v.330 and lhd0019l.330.  Slew sensors    
+      to nadir mapping.                                                       
+                                                                              
+CL_0077 - ORBIT 331 - INVALID UNK VALUES                                      
+      Image files lnf0001s.331 through lla0860s.331 have "UNK" values         
+      for TARGET_NAME, RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and     
+      other SPICE related keywords.  SPICE kernels are unavailable.           
+                                                                              
+CL_0077 - ORBIT 332 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 2673 and 2678 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Rapid slew maneuvers   
+      are likely cause.                                                       
+                                                                              
+CL_0078 - ORBIT 333 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 0119 and 0427 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.         
+                                                                              
+CL_0078 - ORBIT 333 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 493 images between  
+      sequence numbers 0018 and 7034. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0078 - ORBIT 333 - INVALID UNK VALUES                                      
+      The following image files contain "UNK" values for TARGET_NAME,         
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE          
+      related keywords.  SPICE kernels are unavailable.                       
+         luf3175s.333 luf3176s.333 lhd3177s.333                               
+         lhd3178s.333 lla3179s.333 lhd3180s.333                               
+                                                                              
+CL_0078 - ORBIT 334 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 252 images between  
+      sequence numbers 0091 and 4419 . This does not necessarily include all  
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0078 - ORBIT 335 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 436 images between  
+      sequence numbers 0091 and 6511. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0078 - ORBIT 336 - ALL DNs ARE VALUE 7                                     
+      The image array are all value 7 for the following images.               
+         luf0006v.336 luf0012v.336 luf0018v.336                               
+         luf0030v.336 luf0036v.336 luf0042v.336                               
+                                                                              
+CL_0078 - ORBIT 336 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 79 images between   
+      sequence numbers 0102 and 0576. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+          ORBIT 337 - NO DATA                                                 
+                                                                              
+CL_0079 - ORBIT 338 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 436 images between  
+      sequence numbers 0124 and 6512. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0079 - ORBIT 339 - INVALID UNK VALUES                                      
+      Image file lhd5919s.339 contains "UNK" values for TARGET_NAME,          
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE          
+      related keywords.  SPICE kernels are unavailable.                       
+                                                                              
+CL_0079 - ORBIT 339 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 402 images between  
+      sequence numbers 0124 and 5909. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0079 - ORBIT 340 - NO DATA                                                 
+                                                                              
+CL_0079 - ORBIT 341 - LARGE FOCAL PLANE TEMPERATURE                           
+      Images between frame sequence numbers 0002 and 5799 may contain         
+      large values (greater than 400) for FOCAL_PLANE_TEMPERATURE. Cause      
+      unknown.                                                                
+                                                                              
+CL_0079 - ORBIT 341 - INVALID UNK VALUES                                      
+      All images (5805) for this orbit contain "UNK" values for TARGET_NAME,  
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE          
+      related keywords.  SPICE kernels are unavailable.                       
+                                                                              
+CL_0079 - ORBIT 341 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 1067 images between 
+      sequence numbers 0017 and 5805. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter or the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0079 - ORBIT 342 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 446 images between  
+      sequence numbers 0091 and 6436. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0080 - ORBIT 343 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Slew maneuvers beginning at ~10:21 resulted in a time gap of ~5 minutes 
+      between images lnb0018u.343 and lhd0019b.343. Imaging resumed at        
+      ~10:27.                                                                 
+                                                                              
+CL_0080 - ORBIT 343 - ALL DNs ARE VALUE 7                                     
+      The image array are all value 7 for images luf0832b.343 and             
+      luc0845c.343.                                                           
+                                                                              
+CL_0080 - ORBIT 343 - INVALID UNK VALUES                                      
+      The following image files contain "UNK" values for TARGET_NAME,         
+      RIGHT_ASCENSION, DECLINATION, and TWIST_ANGLE, and other SPICE          
+      related keywords.  SPICE kernels are unavailable.                       
+         lhd7334s.343 lhd7335s.343 lla7336s.343                               
+                                                                              
+CL_0080 - ORBIT 343 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 486 images between  
+      sequence numbers 0040 and 7858. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0080 - ORBIT 344 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      6976 and 7883.                                                          
+                                                                              
+CL_0080 - ORBIT 344 - TIME GAP BETWEEN FRAMES > 21 SECONDS                    
+      Slew maneuvers beginning at ~15:21 resulted in a time gap of ~5 minutes 
+      between images lnb0018u.344 and lhd0019b.344. Imaging resumed at        
+      ~15:27.                                                                 
+                                                                              
+CL_0080 - ORBIT 344 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 679 images between  
+      sequence numbers 0160 and 7883. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter or the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0080 - ORBIT 345 - LARGE FOCAL PLANE TEMPERATURE                           
+      LWIR cryocooler off state may result in large FOCAL_PLANE_TEMPERATURE   
+      values (greater than 400) for images between frame sequence numbers     
+      5005 and 6651.                                                          
+                                                                              
+CL_0080 - ORBIT 345 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 607 images between  
+      sequence numbers 0091 and 6651. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter or the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0080 - ORBIT 346 - LARGE SMEAR MAGNITUDE                                   
+      Images between frame sequence numbers 0163 and 6264 may have large      
+      SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers during  
+      stereo imaging are likely cause.                                        
+                                                                              
+CL_0081 - ORBIT 346 - TEMPERATURE VALUES = "UNK"                              
+      All images for this orbit contain a value of "UNK" (unknown) for        
+      FOCAL_PLANE_TEMPERATURE, LENS_TEMPERATURE, and/or                       
+      CRYOCOOLER_TEMPERATURE.                                                 
+                                                                              
+CL_0081 - ORBIT 346 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 424 images between  
+      sequence numbers 0091 and 6777. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter or the Long Wavelength Infrared camera in combination      
+      with the A filter. However, this may occur for other images as well.    
+                                                                              
+CL_0081 - ORBIT 347 - NO DATA                                                 
+                                                                              
+CL_0081 - ORBIT 348 - TEMPERATURE VALUES = "UNK"                              
+      All images between sequence numbers 0001 and 2258 contain a value of    
+      "UNK" (unknown) for FOCAL_PLANE_TEMPERATURE, LENS_TEMPERATURE, and/or   
+      CRYOCOOLER_TEMPERATURE.                                                 
+                                                                              
+CL_0081 - ORBIT 348 - ALL DNs ARE VALUE 255                                   
+      The image array are all value 255 for approximately 88 images between   
+      sequence numbers 1224 and 2257. This does not necessarily include all   
+      images within this sequence range and appears to involve images         
+      associated with the Ultraviolet/Visible camera in combination with      
+      the F filter. However, this may occur for other images as well.         
+                                                                              
+CL_0081 - ORBIT 348 - ALL DNs ARE VALUE 7                                     
+      The image array are all value 7 for the following images.               
+         luf0720y.348 luf0744y.348 lue0919a.348 lue0943a.348                  
+                                                                              
+------------------------------------------------------------------------------
+    Comments to this point have been related to the systematic lunar          
+    mapping phase. The following are specific and/or general comments         
+    concerning pre-mapping lunar orbits, Low Earth Orbits, and Earth          
+    Phasing loops A and B.                                                    
+------------------------------------------------------------------------------
+                                                                              
+CL_0081 THROUGH CL_0085 (PRE-MAPPING ORBITS 1-3,5,7,8,10,12,13-15,17-30)      
+      The data for these first lunar orbits may appear to contain a variety   
+      of anomalies or errors. Many of these data anomalies may actually       
+      reflect results of intentional tests. Some examples of these as well    
+      as other information are:                                               
+                                                                              
+        CL_0081 - ORBITS 003 AND 004                                          
+           The directory tree labeled for orbit 3 (lun003/...) actually       
+           contains all image data for orbit 4. These orbit 4 images are also 
+           named and labeled as orbit 3 data. The 'index/imgindx.tab' table   
+           also reflects this inconsistency. There is no data for orbit 3.    
+           The 'timeline/tllun004.xls' is the proper timeline file for this   
+           orbit 4 data.                                                      
+                                                                              
+        DUPLICATE IMAGES                                                      
+           A high percentage of duplicate images may occur for these          
+           early orbits. This occurs in pairs where the first image is        
+           uncompressed and the image immediately following is a compressed   
+           version of the same data. For example, image lba0067y.001 and      
+           lba0068y.001 are the same image data where lba0067y.001 is         
+           uncompressed and lba0068y.001 is the compressed version of the     
+           same data.                                                         
+                                                                              
+        All DNs ARE VALUE 255                                                 
+           The image array for some imagery are all value 255.                
+             (Note: Some images exist where most of the DN values             
+              are saturated, however, a few pixels are not saturated.         
+              For example, image lne0155p.001 contains 4 pixels with          
+              value zero.)                                                    
+                                                                              
+        All DNs ARE VALUE 9 (ORBIT 001)                                       
+           The image array are all value 9 for approximately 108 images.      
+           This seems to occur on some images with FILTER_NAME='UNK". These   
+           images have an underscore (_) in the third field of the filename.  
+           For example, image lh_0076s.001 contains all 9's in the image      
+           array. (A few of the images actually have a few DNs with value 10.)
+                                                                              
+        LARGE SMEAR MAGNITUDE (ORBIT 001)                                     
+           Images between frame sequence numbers 0065 and 1149 may have large 
+           SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.    
+                                                                              
+        TEMPERATURE VALUES = "UNK"                                            
+           A high number of images contain a value of "UNK" (unknown) for     
+           FOCAL_PLANE_TEMPERATURE, LENS_TEMPERATURE, and/or                  
+           CRYOCOOLER_TEMPERATURE.                                            
+                                                                              
+        TIME GAP BETWEEN FRAMES > 21 SECONDS                                  
+           Due to periodic "stop/start" of imaging, slew maneuvers, exposure  
+           tests, long script durations, and other operations, time gaps of   
+           several minutes occur between some image pairs.                    
+                                                                              
+        LARGE SMEAR MAGNITUDE (ORBIT 003)                                     
+           Images between frame sequence numbers 0398 and 0423 may have large 
+           SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.    
+                                                                              
+                                                                              
+        All DNs ARE VALUE 23 (ORBIT 003)                                      
+           The image array are all value 23 for approximately 184 images      
+           throughout the orbit. (A few of the images actually have a few     
+           DNs with value 22.)                                                
+                                                                              
+        IMAGE TIMESTAMP VALUES NOT CONSISTENT WITH TIMELINE (ORBIT 003)       
+           The START_TIME values found in the image labels are not within     
+           time ranges shown within the timeline files for this orbit         
+           (Cause unknown).                                                   
+                                                                              
+        ALL DNs ARE VALUE 6 or 7 (ORBIT 017)                                  
+           The image array for images lua0307i.017 and lua0559i.017 are       
+           all value 6 or 7.                                                  
+                                                                              
+        LARGE SMEAR MAGNITUDE (ORBIT 024)                                     
+           Image lnb0533b.024 and duplicate lnb0534b.024 have large           
+           SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers    
+           are likely cause.                                                  
+                                                                              
+        LARGE SMEAR MAGNITUDE (ORBIT 026)                                     
+           Images between frame sequence numbers 0661 and 0685 may have large 
+           SMEAR_MAGNITUDE values (greater than 2 seconds). Slew maneuvers    
+           are likely cause.                                                  
+                                                                              
+        LARGE SMEAR MAGNITUDE (ORBIT 027)                                     
+           Images between frame sequence numbers 0052 and 6741 may have large 
+           SMEAR_MAGNITUDE values (greater than 2 seconds). Cause unknown.    
+                                                                              
+                                                                              
+CL_0085 (LOW EARTH ORBIT GROUPS 1-25)                                         
+                                                                              
+        NO TIMELINE FILES                                                     
+           Timeline files do not exist for Low Earth Orbit data.              
+                                                                              
+        INVALID UNK VALUES                                                    
+           Some images have "UNK" values for TARGET_NAME, RIGHT_ASCENSION,    
+           DECLINATION, and TWIST_ANGLE, and other SPICE related keywords.    
+           SPICE kernels are unavailable.                                     
+                                                                              
+        TEMPERATURE VALUES = "UNK"                                            
+           A high number of images contain a value of "UNK" (unknown) for     
+           FOCAL_PLANE_TEMPERATURE, LENS_TEMPERATURE, and/or                  
+           CRYOCOOLER_TEMPERATURE.                                            
+                                                                              
+        DUPLICATE IMAGES                                                      
+           Duplicate images may occur for Low Earth Orbit data.               
+           As previously mentioned, this occurs in pairs where the first      
+           image is uncompressed and the image immediately following is a     
+           compressed version of the same data.                               
+                                                                              
+                                                                              
+CL_0086 THROUGH CL_0088 (EARTH PHASING LOOPS A (GROUPS 1 THROUGH 49) AND      
+                         EARTH PHASING LOOPS B (GROUPS 1 THROUGH 8)           
+                                                                              
+        INVALID UNK VALUES                                                    
+           Some images have "UNK" values for TARGET_NAME, RIGHT_ASCENSION,    
+           DECLINATION, and TWIST_ANGLE, and other SPICE related keywords.    
+           SPICE kernels are unavailable.                                     
+                                                                              
+        TIME GAP BETWEEN FRAMES > 21 SECONDS                                  
+           Due to periodic "stop/start" of imaging, slew maneuvers, exposure  
+           tests, long script durations, and other operations, time gaps of   
+           several minutes occur between some image pairs.                    
+                                                                              
+        All DNs ARE VALUE 255                                                 
+           The image array for some imagery are all value 255.                
+                                                                              
+        DUPLICATE IMAGES                                                      
+           Duplicate images may occur for EARTH PHASING LOOP data.            
+           As previously mentioned, this occurs in pairs where the first      
+           image is uncompressed and the image immediately following is a     
+           compressed version of the same data.                               
+                                                                              
+----- End of ERRATA.TXT document ---------------------------------------------

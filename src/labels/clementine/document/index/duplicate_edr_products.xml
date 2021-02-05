@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:clementine:document:duplicate_edr_products</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>
+      Clementine EDR Discarded Duplicates Index
+    </title>
+    <information_model_version>1.15.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Citation_Information>
+      <author_list>
+        Michael St. Clair
+      </author_list>
+      <publication_year>2021</publication_year>
+      <description>
+        The Clementine EDR contains 6751 pairs of products with nearly
+        identical metadata, specifically including identical timestamps. After
+        decompression, the image arrays of each pair were discovered to be
+        byte-level duplicates. We believe that these are duplicate
+        observations inserted into separate mission-phase series by mistake.
+        We have discarded one image from each pair. This is an index of which
+        products were discarded and which retained.
+      </description>
+    </Citation_Information>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>1994-01-27T00:20:17.417000Z</start_date_time>
+      <stop_date_time>1994-05-07T23:56:31.288000Z</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>DEEP SPACE PROGRAM SCIENCE EXPERIMENT</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:investigation:mission.deep_space_program_science_experiment::1.1</lidvid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>CLEMENTINE 1</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lidvid_reference>urn:nasa:pds:context:instrument_host:spacecraft.clem1::1.1</lidvid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>MOON</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:target:satellite.earth.moon::1.1</lidvid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+  </Observation_Area>
+  <File_Area_Observational>
+    <File>
+      <file_name>duplicate_edr_products.csv</file_name>
+      <records>6752</records>
+    </File>
+    <Header>
+      <name>Header</name>
+      <offset unit="byte">0</offset>
+      <object_length unit="byte">35</object_length>
+      <parsing_standard_id>UTF-8 Text</parsing_standard_id>
+    </Header>
+    <Table_Delimited>
+      <offset unit="byte">35</offset>
+      <parsing_standard_id>PDS DSV 1</parsing_standard_id>
+      <description>
+        The Clementine EDR contains 6751 pairs of products with nearly identical
+        metadata, specifically including identical timestamps. After
+        decompression, the image arrays of each pair were discovered to be
+        byte-level duplicates. We believe that these are duplicate observations
+        inserted into separate mission-phase series by mistake. We have
+        discarded one image from each pair. This is an index of which products
+        were discarded and which retained.
+      </description>
+      <records>6751</records>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+      <field_delimiter>Comma</field_delimiter>
+      <Record_Delimited>
+        <fields>2</fields>
+        <groups>0</groups>
+        <Field_Delimited>
+          <name>dropped_product</name>
+          <field_number>1</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 product ID of the product in this duplicate pair we did not
+            migrate.
+          </description>
+        </Field_Delimited>
+        <Field_Delimited>
+          <name>retained_product</name>
+          <field_number>2</field_number>
+          <data_type>ASCII_String</data_type>
+          <description>
+            PDS3 product ID of the product in this duplicate pair we did
+            migrate.
+          </description>
+        </Field_Delimited>
+      </Record_Delimited>
+    </Table_Delimited>
+  </File_Area_Observational>
+</Product_Observational>

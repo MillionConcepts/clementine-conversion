@@ -1,0 +1,597 @@
+PDS_VERSION_ID                  = PDS3
+LABEL_REVISION_NOTE             = "
+      LISA GADDIS, LYNN WELLER, AND CHRIS ISBELL, 2007-05-01"
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "STAIDETAL2003"
+ REFERENCE_DESC                 = "Staid, M.I., C. Isbell,
+L. Gaddis, E. Eliason, E.M. Lee, T. Becker, L. Weller,
+J. Shinaman, D. Steutel, P. Lucey, J. Gillis, A. McEwen,
+M. Robinson, T. Duxbury, E. Malaret, B. Jolliff, C. Pieters,
+Clementine Near-Infrared Global Multispectral Map,
+First Release,  Online document and images
+(http://astrogeology.usgs.gov/Projects/ClementineNIR/),
+2003."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "STAIDETAL2004"
+ REFERENCE_DESC                 = "Staid, M.I., L.R. Gaddis,
+C.E. Isbell, Global comparisons of mare volcanism from
+Clementine NIR data, Lunar and Planetary Science
+Conference XXXV, abstract #1925, 2004."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ROBINSON2003"
+ REFERENCE_DESC                 = "Robinson, M.S., E. Malaret,
+and T. White, A calibration for the Clementine HIRES Camera,
+Jour. Geophys. Res., 108, No. E4, 5028, 2003."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PIETERS1991"
+ REFERENCE_DESC                 = "Pieters, C.M., S. Pratt,
+H. Hoffmann, P. Helfenstein, and J. Mustard, Bi-directional
+Spectroscopy of Returned Lunar Soils: Detailed "Ground Truth"
+for Planetary Remote Sensors: Lunar and Planetary Science
+Conference 22nd, pp. 1069-1070, 1991."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PIETERS1999"
+ REFERENCE_DESC                 = "Pieters, C.M., The Moon as a
+Spectral Calibration Standard Enabled by Lunar Samples: 
+The Clementine Example, in New Views of the Moon II:
+Understanding the Moon Through the Integration of Diverse Datasets,
+September 22-24, 1999, Flagstaff, Arizona, abstract 8025
+(http://www.planetary.brown.edu/pds/Pieters_NV99_8025.pdf), 1999."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PIETERS1993"
+ REFERENCE_DESC                 = "Pieters, C., Compositional
+diversity and stratigraphy of the lunar crust derived from
+reflectance spectroscopy, Chap. 14 in Remote Geochemical
+Analysis: Elemental and Mineralogical Composition,
+C. Pieters and P. Englert (ed.), University of Cambridge,
+Cambridge, England, 167-198, 1993."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWEN1996"
+ REFERENCE_DESC                 = "McEwen, A.S., A Precise Lunar
+Photometric Function: Lunar and Planetary Science Conference 27th,
+pp. 841-842, 1996."
+END_OBJECT                      = REFERENCE
+
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWEN&ROBINSON1997"
+ REFERENCE_DESC                 = "McEwen, A.S., M. Robinson,
+Mapping of the Moon by Clementine: Adv. Space Research, Vol. 19,
+No. 10, pp. 1523-1533, 1997."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LUCEYETAL2000"
+REFERENCE_DESC                  = "Lucey, P.G., D.T. Blewett,
+E. Eliason, L.A. Weller, R. Sucharski, E. Malaret, J.L. Hinrichs,
+and P.D. Owensby, Optimized calibration constants for the
+Clementine NIR camera, Lunar and Planetary Science Conference
+XXIX, #1273, 2000."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LUCEYETAL1998"
+REFERENCE_DESC                  = "Lucey, P.G., J. Hinrichs,
+C. Budney, G. Smith, C. Frost, B.R. Hawke, E. Malaret,
+M.S. Robinson, B. Bussey, T. Duxbury, D. Cook, P. Coffin,
+E. Eliason, T. Sucharski, A. McEwen, C.M. Pieters,
+Calibration of the Clementine Near Infrared Camera:
+Ready for Prime Time, Lunar and Planetary Science Conference
+XXXI, Abstract #1576, 1998."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LUCEYETAL1997"
+REFERENCE_DESC                  = "Lucey, P.G., J.L. Hinrichs,
+and E. Malaret, Progress Toward Calibration of the Clementine
+Near Infrared Camera Data Set, Lunar and Planetary Science
+Conference XXXVIII, Abstract #1401, 1997."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LIETAL1999"
+REFERENCE_DESC                  = "Li, Lin, J.F. Mustard, and
+C.M. Pieters, The Effects of Scattered Light in the Clementine
+UVVIS Camera on Mixture Analysis, Lunar and Planetary Science
+Conference 30th, pp. 1356-1357, 1999."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LEWIS1995"
+REFERENCE_DESC                  = "Lewis, I., Clementine NIR and
+LWIR Cameras:  Comments on Raw Data Sets, online document,
+http://astrogeology.usgs.gov/Projects/Clementine/nasaclem/sensors
+/nir/nir_lwir_lewis_comments.html, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LEMOUELICETAL1999"
+REFERENCE_DESC                  = "Le Mouelic, S., Y. Langevin,
+and S. Erard, A new data reduction approach for the Clementine
+NIR data set:  Application to Aristillus, Aristarchus,
+and Kepler, Journal of Geophysical Research,
+v. 104, No. E2, pp. 3833-3843, 1999."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LEEETAL1997A"
+REFERENCE_DESC                  = "Lee, E.M., K.E. Edwards,
+T.L. Becker, D. Cook, E. Eliason, M.S. Robinson, A.S. McEwen,
+T. Colvin, M. Davies, T. Duxbury, T. Sorenson, 1997,
+Clementine UVVIS Multispectral Processing, Lunar and Planetary
+Science Conference XXVIII, abstract #1705, 1997."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "LAWSONETAL2000"
+REFERENCE_DESC                  = "Lawson, S.L., B.M. Jakosky,
+H.-S. Park, and M.T. Mellon, Brightness temperatures of the
+lunar surface: Calibration and global analysis of the Clementine
+long-wave infrared camera data, J. Geophys. Res., 105,
+4273-4290, 2000."
+END_OBJECT = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ISBELLETAL2001"
+ REFERENCE_DESC                 = "Isbell, C.E., E.M. Eliason,
+E.M. Lee, K.C. Adams, T.L. Becker, A.L. Bennett, A.S. McEwen,
+Clementine: Reduced Resolution Digital Image Model of the Moon:
+Lunar and Planetary Science Conference 32nd,
+abstract #2076, 2001."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "GILLIS2005"
+REFERENCE_DESC                  = "Gillis, J.J., P.G. Lucey, B.A.
+Campbell, and B.R. Hawke, Clementine 2.7 micron data and 70-cm
+Earth-based radar data provide additional constraints for
+UVVIS-based estimates of TiO2 content for lunar mare basalts,
+Lunar and Planetary Science Conference XXVI, abstract #2254, 2005."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "GADDISETAL1997"
+REFERENCE_DESC                  = "Gaddis, L. et al., 1997.
+An overview of the Integrated Software for Imaging Spectrometers
+(ISIS). Lunar Planet. Sci., XXVIII pp. 387-388, Lunar and
+Planetary Institute, Houston."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ELIASONETAL1998"
+ REFERENCE_DESC                 = "Eliason, E., A. McEwen,
+M. Robinson, P. Lucey, T. Duxbury, E. Malaret, C. Pieters,
+T. Becker, C. Isbell, E. Lee, Multispectral Mapping of the
+Moon by Clementine, New Views of the Moon 1998,
+abstract #6006, 1998."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ELIASONETAL1999"
+ REFERENCE_DESC                 = "Eliason, E.M., A.S. McEwen,
+M.S. Robinson, E.M. Lee, T.L. Becker, L. Gaddis, L.A. Weller,
+C.E. Isbell, J.R. Shinaman, T. Duxbury, E. Malaret, Clementine:
+A Global Multi-Spectral Map of the Moon from the Clementine
+UVVIS Imaging Instrument: Lunar and Planetary Science Conference
+30th, pp. 1933-1934, 1999."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ELIASONETAL2003"
+ REFERENCE_DESC                 = "Eliason, E.M., E.M. Lee,
+T.L. Becker, L.A. Weller, C.E. Isbell, M.I. Staid, L.R. Gaddis,
+A.S. McEwen, M.S. Robinson, T. Duxbury, D. Steutel, D.T. Blewett,
+and P.G. Lucey, A Near-Infrared (NIR) global multispectral map
+of the Moon from Clementine, Lunar and Planetary Science
+Conference XXXIV, abstract #2093, 2003."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "COOKETAL2002"
+REFERENCE_DESC                  = "Cook, A.C., B. Semenov, M.S.
+Robinson, and T.R. Watters, Assessing the Absolute Positional
+Accuracy of the Clementine UVVIS Mosaic, Proceedings of the
+36th Vernadsky-Brown Microsymposium, Moscow, Russia,
+CDROM abstract #ms107, 2002."
+END_OBJECT = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "CAHILLETAL2004"
+ REFERENCE_DESC                 = "Cahill, J.T., P.G. Lucey,
+J.J. Gillis, D. Steutel, Verification of quality and
+compatibility for the newly calibrated Clementine NIR Data Set,
+Lunar and Planetary Science Conference XXXV,
+abstract #1469, 2004."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ANDERSONETAL2004"
+ REFERENCE_DESC                 = "Anderson, J.A., S.C. Sides,
+D.L. Soltesz, T.L. Sucharski, K.J. Becker, Modernization of
+the Integrated Software for Imagers and Spectrometers,
+Lunar and Planetary Science Conference XXXV,
+abstract #2039, 2004."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "BATSON1987"
+ REFERENCE_DESC                 = "Batson, R.M., Digital
+Cartography of the Planets: New Methods, Its Status, and Its
+Future: September 1987, Photogrammetric Engineering and Remote
+Sensing, Vol. 53, No. 9, pp. 1211-1218, 1987."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "BATSON1990A"
+REFERENCE_DESC                  = "Batson, R.M., Cartography,
+in Greeley, Ronald, and Batson, R.M., eds, Planetary Mapping:
+New York, Cambridge University Press, pp. 60-95, 1990."
+END_OBJECT = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "EDWARDS1987"
+ REFERENCE_DESC                 = "Edwards, K., Geometric
+Processing of Digital Images of the Planets: September, 1987,
+Photogrammetric Engineering and Remote Sensing, Vol. 53, No. 9,
+pp. 1219-1222, 1987."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "SNYDER1987"
+ REFERENCE_DESC                 = "Snyder, John P., Map
+Projections -- A Working Manual, U. S. Geol. Surv. Professional
+Paper 1395, 383p., 1987."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ACTON1996"
+ REFERENCE_DESC                 = "Acton, Jr. C.H., Ancillary Data
+Services of NASA's Navigation and Ancillary Information Facility,
+Planetary and Space Sciences, 44, Number 1, pp. 65-70, 1996."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ASMAR&HERRERA1993"
+ REFERENCE_DESC                 = "Asmar, S.W., and R.G.
+Herrera, Radio Science Handbook, JPL D-7938, Volume 4, Jet
+Propulsion Laboratory, Pasadena, CA, 22 January 1993."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ASMAR&RENZETTI1993"
+ REFERENCE_DESC                 = "Asmar, S.W., and N.A.
+Renzetti, The Deep Space Network as an Instrument for Radio
+Science Research, Jet Propulsion Laboratory Publication 80-93,
+Rev. 1, 15 April 1993."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ELIASONETAL1995"
+ REFERENCE_DESC                 = "Eliason, E.M., E.R. Malaret, and
+G. Woodward, Clementine Mission: The Archive of Image Data
+Products and Data Processing Capabilities, (Abstract), Proceedings of
+the 26-th Lunar and Planetary Conference,  pp. 369-370, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "GADDISETAL1995"
+ REFERENCE_DESC                 = "Gaddis, L., A. McEwen, and M.
+Robinson, The Distribution of Localized Lunar Pyroclastic Deposits
+as Related to Crustal Thickness, Proceedings of the 26-th Lunar and
+Planetary Conference, p. 433, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "KORDASETAL1995"
+ REFERENCE_DESC                 = "Kordas, J.R., I.T. Lewis, R.E.
+Priest, W.T. White, D.P. Nielsen, H. Park, B.A. Wilson, M.J. Shannon,
+A.G. Ledebuhr, and L.D. Pleasance, UV/visible Camera for the
+Clementine Mission, Proceedings of the Society of Photo-optical
+Instrumentation Engineers (SPIE), 2478, pp. 175-186, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "KORDASETAL1995B"
+ REFERENCE_DESC                 = "Kordas, J.F., I.T. Lewis, B.A.
+Wilson, D.P. Nielson, H. Park, R.E. Priest, R.F. Hills, M.J.
+Shannon, A.G. Ledebuhr, and L.D. Pleasance, Star Tracker Stellar
+Compass for the Clementine Mission, Proceedings of the Society of
+Photo-optical Instrumentation Engineers (SPIE), 2466, pp. 70-83,
+1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "LEDEBUHRETAL1995"
+ REFERENCE_DESC                 = "Ledebuhr, A.G., J.F. Kordas, I.T.
+Lewis, M.J. Richardson, G.R. Cameron, W.T. White, D.W. Dobie, W.D.
+Strubhar, T.F. Tassinari, D. Sawyer, M.J. Shannon, L.D. Pleasance,
+A.J. Lieber, P.K. Trost, D.W. Doll, and M.G. Grote, HiRes Camera
+and Lidar Ranging System for the Clementine Mission, Proceedings of
+the Society of Photo-optical Instrumentation Engineers (SPIE), 2472,
+pp. 62-81, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "LUCEYETAL1994"
+ REFERENCE_DESC                 = "Lucey, P., P.D. Spudis, M.
+Zuber, D. Smith, and E. Malaret, Topographic-Compositional Units
+on the Moon and the Early Evolution of the Lunar Crust, Science,
+266, 1855-1858, 1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWENETAL1994"
+ REFERENCE_DESC                 = "McEwen, A., M.S. Robinson, E.M.
+Eliason, P.G. Lucey, T.C. Duxbury, and P.D. Spudis, Clementine
+Observations of the Aristarchus Region on the Moon, Science, 266,
+1858-1861, 1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWENETAL1995A"
+ REFERENCE_DESC                 = "McEwen, A.S., M.S. Robinson, T.C.
+Duxbury, and B.J.Buratti, Global Albedo Variations on the Moon:
+Clementine 750-NM Observations, Proceedings of the 26-th Lunar and
+Planetary Conference, pp. 931-932, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWENETAL1995B"
+ REFERENCE_DESC                = "McEwen, A.S., T. Becker, A. Bennett,
+J. Bowell, K. Edwards, E. Eliason, L. Gaddis, C. Isbell, A. Howington-
+Kraus, R. Kirk, E. Lee, H. Morgan, and M. Robinson, New Digital Images
+on the Moon, Proceedings of the 26-th Lunar and Planetary Conference,
+p. 929, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWENETAL1995C"
+ REFERENCE_DESC                 = "McEwen, A.S., M.S.Robinson, E.M.
+Eliason, P.G. Lucey, B.R. Hawke, and T.C. Duxbury, Clementine and
+Groundbased Observations of the Aristarchus Region of the Moon,
+Proceedings of the 26-th Lunar and Planetary Conference,
+p. 933, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWEN&SHOEMAKER1995"
+ REFERENCE_DESC                 = "McEwen, A.S., and E.M. Shoemaker,
+Two Classes of Impact Basins on the Moon, Proceedings of the 26-th
+Lunar and Planetary Conference, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "NOZETTE&GARRETT1994"
+ REFERENCE_DESC                 = "Nozette, S. and H.B. Garrett,
+Mission Offers a New Look at the Moon and a Near-Earth Asteroid, EOS,
+Vol. 75, No. 14, p. 161 and 163, 1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "NOZETTEETAL1994"
+ REFERENCE_DESC                 = "Nozette, S., P. Rustan, L.P.
+Pleasance, D.M. Horan, P. Regeon, E.M. Shoemaker, P.D. Spudis,
+C.H. Acton, D.N. Baker, J.E. Blamont, B.J. Buratti, M.P. Corson,
+M.E. Davies, T.C. Duxbury, E.M. Eliason, B.M. Jakosky, J.F.
+Kordas, I.T. Lewis, C.L. Lichtenberg, P.G. Lucey, E. Malaret, M.A.
+Massie, J.H. Resnick, C.J. Rollins, H.S. Park, A.S. McEwen, R.E.
+Priest, C.M. Pieters, R.A. Reisse, M.S. Robinson, D.E. Smith, T.C.
+Sorenson, R.W. Vorder Breugge, and M.T. Zuber, The Clementine
+Mission to the Moon: Scientific Overview, Science, 266, 1835-1839,
+1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PIETERSETAL1994"
+ REFERENCE_DESC                 = "Pieters, C., M.I. Staid, E.M.
+Fischer, S. Thompkins, and G. He, The Sharper View of Impact
+Craters from Clementine Data, Science, 266, 1844-1848, 1994"
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PRIESTETAL1995A"
+ REFERENCE_DESC                 = "Priest, R.E., I.T. Lewis, N.R.
+Sewall, H. Park, M.J. Shannon, A.G. Ledebuhr, L.D. Pleasance, M.A.
+Massie, and K. Metschuleit, Near-infrared Camera for the
+Clementine Mission, Proceedings of the Society of Photo-optical
+Instrumentation Engineers (SPIE), 2475, pp. 393-404, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PRIESTETAL1995B"
+ REFERENCE_DESC                 = "Priest, R.E., I.T. Lewis, N.R.
+Sewall, H. Park, M.J. Shannon, A.G. Ledebuhr, L.D. Pleasance, M.A.
+Massie, and K. Metschuleit, Clementine Longwave Infrared Camera,
+Proceedings of the Society of Photo-Optical Instrumentation
+Engineers (SPIE), 2475, pp. 405-416, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "REGEONETAL1994"
+ REFERENCE_DESC                 = "Regeon, P.A., R.J. Chapman,
+and R. Baugh, Clementine -- The Deep Space Program Science
+Experiment (DSPSE),Paper IAA-L-0501, IAA International Conference
+on Low-Cost Planetary Missions, Laurel, MD: The Johns Hopkins
+University Applied Physics Laboratory, 12-15 April 1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "RUSTAN1994"
+ REFERENCE_DESC                 = "Rustan, P., Flight-Qualifying
+Space Technologies with the Clementine Mission, EOS, Vol. 75
+No. 14, 1 p., 1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "SHOEMAKER&ROBINS1995"
+ REFERENCE_DESC                 = "Shoemaker, E., and M.S. Robinson,
+Clementine Observations of Melt Rocks and Volcanic Materials in the
+Schrodinger Basin, Proceedings of the 26-th Lunar and Planetary
+Conference, pp. 1297-1298, 1995."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "SHOEMAKERETAL1994"
+ REFERENCE_DESC                 = "Shoemaker, E., M.S. Robinson,
+and E.M. Eliason, The South Pole Region of the Moon as Seen by
+Clementine, Science, 266, 1851-1854, 1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "SPUDISETAL1994"
+ REFERENCE_DESC                 = "Spudis, P., R.A. Reisse, and
+J.J. Gillis, Ancient Multiring Basins on the Moon Revealed by
+Clementine Laser Altimetry, Science, 266, 1848-1851, 1994"
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ZUBERETAL1994"
+ REFERENCE_DESC                 = "Zuber, M., D.E. Smith, F.G.
+Lemoine, and G. Neumann, The Shape and Internal Structure of the
+Moon from the Clementine Mission, Science, 266, 1839-1843, 1994."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ISBELLETAL1999"
+ REFERENCE_DESC                 = "Isbell, C.E., E.M. Eliason,
+K.C. Adams, T.L. Becker, A.L. Bennett, E.M. Lee, A.S. McEwen,
+M.S. Robinson, J.R. Shinaman, and L.A. Weller, Clementine:
+A Multi-Spectral Digital Image Model Archive of the Moon:
+Lunar and Planetary Science Conference 30th,
+pp. 1812-1813, 1999."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "DAVIESETAL1989"
+ REFERENCE_DESC                 = "Davies, M.E., V.K. Abalakin,
+M. Bursa, G.E. Hunt, J.H. Lieske, B. Morando, R.H. Rapp, P.K.
+Seidelmann, A.T. Sinclair, and Yu.S. Tyuflin, Report of the
+IAU/IAG/COSPAR Working Group on Cartographic Coordinates and
+Rotational Elements of the Planets and Satellites: 1988,
+Celestial Mechanics and Dynamical Astronomy, 46, 187-204, 1989."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PDSSR1992"
+ REFERENCE_DESC                 = "Planetary Data System Standards
+Reference, Jet Propulsion Laboratory Document D-7669, Part 2,
+20 November 1992"
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+REFERENCE_KEY_ID                = "PDSSR2006"
+REFERENCE_DESC                  = "Planetary Data System Standards
+Reference, Document JPL D-7669 Part 2, Jet Propulsion Laboratory,
+Pasadena, CA 2006"
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "JOLLIFF1999"
+ REFERENCE_DESC                 = "Jolliff, B.L., Clementine UVVIS
+multispectral data and the Apollo 17 landing site:  What can we tell
+and how well?, JGR, vol. 104, no. E6, p. 14,123-14,148, 1999."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "GADDISETAL1999"
+ REFERENCE_DESC                 = "Gaddis, L.R., B.R. Hawke, M.S.
+Robinson, and C.R. Coombs, Juvenile materials in lunar pyroclastic
+deposits, LPS XXX, 1732."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "GADDISETAL1999B"
+ REFERENCE_DESC                 = "Gaddis, L.R., BR. Hawke, M.S.
+Robinson, and C.R. Coombs, Compositional analyses of small lunar
+pyroclastic deposits using Clementine multispectral data, JRG,
+in press, April 1999."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ELIASON1997"
+ REFERENCE_DESC                 = "Eliason, E.M., Production of
+digital image models with the ISIS system, LPS XXVIII, 331-332."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "LIETAL1999"
+ REFERENCE_DESC                 = "Li, Lin, J.F. Mustard, and C.M.
+Pieters, The effects of scattered light in the Clementine UV-VIS
+camera on mixture analysis, LPS XXX, 1866-1867."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWEN1991"
+ REFERENCE_DESC                 = "McEwen, A.S., Photometric
+functions for photoclinometry and other applications, Icarus,
+v. 92, 298-311."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWEN1996"
+ REFERENCE_DESC                 = "McEwen, A.S., A precise
+lunar photometric function, LPS XXVII, 841-842."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWEN&ROBINSON1997"
+ REFERENCE_DESC                 = "McEwen, A.S. and M.S.
+Robinson, Mapping the Moon by Clementine, Adv. Space Res.,
+v. 19, 1523-1533."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "MCEWENETAL1998"
+ REFERENCE_DESC                 = "McEwen, A.S., E. Eliason,
+P. Lucey, E. Malaret, C. Pieters, M. Robinson, and T. Sucharski,
+Summary of radiometric calibration and photometric normalization
+steps for the Clementine UVVIS images, LPS XXIX, 1466-1467."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "PIETERSETAL1997"
+ REFERENCE_DESC                 = "Pieters, C.M., G. He, M. Staid,
+S. Thompkins, and E. Fischer, Clementine UVVIS data calibration and
+processing an online document, 
+http://www.planetary.brown.edu/clementine/calibration.html."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "ROBINSONETAL1999"
+ REFERENCE_DESC                 = "Robinson, M.S., A.S. McEwen,
+E.M. Eliason, E.M. Lee, E. Malaret, P. Lucey, Clementine UVVIS
+global mosaic:  A new tool for understanding the lunar crust,
+LPS XXX,  1931-1932. 1999"
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "TORSON&BECKER1997"
+ REFERENCE_DESC                 = "Torson, J. and K. Becker,
+ISIS - A software architecture for processing planetary images,
+LPS XXVIII, 1443-1444."
+END_OBJECT                      = REFERENCE
+
+OBJECT                          = REFERENCE
+ REFERENCE_KEY_ID               = "BELTONETAL1992B"
+ REFERENCE_DESC                 = "Belton, M.J.S., J.W. Head III,
+C.M. Pieters, R. Greeley, A.S. McEwen, G. Neukum, K.P. Klaasen,
+C.D. Anger, M.H. Carr, C.R. Chapman, M.E. Davies, F.P. Fanale,
+P.J. Gierasch, R. Greenberg, A.P. Ingersoll, T. Johnson,
+B. Paczkowski, C.B. Pilcher, J. Veverka, Lunar Impact Basins and
+Crustal Heterogeneity:  New Western Limb and Far Side Data from
+Galileo, Science, v. 255, p. 570-576."
+END_OBJECT                      = REFERENCE
+END

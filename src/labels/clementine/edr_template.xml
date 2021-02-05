@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/msn/v1/PDS4_MSN_1B00_1100.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1D00_1730.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1B00_1100.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1E00_1810.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://raw.githubusercontent.com/MillionConcepts/ldd-clementine/master/build/testing/PDS4_CLEMENTINE_1F00_1000.sch " schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational
+xmlns="http://pds.nasa.gov/pds4/pds/v1"
+xmlns:msn="http://pds.nasa.gov/pds4/msn/v1"
+xmlns:img="http://pds.nasa.gov/pds4/img/v1"
+xmlns:proc="http://pds.nasa.gov/pds4/proc/v1"
+xmlns:geom="http://pds.nasa.gov/pds4/geom/v1"
+xmlns:clementine="http://pds.nasa.gov/pds4/mission/clementine/v1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation=
+    "http://pds.nasa.gov/pds4/pds/v1     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd
+    http://pds.nasa.gov/pds4/msn/v1     https://pds.nasa.gov/pds4/msn/v1/PDS4_MSN_1B00_1100.xsd
+    http://pds.nasa.gov/pds4/img/v1     https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1D00_1730.xsd
+    http://pds.nasa.gov/pds4/proc/v1     https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1B00_1100.xsd
+    http://pds.nasa.gov/pds4/geom/v1   https://pds.nasa.gov/pds4/geom/v1/PDS4_GEOM_1E00_1810.xsd
+    http://pds.nasa.gov/pds4/mission/clementine/v1  https://raw.githubusercontent.com/MillionConcepts/ldd-clementine/master/build/testing/PDS4_CLEMENTINE_1F00_1000.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:clementine:data:{pds4_root}</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>
+      Clementine EDR Product {pds4_root}
+    </title>
+    <information_model_version>1.15.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Citation_Information>
+      <publication_year>2021</publication_year>
+      <description>
+        This is an observation from the {instrument_long_name}
+        with an accompanying image histogram. Most, but not all, of the
+        Clementine observational data were compressed onboard using a
+        proprietary hardware-accelerated JPEG-style discrete cosine transform
+        compression algorithm designed by Matra. For most purposes, including
+        archival, the instrument team retained these data in their native forms,
+        whether compressed or uncompressed (aside from depacketizing them into
+        discrete binary files containing individual observations). For archival,
+        they also attached PDS3 labels, image histograms, and sometimes browse
+        images to each file. To permit use of the EDR products, they included
+        decompression and image-reading software in the archive. To increase
+        usability of the archive and meet PDS4 standards, we have detached these
+        images from their metadata and ancillary data, decompressed those that
+        were compressed (reference the clementine:clem_jpeg_version and
+        img:onboard_compression_ratio attributes for details on the prior
+        compression state of this particular image), and converted them to FITS
+        format. Although they are now readable by general-purpose software,
+        often contain visually-recognizable features, and may have been subject
+        to lossy compression, these products remain "raw" in the sense that they
+        have not been "scientifically" processed -- radiometrically calibrated,
+        corrected for instrument signature, or otherwise modified to make them
+        straightforwardly suitable for science purposes.
+      </description>
+    </Citation_Information>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>{modification_date}</modification_date>
+        <version_id>1.0</version_id>
+        <description>
+          Initial PDS4 version of this product.
+        </description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>{start_time}</start_date_time>
+      <stop_date_time>{start_time}</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Raw</processing_level>
+      <Science_Facets>
+        {delete:uvvis_only:start}
+        <wavelength_range>{instrument_wavelength}</wavelength_range>
+        {delete:uvvis_only:stop}
+        {delete:not_uvvis:start}
+        <wavelength_range>Ultraviolet</wavelength_range>
+        <wavelength_range>Visible</wavelength_range>
+        <wavelength_range>Near Infrared</wavelength_range>
+        {delete:not_uvvis:stop}
+        <discipline_name>Imaging</discipline_name>
+      </Science_Facets>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>DEEP SPACE PROGRAM SCIENCE EXPERIMENT</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:investigation:mission.deep_space_program_science_experiment::1.1</lidvid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>CLEMENTINE 1</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lidvid_reference>urn:nasa:pds:context:instrument_host:spacecraft.clem1::1.1</lidvid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>{instrument_context_name}</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lidvid_reference>{instrument_lidvid}</lidvid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>{target_name}</name>
+      <type>{target_type}</type>
+      <Internal_Reference>
+        <lidvid_reference>{target_lidvid}</lidvid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <clementine:Clementine_Parameters>
+        <clementine:original_product_id>{original_product_id}</clementine:original_product_id>
+        <clementine:revolution_number>{revolution_number}</clementine:revolution_number>
+        <clementine:producer_institution_name>{producer_institution_name}</clementine:producer_institution_name>
+        <clementine:frame_sequence_number>{frame_sequence_number}</clementine:frame_sequence_number>
+        <clementine:sequence_table_id>{sequence_table_id}</clementine:sequence_table_id>
+        <clementine:uncorrected_start_time>{uncorrected_start_time}</clementine:uncorrected_start_time>
+        <clementine:clem_jpeg_version>{clem_jpeg_version}</clementine:clem_jpeg_version>
+        {delete:unknown_target:start}
+        <clementine:twist_angle unit="deg">{twist_angle}</clementine:twist_angle>
+<!-- labels with mangled footprint vertices appear to usually or always -->
+<!-- have mangled values in most of these related illumination and footprint- -->
+<!-- type-parameters; morever, not knowing the intercept makes the value of these -->
+<!-- all pretty questionable -->
+        {delete:planetodetic:start}
+        {delete:star_only:start}
+        {delete:footprint_vertices:start}
+        <clementine:smear_magnitude>{smear_magnitude}</clementine:smear_magnitude>
+        <clementine:smear_azimuth unit="deg">{smear_azimuth}</clementine:smear_azimuth>
+        {delete:footprint_vertices:stop}
+        {delete:star_only:stop}
+        <clementine:north_azimuth unit="deg">{north_azimuth}</clementine:north_azimuth>
+        {delete:planetodetic:stop}
+        <clementine:Celestial_Footprint_Vertices>
+          <clementine:Celestial_Reference_Pixel>
+            <clementine:reference_pixel_location>Upper Left Corner</clementine:reference_pixel_location>
+            <clementine:pixel_ra unit="deg">{reticle_radec_0_0}</clementine:pixel_ra>
+            <clementine:pixel_dec unit="deg">{reticle_radec_1_0}</clementine:pixel_dec>
+          </clementine:Celestial_Reference_Pixel>
+          <clementine:Celestial_Reference_Pixel>
+            <clementine:reference_pixel_location>Upper Right Corner</clementine:reference_pixel_location>
+            <clementine:pixel_ra unit="deg">{reticle_radec_0_1}</clementine:pixel_ra>
+            <clementine:pixel_dec unit="deg">{reticle_radec_1_1}</clementine:pixel_dec>
+          </clementine:Celestial_Reference_Pixel>
+          <clementine:Celestial_Reference_Pixel>
+            <clementine:reference_pixel_location>Lower Right Corner</clementine:reference_pixel_location>
+            <clementine:pixel_ra unit="deg">{reticle_radec_0_2}</clementine:pixel_ra>
+            <clementine:pixel_dec unit="deg">{reticle_radec_1_2}</clementine:pixel_dec>
+          </clementine:Celestial_Reference_Pixel>
+          <clementine:Celestial_Reference_Pixel>
+            <clementine:reference_pixel_location>Lower Left Corner</clementine:reference_pixel_location>
+            <clementine:pixel_ra unit="deg">{reticle_radec_0_3}</clementine:pixel_ra>
+            <clementine:pixel_dec unit="deg">{reticle_radec_1_3}</clementine:pixel_dec>
+          </clementine:Celestial_Reference_Pixel>
+          <clementine:Celestial_Reference_Pixel>
+            <clementine:reference_pixel_location>Center</clementine:reference_pixel_location>
+            <clementine:pixel_ra unit="deg">{right_ascension}</clementine:pixel_ra>
+            <clementine:pixel_dec unit="deg">{declination}</clementine:pixel_dec>
+          </clementine:Celestial_Reference_Pixel>
+        </clementine:Celestial_Footprint_Vertices>
+        {delete:planetodetic:start}
+        <clementine:local_hour_angle unit="deg">{local_hour_angle}</clementine:local_hour_angle>
+        <clementine:Illumination_Secondary>
+          <clementine:light_source_name>{light_source_name}</clementine:light_source_name>
+          <clementine:light_source_distance unit="km">{light_source_distance}
+                    </clementine:light_source_distance>
+          <clementine:sub_light_source_azimuth unit="deg">{sub_light_source_azimuth}
+                    </clementine:sub_light_source_azimuth>
+          <clementine:sub_light_source_latitude unit="deg">{sub_light_source_latitude}
+                    </clementine:sub_light_source_latitude>
+          <clementine:sub_light_source_longitude unit="deg">{sub_light_source_longitude}
+                    </clementine:sub_light_source_longitude>
+          {delete:star_only:start}
+          {delete:footprint_vertices:start}
+          <clementine:incidence_angle unit="deg">{light_source_incidence_angle}</clementine:incidence_angle>
+          <clementine:phase_angle unit="deg">{light_source_phase_angle}</clementine:phase_angle> 
+         {delete:footprint_vertices:stop}
+         {delete:star_only:stop}
+          </clementine:Illumination_Secondary>
+        {delete:planetodetic:stop}
+        {delete:unknown_target:stop}
+        {delete:cryocooler:start}
+        {delete:cryocooler_duration:start}
+        <clementine:cryocooler_duration unit="s">{cryocooler_duration}</clementine:cryocooler_duration>
+        {delete:cryocooler_duration:stop}
+        {delete:cryocooler:stop}
+      </clementine:Clementine_Parameters>
+    </Mission_Area>
+    <Discipline_Area>
+      <msn:Mission_Information>
+        <msn:mission_phase_name>{mission_phase_name}</msn:mission_phase_name>
+        <msn:product_type_name>EDR</msn:product_type_name>
+      </msn:Mission_Information>
+      <img:Imaging>
+        <Local_Internal_Reference>
+          <local_identifier_reference>fits_image</local_identifier_reference>
+          <local_reference_type>imaging_parameters_to_image_object</local_reference_type>
+        </Local_Internal_Reference>
+        <img:Detector>
+          <img:gain_mode_id>{gain_mode_id}</img:gain_mode_id>
+        </img:Detector>
+        <img:Exposure>
+          <img:exposure_duration unit="ms">{exposure_duration}</img:exposure_duration>
+        </img:Exposure>
+        <img:Onboard_Compression>
+          <img:onboard_compression_type>{encoding_type_original}</img:onboard_compression_type>
+          <img:onboard_compression_ratio>{encoding_compression_ratio_original}</img:onboard_compression_ratio>
+        </img:Onboard_Compression>
+        {delete:star_only:start}
+        <img:Optical_Filter>
+<!-- We'd like to retain the "N/A" here for instruments that have filters -->
+<!-- but have an unknown filter for a particular product. -->
+          <img:filter_name>{filter_name}</img:filter_name>
+        {delete:filter_values:start}
+          <img:bandwidth unit="nm">{bandwidth}</img:bandwidth>
+          <img:center_filter_wavelength unit="nm">{center_filter_wavelength}</img:center_filter_wavelength>
+        {delete:filter_values:stop}
+        </img:Optical_Filter>
+        {delete:star_only:stop}
+        <img:Instrument_State>
+          <img:Device_Component_States>
+            {delete:not_hires:start}
+            <img:Device_Component_State>
+              <img:device_name>Micro Channel Plate</img:device_name>
+              <img:device_state>Gain Mode {mcp_gain_mode_id}</img:device_state>
+            </img:Device_Component_State>
+            {delete:not_hires:stop}
+            <img:Device_Component_State>
+              <img:device_name>Detector</img:device_name>
+              <img:device_state>Offset Mode {offset_mode_id}</img:device_state>
+            </img:Device_Component_State>
+          </img:Device_Component_States>
+          {delete:device_temperatures:start}
+          <img:Device_Temperatures>
+            {delete:cryocooler:start}
+            {delete:cryocooler_temperature:start}
+            <img:Device_Temperature>
+              <img:device_name>Cryocooler</img:device_name>
+              <img:temperature_value unit="K">{cryocooler_temperature}</img:temperature_value>
+            </img:Device_Temperature>
+            {delete:cryocooler:stop}
+            {delete:cryocooler_temperature:stop}
+            {delete:focal_plane_temperature:start}
+            <img:Device_Temperature>
+              <img:device_name>Focal Plane Array</img:device_name>
+              <img:temperature_value unit="K">{focal_plane_temperature}</img:temperature_value>
+            </img:Device_Temperature>
+            {delete:focal_plane_temperature:stop}
+            {delete:hires_only:start}
+            {delete:lens_temperature:start}
+            <img:Device_Temperature>
+              <img:device_name>Lens</img:device_name>
+              <img:temperature_value unit="K">{lens_temperature}</img:temperature_value>
+            </img:Device_Temperature>
+            {delete:hires_only:stop}
+            {delete:lens_temperature:stop}
+          </img:Device_Temperatures>
+          {delete:device_temperatures:stop}
+        </img:Instrument_State>
+      </img:Imaging>
+      <geom:Geometry>
+        <geom:Geometry_Orbiter>
+          <geom:geometry_reference_time_utc>{start_time}</geom:geometry_reference_time_utc>
+          <geom:Orbiter_Identification>
+            <geom:Geometry_Target_Identification>
+              <geom:name>{target_name}</geom:name>
+              <Internal_Reference>
+                <lidvid_reference>{target_lidvid}</lidvid_reference>
+                <reference_type>geometry_to_body</reference_type>
+              </Internal_Reference>
+            </geom:Geometry_Target_Identification>
+            <geom:Coordinate_System_Identification>
+              <geom:coordinate_system_type>Spherical</geom:coordinate_system_type>
+              <geom:Coordinate_System_Origin_Identification>
+                <geom:name>Earth</geom:name>
+                <Internal_Reference>
+                  <lidvid_reference>urn:nasa:pds:context:target:planet.earth::1.3</lidvid_reference>
+                  <reference_type>geometry_to_body</reference_type>
+                </Internal_Reference>
+              </geom:Coordinate_System_Origin_Identification>
+              <geom:Reference_Frame_Identification>
+                <geom:frame_spice_name>J2000</geom:frame_spice_name>
+              </geom:Reference_Frame_Identification>
+            </geom:Coordinate_System_Identification>
+          </geom:Orbiter_Identification>
+          {delete:planetodetic:start}
+          {delete:unknown_target:start}
+          {delete:star_only:start}
+          {delete:footprint_vertices:start}
+          <geom:Pixel_Dimensions>
+            <geom:pixel_field_of_view_method>Central Pixel</geom:pixel_field_of_view_method>
+            <geom:Pixel_Size_Projected>
+              <geom:reference_location>Boresight Intercept Point</geom:reference_location>
+              <geom:horizontal_pixel_footprint unit="km">{horizontal_pixel_scale}
+                        </geom:horizontal_pixel_footprint>
+              <geom:vertical_pixel_footprint unit="km">{vertical_pixel_scale}</geom:vertical_pixel_footprint>
+            </geom:Pixel_Size_Projected>
+          </geom:Pixel_Dimensions>
+          {delete:planetodetic:stop}
+          {delete:unknown_target:stop}
+          {delete:star_only:stop}
+          {delete:footprint_vertices:stop}
+          <geom:Distances>
+            <geom:Distances_Specific>
+              <geom:spacecraft_heliocentric_distance unit="km">{spacecraft_solar_distance}
+                        </geom:spacecraft_heliocentric_distance>
+              {delete:planetodetic:start}
+              {delete:unknown_target:start}
+              <geom:spacecraft_target_center_distance unit="km">{target_center_distance}
+                        </geom:spacecraft_target_center_distance>
+              {delete:star_only:start}
+              {delete:footprint_vertices:start}
+              <geom:spacecraft_target_boresight_intercept_distance unit="km">{slant_distance}
+                        </geom:spacecraft_target_boresight_intercept_distance>
+              {delete:star_only:stop}
+              {delete:footprint_vertices:stop}
+              {delete:planetodetic:stop}
+              {delete:unknown_target:stop}
+            </geom:Distances_Specific>
+          </geom:Distances>
+          {delete:planetodetic:start}
+          <geom:Surface_Geometry>
+            <geom:Surface_Geometry_Specific>
+              {delete:unknown_target:start}
+              {delete:footprint_vertices:start}
+              <geom:Footprint_Vertices>
+                <geom:Pixel_Intercept>
+                  <geom:reference_pixel_location>Upper Left Corner</geom:reference_pixel_location>
+                  <geom:pixel_latitude unit="deg">{reticle_0_0}</geom:pixel_latitude>
+                  <geom:pixel_longitude unit="deg">{reticle_1_0}</geom:pixel_longitude>
+                </geom:Pixel_Intercept>
+                <geom:Pixel_Intercept>
+                  <geom:reference_pixel_location>Upper Right Corner</geom:reference_pixel_location>
+                  <geom:pixel_latitude unit="deg">{reticle_0_1}</geom:pixel_latitude>
+                  <geom:pixel_longitude unit="deg">{reticle_1_1}</geom:pixel_longitude>
+                </geom:Pixel_Intercept>
+                <geom:Pixel_Intercept>
+                  <geom:reference_pixel_location>Lower Right Corner</geom:reference_pixel_location>
+                  <geom:pixel_latitude unit="deg">{reticle_0_2}</geom:pixel_latitude>
+                  <geom:pixel_longitude unit="deg">{reticle_1_2}</geom:pixel_longitude>
+                </geom:Pixel_Intercept>
+                <geom:Pixel_Intercept>
+                  <geom:reference_pixel_location>Lower Left Corner</geom:reference_pixel_location>
+                  <geom:pixel_latitude unit="deg">{reticle_0_3}</geom:pixel_latitude>
+                  <geom:pixel_longitude unit="deg">{reticle_1_3}</geom:pixel_longitude>
+                </geom:Pixel_Intercept>
+                <geom:Pixel_Intercept>
+                  <geom:reference_pixel_location>Center</geom:reference_pixel_location>
+                  <geom:pixel_latitude unit="deg">{center_latitude}</geom:pixel_latitude>
+                  <geom:pixel_longitude unit="deg">{center_longitude}</geom:pixel_longitude>
+                </geom:Pixel_Intercept>
+              </geom:Footprint_Vertices>
+              {delete:footprint_vertices:stop}
+              <geom:subsolar_azimuth unit="deg">{sub_solar_azimuth}</geom:subsolar_azimuth>
+              <geom:subsolar_latitude unit="deg">{sub_solar_latitude}</geom:subsolar_latitude>
+              <geom:subsolar_longitude unit="deg">{sub_solar_longitude}</geom:subsolar_longitude>
+              <geom:subspacecraft_azimuth unit="deg">{sub_spacecraft_azimuth}</geom:subspacecraft_azimuth>
+              {delete:unknown_target:stop}
+              <geom:subspacecraft_latitude unit="deg">{sub_spacecraft_latitude}</geom:subspacecraft_latitude>
+              <geom:subspacecraft_longitude unit="deg">{sub_spacecraft_longitude}</geom:subspacecraft_longitude>
+            </geom:Surface_Geometry_Specific>
+          </geom:Surface_Geometry>
+          {delete:unknown_target:start}
+          {delete:star_only:start}
+          {delete:footprint_vertices:start}
+          <geom:Illumination_Geometry>
+            <geom:Illumination_Specific>
+              <geom:reference_location>Boresight Intercept Point</geom:reference_location>
+              <geom:emission_angle unit="deg">{emission_angle}</geom:emission_angle>
+              <geom:incidence_angle unit="deg">{incidence_angle}</geom:incidence_angle>
+              <geom:phase_angle unit="deg">{phase_angle}</geom:phase_angle>
+            </geom:Illumination_Specific>
+          </geom:Illumination_Geometry>
+          {delete:planetodetic:stop}
+          {delete:unknown_target:stop}
+          {delete:star_only:stop}
+          {delete:footprint_vertices:stop}
+          <geom:Vectors>
+            <geom:Vectors_Cartesian_Specific>
+              {delete:planetodetic:start}
+              {delete:unknown_target:start}
+              <geom:Vector_Cartesian_Position_Spacecraft_To_Target>
+                <geom:x_position unit="km">{sc_target_position_vector_0}</geom:x_position>
+                <geom:y_position unit="km">{sc_target_position_vector_1}</geom:y_position>
+                <geom:z_position unit="km">{sc_target_position_vector_2}</geom:z_position>
+                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+              </geom:Vector_Cartesian_Position_Spacecraft_To_Target>
+              {delete:planetodetic:stop}
+              {delete:unknown_target:stop}
+              <geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
+                <geom:x_position unit="km">{sc_sun_position_vector_0_neg}</geom:x_position>
+                <geom:y_position unit="km">{sc_sun_position_vector_1_neg}</geom:y_position>
+                <geom:z_position unit="km">{sc_sun_position_vector_2_neg}</geom:z_position>
+                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+              </geom:Vector_Cartesian_Position_Sun_To_Spacecraft>
+              <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
+                <geom:x_velocity unit="km/s">{sc_sun_velocity_vector_0}</geom:x_velocity>
+                <geom:y_velocity unit="km/s">{sc_sun_velocity_vector_1}</geom:y_velocity>
+                <geom:z_velocity unit="km/s">{sc_sun_velocity_vector_2}</geom:z_velocity>
+                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+              </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Sun>
+              {delete:planetodetic:start}
+              {delete:unknown_target:start}
+              <geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target>
+                <geom:x_velocity unit="km/s">{sc_target_velocity_vector_0}</geom:x_velocity>
+                <geom:y_velocity unit="km/s">{sc_target_velocity_vector_1}</geom:y_velocity>
+                <geom:z_velocity unit="km/s">{sc_target_velocity_vector_2}</geom:z_velocity>
+                <geom:light_time_correction_applied>Received_Light_Time_Stellar_Abb</geom:light_time_correction_applied>
+              </geom:Vector_Cartesian_Velocity_Spacecraft_Relative_To_Target>
+              {delete:planetodetic:stop}
+              {delete:unknown_target:stop}
+            </geom:Vectors_Cartesian_Specific>
+          </geom:Vectors>
+        </geom:Geometry_Orbiter>
+      </geom:Geometry>
+      <proc:Processing_Information>
+        <Local_Internal_Reference>
+          <local_identifier_reference>fits_image</local_identifier_reference>
+          <local_reference_type>processing_information_to_data_object</local_reference_type>
+        </Local_Internal_Reference>
+        <proc:Process>
+          <proc:description>Initial data archival.</proc:description>
+          <proc:Software>
+            <proc:name>{edr_software_name}</proc:name>
+          </proc:Software>
+        </proc:Process>
+        <proc:Process>
+          <proc:description>Decompression from CLEM-JPEG format (if applicable)</proc:description>
+          <proc:Software>
+            <proc:name>Clementine Image Decompression and Formatting</proc:name>
+            <proc:software_id>CLEMDCMP</proc:software_id>
+            <proc:software_version_id>1.0</proc:software_version_id>
+            <proc:description>
+              Tracie Sucharski's Clementine EDR product swiss army knife, here instantiated in its PCDOS version
+              (CLEMDCMP.EXE) and executed using the DOSBOX PCDOS emulator. All archived versions of this software
+              are numbered 1.0, but this is specifically the binary executable archived on cl_0088, which differs
+              slightly from all others (although it does not produce obviously different output). Since cl_0088
+              served as the summary and errata disc for all EDR volumes, we consider its software and documentation
+              products the definitive versions.
+            </proc:description>
+          </proc:Software>
+        </proc:Process>
+        <proc:Process>
+          <proc:description>Conversion to PDS4 format</proc:description>
+          <proc:Software>
+            <proc:name>Planetary Data Reader</proc:name>
+            <proc:description>
+              Million Concepts' planetary data and metadata reading and conversion suite.
+            </proc:description>
+          </proc:Software>
+        </proc:Process>
+      </proc:Processing_Information>
+    </Discipline_Area>
+  </Observation_Area>
+  <Reference_List>
+    <Source_Product_External>
+      <external_source_product_identifier>CLEM1-L/E/Y-A/B/U/H/L/N-2-EDR-V1.0:{product_id}</external_source_product_identifier>
+      <reference_type>data_to_raw_source_product</reference_type>
+      <curating_facility>IMG</curating_facility>
+      <description>
+        PDS3 version of this product.
+      </description>
+    </Source_Product_External>
+  </Reference_List>
+  <File_Area_Observational>
+    <File>
+      <file_name>{pds4_root}.fits</file_name>
+      <creation_date_time>{product_creation_time}</creation_date_time>
+      <file_size unit="byte">{fits_file_size}</file_size>
+    </File>
+    <Header>
+      <name>FITS Image Header</name>
+      <offset unit="byte">0</offset>
+      <object_length unit="byte">2880</object_length>
+      <parsing_standard_id>FITS 3.0</parsing_standard_id>
+    </Header>
+    <Array_2D_Image>
+      <local_identifier>fits_image</local_identifier>
+      <offset unit="byte">2880</offset>
+      <axes>2</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <description>
+        Clementine {instrument_id} EDR Image
+      </description>
+      <Element_Array>
+        <data_type>UnsignedByte</data_type>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>{lines}</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>{line_samples}</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+    </Array_2D_Image>
+  </File_Area_Observational>
+  <File_Area_Observational>
+    <File>
+      <file_name>{pds4_root}_histogram.csv</file_name>
+      <file_size unit="byte">{histogram_file_size}</file_size>
+      <records>256</records>
+    </File>
+    <Table_Delimited>
+      <offset unit="byte">0</offset>
+      <parsing_standard_id>PDS DSV 1</parsing_standard_id>
+      <description>
+        Histogram of the uncompressed image, originally attached to the PDS3 EDR
+        product as a binary array. We have detached it and decoded it into an
+        ASCII table. No detailed description is given for these objects in
+        mission documentation, but they are presumably simply image histograms
+        in the usual sense, i.e., tables giving pixel frequencies at each of the
+        256 possible pixel values.
+      </description>
+      <records>256</records>
+      <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+      <field_delimiter>Comma</field_delimiter>
+      <Record_Delimited>
+        <fields>1</fields>
+        <groups>0</groups>
+        <Field_Delimited>
+          <name>Frequency</name>
+          <field_number>1</field_number>
+          <data_type>ASCII_NonNegative_Integer</data_type>
+          <description>
+            Number of pixels in the image with value equal to the index of this
+            row.
+          </description>
+        </Field_Delimited>
+      </Record_Delimited>
+    </Table_Delimited>
+  </File_Area_Observational>
+</Product_Observational>

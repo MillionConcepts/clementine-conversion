@@ -1,0 +1,1195 @@
+PDS_VERSION_ID      = PDS3                                                    
+RECORD_TYPE          = FIXED_LENGTH                                           
+RECORD_BYTES         = 80                                                     
+SPACECRAFT_NAME      = "CLEMENTINE 1"                                         
+TARGET_NAME          = {EARTH, MOON, SKY}                                     
+OBJECT               = TEXT                                                   
+ INTERCHANGE_FORMAT  = ASCII                                                  
+ PUBLICATION_DATE    = 1994-10-1                                              
+ NOTE                = "CLEMENTINE MISSION"                                   
+END_OBJECT           = TEXT                                                   
+END                                                                           
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                           Clementine Mission                                 
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                    Assembled from many sources by:                           
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                              Eric Eliason                                    
+                     Planetary Data System - Imaging Node                     
+                         Branch of Astrogeology                               
+                     United States Geological Survey                          
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                            October 1, 1994                                   
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                    TABLE OF CONTENTS                                         
+                                                                              
+1. INTRODUCTION                                                               
+2. CLEMENTINE EDR IMAGE ARCHIVE                                               
+3. MISSION TIME LINE                                                          
+4. THE SCIENTIFIC PAYLOAD                                                     
+5. LUNAR ORBITAL DYNAMICS                                                     
+6. INITIAL SCIENTIFIC RESULTS                                                 
+                                                                              
+APPENDIX I - Lunar Orbit Time Line                                            
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+1. Introduction                                                               
+                                                                              
+During the past decade, the Department of Defense and the Ballistic           
+Missile Defense Organization, BMDO (formally the Strategic Defense            
+Initiative, SDIO) of the US Department of Defense (DOD) have invested         
+heavily in space technology, focused on the development of lighter, more      
+cost effective components and systems for spacecraft.  In May of 1990,        
+the NASA Discovery Science Working Group endorsed a study of                  
+incorporation of SDIO developed technology into civilian scientific           
+missions. In September 1990, NASA Administrator Richard Truly formally        
+inquired of Deputy Secretary of Defense Donald Atwood as to the               
+possibility of utilizing the advanced, lightweight technologies being         
+developed by the Department of Defense in a joint space exploration           
+mission.  After a six month effort by NASA, DOD, and industry, it was         
+concluded that a mission to a near-Earth-asteroid was desirable and           
+feasible from both organizations' standpoint. In addition to the              
+scientific value of an asteroid flyby and of the potential benefit of         
+technology transfer between the agencies for NASA, there was clear            
+benefits to DOD. In early 1992 the mission was incorporated into the          
+Ballistic Missile Defense Organization Sensor Integration Program. The        
+mission was subsequently expanded by two months to include mapping of         
+the Moon to demonstrate spacecraft and sensor performance prior to the        
+demanding asteroid flyby mission. The interstage adapter of the               
+spacecraft, housing the solid rocket motor, was also designated as a          
+platform to remain in highly eccentric earth orbit as a radiation             
+experiment platform and additional sensor target.                             
+                                                                              
+The Clementine spacecraft was built at the US Naval Research Laboratory       
+in Washington, DC, and carried sensors, attitude control systems and          
+software designed and built by the Lawrence Livermore National                
+Laboratory (LLNL). The USAF supplied advanced lightweight composite           
+structures and the launch vehicle, a Titan II B refurbished ICBM.             
+Several other organizations were involved, especially NASA with               
+communications support, through the Jet Propulsion Laboratory's (JPL)         
+Deep Space network, and orbit determination and operations support from       
+both the Goddard Space Flight Center and JPL. Supporting these                
+laboratories were scores of industrial contractors, both large and            
+small.                                                                        
+                                                                              
+The spacecraft consists of an octagonal prism about 2 meters high. A          
+110-pound thruster for delta-V maneuvers is on one end of the prism and       
+a high-gain fixed dish antenna is on the other end. The spacecraft            
+propulsion system consists of a nonpropellant hydrazine system for            
+attitude control and a bipropellant nitrogen tetraoxide and monomenthyl       
+hydrazine system for the maneuvers in space. The bipropellant system had      
+a total capability of about 1.9 km/s with about 550 m/s required for          
+lunar insertion and 540 m/s for lunar departure. The power system             
+consists of a gimbaled, single axis, GaAs/Ge solar array providing a          
+total spacecraft power of 360 watts at 30 Vdc, with a specific power of       
+240 w/kg, based on lightweight construction. Two arrays of the rotating       
+solar panels protrude from opposite sides; by rolling the spacecraft and      
+rotating the panels, full solar illumination of the panels would be           
+achieved. The solar array was used to charge a 15 A-h, 47-w hr/kg, Nihau      
+common pressure vessel battery. The total mass of the spacecraft in the       
+launch configuration was 1690 kg, with most of the weight in the solid        
+rocket motor required for translunar insertion. The spacecraft dry mass       
+is about 227 kg, with a roughly equal mass for liquid fuel. This weight       
+was achieved by incorporating many of the previously discussed                
+lightweight technologies.                                                     
+                                                                              
+The main instrumentation on Clementine consists of four cameras, one          
+with a laser-ranging system. The cameras include an ultraviolet-visual        
+(UV-VIS) camera, a long-wave infrared (LWIR) camera, the laser-ranger         
+(LIDAR) high-resolution (HiRes) camera, and a near-infrared (NIR)             
+camera. The spacecraft also has two star tracker cameras, used mainly         
+for attitude determination, but they also serve as wide-field cameras         
+for various scientific and operational purposes. The sensor package has       
+a mass of 8 kg and represents the state-of-the-art at the initiation of       
+the Clementine program. The sensors are all located on one side, 90           
+degrees away from the solar panels. Clementine has 12 small attitude          
+control jets that were used to orient the spacecraft to point the             
+cameras to desired targets. The attitude control system includes the two      
+star tracker cameras and two lightweight inertial measurement units,          
+based on a ring laser gyro and an interferometric fiber optic gyro.           
+During initial deployment at low-earth-orbit, the full size spacecraft        
+was 3-axis stabilized. The spacecraft was 3-axis stabilized in lunar          
+orbit via reaction wheels, with a precision of 0.05 Deg. in control and       
+0.03 in knowledge.                                                            
+                                                                              
+The spacecraft data processing was performed by 3 computing systems. A        
+MIL-STD-1750A computer with a capacity of 1.7 million instructions per        
+second was used for save mode, attitude control system, and housekeeping      
+operations. A reduced instruction set computer (RISC) 32-bit processor        
+with 18 million instructions per second was used for image processing         
+and autonomous operations. The Clementine mission represents the first        
+long duration flight of a 32 bit RISC processor. Also incorporated is a       
+state-of-the-art image compression system provided by the French Space        
+Agency CNES. A data handling unit with its own microcontroller sequenced      
+the cameras, operated the image compression system, and directed the          
+data flow. During imaging operations, the data were stored in a 3 kg, 2       
+Gbit dynamic solid state data recorder and later transferred to the           
+ground stations using a 128 kb/s downlink. The spacecraft was commanded       
+from the ground using a 1 kb/s uplink from the NASA Deep Space Network        
+and DOD stations. Demonstration of autonomous navigation including            
+autonomous orbit determination was a major goal of the Clementine             
+mission. Autonomous operations were conducted in lunar orbit.                 
+                                                                              
+2. Clementine EDR Image Archive                                               
+                                                                              
+The Clementine EDR (Engineering Data Record) Image Archive will contain       
+approximately 100 CD-ROM volumes for distribution to the science              
+community. Each volume will contain approximately 3 lunar orbits but may      
+vary in the number of orbits depending on the size of each orbit. The         
+first volume in the series begins with orbit 32--the start of the lunar       
+mapping phase of the mission. The Low Earth orbit, and earth phasing          
+loop image data will be generated on the volumes at the end of the            
+volume series.                                                                
+                                                                              
+Additional documentation exists on the CD-ROM volume series that              
+describe the organization and content of the Clementine EDR Image             
+Archive. Please see the EDRSIS and ARCSIS documents located in the            
+<document> directory. The EDRSIS document provides a detailed                 
+description of the format of the image files that are contained in the        
+archive.  The ARCSIS document describes the organization of the               
+volumes.                                                                      
+                                                                              
+3. Mission Time Line                                                          
+                                                                              
+Clementine was launched on January 25, 1994 from Vandenburg Air Force         
+Base aboard a Titan IIG rocket. After two Earth flybys, lunar insertion       
+was achieved on February 19-th. Lunar mapping took place over                 
+approximately 2 months in two systematic mapping passes over the Moon         
+(See Lunar Orbital Dynamics section for more details on systematic            
+mapping and Appendix I showing a table of the Lunar orbit time lines.)        
+Table 1 provides a synopsis of the mission time line.                         
+                                                                              
+After successfully completing the Lunar mapping phase of the mission,         
+Clementine suffered an on-board malfunction at 9:39 AM EST, Saturday,         
+May 7, 1994. The result of the malfunction prevented Clementine from          
+performing the planned close flyby of the near-Earth asteroid Geographos      
+scheduled for August 1994. Preliminary analysis traced the cause of the       
+malfunction to the on-board computer which controls most of the               
+satellite's  systems including the attitude control thrusters. The            
+computer activated several thrusters during a 20 minute telemetry             
+interrupt with the ground station, thus depleting all the fuel in the         
+Attitude Control System (ACS) tanks. With the  depletion of the ACS           
+tanks, the spacecraft was left spinning at 80 revolutions per minute          
+with no remaining fuel left to despin the spacecraft.                         
+                                                                              
+           Table 1 - Mission Time line Summary                                
+                                                                              
+ 3/24/1992   -  Clementine Design Begins                                      
+ 1/25/1994   -  Spacecraft launched at Vandenburg Air Force Base              
+ 2/ 3/1994   -  Departure from low Earth orbit following an                   
+                eight day checkout period                                     
+ 2/19/1994   -  Following two phasing loop orbits, Clementine                 
+                injected into lunar orbit. Lunar orbit shake down             
+                period begins.                                                
+ 2/26/1994   -  Start of systematic mapping for first cycle.                  
+ 3/26/1994   -  First mapping cycle complete, start of second cycle           
+ 4/21/1994   -  Second mapping cycle complete, begin special                  
+                observations.                                                 
+ 5/ 5/1994   -  Leave Lunar Orbit                                             
+ 5/ 7/1994   -  Clementine satellite suffered on-board malfunction            
+                that prevents planned close fly-by of the near-Earth          
+                asteroid Geographos                                           
+ 8/31/1994   -  Planned Geographos Fly-by (not accomplished)                  
+                                                                              
+4. The Scientific Payload                                                     
+                                                                              
+UV-Visible Camera: The UV-Visible camera has a catadioptic telescope          
+using fused silica lenses focusing onto a metachrome-coated CCD imager.       
+Active wavelength response is limited on the short wavelength end by the      
+transmission of fused silica and the optical blur of the lens.                
+Wavelength response on the long end is limited by the response of the         
+CCD. Six spectral bands can be selected from a filter wheel which is          
+controlled through the same serial-addressable synchronous interface          
+(SASI).                                                                       
+                                                                              
+The Thomson focal plane array (FPA) used is a frame-transfer device,          
+accomplishing electronic shuttering by rapidly shifting the active pixel      
+area into the storage area, pausing for the (13-bit programmable)             
+integration time, then rapidly shifting the captured image into a             
+storage buffer from which the image is read out. Post-FPA electronics         
+allow three gain states followed by 5 bits of offset that span 248            
+counts in the analog regime to augment the basic 8-bit A/D conversion.        
+Gain is A/D digitization noise limited, so proper exposure is critical.       
+Working against the day side of the Moon as a target, typical                 
+integration times were as short as several milliseconds in the lowest         
+gain state (1000 electrons/bit) near sub-solar illumination points at         
+the brighter spectral bands, increasing to 40 msec near the polar             
+regions in the mid-gain setting for the weaker  415 and 1000 nm spectral      
+bands. The UV-Visible Performance specifications are shown in Table 2.        
+                                                                              
+Wide Field of View Star Trackers: The star tracker cameras have a             
+concentric optics design with a fiber optic field flattener to couple         
+the image surface to a CCD array. The CCD is kept cleared by                  
+continuously shifting lines and reading out pixels at the 5 MHz base          
+rate, which is approximately 100 microseconds per line. Integration is        
+accomplished by stopping this clearing process for the specific time          
+(13-bit programmable), then proceeding with a second line-shifting            
+operation into a readout buffer line and completing readout at 5 MHz.         
+Camera electronics are identical to those of the UV-VIS camera, with the      
+gain circuit resistors selected to be slightly more sensitive.                
+                                                                              
+The primary function of the star tracker cameras was to provide stellar       
+images that were processed against an onboard star catalog to find            
+pointing, thus establishing absolute angular references for navigation.       
+The scientific uses of the cameras were secondary. Only broad band            
+operation was available. Owing to the line-transfer electronic                
+shuttering, imaging was limited to dim targets such as the lunar surface      
+illuminated by earth shine. System noise is about 1.0 bits rms at the         
+highest sensitivity setting. The star tracker camera performance              
+specifications are provided in Table 3.                                       
+                                                                              
+High Resolution Imaging (HiRes) camera: The HiRes camera combines a           
+lightweight beryllium telescope with an image intensifier-coupled frame       
+transfer CCD imager. Image shuttering is accomplished through voltage         
+gating of the image intensifier. Maximum integration time is 733              
+milliseconds in  10.67 microsecond increments. Spectral response is           
+limited in the system by the S-2 photocathode between 0.4 and 0.8             
+microns. Five spectral bands can be selected from a filter wheel which        
+is controlled through the same SASI interface. A sixth filter position        
+is allocated to an opaque filter for the image intensifier's protection.      
+                                                                              
+The post-FPA electronics circuitry is identical to that used in the UV-       
+VIS camera. Images of the day side of the moon used intensifier gate          
+times with relatively low gain settings on the order of 1 millisecond.        
+Lifetime concerns about the photocathode and micro channel plates in the      
+intensifier unit drove operational settings to low exposures. This            
+resulted in photon shot noise significantly contributing to the overall       
+noise in the HiRes sensor. The HiRes performance specifications are           
+provided in Table 4.                                                          
+                                                                              
+Laser Rangefinder (LIDAR): The LIDAR unit shares the telescope of the         
+HiRes camera, splitting the 1064 nm return signal from the NdYag source       
+off to an avalanche photodiode (APD) detector with dichroic filter. The       
+optics are non-imaging, providing an exit pupil through simple relay          
+optics at the APD. The APD electronics includes a temperature                 
+compensation feature for the APD bias voltage and programmable                
+thresholding of the output signal. The APD current is amplified and           
+inverted to a voltage by a transimpedance amplifier with a gain of 230X,      
+a low frequency cutoff of 3 MHz, and a high frequency cutoff of 23 MHz.       
+The APD current is amplified, then discriminated for changes (increase)       
+through 14 MHz discriminator. Voltage changes exceeding the programmed        
+threshold are flagged as returns.                                             
+                                                                              
+Range value is determined by the clock cycles since a laser output            
+sampled start pulse is received. The clock counter has only 14 bits           
+owing to the hardware availability limitations. In order to allow             
+returns up to the 640 km maximum range required in the lunar mission,         
+returns from the discriminator are binned 4 to a clock count, turning         
+the 23 MHz response into a 40 meter height bin. Internal memory in the        
+LIDAR unit saves up to 6 "returns" per laser firing, with up to 4 saved       
+between programmable search range minimum/maximum values. Threshold is        
+set for the best compromise between missed detection and false alarms.        
+The LIDAR components are summarized in Table 5.                               
+                                                                              
+Near Infrared Camera (NIR): The NIR camera uses a catadioptric lens with      
+a 256x256 indium antimonide (InSb) FPA mechanically cooled to cryogenic       
+temperature.  The FPA operated at 70 plus-or-minus 0.5 K at the Moon and      
+showed excellent stability over the more than 500 hours of operation in       
+space.  The lens design features all ZnSe refractive elements with a          
+relay to provide an external pupil for 100% efficient cold shielding.         
+This lens design was chosen for image quality and focus stability.            
+Wavelength range was constrained by the optics and the InSb response to       
+somewhat less that 1.0 to 5.5 microns. Six wavebands were selected by         
+the NASA advisory committee, all falling well inside this range.              
+                                                                              
+Camera electronic programmable variables allow 4 integration times, 5         
+bits of gain, and 8 bits of offset. Gain states are spaced approximately      
+evenly from 0.5 to 36 factors of voltage multiplication. Offset is            
+subtracted before gain is applied with 0 V to full well range that can        
+be set in 1/255 full well increments. The NIR camera performance              
+specifications are shown in Table 6.                                          
+                                                                              
+Longwave Infrared Camera (LWIR): The LWIR camera uses a catadioptric          
+lens with a 128 x 128 mercury cadmium telluride (HCT) FPA. The FPA was        
+mechanically cooled to cryogenic temperatures during operation with a         
+temperature set point goal of 65 K. The optics design incorporates an         
+internal relay with 100% cold shield efficiency. Wavelength ranges was        
+controlled by the cold filter to 8.0 to 9.5 microns.                          
+                                                                              
+Camera electronic design is virtually identical to the NIR camera, with       
+a minor alteration in line readout to compensate for the difference in        
+column count between the two arrays (256 for the NIR, 128 for the LWIR).      
+The NIR and LWIR cameras also share a common cryocooler and dewar             
+design, with minor modifications made to accommodate cold shield and          
+cold filter differences. The LWIR Performance Specifications are shown        
+in Table 7.                                                                   
+                                                                              
+                                                                              
+Table 2  UV/Visible Performance Specifications                                
+                                                                              
+                                                                              
+Focal Plane Array:                                                            
+Type              Si Charge Coupled Device                                    
+                  Thomson TH7863-CRU-UV                                       
+Pixel format      288x384                                                     
+Pixel size        23x23 microns                                               
+Readout rate      4MHz                                                        
+                                                                              
+Optics:                                                                       
+Clear aperture    46nm                                                        
+Speed             F/1.96                                                      
+                                                                              
+Imaging:                                                                      
+Wavelength        0.3 to 1.1 microns                                          
+Field of view     4.2 deg. x 5.6 deg.                                         
+Pixel IFOV        255 microradians                                            
+Point spread      1.1 to 1.5 pixels                                           
+Filters           415nm cw (plus-or-minus 20 nm bw)                           
+                  750nm (plus-or-minus 5)                                     
+                  900nm (plus-or-minus 10)                                    
+                  950nm (plus-or-minus  15)                                   
+                  1000nm (plus-or-minus 15)                                   
+                  400 to 950 broad band                                       
+                                                                              
+Camera Electronics:                                                           
+A/D resolution    8 bits                                                      
+Frame rate        10 Hz                                                       
+Readout time      27.4 ms                                                     
+Integration time  0.2-733 ms                                                  
+Digitization gain 150,350,1000 electrons/count                                
+Offset control    248 gray levels                                             
+Power             4.5 W                                                       
+                                                                              
+Mechanical:                                                                   
+Mass              410 grams                                                   
+Envelope          15.5cm x 11.7 cm x 10.4 cm                                  
+                                                                              
+Common Module Filter Wheel System:                                            
+Type              6 position, 90 deg. stepper motor driven,                   
+                  Hall effect position sensors                                
+Step and Settle time    < 250ms                                               
+Position repeatability  < 10mr                                                
+Power             0.15 W quiescent, 11.0 W stepping                           
+                                                                              
+                                                                              
+                                                                              
+Table 3  Star Tracker Performance Specifications                              
+                                                                              
+                                                                              
+Focal Plane Array:                                                            
+Type              Si Charge Coupled Device                                    
+                  Thomson TH7863                                              
+Pixel format      576x384                                                     
+Pixel size        23x23 microns                                               
+Readout rate      5MHz                                                        
+                                                                              
+Optics:                                                                       
+Clear aperture    14nm                                                        
+Speed             F/1.3                                                       
+                                                                              
+Imaging:                                                                      
+Wavelength        0.5 to 1.1 microns                                          
+Field of view     43 deg. x 28 deg.                                           
+Pixel IFOV        1.3 microradians                                            
+Point spread      2 pixels                                                    
+                                                                              
+Camera Electronics:                                                           
+A/D resolution    8 bits                                                      
+Readout time      54.8 ms                                                     
+Integration time  0.2-733 ms                                                  
+Digitization gain 75, 150, 350 electrons/count                                
+Offset control    248 gray levels                                             
+Power             4.5 W                                                       
+                                                                              
+Mechanical:                                                                   
+Mass              290 grams                                                   
+Envelope          11.7 cm x 11.7 cm x 13.2 cm                                 
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+Table 4  HiRes Imaging Receiver Performance Specifications                    
+                                                                              
+Focal Plane Array:                                                            
+See UV/Visible specifications in Table 1, except arrays are not UV            
+enhanced.                                                                     
+                                                                              
+Optics:                                                                       
+Clear aperture    131 nm                                                      
+Speed             F/9.5                                                       
+                                                                              
+Imaging:                                                                      
+Wavelength        0.4 to 0.8 microns                                          
+Field of view     0.4 deg. x 0.3 deg.                                         
+Pixel IFOV        18 microradians                                             
+Point spread      4 pixels                                                    
+Filters           415 nm cw (plus-or-minus 20 nm bw)                          
+                  560 nm cw (plus-or-minus 5)                                 
+                  650 nm cw (plus-or-minus 5)                                 
+                  750 nm cw (plus-or-minus 10)                                
+                  400 to 800 nm broad band                                    
+                                                                              
+Image intensifier:                                                            
+Image intensifier module      General Atomics 0131-Z12-2-009                  
+Useful photocathode diameter  12 mm                                           
+Luminous gain     1000 fL/fC                                                  
+Limiting resolution           40 lp/mm                                        
+Gain control      8 bits                                                      
+                                                                              
+                                                                              
+                                                                              
+Camera Electronics:                                                           
+See UV/Visible specifications in Table 1                                      
+Power             9.5 W                                                       
+                                                                              
+Mechanical:                                                                   
+Mass              1120 grams                                                  
+Envelope          17.0 cm x 18.1 cm x 36.4 cm                                 
+                                                                              
+                                                                              
+                                                                              
+Table 5 LIDAR Components                                                      
+                                                                              
+Detector:                                                                     
+Type              Si APD C30954E, 0.4 to 1.1 micron                           
+Pixel format      single APD                                                  
+Pixel size        0.5 mm2                                                     
+Pixel FOV         1.0 mrad diameter                                           
+APD gain          100 X nominal                                               
+Transimpedance amplifier      230 X gain; 3 MHz to 23 MHz response            
+                                                                              
+Optics:                                                                       
+Shared path wit HiRes Camera. Dichroic beamsplitter. Exit pupil matched       
+to APD. Mass and envelope included in HiRes description.                      
+                                                                              
+Camera Electronics:                                                           
+Range Resolution  40 meter                                                    
+Detection         signal derivative                                           
+Detection criteria       programmable threshold (8 bits)                      
+                                                                              
+Laser Transmitter:                                                            
+Wavelengths       532 nm/1064 nm                                              
+Pulse energy      171 mJ @ 1064, 9 mJ @ 532 nm                                
+Pulse width       < 10ns                                                      
+Beam divergence   < 500 mrad @ 064 nm, 4 mrad @ 532 nm                        
+Shot profile      Continuous @ 1 Hz, 400 shots @ 8 Hz                         
+                                                                              
+Laser Transmitter Optics:                                                     
+Type              5X Galilean-type telescope                                  
+Clear Aperture    38 mm exit diameter                                         
+Start pulse detector    Analog Modules, Inc. Model 754                        
+Pockels cell driver     Analog Modules, Inc. Model 824                        
+Laser diode heater      Minco Kapton film resistance type; 16C to 18C         
+Power             6.8 W at 1 Hz; 2.6 W quiescent                              
+                                                                              
+Laser Transmitter Mechanical:                                                 
+Mass              635 grams laser head; 615 grams power supply                
+Envelope          13.3 cm x 15.2 cm x 3.9 cm high (power supply)              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+Table 6  NIR Performance Specifications                                       
+                                                                              
+                                                                              
+Focal Plane Array:                                                            
+Type              Amber PV InSb                                               
+Pixel format      256x256                                                     
+Pixel size        38x38 microns                                               
+Non-operable pixels     < 0.5%                                                
+FPA operating temp.     70 K                                                  
+FPA well capacity       11.7 million electrons                                
+                                                                              
+Optics:                                                                       
+Clear aperture          29nm                                                  
+Effective focal length  96 mm                                                 
+Cold stop               F/3.33, 6.0 mm diameter                               
+Cold shield efficiency  100%                                                  
+                                                                              
+                                                                              
+Imaging:                                                                      
+Field of view     5.6 deg. x 5.6 deg.                                         
+Pixel IFOV        400 x 400 microrad                                          
+Point spread      > 50% energy in 30 micrometer slit                          
+Filters           1100 nm (plus-or-minus 30 nm)                               
+                  1250 nm (plus-or-minus 30 nm)                               
+                  1500 nm (plus-or-minus 30 nm)                               
+                  2000 nm (plus-or-minus 30 nm)                               
+                  2600 nm (plus-or-minus 30 nm)                               
+                  2690 nm (plus-or-minus 60 nm)                               
+                                                                              
+Camera Electronics:                                                           
+A/D resolution    8 bits                                                      
+Frame rate        7.1 Hz (single frame mode)                                  
+Integration times 11, 33, 57, and 95 ms                                       
+Digitization gain 0.5 to 36 X voltage multiplication                          
+Offset control    8 bits                                                      
+Power             13.0 W                                                      
+                                                                              
+Cryocooler:                                                                   
+Type              Ricor K506B integral Stirling with                          
+                  H-10 FPA temperature closed-loop                            
+                  control electronics                                         
+Avg. power        11.0 W steady-state                                         
+                                                                              
+                                                                              
+Mechanical:                                                                   
+Mass              1920 grams                                                  
+Envelope          10.4 cm x 11.5 cm x 36.5 cm long                            
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+Table 7  LWIR Performance Specifications                                      
+                                                                              
+                                                                              
+Focal Plane Array:                                                            
+Type              Amber PV HgCdTe                                             
+Pixel format      128x128                                                     
+Pixel size        50x50 microns                                               
+Non-operable pixels     < 5%                                                  
+FPA operating temp.     65 K nominal                                          
+FPA well capacity       42 million electrons                                  
+                                                                              
+Optics:                                                                       
+Equivalent clear aperture     29nm                                            
+Effective focal length        96 mm                                           
+Cold stop               F/2.67, 7.47 mm diameter                              
+Cold shield efficiency  100%                                                  
+                                                                              
+                                                                              
+Imaging:                                                                      
+Field of view     1 deg. x 1 deg.                                             
+Pixel IFOV        143 x 143 microrad                                          
+Point spread      > 60% energy in 79 micrometer slit                          
+                                                                              
+Camera Electronics:                                                           
+A/D resolution    8 bits                                                      
+Frame rate        52.9 Hz (single frame mode)                                 
+Pixel rate        500kHz                                                      
+Integration times 0.115, 0.92, 2.30, and 4.60 ms                              
+Digitization gain 0.5 to 36 X voltage multiplication                          
+Offset control    8 bits                                                      
+Power             13.0 W                                                      
+                                                                              
+Cryocooler:                                                                   
+See NIR cryocooler specifications in Table 5.                                 
+                                                                              
+                                                                              
+Mechanical:                                                                   
+Mass              2100 grams                                                  
+Envelope          14.7 cm diameter x 36.1 cm long                             
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+Preflight Calibration: Extensive pre-flight calibration data were             
+acquired using an automated calibration facility at LLNL. In a typical        
+calibration configuration, a sensor was mounted inside an environmental       
+chamber whose temperature was set from -20 to 20 deg. C which were the        
+expected operating temperatures for the mission. Depending on the             
+measurement types, the sensors saw either a flat diffused light source        
+or an off-axis collimator with various pinholes as the point source. A        
+custom board controlled the sensor parameters from the host computers;        
+the video signal was acquired using a commercial image processor. During      
+data acquisition many thermal parameters such as FPA and chamber              
+temperatures were monitored  and recorded as part of the image                
+structure. All calibration processes were fully automated enabling rapid      
+data acquisition and minimization of operator error. Pre-flight               
+calibration attempted to cover similar light levels expected from the         
+lunar surface and spanning the same camera settings required for the          
+lunar mapping phase.                                                          
+                                                                              
+The pre-flight calibration measurements included radiometric                  
+sensitivity; FPA uniformity; gain and offset scale factors;                   
+temporal/spatial noise; dark noise dependence on FPA temperatures,            
+integration times or input voltage levels, spectral response of FPA;          
+optical distortion map; point spread function; electronic warm-up time        
+and cryocooler cool down time. For the thermally sensitive sensors such       
+as LWIR camera, the noise measurement was performed using a vacuum            
+chamber to simulate the space thermal environment.                            
+                                                                              
+Many pre-flight calibration coefficients were applied to lunar data           
+showing reasonable agreement with expected performance. In-flight             
+calibration data will allow minor corrections for vacuum flight               
+condition and sensor degradation over mission lifetime to be added to         
+the pre-flight calibration results. The final calibration is expected to      
+be better than 5%.                                                            
+                                                                              
+Data Compression: Data compression was done onboard using the CNES            
+compression chip. The processing was performed on a completed, framed         
+image prior to storage on the solid state data recorder (SSDR) when the       
+appropriate compression flag is set.                                          
+                                                                              
+The compression chip developed by MATRA under CNES specifications is          
+used in two modes, which could be selected via a software uplink              
+command. The first mode optimized rms error for a nominal compression.        
+The second (JPEG) provided visual optimization at a fixed compression         
+rate. In the first mode, blocks of 8x8 pixel 8-bit data are transformed       
+to a best fit cosine series expansion in the orthogonal row and column        
+directions. This algorithm tends to preserve high frequency information       
+with less data loss than does JPEG at the same compression ratio for the      
+lunar data. Total signal from the 8x8 block is preserved exactly. The         
+nominal amount of compression was set by limiting the scene error             
+induced by compression to a fraction of the camera's temporal noises.         
+Analysis of lunar images during the first part of the mission showed          
+that the quantization matrix used by the chip was optimum for the             
+imaging cameras. The HiRes camera, however, was operated in JPEG mode.        
+The high frequency information in the HiRes scenes was spurious (it was       
+caused by gain non-uniformity of the intensifier tube); eliminating high      
+frequency content allowed higher compression without harming the              
+information content of the scenes. The average compression rate for all       
+images obtained during the mission was 5.5.                                   
+                                                                              
+5. Lunar Orbital Dynamics                                                     
+                                                                              
+Based on the characteristics of the baseline sensor complement, the           
+mapping of 100% of the lunar surface was done in two lunar days (two          
+Earth months).  During the nominal two month mapping mission, the             
+required image overlap for the UV/VIS and NIR cameras was ~15% in the         
+down track and ~10% in the cross track directions.  This required that        
+the periselene of the lunar orbit be maintained at an altitude of 425         
+plus-or-minus 25 km.  In order to image 100% percent of the moon's            
+surface during the two months, the spacecraft was required to be in a         
+polar orbit.  This requirement was satisfied with the inclination of the      
+orbit at 90 degrees plus-or-minus 1 degree with reference to the lunar        
+equator.  To provide the necessary separation for the alternating             
+imaging strips to cover the entire surface of the moon during the two         
+months, the orbital period was approximately 5 hours.  During this            
+orbital period the moon rotated approximately 2.7 degrees beneath the         
+spacecraft.  The orbit also was a sufficiently long period to allow the       
+transmission to Earth of data collected during the imaging phase of each      
+orbit.                                                                        
+                                                                              
+During the lunar mapping phase of the mission, there were four separate       
+observational periods. The first, orbits 1-31, was a shakedown and            
+testing period where the spacecraft observation sequences were tested         
+and refined. Observations of special targets, such as Apollo landing          
+sites, were additionally acquired during this period. The second period,      
+orbits 32-168, was the first month's systematic mapping with periselene       
+in the southern hemisphere. The third period, orbits 169-297, was the         
+second month's systematic mapping with periselene at the northern             
+hemisphere. In the fourth period, orbits 298-348, periselene remained in      
+the northern hemisphere. In this period, observations were made to cover      
+gaps in coverage, acquire observations of special targets, acquire            
+stereo observations over Orientale Basin, and obtain calibration data.        
+Clementine left lunar orbit soon after orbit 348.                             
+                                                                              
+The best data for lunar mineral mapping is obtained if the  solar phase       
+angle is less than 30 degrees.  The solar phase angle is defined as the       
+angle between the vector to the Sun and the vector to the spacecraft          
+from a point on the Moon's surface.  To maximize the time period in           
+which the solar phase angle is within 30 degrees, the plane of the lunar      
+orbit should contain the Moon-Sun line half way through the two-month         
+lunar mapping period.  Therefore, insertion into the lunar orbit was          
+selected so that, as the Moon-Sun line changes with Earth's motion about      
+the Sun, the Moon-Sun line will initially close on the orbital plane,         
+and then lie in the orbital plane half-way through the mapping mission.       
+The angle between the Moon-Sun line and the orbital plane was close for       
+approximately five weeks before becoming zero. Table 8 contains a list        
+of Clementine's orbital parameters                                            
+                                                                              
+            Table 8 Clementine Orbital Parameters                             
+                                                                              
+Orbital Period:         4.970 hr < P < 5.003 hr                               
+Radius of Periselene:   2138 km < radius < 2188 km                            
+Eccentricity:           0.35821 < e < 0.37567                                 
+Right Ascension:        -3 deg < Omega <+3 deg (J2000)                        
+Inclination:            89 deg < i < 91 deg                                   
+Periselene:            -28.4 deg < w < -27.9 deg (1st month)                  
+                        29.6 deg < w <  29.2 deg (2nd month)                  
+                                                                              
+Orbit determination and monitoring was done on a continuous basis             
+throughout the lunar pre-mapping phase.  The gravitational potential          
+field of the moon has not been fully mapped, and large lunar mass             
+concentrations may have had a significant perturbation effect on the          
+orbit.  Maintenance burns were required to maintain the orbit within the      
+required envelope.  The number of these burns was minimized to avoid          
+unnecessary disruptions to the systematic mapping.  To this end, any          
+required periapsis burns were performed away from periselene in the           
+direction of the near pole.                                                   
+                                                                              
+Attitude measurement accuracy was necessary to determine spacecraft           
+pointing to within 0.03 degree, 0.5 milliradians. This accuracy was           
+achieved in real-time, in darkness or sunlight throughout the lunar           
+mapping phase.  The spacecraft was three-axis stabilized and capable of       
+autonomous, open loop inertial pointing with an accuracy of 0.05 degree,      
+0.87 milliradian, or better.  This accuracy was required to support use       
+of the high resolution camera because of its narrow field of view for         
+imaging selected target sites during the lunar mapping mission.               
+                                                                              
+The spacecraft was able to execute controlled, relative pointing motion       
+about a pointing vector for scanning across targets.  The relative            
+pointing was capable of controlled motion of 75 microradians.                 
+                                                                              
+During lunar imaging, the spacecraft had to maintain a NADIR pointing         
+attitude.  This required a greater than 180 degree rotation over the          
+approximately 1.5-2.0 hour period during each lunar orbit.  The               
+spacecraft was also required to maintain an angular bias about the X-         
+axis from NADIR to permit an imaging groundtrack parallel but offset          
+from the NADIR groundtrack.                                                   
+                                                                              
+The spacecraft was required to point to the Earth center, and to a            
+specified tracking station site on the Earth, for the dumping of data         
+using the high-gain directional antenna.                                      
+                                                                              
+To help accomplish attitude determination, the spacecraft had two             
+inertial measurement units (IMU) and two star trackers.  Because of a         
+solar exclusion angle constraint, one of the two star trackers had to be      
+covered during lunar orbit.  To meet the aforementioned pointing              
+requirements, during lunar orbit a star tracker image was processed and       
+the spacecraft attitude knowledge was updated at 10 second intervals or       
+less.                                                                         
+                                                                              
+6. Initial Scientific Results                                                 
+                                                                              
+Over the course of 71 days in lunar orbit, Clementine systematically          
+mapped the 38 million square kilometers of the Moon in eleven colors in       
+the visible and near infrared parts of the spectrum (nearly 1,000,000         
+images). In addition, the spacecraft took 620,000 high resolution and         
+about 320,000 mid-infrared thermal images, mapped the topography of the       
+moon with a laser ranging experiment, improved our knowledge of the           
+surface gravity field of the Moon through radio tracking, and carried a       
+charged particle telescope to characterize the solar and magnetospheric       
+energetic particle environment. All sensors on the spacecraft met or          
+exceeded expectations of their performance. The first global color view       
+of the Moon was acquired, major compositional provinces were identified,      
+and geology and composition details were mapped.                              
+                                                                              
+The images from Clementine constitute the first color global digital          
+data set of the Moon. The NASA Science Team advised the project on the        
+selection of color filters for the two principal mapping cameras: the         
+UV/Visible camera and the NIR camera. The color of the Moon in the            
+visible to near-infrared part of the spectrum is sensitive to variations      
+in both the composition of the surface material and the amount of time        
+material has been exposed to space. The Clementine filters were selected      
+to characterize the broad lunar continuum and to sample parts of the          
+spectrum that are known to contain absorption bands diagnostic of iron-       
+bearing minerals and plagioclase feldspar, the dominant mineral               
+constituents of the lunar crust. By combining information obtained            
+through several filters, multispectral image data are being used to map       
+the distribution of rock and soil types on the Moon.                          
+                                                                              
+Clementine was successful in systematically mapping the Moon in these 11      
+colors at an average surface resolution of about 200 meters per pixel.        
+The initial examination of the data attests to its excellent quality.         
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+APPENDIX I - Lunar Orbit Time Line                                            
+                                                                              
+The table shown below provides a timeline for each Clementine lunar           
+orbit. The table shows the orbit number (ORB), Day of Year (DOY), Date,       
+UTC, Longitude of orbit at the equator (LONG), and altitude at periapsis      
+(ALT).                                                                        
+                                                                              
+                                                                              
+                                                                              
+ ORB DOY   DATE      UTC    LONG   ALT                                        
+                                                                              
+  1   50 02/19/94  20:25:0 103.5  401.8                                       
+  2   51 02/20/94  04:19:2 99.2   402.2                                       
+  3   51 02/20/94  12:13:3 94.8   402.3                                       
+  4   51 02/20/94  20:04:4 90.5   401.6                                       
+  5   52 02/21/94  03:56:0 86.2   401.5                                       
+  6   52 02/21/94  11:47:1 81.9   401.5                                       
+  7   52 02/21/94  16:46:0 79.2   396.6                                       
+  8   52 02/21/94  21:44:5 76.4   396.6                                       
+  9   53 02/22/94  02:43:4 73.7   396.6                                       
+ 10   53 02/22/94  07:42:4 71.0   396.6                                       
+ 11   53 02/22/94  12:41:3 68.2   382.5                                       
+ 12   53 02/22/94  17:39:5 65.5   382.6                                       
+ 13   53 02/22/94  22:38:2 62.8   382.7                                       
+ 14   54 02/23/94  03:36:4 60.0   382.9                                       
+ 15   54 02/23/94  08:35:0 57.3   383.2                                       
+ 16   54 02/23/94  13:33:3 54.6   383.6                                       
+ 17   54 02/23/94  18:31:5 51.8   384.0                                       
+ 18   54 02/23/94  23:30:2 49.1   384.5                                       
+ 19   55 02/24/94  04:28:4 46.3   385.1                                       
+ 20   55 02/24/94  09:27:0 43.6   385.8                                       
+ 21   55 02/24/94  14:25:3 40.9   386.5                                       
+ 22   55 02/24/94  19:23:5 38.1   387.4                                       
+ 23   56 02/25/94  00:22:2 35.4   388.4                                       
+ 24   56 02/25/94  05:20:4 32.7   389.5                                       
+ 25   56 02/25/94  10:19:1 29.9   390.7                                       
+ 26   56 02/25/94  15:17:3 27.2   391.9                                       
+ 27   56 02/25/94  20:15:5 24.5   393.3                                       
+ 28   57 02/26/94  01:14:2 21.7   394.8                                       
+ 29   57 02/26/94  06:12:4 19.0   396.3                                       
+ 30   57 02/26/94  11:11:1 16.3   398.0                                       
+ 31   57 02/26/94  16:09:3 13.5   399.7                                       
+                                                                              
+START OF SYSTEMATIC MAPPING                                                   
+ 32   57 02/26/94  21:08:0 10.8   401.5                                       
+ 33   58 02/27/94  02:06:2  8.1   403.2                                       
+ 34   58 02/27/94  07:04:5  5.3   405.1                                       
+ 35   58 02/27/94  12:03:1  2.6   406.9                                       
+ 36   58 02/27/94  17:01:4 359.9  408.7                                       
+ 37   58 02/27/94  22:00:0 357.2  410.5                                       
+ 38   59 02/28/94  02:58:3 354.4  412.3                                       
+ 39   59 02/28/94  07:57:0 351.7  414.1                                       
+ 40   59 02/28/94  12:55:2 349.0  415.8                                       
+ 41   59 02/28/94  17:53:5 346.2  417.5                                       
+ 42   59 02/28/94  22:52:1 343.5  419.2                                       
+ 43   60 03/01/94  03:50:4 340.8  420.8                                       
+ 44   60 03/01/94  08:49:0 338.1  422.3                                       
+ 45   60 03/01/94  13:47:3 335.3  423.7                                       
+ 46   60 03/01/94  18:45:5 332.6  425.0                                       
+ 47   60 03/01/94  23:44:2 329.9  426.3                                       
+ 48   61 03/02/94  04:42:4 327.2  427.4                                       
+ 49   61 03/02/94  09:41:1 324.4  428.4                                       
+ 50   61 03/02/94  14:39:3 321.7  429.4                                       
+ 51   61 03/02/94  19:37:5 319.0  430.2                                       
+ 52   62 03/03/94  00:36:2 316.2  430.9                                       
+ 53   62 03/03/94  05:34:4 313.5  431.5                                       
+ 54   62 03/03/94  10:33:1 310.8  432.0                                       
+ 55   62 03/03/94  15:31:3 308.1  432.4                                       
+ 56   62 03/03/94  20:30:0 305.3  432.8                                       
+ 57   63 03/04/94  01:28:2 302.6  433.0                                       
+ 58   63 03/04/94  06:26:4 299.9  433.2                                       
+ 59   63 03/04/94  11:25:1 297.2  433.3                                       
+ 60   63 03/04/94  16:23:3 294.4  433.4                                       
+ 61   63 03/04/94  21:21:5 291.7  433.4                                       
+ 62   64 03/05/94  02:20:2 289.0  433.4                                       
+ 63   64 03/05/94  07:18:4 286.2  433.3                                       
+ 64   64 03/05/94  12:17:0 283.5  433.3                                       
+ 65   64 03/05/94  17:15:3 280.8  433.2                                       
+ 66   64 03/05/94  22:13:5 278.1  433.1                                       
+ 67   65 03/06/94  03:12:1 275.3  433.0                                       
+ 68   65 03/06/94  08:10:4 272.6  432.9                                       
+ 69   65 03/06/94  13:09:0 269.9  432.8                                       
+ 70   65 03/06/94  18:07:2 267.2  432.8                                       
+ 71   65 03/06/94  23:05:5 264.4  432.7                                       
+ 72   66 03/07/94  04:04:1 261.7  432.7                                       
+ 73   66 03/07/94  09:02:4 259.0  432.8                                       
+ 74   66 03/07/94  14:01:0 256.2  432.9                                       
+ 75   66 03/07/94  18:59:2 253.5  433.0                                       
+ 76   66 03/07/94  23:57:5 250.8  433.2                                       
+ 77   67 03/08/94  04:56:1 248.1  433.4                                       
+ 78   67 03/08/94  09:54:4 245.3  433.8                                       
+ 79   67 03/08/94  14:53:0 242.6  434.1                                       
+ 80   67 03/08/94  19:51:3 239.9  434.6                                       
+ 81   68 03/09/94  00:49:5 237.2  435.1                                       
+ 82   68 03/09/94  05:48:1 234.4  435.6                                       
+ 83   68 03/09/94  10:46:4 231.7  436.3                                       
+ 84   68 03/09/94  15:45:0 229.0  437.0                                       
+ 85   68 03/09/94  20:43:3 226.3  437.7                                       
+ 86   69 03/10/94  01:41:5 223.5  438.6                                       
+ 87   69 03/10/94  06:40:2 220.8  439.5                                       
+ 88   69 03/10/94  11:38:4 218.1  440.4                                       
+ 89   69 03/10/94  16:37:1 215.3  441.5                                       
+ 90   69 03/10/94  21:35:3 212.6  442.6                                       
+ 91   70 03/11/94  02:34:0 209.9  443.7                                       
+ 92   70 03/11/94  07:32:2 207.1  444.9                                       
+ 93   70 03/11/94  12:30:5 204.4  446.1                                       
+ 94   70 03/11/94  17:32:1 201.7  401.4                                       
+ 95   70 03/11/94  22:30:3 198.9  402.7                                       
+ 96   71 03/12/94  03:29:0 196.2  404.0                                       
+ 97   71 03/12/94  08:27:2 193.5  405.3                                       
+ 98   71 03/12/94  13:25:4 190.7  406.7                                       
+ 99   71 03/12/94  18:24:0 188.0  408.0                                       
+ 100  71 03/12/94  23:22:3 185.3  409.3                                       
+ 101  72 03/13/94  04:20:5 182.5  410.6                                       
+ 102  72 03/13/94  09:19:1 179.8  411.8                                       
+ 103  72 03/13/94  14:17:4 177.1  413.1                                       
+ 104  72 03/13/94  19:16:0 174.3  414.3                                       
+ 105  73 03/14/94  00:14:2 171.6  415.5                                       
+ 106  73 03/14/94  05:12:5 168.9  416.7                                       
+ 107  73 03/14/94  10:11:1 166.1  417.8                                       
+ 108  73 03/14/94  15:09:3 163.4  418.9                                       
+ 109  73 03/14/94  20:07:5 160.7  420.0                                       
+ 110  74 03/15/94  01:06:2 157.9  421.0                                       
+ 111  74 03/15/94  06:04:4 155.2  422.0                                       
+ 112  74 03/15/94  11:03:0 152.5  422.9                                       
+ 113  74 03/15/94  16:01:3 149.7  423.8                                       
+ 114  74 03/15/94  20:59:5 147.0  424.7                                       
+ 115  75 03/16/94  01:58:1 144.3  425.5                                       
+ 116  75 03/16/94  06:56:3 141.6  426.3                                       
+ 117  75 03/16/94  11:55:0 138.8  427.0                                       
+ 118  75 03/16/94  16:53:2 136.1  427.7                                       
+ 119  75 03/16/94  21:51:4 133.4  428.3                                       
+ 120  76 03/17/94  02:50:0 130.6  428.9                                       
+ 121  76 03/17/94  07:48:2 127.9  429.4                                       
+ 122  76 03/17/94  12:46:5 125.2  429.8                                       
+ 123  76 03/17/94  17:45:1 122.5  430.2                                       
+ 124  76 03/17/94  22:43:3 119.7  430.6                                       
+ 125  77 03/18/94  03:41:5 117.0  430.9                                       
+ 126  77 03/18/94  08:40:1 114.3  431.1                                       
+ 127  77 03/18/94  13:38:4 111.5  431.3                                       
+ 128  77 03/18/94  18:37:0 108.8  431.4                                       
+ 129  77 03/18/94  23:35:2 106.1  431.5                                       
+ 130  78 03/19/94  04:33:4 103.4  431.6                                       
+ 131  78 03/19/94  09:32:0 100.6  431.6                                       
+ 132  78 03/19/94  14:30:3 97.9   431.6                                       
+ 133  78 03/19/94  19:28:5 95.2   431.5                                       
+ 134  79 03/20/94  00:27:1 92.4   431.5                                       
+ 135  79 03/20/94  05:25:3 89.7   431.4                                       
+ 136  79 03/20/94  10:23:5 87.0   431.3                                       
+ 137  79 03/20/94  15:22:1 84.3   431.3                                       
+ 138  79 03/20/94  20:20:3 81.5   431.2                                       
+ 139  80 03/21/94  01:19:0 78.8   431.1                                       
+ 140  80 03/21/94  06:17:2 76.1   431.1                                       
+ 141  80 03/21/94  11:15:4 73.3   431.0                                       
+ 142  80 03/21/94  16:14:0 70.6   431.0                                       
+ 143  80 03/21/94  21:12:2 67.9   431.1                                       
+ 144  81 03/22/94  02:10:4 65.1   431.2                                       
+ 145  81 03/22/94  07:09:0 62.4   431.3                                       
+ 146  81 03/22/94  12:07:3 59.7   431.5                                       
+ 147  81 03/22/94  17:05:5 56.9   431.7                                       
+ 148  81 03/22/94  22:04:1 54.2   432.0                                       
+ 149  82 03/23/94  03:02:3 51.5   432.4                                       
+ 150  82 03/23/94  08:00:5 48.7   432.8                                       
+ 151  82 03/23/94  12:59:1 46.0   433.4                                       
+ 152  82 03/23/94  17:57:3 43.3   434.0                                       
+ 153  82 03/23/94  22:56:0 40.5   434.7                                       
+ 154  83 03/24/94  03:54:2 37.8   435.5                                       
+ 155  83 03/24/94  08:52:4 35.1   436.4                                       
+ 156  83 03/24/94  13:51:0 32.3   437.4                                       
+ 157  83 03/24/94  18:49:2 29.6   438.5                                       
+ 158  83 03/24/94  23:47:5 26.9   439.8                                       
+ 159  84 03/25/94  04:46:1 24.1   441.1                                       
+ 160  84 03/25/94  09:44:3 21.4   442.5                                       
+ 161  84 03/25/94  14:42:5 18.7   444.0                                       
+ 162  84 03/25/94  19:41:2 15.9   445.6                                       
+ 163  85 03/26/94  00:39:4 13.2   447.2                                       
+ 164  85 03/26/94  06:36:5 11.3  1007.9                                       
+ 165  85 03/26/94  13:00:1  9.5   449.8                                       
+ 166  85 03/26/94  17:59:0  6.8   448.6                                       
+ 167  85 03/26/94  22:58:0  4.0   447.3                                       
+ 168  86 03/27/94  03:56:5  1.3   446.0                                       
+ 169  86 03/27/94  08:55:5 358.6  444.7                                       
+ 170  86 03/27/94  13:54:5 355.8  443.3                                       
+ 171  86 03/27/94  18:53:4 353.2  447.8                                       
+ 172  86 03/27/94  23:52:1 350.4  446.4                                       
+ 173  86 03/28/94  04:50:4 347.7  445.1                                       
+ 174  87 03/28/94  09:49:1 345.0  443.8                                       
+ 175  87 03/28/94  14:47:4 342.2  442.5                                       
+ 176  87 03/28/94  19:46:1 339.5  441.3                                       
+ 177  87 03/29/94  00:44:3 336.8  440.0                                       
+ 178  88 03/29/94  05:43:0 334.0  438.9                                       
+ 179  88 03/29/94  10:41:3 331.3  437.8                                       
+ 180  88 03/29/94  15:40:0 328.5  436.7                                       
+ 181  88 03/29/94  20:38:3 325.8  435.7                                       
+ 182  88 03/30/94  01:36:5 323.1  434.8                                       
+ 183  89 03/30/94  06:35:2 320.3  434.0                                       
+ 184  89 03/30/94  11:33:5 317.6  433.2                                       
+ 185  89 03/30/94  16:32:1 314.8  432.5                                       
+ 186  89 03/30/94  21:30:4 312.1  431.9                                       
+ 187  89 03/31/94  02:29:1 309.4  431.3                                       
+ 188  90 03/31/94  07:27:4 306.6  430.8                                       
+ 189  90 03/31/94  12:26:0 303.9  430.4                                       
+ 190  90 03/31/94  17:24:3 301.1  430.1                                       
+ 191  90 03/31/94  22:22:5 298.4  429.8                                       
+ 192  90 04/01/94  03:21:2 295.7  429.5                                       
+ 193  91 04/01/94  08:19:5 292.9  429.3                                       
+ 194  91 04/01/94  13:18:1 290.2  429.2                                       
+ 195  91 04/01/94  18:16:4 287.5  429.0                                       
+ 196  91 04/01/94  23:15:0 284.7  428.9                                       
+ 197  91 04/02/94  04:13:3 282.0  428.8                                       
+ 198  92 04/02/94  09:11:5 279.3  428.8                                       
+ 199  92 04/02/94  14:10:2 276.5  428.7                                       
+ 200  92 04/02/94  19:08:5 273.8  428.7                                       
+ 201  92 04/03/94  00:07:1 271.1  428.6                                       
+ 202  93 04/03/94  05:05:4 268.4  428.6                                       
+ 203  93 04/03/94  10:04:0 265.6  428.5                                       
+ 204  93 04/03/94  15:02:3 262.9  428.4                                       
+ 205  93 04/03/94  20:01:0 260.2  428.3                                       
+ 206  93 04/04/94  00:59:2 257.5  428.1                                       
+ 207  94 04/04/94  05:57:5 254.7  428.0                                       
+ 208  94 04/04/94  10:56:2 252.0  427.7                                       
+ 209  94 04/04/94  15:54:4 249.3  427.5                                       
+ 210  94 04/04/94  20:53:1 246.6  427.2                                       
+ 211  94 04/05/94  01:51:4 243.8  426.9                                       
+ 212  95 04/05/94  06:50:0 241.1  426.6                                       
+ 213  95 04/05/94  11:48:3 238.4  426.2                                       
+ 214  95 04/05/94  16:47:0 235.7  425.8                                       
+ 215  95 04/05/94  21:45:2 232.9  425.4                                       
+ 216  95 04/06/94  02:43:5 230.2  425.0                                       
+ 217  96 04/06/94  07:42:2 227.5  424.5                                       
+ 218  96 04/06/94  12:40:5 224.8  424.0                                       
+ 219  96 04/06/94  17:39:1 222.0  423.4                                       
+ 220  96 04/06/94  22:37:4 219.3  422.8                                       
+ 221  96 04/07/94  03:36:1 216.6  422.2                                       
+ 222  97 04/07/94  08:34:4 213.9  421.5                                       
+ 223  97 04/07/94  13:33:0 211.1  420.8                                       
+ 224  97 04/07/94  18:31:3 208.4  420.1                                       
+ 225  97 04/07/94  23:30:0 205.7  419.4                                       
+ 226  97 04/08/94  04:28:3 203.0  418.6                                       
+ 227  98 04/08/94  09:26:5 200.2  417.9                                       
+ 228  98 04/08/94  14:25:2 197.5  417.0                                       
+ 229  98 04/08/94  19:23:5 194.8  416.2                                       
+ 230  98 04/09/94  00:22:2 192.1  415.4                                       
+ 231  99 04/09/94  05:20:5 189.3  414.6                                       
+ 232  99 04/09/94  10:19:1 186.6  413.7                                       
+ 233  99 04/09/94  15:17:4 183.9  412.8                                       
+ 234  99 04/09/94  20:16:1 181.1  412.0                                       
+ 235  99 04/10/94  01:14:4 178.4  411.1                                       
+ 236 100 04/10/94  06:13:1 175.7  410.3                                       
+ 237 100 04/10/94  11:11:4 172.9  409.4                                       
+ 238 100 04/10/94  16:10:0 170.2  408.6                                       
+ 239 100 04/10/94  21:08:3 167.5  407.7                                       
+ 240 100 04/11/94  02:07:0 164.7  406.9                                       
+ 241 101 04/11/94  07:05:3 162.0  427.7                                       
+ 242 101 04/11/94  12:04:0 159.3  426.9                                       
+ 243 101 04/11/94  17:02:3 156.5  426.1                                       
+ 244 101 04/11/94  22:01:0 153.8  425.2                                       
+ 245 101 04/12/94  02:59:3 151.1  424.4                                       
+ 246 102 04/12/94  07:58:0 148.3  423.6                                       
+ 247 102 04/12/94  12:56:3 145.6  422.8                                       
+ 248 102 04/12/94  17:55:0 142.9  422.0                                       
+ 249 102 04/12/94  22:53:3 140.1  421.3                                       
+ 250 102 04/13/94  03:52:0 137.4  420.5                                       
+ 251 103 04/13/94  08:50:3 134.7  419.9                                       
+ 252 103 04/13/94  13:49:0 131.9  419.2                                       
+ 253 103 04/13/94  18:47:2 129.2  418.6                                       
+ 254 103 04/13/94  23:45:5 126.5  418.1                                       
+ 255 103 04/14/94  04:44:2 123.7  417.5                                       
+ 256 104 04/14/94  09:42:5 121.0  417.1                                       
+ 257 104 04/14/94  14:41:2 118.3  416.6                                       
+ 258 104 04/14/94  19:39:5 115.5  416.3                                       
+ 259 105 04/15/94  00:38:1 112.8  415.9                                       
+ 260 105 04/15/94  05:36:4 110.1  415.6                                       
+ 261 105 04/15/94  10:35:1 107.3  415.3                                       
+ 262 105 04/15/94  15:33:4 104.6  415.1                                       
+ 263 105 04/15/94  20:32:1 101.9  414.9                                       
+ 264 106 04/16/94  01:30:4 99.1   414.7                                       
+ 265 106 04/16/94  06:29:1 96.4   414.6                                       
+ 266 106 04/16/94  11:27:3 93.7   414.5                                       
+ 267 106 04/16/94  16:26:0 90.9   414.4                                       
+ 268 106 04/16/94  21:24:3 88.2   414.3                                       
+ 269 107 04/17/94  02:23:0 85.5   414.2                                       
+ 270 107 04/17/94  07:21:3 82.8   414.2                                       
+ 271 107 04/17/94  12:19:5 80.0   414.1                                       
+ 272 107 04/17/94  17:18:2 77.3   414.1                                       
+ 273 107 04/17/94  22:16:5 74.6   414.1                                       
+ 274 108 04/18/94  03:15:2 71.9   414.0                                       
+ 275 108 04/18/94  08:13:4 69.1   414.0                                       
+ 276 108 04/18/94  13:12:1 66.4   413.9                                       
+ 277 108 04/18/94  18:10:4 63.7   413.9                                       
+ 278 108 04/18/94  23:09:1 61.0   413.8                                       
+ 279 109 04/19/94  04:07:3 58.2   413.6                                       
+ 280 109 04/19/94  09:06:0 55.5   413.5                                       
+ 281 109 04/19/94  14:04:3 52.8   413.3                                       
+ 282 109 04/19/94  19:03:0 50.1   413.1                                       
+ 283 110 04/20/94  00:01:3 47.3   412.8                                       
+ 284 110 04/20/94  04:59:5 44.6   412.4                                       
+ 285 110 04/20/94  09:58:2 41.9   412.0                                       
+ 286 110 04/20/94  14:56:5 39.2   411.6                                       
+ 287 110 04/20/94  19:55:2 36.4   411.1                                       
+ 288 111 04/21/94  00:53:5 33.7   410.5                                       
+ 289 111 04/21/94  05:52:2 31.0   409.8                                       
+ 290 111 04/21/94  10:50:5 28.3   409.1                                       
+ 291 111 04/21/94  15:49:1 25.6   408.3                                       
+ 292 111 04/21/94  20:47:4 22.8   407.4                                       
+ 293 112 04/22/94  01:46:1 20.1   406.5                                       
+ 294 112 04/22/94  06:44:4 17.4   405.5                                       
+ 295 112 04/22/94  11:43:1 14.7   404.4                                       
+ 296 112 04/22/94  16:41:4 11.9   403.2                                       
+ 297 112 04/22/94  21:40:1  9.2   402.0                                       
+                                                                              
+START OF POST-MAPPING ACTIVITIES                                              
+ 298 113 04/23/94  02:38:4  6.5   400.8                                       
+ 299 113 04/23/94  07:37:1  3.7   399.5                                       
+ 300 113 04/23/94  12:35:4  1.0   398.2                                       
+ 301 113 04/23/94  17:34:1 358.3  396.8                                       
+ 302 113 04/23/94  22:32:5 355.6  395.4                                       
+ 303 114 04/24/94  03:31:2 352.8  394.0                                       
+ 304 114 04/24/94  08:29:5 350.1  392.6                                       
+ 305 114 04/24/94  13:28:2 347.4  391.2                                       
+ 306 114 04/24/94  18:26:5 344.6  389.8                                       
+ 307 114 04/24/94  23:25:2 341.9  388.4                                       
+ 308 115 04/25/94  04:23:5 339.2  387.1                                       
+ 309 115 04/25/94  09:22:2 336.4  385.8                                       
+ 310 115 04/25/94  14:20:5 333.7  384.5                                       
+ 311 115 04/25/94  19:19:2 330.9  383.3                                       
+ 312 116 04/26/94  00:17:5 328.2  382.1                                       
+ 313 116 04/26/94  05:16:2 325.5  381.0                                       
+ 314 116 04/26/94  10:14:5 322.7  380.0                                       
+ 315 116 04/26/94  15:13:2 320.0  379.0                                       
+ 316 116 04/26/94  20:11:5 317.2  378.1                                       
+ 317 117 04/27/94  01:10:2 314.5  377.4                                       
+ 318 117 04/27/94  06:08:4 311.8  376.7                                       
+ 319 117 04/27/94  11:07:1 309.0  376.0                                       
+ 320 117 04/27/94  16:05:4 306.3  375.5                                       
+ 321 117 04/27/94  21:04:1 303.5  375.0                                       
+ 322 118 04/28/94  02:02:4 300.8  374.6                                       
+ 323 118 04/28/94  07:01:1 298.1  374.3                                       
+ 324 118 04/28/94  11:59:3 295.3  374.0                                       
+ 325 118 04/28/94  16:58:0 292.6  373.8                                       
+ 326 118 04/28/94  21:56:3 289.9  373.6                                       
+ 327 119 04/29/94  02:55:0 287.1  373.5                                       
+ 328 119 04/29/94  07:53:2 284.4  373.3                                       
+ 329 119 04/29/94  12:51:5 281.7  373.3                                       
+ 330 119 04/29/94  17:50:2 278.9  373.2                                       
+ 331 119 04/29/94  22:48:4 276.2  373.1                                       
+ 332 120 04/30/94  03:47:1 273.5  373.1                                       
+ 333 120 04/30/94  08:45:4 270.7  373.0                                       
+ 334 120 04/30/94  13:44:1 268.0  373.0                                       
+ 335 120 04/30/94  18:42:3 265.3  372.9                                       
+ 336 120 04/30/94  23:41:0 262.6  372.8                                       
+ 337 121 05/01/94  04:39:3 259.8  372.7                                       
+ 338 121 05/01/94  09:38:0 257.1  372.6                                       
+ 339 121 05/01/94  14:36:2 254.4  372.4                                       
+ 340 121 05/01/94  19:34:5 251.7  372.2                                       
+ 341 122 05/02/94  00:33:2 248.9  371.9                                       
+ 342 122 05/02/94  05:31:5 246.2  371.6                                       
+ 343 122 05/02/94  10:30:2 243.5  371.2                                       
+ 344 122 05/02/94  15:28:5 240.8  370.9                                       
+ 345 122 05/02/94  20:27:2 238.0  370.5                                       
+ 346 123 05/03/94  01:25:4 235.3  370.1                                       
+ 347 123 05/03/94  06:24:1 232.6  369.6                                       
+ 348 123 05/03/94  11:22:4 229.9  369.1                                       
+ 349 123 05/03/94  16:21:1 227.2  368.5                                       
+ 350 123 05/03/94  21:19:4 224.4  367.9                                       
+                                                                              
+                                                                              

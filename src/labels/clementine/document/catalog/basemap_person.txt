@@ -1,0 +1,176 @@
+PDS_VERSION_ID                          = PDS3
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = AMCEWEN
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Dr. Alfred S. McEwen"
+LAST_NAME                               = MCEWEN
+TELEPHONE_NUMBER                        = "5206214573"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "University of Arizona"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       = 1997-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "N"
+ADDRESS_TEXT                            = "Lunar and Planetary
+  Laboratory, Kuiper Space Science Building,
+  University of Arizona, Tucson, AZ 85721"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                     = "mcewen@pirl.lpl.arizona.edu"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = KEDWARDS
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Kathleen E. Edwards
+     (retired)"
+LAST_NAME                               = EDWARDS
+TELEPHONE_NUMBER                        = "N/A"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY (RETIRED)"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       = 1997-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "N"
+ADDRESS_TEXT                            = "N/A"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "N/A"
+ELECTRONIC_MAIL_TYPE                    = "N/A"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = MROBINSON
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Dr. Mark S. Robinson"
+LAST_NAME                               = ROBINSON
+TELEPHONE_NUMBER                        = "8474671825"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "Northwestern University"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       = 1997-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "N"
+ADDRESS_TEXT                            = "Geological Sciences,
+Locy Hall Room 309, 1847 Sheridan Rd, Evanston, IL."
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "N/A"
+ELECTRONIC_MAIL_TYPE                    = "N/A"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = TBECKER
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Tammy Becker"
+LAST_NAME                               = BECKER
+TELEPHONE_NUMBER                        = "5205567254"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       = 1997-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "N"
+ADDRESS_TEXT                            = "Astrogeology Team,
+2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "tbecker@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = ELEE
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Ella Lee"
+LAST_NAME                               = LEE
+TELEPHONE_NUMBER                        = "5205567260"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       = 1997-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "N"
+ADDRESS_TEXT                            = "Astrogeology Team,
+2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "elee@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = CISBELL
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Chris Isbell"
+LAST_NAME                               = ISBELL
+TELEPHONE_NUMBER                        = "5205567211"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "5205567090"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "IMAGING"
+PDS_AFFILIATION                         = "DATA ENGINEER"
+REGISTRATION_DATE                       = 1996-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "Y"
+ADDRESS_TEXT                            = "United States Geological
+ Survey, 2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "cisbell@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = EELIASON
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Eric M. Eliason"
+LAST_NAME                               = ELIASON
+TELEPHONE_NUMBER                        = "5205567113"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "5205567090"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "IMAGING"
+PDS_AFFILIATION                         = "IMAGING NODE MANAGER"
+REGISTRATION_DATE                       = 1996-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "Y"
+ADDRESS_TEXT                            = "United States Geological
+ Survery, 2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "eeliason@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+END

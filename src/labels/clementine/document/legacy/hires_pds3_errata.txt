@@ -1,0 +1,284 @@
+PDS_VERSION_ID        = PDS3
+RECORD_TYPE           = STREAM
+OBJECT                = TEXT
+  PUBLICATION_DATE    = 1998-09-12
+  NOTE                = "Anomalies and discrepancies in the
+    CD Volume set"
+END_OBJECT            = TEXT
+END
+
+#################################################################
+
+                             CD COUNT
+
+Documents on previous HiRes Mosaic CDs refer to the total CD 
+count as 20, consistent with a single CD per pole, each using all 
+available data pertinent to a given pole. However, it was decided 
+during completion of the polar mosaics to generate separate 
+mosaics for apoapsis and periapsis data, which provides a more 
+uniform appearance and quality.  This brings the total CD count 
+to 22.
+
+
+                      IMAGE NAMING CONVENTION
+
+Clementine HiRes mosaics produced at 20 m/pixel scale have names 
+starting with "H"; this is not consistent with the naming scheme 
+developed by the USGS, which recently designated "E" for 20 
+m/pixel Clementine products.
+
+Also, although the USGS has no designation for 30 m/pixel scale, 
+the use of "G" for the 30 m/pixel polar mosaics is contrary to 
+the USGS arrangement in which resolution decreases with 
+alphabetic order.
+
+
+                MISSING UV/Vis SUB-POLAR CONTEXT
+
+A very few of the sub-polar mosaic JPEG context images appear to 
+have portions missing UV/Vis data. These "holes" are, in fact, 
+present in the original UV/Vis basemaps and represent lack of 
+UV/Vis and NIR images of sufficient quality.
+
+
+                           MISCELLANEOUS
+
+The following ancillary file errors are found on CL_6019 and 
+CL_6021:
+
+   1. Missing END statement in dsmap.cat.
+
+   2. Missing closing quote for MCEWENETAL1997 reference in 
+refs.cat.
+
+   3. Missing closing quote for column 1's description section.
+
+
+
+                 ADDITIONAL ERRATA INFORMATION
+
+Presented below are discussions by Eric Eliason which address, 
+first, discrepancies in cartographic offset parameter definitions 
+in the various planetary DIMs and, second, variations in file 
+name conventions and the impact of this with ISO-9660 CD 
+standards.
+
+#################################################################
+
+DISCREPANCIES OF PROJECTION OFFSET PARAMETERS AMONG USGS-PRODUCED
+                     PLANETARY DIGITAL GLOBAL MAPS
+
+                           Eric M. Eliason
+                              7/1/1997
+
+The Issue
+---------
+
+This report discusses discrepancies in map projection parameters 
+found in the PDS labels on the Mars MDIM, Magellan F-Map (Venus), 
+and Clementine Base Map Mosaic (Earth's Moon) produced by the 
+USGS Astrogeology Team. This report is important for individuals 
+needing to know the precise definition of the map projection and 
+cartographic parameters that describe the image map. There are 
+differences in the cartographic parameters in each of the data 
+products that effect the algorithms defining the relationship 
+between line and sample position in the image array and the 
+latitude and longitude position on the planet surface.  
+Specifically, the LINE_PROJECTION_OFFSET and 
+SAMPLE_PROJECTION_OFFSET parameters have inconsistent definitions 
+among these data sets.
+
+Additionally, as discussed below there are differences in the 
+keywords names used to describe the map projection parameters on 
+the PDS labels due to the evolution of PDS standards.
+
+Data Products In Question
+-------------------------
+
+The Mars MDIM, Magellan F-Map, and Clementine Basemap Mosaic 
+exist on CD media and are available for wide distribution to the 
+NASA science community. These data sets contain global Mosaicked 
+Digital Image Models (MDIM). The data sets are organized 
+according to a "tiling"  scheme that divides the planet into 
+tiles (or quadrangles). Each tile represents a specific area on 
+the planet.  A tile is stored as a PDS-labeled image file. For 
+more information on the data products, refer to the "volinfo.txt" 
+file located in the document directory on the CD volume sets. 
+[Note: The Clementine HiRes Mosaics also adopt the same keyword 
+convention.]
+
+Cartographic Keywords in the PDS Labels
+---------------------------------------
+The "IMAGE_MAP_PROJECTION" object contained in a PDS label 
+provides the cartographic parameters necessary to define any map 
+projection.  For the Sinusoidal Equal-Area Projection only a 
+subset of the cartographic keywords are required and parameters 
+not applicable will contain "N/A" in the fields. The list below 
+shows a typical IMAGE_MAP_PROJECTION group of keywords. For 
+precise definitions of the keywords, refer to the volinfo.txt 
+file (located in the document directory) and the dsmap.cat file 
+(located in the catalog directory.)
+
+OBJECT                         = IMAGE_MAP_PROJECTION
+  ^DATA_SET_MAP_PROJECTION     = "DSMAP.CAT"
+  MAP_PROJECTION_TYPE          = SINUSOIDAL
+  MAP_RESOLUTION               = 1408.1316 <PIXEL/DEGREE>
+  MAP_SCALE                    = 0.075 <KM/PIXEL>
+  MAXIMUM_LATITUDE             = 38.00000
+  MINIMUM_LATITUDE             = 35.99000
+  EASTERNMOST_LONGITUDE        = 146.01088
+  WESTERNMOST_LONGITUDE        = 144.00000
+  LINE_PROJECTION_OFFSET       = -53510.0039
+  SAMPLE_PROJECTION_OFFSET     = -6837.0801
+  A_AXIS_RADIUS                = 6051.00 <KM>
+  B_AXIS_RADIUS                = 6051.00 <KM>
+  C_AXIS_RADIUS                = 6051.00 <KM>
+  FIRST_STANDARD_PARALLEL      = "N/A"
+  SECOND_STANDARD_PARALLEL     = "N/A"
+  POSITIVE_LONGITUDE_DIRECTION = EAST
+  CENTER_LATITUDE              = 0.00000
+  CENTER_LONGITUDE             = 150.00000
+  REFERENCE_LATITUDE           = "N/A"
+  REFERENCE_LONGITUDE          = "N/A"
+  LINE_FIRST_PIXEL             = 1
+  SAMPLE_FIRST_PIXEL           = 1
+  LINE_LAST_PIXEL              = 2830
+  SAMPLE_LAST_PIXEL            = 2410
+  MAP_PROJECTION_ROTATION      = 0.00000
+  VERTICAL_FRAMELET_OFFSET     = 1
+  HORIZONTAL_FRAMELET_OFFSET   = 6
+END_OBJECT                     = IMAGE_MAP_PROJECTION
+END
+
+Because of the change in PDS standards the IMAGE_MAP_PROJECTION 
+group is different between the Mars MDIM products and the 
+Magellan F-Map and Lunar MDIM products. The Mars MDIM products 
+were created before the "final" cartographic projection keywords 
+were defined and so they are different from the F-MAP and Lunar 
+MDIM products. Here is a list of the differences in keyword 
+names:
+
+Mars MDIM Label                       F-MAP / Lunar MDIM Label
+-----------------------------------------------------------------
+IMAGE_ID (in main label body)   changed to PRODUCT_ID
+IMAGE_MAP_PROJECTION_CATALOG    changed to IMAGE_MAP_PROJECTION
+DATA_SET_MAP_PROJECTION_CATALOG changed to 
+   DATA_SET_MAP_PROJECTION
+X_AXIS_FIRST_PIXEL              changed to LINE_LAST_PIXEL
+X_AXIS_LAST_PIXEL               changed to LINE_LAST_PIXEL
+Y_AXIS_FIRST_PIXEL              changed to SAMPLE_FIRST_PIXEL
+Y_AXIS_LAST_PIXEL               changed to SAMPLE_LAST_PIXEL
+X_AXIS_PROJECTION_OFFSET        changed to LINE_PROJECTION_OFFSET
+Y_AXIS_PROJECTION_OFFSET        changed to 
+   SAMPLE_PROJECTION_OFFSET
+
+Discrepancies with Offset Parameters
+-------------------------------------
+The LINE_PROJECTION_OFFSET and SAMPLE_PROJECTION_OFFSET 
+parameters have inconsistent definitions among the Clementine, F-
+Map and Mars MDIM data products. This section describes the 
+differences.
+
+For the Mars MDIM, the offset parameters (called 
+X_AXIS_PROJECTION_OFFSET and Y_AXIS_PROJECTION_OFFSET) are used 
+to define line and sample number as a function of latitude and 
+longitude:
+
+line   = INT(X_AXIS_PROJECTION_OFFSET - LAT*MAP_RESOLUTION + 1.0)
+
+sample = INT(Y_AXIS_PROJECTION_OFFSET - (LON -
+         CENTER_LONGITUDE)*MAP_RESOLUTION*COS(LAT) + 1.0)
+
+Note that the addition of 1.0 is part of the equation. This means 
+the X_AXIS_PROJECTION_OFFSET and Y_AXIS_PROJECTION_OFFSET are 
+relative to line and sample 0,0 in the image array. Because the 
+direction of positive longitude is to the west for Mars, there is 
+a "-" after the Y_AXIS_PROJECTION_OFFSET in the equation.
+
+For the F-MAP and Clementine basemap the equations are defined 
+as:
+
+line   = INT(LINE_PROJECTION_OFFSET - LAT*MAP_RESOLUTION)
+
+sample = INT(SAMPLE_PROJECTION_OFFSET + (LON -
+         CENTER_LONGITUDE)*MAP_RESOLUTION*COS(LAT))
+
+Note that the addition of 1.0 is not part of the equation. This 
+means that the offset parameters are relative to line and sample 
+1,1. Because the direction of positive longitude is to the east 
+for Venus and the Moon, there is a "+"  after the 
+SAMPLE_PROJECTION_OFFSET term.
+
+An additional discrepancy exists in the F-MAP volume set. The 
+LINE_PROJECTION_OFFSET and SAMPLE_PROJECTION_OFFSET parameters 
+are actually the negative of the value that they should be.  A 
+software patch has been included on the F-MAP CD-ROMs to correct 
+the projection offset keywords. The name of the program is PATH 
+and it is stored in the SOFTWARE directory on the F-MAP volumes.
+
+#################################################################
+#################################################################
+
+       UPPER-CASE AND LOWER-CASE FILE NAMES AND DIRECTORIES
+                     ON CD VOLUMES THAT CONFORM TO
+                        THE ISO-9660 STANDARDS
+
+                           Eric M. Eliason
+                              3/1/1997
+
+Names of files stored on an ISO-9660 formatted CD are different 
+among computer systems and operating systems. Some systems use 
+lower-case file names while other systems use upper-case file 
+names. Here is a list of how popular operating behave with file 
+names:
+
+Sun/Solaris    - File names and folders are lower-case lettering
+Macintosh      - File names and folders are upper-case lettering
+PC/Windows 95  - File names and folders have the first letter
+                 upper-case followed by lower-case lettering.
+PC/MS-DOS      - File names and folders are upper-case lettering
+PC/Windows 3.1 - File names and folders are lower-case lettering
+
+Because of the inconsistent case lettering of file names it was 
+decided to provide file and volume names in the image index file 
+(imgindx.tab) and the source image index file (srcindx.tab) to 
+upper-case lettering. Users desiring to build applications around 
+these tables will need to convert the file name to the 
+appropriate case for their systems.
+
+#################################################################
+#################################################################
+
+         VALIDATION PERFORMED BY THE PLANETARY DATA SYSTEM
+
+                          Eric Eliason
+                            9/25/99
+
+
+The anomalies reported here are intended primarily for data 
+product developers that might use the Clementine HiRes CD-ROMs as 
+a model for future data products. The original peer review of 
+these data products did not identify the items listed below as 
+problems and are considered inconsequential to the overall 
+usefulness of the data.
+
+1) PDS standards require all files to be labeled. The following 
+files should have been provided with a PDS label:
+brwstxt.htm, 
+clemlogo.gif, 
+index.htm,
+msss.gif,
+All *.htm and *.jpg located in the browse subdirectory of each 
+volume.
+
+2) The index files located in the index directory of these 
+volumes do not fully comply with PDS naming conventions:  
+imgindx.lbl should be named imgindex.lbl
+imgindx.tab should be named imgindex.tab
+srcindx.lbl should be named srcindex.lbl
+srcindx.tab should be named srcindex.tab
+
+3) The html files on these volumes have unix-style line 
+terminators (line-feed characters at the end of each line) but 
+should have used the DOS-style convention of carriage-return 
+line-feed characters to mark the end of each line.

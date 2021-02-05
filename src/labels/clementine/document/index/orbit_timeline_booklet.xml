@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Document xmlns="http://pds.nasa.gov/pds4/pds/v1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:clementine:document:orbit_timeline_booklet</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>
+      Clementine Orbit Timeline Spreadsheet Booklet
+    </title>
+    <information_model_version>1.15.0.0</information_model_version>
+    <product_class>Product_Document</product_class>
+    <Citation_Information>
+      <author_list>
+        No authorial attribution
+      </author_list>
+      <editor_list>
+        Michael St. Clair
+      </editor_list>
+      <publication_year>2021</publication_year>
+      <description>
+        The PDS3 Clementine EDR data set includes several hundred Excel 95
+        worksheets (tllun*.xls) describing important events during each orbit
+        / revolution. These appear to have been partially but not completely
+        translated into the EKs in the PDS3 data set CLEM1-L-SPICE-6-V1.0. As 
+        these were working mission documents, the entirety of their contents
+        are of at least historical interest. Because of the way they use
+        visual functions of Excel to make semantic distinctions, we were
+        unable to find a straightforward way to convert them into a simple
+        tabular format. We therefore simply converted  them to PDF/A and
+        bundled them into a ~ 1000-page booklet.
+      </description>
+    </Citation_Information>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2021-01-30</modification_date>
+        <version_id>1.0</version_id>
+        <description>
+          Collected files from PDS3 archive and bundled into PDF/A.
+        </description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Context_Area>
+    <Investigation_Area>
+      <name>DEEP SPACE PROGRAM SCIENCE EXPERIMENT</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:investigation:mission.deep_space_program_science_experiment::1.1</lidvid_reference>
+        <reference_type>document_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>CLEMENTINE 1</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lidvid_reference>urn:nasa:pds:context:instrument_host:spacecraft.clem1::1.1</lidvid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>MOON</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:target:satellite.earth.moon::1.1</lidvid_reference>
+        <reference_type>document_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+  </Context_Area>
+  <Document>
+    <publication_date>2021</publication_date>
+    <description>
+    The PDS3 Clementine EDR data set includes several hundred Excel 95
+    worksheets (tllun*.xls) describing important events during each orbit
+    / revolution. These appear to have been partially but not completely
+    translated into the EKs in the PDS3 data set CLEM1-L-SPICE-6-V1.0. As 
+    these were working mission documents, the entirety of their contents
+    are of at least historical interest. Because of the way they use
+    visual functions of Excel to make semantic distinctions, we were
+    unable to find a straightforward way to convert them into a simple
+    tabular format. We therefore simply converted  them to PDF/A and
+    bundled them into a ~ 1000-page booklet.
+    </description>
+    <Document_Edition>
+      <edition_name>PDF/A Version</edition_name>
+      <language>English</language>
+      <files>1</files>
+      <Document_File>
+        <file_name>orbit_timeline_booklet.xml</file_name>
+        <document_standard_id>PDF/A</document_standard_id>
+      </Document_File>
+    </Document_Edition>
+  </Document>
+</Product_Document>

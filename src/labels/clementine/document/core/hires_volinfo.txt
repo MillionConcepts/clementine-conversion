@@ -1,0 +1,1028 @@
+PDS_VERSION_ID      = PDS3
+RECORD_TYPE         = STREAM
+SPACECRAFT_NAME     = "CLEMENTINE 1"
+TARGET_NAME         = "MOON"
+OBJECT              = TEXT
+ INTERCHANGE_FORMAT = ASCII
+ PUBLICATION_DATE   = 1998-09-12
+ NOTE               = "The Clementine HIRES Mosaic"
+END_OBJECT          = TEXT
+END
+
+CONTENTS
+
+ 1 - INTRODUCTION
+ 2 - CLEMENTINE MISSION
+ 3 - HIGH RESOLUTION CAMERA (HiRes)
+ 4 - LUNAR ORBIT SUMMARY
+ 5 - GEOMETRIC REGISTRATION
+ 6 - RADIOMETRIC ISSUES
+ 7 - DATA PROCESSING
+ 8 - FILE, DIRECTORIES AND DISK CONTENTS
+ 9 - IMAGE FILE ORGAINZATION
+10 - INDEX FILES
+11 - REFERENCES
+
+APPENDIX A - KEYWORD ASSIGNMENT
+
+
+
+INTRODUCTION
+============
+This compact disk (CD) is one of 22 which comprise mosaics of the 
+Clementine I high resolution (HiRes) camera images of the moon.  
+These mosaics were produced through semi-automated registration 
+and calibration against the recently released geometrically and 
+photometrically controlled Ultraviolet/Visible (UV/Vis) Basemap 
+Mosaic.  The HiRes mosaics were compiled from non-uniformity 
+corrected, 750 nanometer ("D") filter high resolution nadir-
+looking observations from the HiRes imaging system onboard the 
+Clementine Spacecraft.  The images were spatially warped using 
+the sinusoidal equal-area projection at a scale of 20 m/pixel for 
+sub-polar mosaics (below 80 deg latitude) and using the 
+stereographic projection at a scale of 30 m/pixel for polar 
+mosaics.  To avoid the necessity of iterative reprojection, which 
+was beyond the scope of the present effort, only images with 
+emission angles less than approximately 5 degrees were used. 
+Similarly, images from non-mapping cross-track slews, which 
+tended to have large SPICE errors, were generally omitted. The 
+locations of the resulting image population were offset from the 
+UV/Vis basemap by up to 13 km (0.4 deg).
+
+The geometric control was provided by the 100 m/pixel global and 
+150 m/pixel polar U. S. Geological Survey (USGS) Clementine 
+Basemap Mosaics compiled from the 750 nm Ultraviolet/Visible 
+Clementine imaging system.  Calibration was achieved by removing 
+the image nonuniformity dominated by the HiRes system's light 
+intensifier.  Also provided are offset and scale factors, 
+achieved by a fit of the HiRes data to the corresponding 
+photometrically calibrated UV/Vis basemap, that approximately 
+transform the 8-bit HiRes data to photometric units.
+
+The sub-polar mosaics are divided into tiles that cover 
+approximately 1.75 degrees of latitude and span the longitude 
+range of the mosaicked frames.  Images from a given orbit are map 
+projected using the orbit's nominal central latitude. Polar 
+mosaics are tiled into squares 2250 pixels on a side, which spans 
+approximately 2.2 degrees. Two mosaics are provided for each 
+pole: one corresponding to south periapsis data, the other to 
+north periapsis data.
+
+This CD also contains ancillary data files that support the HiRes 
+mosaic.  These files include browse images with UV/Vis context 
+stored in a Joint Photographic Experts Group (JPEG) format, index 
+files ('imgindx.tab' and 'srcindx.tab') that tabulate the 
+contents of the CD, and documentation files.  For more 
+information on the contents and organization of the CD volume set 
+refer to the "FILES, DIRECTORIES AND DISK CONTENTS" section of 
+this document.
+
+The Clementine HiRes Mosaic was compiled for the National 
+Aeronautics and Space Administration (NASA) by Malin Space 
+Science Systems personnel under the direction of Dr. Michael C. 
+Malin, principal Investigator.  Jeff Warren and Rick Adair 
+comprised the technical group responsible for its compilation.  
+Much of the background text in this document draws heavily on 
+McEwen et al. [1997].
+
+CLEMENTINE MISSION
+===================
+The Clementine Mission [Nozette et al., 1994] was a technology 
+demonstration jointly sponsored by the Ballistic Missile Defense 
+Organization (BMDO) and the National Aeronautics and Space 
+Administration (NASA).  Clementine was launched on 1994-01-25 
+aboard a Titan IIG rocket from Vandenburg Air Force Base.  The 
+mission included two months of systematic lunar mapping (1994-02-
+26 through 1994-04-21), which was to have been followed by a 
+flyby of the near-Earth asteroid Geographos (1994-08-31).  
+However, an onboard software error combined with improbable 
+hardware conditions on 1994-05-07 led to accidental spin-up of 
+the spacecraft and loss of attitude control gas.  This precluded 
+the flyby of Geographos.
+
+
+Clementine's primary objective was the qualification of light 
+weight imaging sensors and component technologies for the next 
+generation of Department of Defense spacecraft.  A second 
+objective was the return of data about the Moon and Geographos to 
+the international civilian scientific community.  For more 
+information on the Clementine Mission refer to the 'mission.cat' 
+file located in the 'catalog' directory.
+
+The HiRes mosaic was created using the Clementine EDR Image 
+Archive [Eliason, et al., 1995] produced by the Clementine 
+mission.  The EDR (Engineering Data Record) data are raw images.  
+The archive also includes tabulations of the unprocessed and 
+uncorrected data properties.  The Clementine EDR Image Archive 
+contains more than 1.9 million images acquired during active 
+mission operations.  For information on how to obtain this 
+archive contact the PDS Imaging Node or visit their world wide 
+web site at the URL:  http://pdsimage.jpl.nasa.gov/PDS.
+
+HIGH RESOLUTION (HiRes) IMAGING CAMERA
+======================================
+The HiRes camera combined a lightweight beryllium telescope with 
+an image intensifier-coupled frame transfer CCD imager.  Image 
+shuttering was accomplished through voltage gating of the image 
+intensifier.  Maximum integration time was 733 milliseconds in 
+10.67 microsecond increments.  The spectral response was limited 
+in the system by the S-2 photocathode between 0.4 and 0.8 
+microns.  Five spectral bands were available using a filter wheel 
+that was controlled through the serial-addressable synchronous 
+interface (SASI).  A sixth filter position was allocated to an 
+opaque filter for the imager intensifier's protection.  
+Additional information on the HiRes camera is in the 
+'hresinst.cat' file in the 'catalog' directory. 
+
+The post-FPA electronic circuitry was identical to that used in 
+the UV/Vis camera: three gains states were allowed, followed by 5 
+bits of offset that span 248 counts in the analog regime to 
+augment the basic 8-bit A/D conversion.  Images of the Moon's day 
+side used relatively low gain settings and intensifier gate times 
+on the order of 1 ms.  Lifetime concerns about the photocathode 
+and microchannel plates in the intensifier unit drove operations 
+settings to low exposures.  This resulted in photon shot noise 
+contributing significantly to the overall noise in the HiRes 
+sensor.  Further, the image intensifier imposed a non-uniform, 
+but predictable, artifact within the images.
+
+LUNAR ORBIT SUMMARY
+===================
+The Clementine spacecraft maintained a polar orbit during the 
+systematic mapping of the surface of the Moon.  Mapping of 
+virtually 100% of the lunar surface was accomplished in two lunar 
+days (two Earth months).  In order to obtain full coverage during 
+these two months, the required image overlap for the UV/Vis and 
+NIR cameras was ~15% in the down-track and ~10% in the cross-
+track directions.  This required an orbit inclination of 90 
+degrees plus-or- minus 1 degree with reference to the lunar 
+equator, and that the periselene of the orbit be maintained at an 
+altitude of 425 plus-or-minus 25 km.  To provide the necessary 
+cross-track separation for the alternating imaging strips to 
+cover the entire surface of the moon, the orbital period was 
+approximately 5 hours, during which the moon rotated 
+approximately 2.7 degrees beneath the spacecraft.  Images were 
+generally taken and recorded only in the region of periselene, 
+leaving sufficient time to replay the data to Earth.
+
+The best data for lunar mineral mapping is obtained if the solar 
+phase angle is less than 30 degrees.  The solar phase angle is 
+defined as the angle between the vector to the Sun and the vector 
+to the spacecraft from a point on the Moon's surface.  To 
+maximize the time period in which the solar phase angle is less 
+than 30 degrees, the plane of the orbit should contain the Moon-
+Sun line half way through the two-month lunar mapping period.  
+Therefore, insertion into orbit was selected so that, as the 
+Moon-Sun line changed with Earth's motion about the Sun, the 
+Moon-Sun line was initially close on the orbital plane, and then 
+in the orbital plane half-way through the mapping mission.  The 
+angle between the Moon-Sun line and the orbital plane was close 
+(less than 5 degrees) for approximately five weeks before 
+becoming zero.  The table shown below contains a list of 
+Clementine's orbital parameters.  For more information on the 
+Lunar orbit refer to the 'mission.cat' file located in the 
+'catalog' directory.
+
+                  Clementine Orbital Parameters
+===========================================================
+Orbital Period:          4.970 hr < P < 5.003 hr
+Altitude of Periselene:  401 km < radius < 451 km
+Eccentricity:            0.35821 < e < 0.37567
+Right Ascension:         -3 deg < Omega < +3 deg (referred J2000)
+  Inclination:           89 deg < i < 91 deg
+  Argument of Periselene:  -28.4 deg < w < -27.9 deg (1st month)
+                            29.6 deg < w <  29.2 deg (2nd month)
+
+
+GEOMETRIC ACCURACY
+==================
+The geometric placement of the HiRes mosaics is based primarily 
+on registration with the Clementine Basemap Mosaic, which has 
+accuracies approaching the UV/Vis scale.  Thus, an overview of 
+Basemap Mosaic is appropriate.
+
+The UV/Vis Basemap Mosaic
+-------------------------
+The goal of the  UV/Vis basemap was for 95% of the Moon 
+(excluding the oblique observation gap fills) to have better than 
+0.5 km/pixel absolute positional accuracy and to adjust the 
+camera angles so that all frames match neighboring frames to 
+within an accuracy of 2 pixels.
+
+Approximately 265,000 match points were collected at the USGS 
+from ~43,000 UV/Vis images, providing global coverage.  About 80% 
+of these points were collected via autonomous procedures, whereas 
+20% required the more time consuming but highly accurate manual 
+pattern-recognition.  Oblique gap-fill images were the most 
+difficult to match, and required substantial human intervention.  
+Matching the polar regions was time-consuming because each frame 
+overlapped many other frames.  Most match points were found to a 
+precision of 0.2 pixels.
+
+The USGS match points were sent to RAND Corporation for 
+analytical triangulations.  Using these match points, control 
+points from the Apollo region, and the latest NAIF/SPICE 
+information, RAND determined improved camera orientation angles 
+for the global set of UV/Vis images.  A spherical Moon of 
+constant radius (1737.4 kilometers) was assumed, which was a 
+significant source of error near the oblique gap fills.  The 
+analytical triangulation is a least-squares formulation designed 
+to adjust the latitude and longitude of the control points and 
+the camera orientation angles to best fit the match points.  The 
+final (global) analytical triangulation required solving ~660,000 
+normal equations.  The mean error is less than 1 pixel.  This is 
+by far the largest analytical triangulation ever applied to a 
+planetary body other than Earth.  The results fully define the 
+planimetric geometry of the basemap, to which future systematic 
+products, including the HiRes mosaic, should be tied.
+
+The HiRes Mosaic
+----------------
+
+Accurate placement of the map-projected HiRes images was 
+accomplished by combining registration to the UV/Vis basemap at 
+the basemap's resolution (100 m/pixel for sub-polar mosaics and 
+150 m/pixel for polar mosaics ) with registration of overlapping 
+HiRes pairs at five times this resolution (20 m/pixel sub-polar 
+and 30 m/pixel polar).  The registrations were facilitated with 
+automated image correlation.  These registrations were combined 
+in a Least Absolute Deviation fit (Barrodale and Roberts, 1980) 
+constrained to stray no further than some small amount from the 
+basemap-scale registration.  Use of the least absolute deviation 
+gives outliers less importance than does a least squares fit.  
+Further manual placement of 1-5 percent of the images was 
+required; these were due either to poor initial placement, 
+particularly when the scene was featureless and provided few or 
+no overlapping features with the UV/Vis basemap, or to mismatches 
+of scene, resolution or illumination across seams in the UV/Vis 
+mosaic.  Some misregistration of adjacent HiRes images remains in 
+the final mosaic because the paramount goal was registration with 
+the underlying UV/Vis Basemap Mosaic. The HiRes polar mosaics 
+within approximately 2 degrees of the pole were dominantly 
+registered to HiRes images rather than the basemap due to lack of 
+useful basemap detail in that region.
+
+
+
+RADIOMETRIC UNITS
+=================
+To date, absolute photometric calibration of the HiRes image data 
+remains elusive.  This seems particularly problematic for the 
+bulk of HiRes images, which were noisy due to the low gain 
+setting intended to extend the life of the imaging system.  For 
+this product, piece-wise intensity matching of the HiRes mosaics 
+to the UV/Vis Basemap Mosaic was adopted as an approximate 
+radiometric calibration.  The further decision was made to use 
+750 nm ("D") filter HiRes images in order to best match the 
+UV/Vis Basemap Mosaic, which dominantly comprises 750 nm ("B") 
+filter images.  A more detailed description of the UV/Vis basemap 
+photometric calibration may be found on the UV/Vis basemap 
+volumes CL_30XX.
+
+HiRes sub-polar mosaic tiles were individually calibrated against 
+the underlying UV/Vis basemap. In constrast, each of the four 
+HiRes polar mosaics employ a single calibration for all tiles due 
+to the generally unreliable calibration of the underlying basemap 
+in shadowed regions. These calibrations are each based on those 
+of well-illuminated tiles and basemap.
+
+In each tile header, the OFFSET and SCALING_FACTOR entries define 
+HiRes fractional reflectances as follows:
+
+   HIRES MOSAIC FRACTIONAL_REFLECTANCE = (SCALING_FACTOR * DN) + 
+     OFFSET
+   where: DN = 8-bit pixel value of HiRes mosaic image array.
+          SCALING_FACTOR units are fractional reflectance per DN
+            OFFSET units are fractional reflectance 
+
+
+The calibration in every case included correction for the non-
+uniformity of the raw HiRes images due to the light intensifier 
+(Robinson, personal communication, 1997).
+
+DATA PROCESSING
+===============
+Image processing tools developed at Malin Space Science Systems 
+were used for image map projection, registration, tone matching 
+and mosaicking.  MapMaker was used to generate context images 
+from the UV/Vis Basemap Mosaic.
+
+Generally, processing proceeded on an orbit and latitude "bin" 
+basis, reflecting the organization of the Clementine EDR CDs.  A 
+latitude bin consists of all images of a given orbit deemed to 
+fall within a 10 degree latitude range based on SPICE 
+information.  The latitude ranges are defined to fall on 10-
+degree boundaries from -90 to +90.  For the sub-polar mosaics, 
+sinusoidal map projection of images from a given orbit used the 
+same central longitude, taken to be the orbit's longitude at the 
+lunar equator. Polar mosaics employed the stereographic 
+projection.
+
+The HiRes mosaic was processed in 5 steps:
+
+1. image calibration, map project, and basemap generation
+
+2. lores registration
+
+3. HiRes registration
+
+4. constrained registration
+
+5. mosaic and estimate photometric calibration
+
+
+Step 1
+-------
+Following calibration for image non-uniformity, each image is 
+warped with the equal-area sinusoidal or stereographic projection 
+[Snyder, 1982], using the SPICE information in the EDR's PDS 
+header.  Only "D" filter (750 nm) images are considered.  Images 
+with no apparent content, indicated by MINIMUM = MAXIMUM (DN) 
+header entries, or low intensifier gains (< 10) are rejected. 
+Also rejected are images with excessive emission angles.
+
+The HiRes SPICE information is erroneous to some degree, 
+necessitating further effort to register them with the UV/Vis 
+Basemap Mosaic.  Both high resolution (20 m/pixel or 30 m/pixel) 
+and low-resolution (100 m/pixel or 150 m/pixel) versions are 
+generated.  In the case of the sub-polar mosaic, this 
+necessitated reprojection of the UV/Vis context to match the 
+central longitude of a given orbit's images.
+
+Step 2
+------
+Step 2 registers the HiRes images at UV/Vis basemap resolution.  
+The HiRes images generally have some small systematic deviation 
+away from a geometrically controlled position.  This deviation is 
+of order 10-200 pixels at 100 m/pixel, tending to be largest near 
+the poles.  Correlation of the HiRes images to the UV/Vis basemap 
+permits estimation of HiRes image offsets relative to the UV/Vis 
+basemap.  Provisional image placements that failed the 
+correlation effort are estimated from neighboring "good" images 
+that did not fail.  Very rarely, "holes" in the underlying 
+basemap, due to absence of valid UV/Vis data, result in stretches 
+of HiRes data which lack geometric constraint to the basemap.
+
+Step 3
+------
+Overlapping "good" images are correlated against each other to 
+provide a "full-resolution" placement constraint.
+
+Step 4
+------
+The results of the reduced and full resolution registrations are 
+combined to define a constrained, least absolute-deviation 
+problem for the image placement.  Like the more familiar least-
+squares fit procedure, this seeks to minimize deviation away from 
+specified targets, in this case the nominal absolute and relative 
+HiRes image placements.  However, least-squares tends to weight 
+outlying locations in a manner considered undesirable.
+
+An additional constraint is imposed by not allowing the any 
+placement solution to stray further than 3 UV/Vis-resolution 
+pixels from the nominal location.  Occasionally, this constraint 
+must be relaxed to accommodate relatively severe UV/Vis mosaic 
+seam offsets.
+
+Step 5
+------
+Using the estimated placements, the full resolution HiRes images 
+are provisionally mosaicked, laying frames down from south to 
+north.  This provisional mosaic is manually examined to detect 
+misplaced and invalid (no significant content) images, due in 
+some cases to an image taken while gain states were transitioning 
+to different values.  Misplaced images are manually mosaicked, 
+and invalid images flagged for exclusion. In regions of great 
+overlap, ie near the pole, redundant, poorer-quality data frames 
+were excluded.
+
+Because the UV/Vis Basemap Mosaic is the de facto control network 
+for lunar cartography, HiRes images are permitted to mismatch 
+each other when forced by UV/Vis scene content which is 
+mismatched across mosaic seams.
+
+Following the manual quality review, a final mosaic is produced 
+as tiles that span approximately 1.75 degrees of latitude for the 
+sub-polar mosaic, and 2250 pixel squares (approximately 2.2 deg) 
+for the polar mosaics.  Low resolution versions with UV/Vis 
+context are also generated to estimate an approximate photometric 
+calibration.  The sub-polar calibrations are computed as the 
+least-squares linear fit of the 1.75-degree tile's DN values to 
+those of the underlying UV/Vis basemap, an 8-bit version 
+generated from the 16-bit versions provided on CD.  This chain of 
+linear scalings is then combined to provide a nominal scaling of 
+the tile DNs to physical photometric (fractional reflectance) 
+values. A single calibration is adopted for each of the four 
+polar mosaics to mitigate problems associated with unreliable 
+basemap calibrations due to shadows near the poles.  The 
+calibrations of the polar mosaics are based on well-illuminated 
+tiles and basemap portions.
+
+
+
+FILES, DIRECTORIES, AND DISK CONTENTS
+=====================================
+The files on CD volume set are organized starting at the root or 
+'parent' directory.  Below the parent directory is a directory  
+tree containing data, documentation, and index files.  In the 
+table below directory names are indicated by brackets (<...>), 
+upper-case letters indicate an actual directory or file name, and 
+lower-case letters indicate the general form of a set of 
+directory or file names.
+
+4. CD CONTENTS, DIRECTORY, AND FILENAMING CONVENTION
+
+The files on this CD are organized starting at the root or 
+'parent' directory.  Below the parent directory is a directory 
+tree containing data, documentation, and index files.  In the 
+table below directory names are indicated by brackets (<...>), 
+upper-case letters indicate an actual directory or file name, and 
+lower-case letters indicate the general form of a set of 
+directory or file names.
+
+
+DIRECTORY/FILE          CONTENTS
+-----------------     ------------------------------------------
+
+<root>
+|
+|-INDEX.HTM          Starting point for web-browsing CD contents.
+|
+|-BRWSGRF.HTM        Graphics-based web interface to contents.
+|
+|-AAREADME.TXT       The file you are reading (ASCII Text).
+|
+|-ERRATA.TXT         Description of known anomalies and errors
+|                    present on the volume set(optional file).
+|
+|-VOLDESC.CAT        A description of the contents of this
+|                    CD volume in a format readable by
+|                    both humans and computers.
+|
+|-<CATALOG>          Catalog Directory
+|  |
+|  |-CATINFO.TXT     Describes Contents of the Catalog directory
+|  |
+|  |-DATASET.CAT     Clementine HiRes Mosaic description.
+|  |
+|  |-DSMAP.CAT       Map Projection description.
+|  |
+|  |-INSTHOST.CAT    Clementine Spacecraft description.
+|  |
+|  |-MISSION.CAT     Clementine Mission description.
+|  |
+|  |-PERSON.CAT      Contributors to Clementine HiRes mosaic.
+|  |
+|  |-REF.CAT         References for Clementine HiRes mosaic.
+|  |
+|  |-HRESINST.CAT    HiRes Camera description.
+|
+|-<DOCUMENT>         Documentation Directory.  The files in this
+|  |                 directory provide detailed information
+|  |                 regarding the Clementine HiRes Mosaic.
+|  |
+|  |-DOCINFO.TXT     Description of files in the DOCUMENT
+|  |                 directory.
+|  |
+|  |-VOLINFO.TXT     Documentation regarding the
+|  |                 contents of this CD Volume Set.
+|  |
+|  |-VOLINFO.HTM     Documentation regarding the contents of
+|  |                 this CD Volume Set in HTML format.
+|  |
+|  |-VOLINFO.LBL     PDS Label file describing the VOLINFO
+|  |                 documents.
+|
+|-<INDEX>            Directory for the image index files.
+|  |
+|  |-INDXINFO.TXT    Description of files in <INDEX> directory.
+|  |
+|  |-IMGINDX.TAB     Image Index table.
+|  |
+|  |-IMGINDX.LBL     PDS label for IMGINDX.TAB.
+|  |
+|  |-SRCINDX.TAB     Table of source images used in the
+|  |                 production of the Clementine HiRes mosaic.
+|  |
+|  |-SRCINDX.LBL     PDS Label for SRCINDX.TAB
+|
+|
+|-<Qn>               Data directory encompassing one quadrant of 
+|  |                 the full polar mosaic. Quadrants are 
+|  |                 numbered in the positive longitude 
+|  |                 direction beginning with 1 in the 
+|  |                 0-90 deg range.
+|  |
+|  |-<Gnnepmmm.IMG>  Polar mosaic data product in PDS format.
+|  |                 Filename is coded as follows:
+|  |
+|  |                   nn = two digit center latitude 
+|  |                        (i.e. INT(lat)).
+|  |                    e = N (North latitude)
+|  |                        S (South latitude)
+|  |                    p = N (North periapsis)
+|  |                        S (South periapsis)
+|  |                  mmm = three-digit center longitude 
+|  |                        (INT(longitude)) 
+|  |
+|  |-<BROWSE>        Subdirectory containing browse images 
+|  |                 for HTML interface.
+|  |  |
+|  |  |-<Gnnepmmm.JPG>  Browse image in JPEG format with 
+|  |  |                 UV/Vis context for
+|  |  |                 corresponding PDS image.
+|  |  |
+|  |  |-<Gnnepmmm.HTM>  Browse HTML file for for corresponding 
+|  |  |                 PDS image.
+|
+|-<THUMNAIL>         Thumbnail browse image in JPEG format at 
+|  |                 1/30th scale with
+|  |                 atop UV/Vis basemap context.
+|  |
+|  |-<Tnnepmmm.JPG>  Thumbnail browse image in JPEG format at 
+|  |                 1/30th scale with UV/Vis context for 
+|  |                 corresponding PDS image; named as above.
+
+
+IMAGE FILE ORGANIZATION
+=======================
+The image files are stored in a PDS compliant format.  An image 
+file contains an label area (header) at the beginning of the file 
+followed by the image data.  The number of bytes of the label 
+area is a multiple of the number of bytes that make up an image 
+line (number of samples * 1 bytes/pixel).  The image label area 
+contains ASCII text data that contains information about the 
+image file (see Image Labels section below).  The label area can 
+be viewed with a simple ASCII editor on most computer systems.
+
+Pixel Representation
+--------------------
+The Clementine HiRes mosaic is stored as image files with 8-bit 
+unsigned integer pixels.
+
+Image Labels
+------------
+The label area of a image file contains descriptive information 
+about the image.  The label consists of keyword statements that 
+conform to version 3 of the Object Description Language (ODL) 
+developed by NASA's PDS project.  There are three types of ODL 
+statements within a label: structural statements, keyword 
+assignment statements, and pointer statements.
+
+Structural statements provide a shell around keyword assignment 
+statements to delineate which data object the assignment 
+statements are describing.  The structural statements are:
+
+         1) OBJECT = object_name
+         2) END_OBJECT
+         3) END
+
+The OBJECT statement begins the description of a particular data 
+object and the END_OBJECT statement signals the end of the 
+object's description.  All keyword assignment statements between 
+an OBJECT and its corresponding END_OBJECT statement describe the 
+particular object named in the OBJECT statement.  The END 
+statement terminates a label.  A keyword assignment statement 
+contains the name of an attribute and the value of that 
+attribute.  Keyword assignment statements are described in more 
+detail in Appendix B of this document.  These statements have the 
+following format:
+
+         name = value
+
+Values of keyword assignment statements can be numeric values, 
+literals, and text strings.
+
+Pointer statements are a special class of keyword assignment 
+statements.  These pointers are expressed in the ODL using the 
+following notation:
+
+         ^object_name = location
+
+If the object is in the same file as the label, the location of 
+the object is given as an integer representing the starting 
+record number of the object, measured from the beginning of the 
+file.  The first label record in a file is record 1.  Pointers 
+are useful for describing the location of individual components 
+of a data object.  Pointer statements are also used for pointing 
+to data or label information stored in separate files.  An 
+example of a detached label (i.e., label information stored in a 
+separate file) is shown below: By convention, detached labels are 
+found in the LABEL directory.  
+
+         ^STRUCTURE = 'logical_file_name'
+
+The value of 'logical_file_name' is the name of the detached 
+label file containing the description.
+
+The keyword statements in the label are packed into the fixed-
+length records that make up the keyword label area.  Each keyword 
+statement is terminated by a carriage-return and line-feed 
+character sequence.  An example of a Clementine HiRes strip 
+mosaic image label is shown below.  Descriptions of the keywords 
+used in the mosaic label are found in Appendix A.
+
+          Example PDS Label for Clementine HiRes Strip Mosaic
+          ===================================================
+
+PDS_VERSION_ID                 = PDS3
+/*          FILE FORMAT AND LENGTH */
+RECORD_TYPE                    = FIXED_LENGTH
+RECORD_BYTES                   = 158   
+FILE_RECORDS                   = 2677  
+LABEL_RECORDS                  = 24    
+INTERCHANGE_FORMAT             = BINARY
+/*          POINTERS TO START RECORDS OF OBJECTS IN FILE */
+^IMAGE                         = 25    
+/*          IMAGE DESCRIPTION */
+DATA_SET_ID                    = "CLEM1-L-H-5-DIM-HIRES-V1.0"
+PRODUCT_ID                     = "H49S0378"          
+PRODUCER_INSTITUTION_NAME      = "MALIN SPACE SCIENCE SYSTEMS"
+PRODUCT_TYPE                   = MDIM
+MISSION_NAME                   = "DEEP SPACE PROGRAM SCIENCE 
+EXPERIMENT"
+SPACECRAFT_NAME                = "CLEMENTINE 1"
+INSTRUMENT_NAME                = "HIGH RESOLUTION CAMERA"
+INSTRUMENT_ID                  = "HIRES"
+TARGET_NAME                    = "MOON"
+FILTER_NAME                    = "D"
+CENTER_FILTER_WAVELENGTH       = 750.0000
+BANDWIDTH                      = 50.0000
+START_TIME                     = "N/A"
+STOP_TIME                      = "N/A"
+SPACECRAFT_CLOCK_START_COUNT   = "N/A"
+SPACECRAFT_CLOCK_STOP_COUNT    = "N/A"
+PRODUCT_CREATION_TIME          = 1998-09-02T00:00:00           
+NOTE                           = "LUNAR HIRES MOSAIC"
+/*          DESCRIPTION OF OBJECTS CONTAINED IN FILE */
+OBJECT                         = IMAGE
+BANDS                        = 1
+BAND_STORAGE_TYPE            = BAND_SEQUENTIAL
+BAND_NAME                    = "N/A"
+LINES                        = 2653  
+LINE_SAMPLES                 = 158   
+SAMPLE_TYPE                  = UNSIGNED_INTEGER
+SAMPLE_BITS                  = 8
+SAMPLE_BIT_MASK              = 2#11111111#
+OFFSET                       = 1.78846745E-01      
+SCALING_FACTOR               = 5.01661140E-04      
+VALID_MINIMUM                = 1
+NULL                         = 0
+LOW_REPR_SATURATION          = 0
+LOW_INSTR_SATURATION         = 0
+HIGH_INSTR_SATURATION        = 255
+HIGH_REPR_SATURATION         = 255
+MINIMUM                      = 0  
+MAXIMUM                      = 125
+CHECKSUM                     = 17038302    
+END_OBJECT                     = IMAGE
+OBJECT                         = IMAGE_MAP_PROJECTION
+^DATA_SET_MAP_PROJECTION     = "DSMAP.CAT"
+COORDINATE_SYSTEM_TYPE       = "BODY-FIXED ROTATING"
+COORDINATE_SYSTEM_NAME       = "PLANETOGRAPHIC"
+MAP_PROJECTION_TYPE          = "SINUSOIDAL"
+MAP_RESOLUTION               = 1516.1666667        
+MAP_SCALE                    = 0.0200000           
+MAXIMUM_LATITUDE             = -49.0002199         
+MINIMUM_LATITUDE             = -50.7493679         
+EASTERNMOST_LONGITUDE        = 37.1729801          
+WESTERNMOST_LONGITUDE        = 37.0093190          
+LINE_PROJECTION_OFFSET       = -74290.5000000      
+SAMPLE_PROJECTION_OFFSET     = 760.5000000         
+A_AXIS_RADIUS                = 1737.4000000        
+B_AXIS_RADIUS                = 1737.4000000        
+C_AXIS_RADIUS                = 1737.4000000        
+FIRST_STANDARD_PARALLEL      = "N/A"
+SECOND_STANDARD_PARALLEL     = "N/A"
+POSITIVE_LONGITUDE_DIRECTION = EAST
+CENTER_LATITUDE              = 0.0
+CENTER_LONGITUDE             = 37.8000000          
+REFERENCE_LATITUDE           = "N/A"
+REFERENCE_LONGITUDE          = "N/A"
+LINE_FIRST_PIXEL             = 1
+SAMPLE_FIRST_PIXEL           = 1
+LINE_LAST_PIXEL              = 2653  
+SAMPLE_LAST_PIXEL            = 158   
+MAP_PROJECTION_ROTATION      = 0.0000000
+VERTICAL_FRAMELET_OFFSET     = "N/A"
+HORIZONTAL_FRAMELET_OFFSET   = "N/A"
+END_OBJECT                     = IMAGE_MAP_PROJECTION
+END
+
+INDEX FILES
+===========
+Each CD volume in the Clementine HiRes mosaic contains an image 
+index file ('imgindx.tab') with catalog information about the 
+entire basemap.  The image index file and it's associated PDS 
+label file ('imgindx.lbl') are located in the 'index' directory.  
+The catalog information in the index table includes the file 
+names, CD volumes, and mapping parameter information.  An 
+additional source file index table ('srcindx.tab' and 
+corresponding PDS label 'srcindx.lbl')contains information about 
+the EDR image collection used to assemble the basemap.  This file 
+contains an entry for each EDR image that was used in the mosaic.  
+For more information on the contents of the index files refer to 
+the label files.
+
+
+REFERENCES
+==========
+Acton, C.H., Ancillary Data Services of NASA's Navigation and 
+Ancillary Information Facility: Planetary and Space Sciences, 
+Vol. 44, No. 1, pp. 65-70, 1996.
+
+Barrodale, I. and Roberts, F.D.K., Algorithm 552: Solution of the 
+Constrained L1 Linear Approximation Problem, ACM TOMS 6 (2), 231-
+235, 1980
+
+Batson, R.M., Digital Cartography of the Planets: New Methods, 
+its status, and its Future: Photogrammetric Engineering and 
+Remote Sensing, Vol. 53, No. 9, p. 1211-1281.
+
+Batson, R.M., 1990, Cartography: in Greeley, Ronald, and Batson, 
+eds. Planetary Mapping: New York, Cambridge University Press, pp. 
+60-95.
+
+Eliason, E.M., E.R. Malaret, and G. Woodward, Clementine Mission, 
+The Archive of Image Data Products and Data Processing 
+Capabilities (Abstract): Proceedings of the 26-th Lunar and 
+Planetary Conference, pp. 369-370, 1995.
+
+McEwen, A., E.M.Eliason, C. Isbell, E. Lee, T. Becker, M.  
+Robinson (1997). The Clementine Basemap Mosaic.  volinfo.txt, 
+CLEM1-L-U-5-DIM-BASEMAP-V1.0.
+
+JPL, PDS Standards Reference: JPL Document D-7669, JPL , 
+Pasadena, California, 1992.
+
+Kordas, J.R., I.T. Lewis, R.E. Priest, W.T. White, D.P. Nielsen, 
+H. Park, B.A. Wilson, M.J. Shannon, A.G. Ledebuhr, and L.D. 
+Pleasance, UV/visible Camera for the Clementine Mission: 
+Proceedings of the Society of Photo-optical Instrumentation 
+Engineers (SPIE), 2478, pp. 175-186, 1995.
+
+Nozette, S., P. Rustan, L.P. Pleasance, D.M. Horan, P. Regeon, 
+E.M. Shoemaker, P.D. Spudis, C.H. Acton, D.N. Baker, J.E. 
+Blamont, B.J. Buratti, M.P. Corson, M.E. Davies, T.C. Duxbury, 
+E.M. Eliason, B.M. Jakosky, J.F. Kordas, I.T. Lewis, C.L. 
+Lichtenberg, P.G. Lucey, E. Malaret, M.A. Massie, J.H. Resnick, 
+C.J. Rollins, H.S. Park, A.S. McEwen, R.E. Priest, C.M. Pieters, 
+R.A. Reisse, M.S. Robinson, D.E. Smith, T.C. Sorenson, R.W. 
+Vorder Breugge, and M.T. Zuber; The Clementine Mission to the 
+Moon: Scientific Overview: Science, 266, 1835-1839, 1994.
+
+Snyder, J.P, Map Projections Used by the U.S. Geological Survey:  
+Geological Survey Bulletin 1532, U.S. Government Printing Office, 
+Washington D.C., 313 pp., 1982.
+
+
+
+APPENDIX A - KEYWORD ASSIGNMENTS
+================================
+
+This section defines the keywords used in the image label area of 
+the Clementine basemap mosaic.
+
+PDS_VERSION_ID                 = PDS3
+This dataset conforms to version 3 of the PDS standards.
+
+RECORD_TYPE                    = FIXED_LENGTH
+This keyword defines the record structure of the file as fixed-
+length record files.
+
+RECORD_BYTES                   = xxxx
+Record length in bytes for fixed-length records (number of 
+samples)
+
+FILE_RECORDS                   = xxxx
+Total number of fixed-length records contained in the file
+
+LABEL_RECORDS                  = x
+Number of fixed-length label records in the file
+
+INTERCHANGE_FORMAT             = BINARY
+Data are organized as BINARY values
+
+^IMAGE                         = x
+Pointer to the first record that contains image data. (The first 
+record in the file is designated as record 1.)
+
+DATA_SET_ID                    = "CLH-002"
+The PDS defined data set identifier for the Clementine HiRes 
+mosaic
+
+PRODUCT_ID                     = "xxxxx"
+Unique product identifier for this image file. This value is the 
+same as the file name. (Format described in the "FILES, 
+DIRECTORIES, AND DISK CONTENTS" section above.)
+
+PRODUCER_INSTITUTION_NAME      = "MALIN SPACE SCIENCE SYSTEMS"
+Identifies the producer organization of this data product.
+
+PRODUCT_TYPE                   = MDIM
+This keyword identifies the image product as a Mosaicked Digital 
+Image Model (MDIM).
+
+MISSION_NAME                   = "DEEP SPACE PROGRAM SCIENCE 
+EXPERIMENT"
+The keyword identifies the product name of the mission. (This is 
+the official name of the Clementine Mission.)
+
+SPACECRAFT_NAME                = "CLEMENTINE 1"
+Name of the spacecraft that acquired the data.
+
+INSTRUMENT_NAME                = "HIGH RESOLUTION CAMERA"
+Name of the instrument that acquired the image data.
+
+INSTRUMENT_ID                  = "HiRes"
+Abbreviated name of the instrument that acquired the image data.
+
+TARGET_NAME                    = "MOON"
+Target of the data product.
+
+FILTER_NAME                    = "D"
+Designation of the 750 nm HiRes filter, chosen because virtually 
+all images that make up the Clementine Basemap Mosaic were 
+acquired using the filter "B", also a 750 nm filter.  (Filter "C" 
+(900 nm) UV/Vis images were used when filter "B" data were not 
+available.)
+
+CENTER_FILTER_WAVELENGTH       = 750.0000
+The center filter wavelength of filter "D" is 750 nanometers.
+
+BANDWIDTH                      = 50.0000
+The bandwidth of the filter "D" is 50 nanometers.
+
+START_TIME                     = "N/A"
+STOP_TIME                      = "N/A"
+SPACECRAFT_CLOCK_START_COUNT   = "N/A"
+SPACECRAFT_CLOCK_STOP_COUNT    = "N/A"
+Start_Time, Stop_Time, and clock counts are not applicable (N/A) 
+for this data product but are required keywords.
+
+PRODUCT_CREATION_TIME          = 1998-06-16T00:00:00
+Time at which the image product was produced.
+
+NOTE                           = "LUNAR HiRes MOSAIC"
+Note field always says LUNAR HiRes MOSAIC.
+
+OBJECT                         = IMAGE
+BANDS                          = 1
+There is only one spectral band in the HiRes mosaic.
+
+BAND_STORAGE_TYPE              = BAND_SEQUENTIAL
+Storage order is band sequential
+
+BAND_NAME                      = "N/A"
+Band name keyword is not applicable.
+
+LINES                          = xxxx
+Number of lines (rows) in image array
+
+LINE_SAMPLES                   = xxxx
+Number of samples (columns) in image array.
+
+SAMPLE_TYPE                    = UNSIGNED_INTEGER
+Data are stored as unsigned, two's complement integers.
+
+
+SAMPLE_BITS                    = 8
+There are 8 bits per sample (1 byte)
+
+SAMPLE_BIT_MASK                = 2#11111111#
+This keyword indicates all bits within a 8-bit byte are used in 
+the expression of the value.
+
+OFFSET                         = xxxxx
+SCALING_FACTOR                 = xxxxx
+The OFFSET and SCALING_FACTOR keywords contain values used to 
+convert the 8-bit integer pixel value to radiometric units. 
+
+FRACTIONAL_REFLECTANCE = (PIXEL* SCALING_FACTOR) + OFFSET
+
+VALID_MINIMUM                  = 1
+Lowest valid value that can be stored in pixel (always 1).
+
+NULL                           = 0
+Value of empty pixels or missing data (always 0).
+
+LOW_REPR_SATURATION            = 0
+Value of pixel if processing caused a low-end value pixel to go 
+outside  dynamic range of a 8-bit unsigned integer (always 0).
+
+LOW_INSTR_SATURATION           = 0
+Value if pixel was low-end saturated (always 0). For example, if 
+the bias of the camera was set so that low DN values could not be 
+stored in the pixel.
+
+HIGH_INSTR_SATURATION          = 255
+Value of pixel if processing caused a high-end value pixel to go 
+outside dynamic range of a 8-bit unsigned integer (always 255).
+
+HIGH_REPR_SATURATION           = 255
+Value if pixel was high-end saturated (always 255). For example, 
+if the scene was too bright for the image to record at the pixel 
+value became saturated.
+
+MINIMUM                        = xxxx
+Minimum value in image array.
+
+MAXIMUM                        = xxxx
+Maximum value in image array.
+
+CHECKSUM                       = xxxxxxxx
+Sum of all bytes in the image object. Used to validate that an 
+image file was properly stored on the media.
+
+END_OBJECT                     = IMAGE
+
+OBJECT                         = IMAGE_MAP_PROJECTION
+^DATA_SET_MAP_PROJECTION       = "DSMAP.CAT"
+Name of file containing additional information about the map 
+projection.
+DSMAP.CAT is located in the 'catalog' directory.
+
+COORDINATE_SYSTEM_TYPE         = "BODY-FIXED ROTATING"
+COORDINATE_SYSTEM_NAME         = "PLANETOGRAPHIC"
+Coordinate system used in the map projection.
+
+MAP_PROJECTION_TYPE            = "SINUSOIDAL"
+Name of map projection. 
+
+MAP_RESOLUTION                 = xxx.xxxxx
+Map resolution (pixels per degree) at the reference point of the 
+projection.
+
+MAP_SCALE                      = x.xxxxxx
+Map scale (kilometers per pixel) at the reference point of the 
+projection.
+
+MAXIMUM_LATITUDE               = xx.xxxxxxx
+Maximum latitude of the image file
+
+MINIMUM_LATITUDE               = xx.xxxxxxx
+Minimum latitude of the image file.
+
+EASTERNMOST_LONGITUDE          = xxx.xxxxxxx
+Easternmost longitude of the image file.
+
+WESTERNMOST_LONGITUDE          = xxx.xxxxxxx
+Westernmost longitude of the image file
+
+LINE_PROJECTION_OFFSET         = xxxxx.xxxxxxx
+SAMPLE_PROJECTION_OFFSET       = xxxxx.xxxxxxx
+Projection offsets are used to define the relationship between 
+line and sample of the image array and the latitude and longitude 
+coordinate on the surface of the planet. See 'dsmap.cat' file 
+located in the 'catalog' directory for information on these 
+keywords.
+
+A_AXIS_RADIUS                  = 1737.4000000
+B_AXIS_RADIUS                  = 1737.4000000
+C_AXIS_RADIUS                  = 1737.4000000
+Three axis radius of the Moon used in the derivation of the map 
+products that make up the basemap mosaic.
+
+FIRST_STANDARD_PARALLEL        = "N/A"
+SECOND_STANDARD_PARALLEL       = "N/A"
+Standard parallels of map, not used in this sinusoidal equal-area 
+projection.
+
+POSITIVE_LONGITUDE_DIRECTION   = EAST
+The Moon coordinate system uses a positive longitude direction of 
+east. Longitude values increase in the eastern direction.
+
+CENTER_LATITUDE                = 0.0
+Center latitude of the map projection.
+
+CENTER_LONGITUDE               = xxxx.xxxx
+Center longitude of the map projection.
+
+REFERENCE_LATITUDE             = "N/A"
+REFERENCE_LONGITUDE            = "N/A"
+Reference latitude and longitudes are not used in the sinusoidal 
+equal-area projection.
+
+LINE_FIRST_PIXEL               = 1
+SAMPLE_FIRST_PIXEL             = 1
+The first pixel (upper left) in the image array is defined as 
+line 1, sample 1.
+
+LINE_LAST_PIXEL                = xxxx
+SAMPLE_LAST_PIXEL              = xxxx
+The last pixel (lower right) in the image arrays is defined by 
+these keywords.
+
+MAP_PROJECTION_ROTATION        = 0.0000000
+Map projection rotation always 0 for the Clementine Basemap 
+Mosaic.
+
+VERTICAL_FRAMELET_OFFSET       = "N/A"
+HORIZONTAL_FRAMELET_OFFSET     = "N/A"
+These keywords are not applicable for the sinusoidal equal-area 
+projection.
+
+END_OBJECT                       = IMAGE_MAP_PROJECTION
+END
+
+END_OBJECT                       = IMAGE_MAP_PROJECTION

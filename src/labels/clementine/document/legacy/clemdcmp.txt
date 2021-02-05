@@ -1,0 +1,47 @@
+PDS_VERSION_ID              = PDS3                                            
+RECORD_TYPE                 = FIXED_LENGTH                                    
+RECORD_BYTES                = 80                                              
+OBJECT                      = TEXT                                            
+   INTERCHANGE_FORMAT       = ASCII                                           
+   PUBLICATION_DATE         = 1994-10-01                                      
+   NOTE                     = "CLEMDCMP USER'S GUIDE"                         
+END_OBJECT                  = TEXT                                            
+END                                                                           
+                                                                              
+                         CLEMDCMP  V1.0                                       
+                                                                              
+     CLEMDCMP will decompress a clementine image and format it into           
+one of four possible formats:                                                 
+                                                                              
+       1) decompressed pds image file, with pds labels, the histogram         
+           object, and an image object, either the browse image or            
+           the full image                                                     
+       2) decompressed raw image file, no labels                              
+       3) decompressed tiff image                                             
+       4) decompressed gif image                                              
+                                                                              
+                                                                              
+Installing and Using Software on an IBM PC Running MS-DOS                     
+                                                                              
+    The file CLEMDCMP.EXE can be run as is directly from the CD-ROM.          
+The CLEMDCMP.EXE software was created using Version 4.0 of the Borland C/C++  
+development software.  It was compiled and linked using the large memory      
+model.  This program has been tested on an IBM PC 486 using DOS 6.1.  The     
+source is in the PC/SOURCE subdirectory.  A make file called CLEMDCMP.MAK     
+has also been provided in the same directory.                                 
+                                                                              
+                                                                              
+CLEMDCMP has four command-line arguments.  The first argument indicates the   
+output format of the decompressed image and the following are the options:    
+         -p = decompressed pds image file                                     
+         -n = decompressed unlabeled file                                     
+         -t = decompressed tiff file                                          
+         -g = decompressed gif file                                           
+                                                                              
+The second argument indicates which image object to output:                   
+         -i = full resolution image                                           
+         -b = browse image                                                    
+The third argument is the filename of the input compressed clementine         
+         data file.                                                           
+The fourth argument is the filename of the output decompressed                
+         clementine image.                                                    

@@ -1,0 +1,105 @@
+PDS_VERSION_ID                          = PDS3
+LABEL_REVISION_NOTE                     = "
+               CHRIS ISBELL AND LISA GADDIS, 2007-05-01"
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = GADDIS
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Lisa R. Gaddis"
+LAST_NAME                               = GADDIS
+TELEPHONE_NUMBER                        = "9285567053"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "9285567014"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "IMAGING"
+PDS_AFFILIATION                         = "NODE MANAGER"
+REGISTRATION_DATE                       = 2003-01-01
+PDS_ADDRESS_BOOK_FLAG                   = "Y"
+ADDRESS_TEXT                            = "United States Geological
+ Survey, 2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "lgaddis@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = CISBELL
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Chris Isbell"
+LAST_NAME                               = ISBELL
+TELEPHONE_NUMBER                        = "9285567211"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "9285567014"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "IMAGING"
+PDS_AFFILIATION                         = "DATA ENGINEER"
+REGISTRATION_DATE                       = 1996-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "Y"
+ADDRESS_TEXT                            = "United States Geological
+ Survey, 2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "cisbell@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = ELEE
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Ella Lee"
+LAST_NAME                               = LEE
+TELEPHONE_NUMBER                        = "9285567260"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       = 1997-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "N"
+ADDRESS_TEXT                            = "Astrogeology Team,
+2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "elee@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+OBJECT                                  = PERSONNEL
+PDS_USER_ID                             = LWELLER
+OBJECT                                  = PERSONNEL_INFORMATION
+FULL_NAME                               = "Lynn Weller"
+LAST_NAME                               = WELLER
+TELEPHONE_NUMBER                        = "9285567054"
+ALTERNATE_TELEPHONE_NUMBER              = "N/A"
+FAX_NUMBER                              = "N/A"
+INSTITUTION_NAME                        = "UNITED STATES GEOLOGICAL
+   SURVEY"
+NODE_ID                                 = "N/A"
+PDS_AFFILIATION                         = "N/A"
+REGISTRATION_DATE                       = 1997-03-01
+PDS_ADDRESS_BOOK_FLAG                   = "N"
+ADDRESS_TEXT                            = "Astrogeology Team,
+2255 North Gemini Drive, Flagstaff, AZ 86001"
+END_OBJECT                              = PERSONNEL_INFORMATION
+
+OBJECT                                  = PERSONNEL_ELECTRONIC_MAIL
+ELECTRONIC_MAIL_ID                      = "lweller@usgs.gov"
+ELECTRONIC_MAIL_TYPE                    = "INTERNET"
+PREFERENCE_ID                           = 1
+END_OBJECT                              = PERSONNEL_ELECTRONIC_MAIL
+END_OBJECT                              = PERSONNEL
+
+END

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1F00_1950.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1F00_1500.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/msn/v1/PDS4_MSN_1B00_1100.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1D00_1730.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1B00_1100.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://raw.githubusercontent.com/MillionConcepts/ldd-clementine/master/build/testing/PDS4_CLEMENTINE_1F00_1000.sch " schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational
+xmlns="http://pds.nasa.gov/pds4/pds/v1"
+xmlns:msn="http://pds.nasa.gov/pds4/msn/v1"
+xmlns:img="http://pds.nasa.gov/pds4/img/v1"
+xmlns:cart="http://pds.nasa.gov/pds4/cart/v1"
+xmlns:proc="http://pds.nasa.gov/pds4/proc/v1"
+xmlns:disp="http://pds.nasa.gov/pds4/disp/v1"
+xmlns:clementine="http://pds.nasa.gov/pds4/mission/clementine/v1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation=
+    "http://pds.nasa.gov/pds4/pds/v1     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd
+    http://pds.nasa.gov/pds4/msn/v1     https://pds.nasa.gov/pds4/msn/v1/PDS4_MSN_1B00_1100.xsd
+    http://pds.nasa.gov/pds4/img/v1     https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1D00_1730.xsd
+    http://pds.nasa.gov/pds4/cart/v1     https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1F00_1950.xsd
+    http://pds.nasa.gov/pds4/disp/v1     https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1F00_1500.xsd
+    http://pds.nasa.gov/pds4/proc/v1     https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1B00_1100.xsd
+    http://pds.nasa.gov/pds4/mission/clementine/v1  https://raw.githubusercontent.com/MillionConcepts/ldd-clementine/master/build/testing/PDS4_CLEMENTINE_1F00_1000.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:clementine:data:{pds4_root}</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>
+    Clementine HIRES Polar Mosaic Product {pds4_root}
+    </title>
+    <information_model_version>1.15.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Citation_Information>
+      <publication_year>2021</publication_year>
+      <description>
+        This is a single tile from a polar portion of the Clementine HIRES
+        Mosaic, formatted as a GeoTIFF file. The polar portions of the HIRES
+        mosaic are made up of a series of "strips," containing all
+        successfully calibrated and geolocated observations with the HIRES
+        camera's "D" (750-nm) filter within a single stereographically-defined
+        quadrant of the polar region. orbit. They are coregistered with the
+        Clementine basemap, radiometrically matched to the UVVIS mosaic, and
+        mapped using a stereographic equal-area projection at 30 m / pixel.
+
+        There are four separate HIRES polar mosaics, generated respectively
+        from south pole observations during north orbital periapsis, south
+        pole observations during south orbital periapsis, north pole
+        observations during north orbital periapsis, and north pole
+        observations during south orbital periapsis. The original archivists
+        caution against directly referencing tiles from separate periapses
+        against one another, as they may not be photometrically equivalent.
+
+        The longitude and latitude implied in the tile's name are roughly its
+        central longitude and latitude.
+
+        Array values are in normalized DN (detector counts). The scaling
+        factor and value offset given in this label are nominally intended to
+        convert these into unitless fractional reflectance values, although
+        the original archivists warn that absolute photometric calibration of
+        these data are uncertain.
+
+        This product was originally formatted as an array in the binary format
+        sometimes referred to as 'PDS,' with an attached PDS3 label. We have
+        reformatted it as a GeoTIFF file with a detached PDS4 label. It is
+        otherwise unchanged.
+
+        Detailed source image information is impractical to place in these
+        labels (some tiles are based on >20 EDR images). Please refer to
+        /document/index/hires_source_index.csv for details.
+      </description>
+    </Citation_Information>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>{modification_date}</modification_date>
+        <version_id>1.0</version_id>
+        <description>
+          Initial PDS4 version of this product.
+        </description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+<!-- note that because we don't have granular source information for these tiles, -->
+<!-- these are just the start and stop times given in the PDS3 label for the dataset as a whole. -->
+      <start_date_time>{start_time}</start_date_time>
+      <stop_date_time>{stop_time}</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+      <Science_Facets>
+        <wavelength_range>Near Infrared</wavelength_range>
+        <discipline_name>Imaging</discipline_name>
+      </Science_Facets>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>DEEP SPACE PROGRAM SCIENCE EXPERIMENT</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:investigation:mission.deep_space_program_science_experiment::1.1</lidvid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>CLEMENTINE 1</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lidvid_reference>urn:nasa:pds:context:instrument_host:spacecraft.clem1::1.1</lidvid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+<!-- these instrument and target tags will always refer to HIRES and the Moon.  they're just set as variables -->
+<!-- in order to make it easy to change them out for new sets of context products -->
+        <name>{instrument_context_name}</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lidvid_reference>{instrument_lidvid}</lidvid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>{target_name}</name>
+      <type>{target_type}</type>
+      <Internal_Reference>
+        <lidvid_reference>{target_lidvid}</lidvid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <clementine:Clementine_Parameters>
+        <clementine:producer_institution_name>{producer_institution_name}</clementine:producer_institution_name>
+      </clementine:Clementine_Parameters>
+    </Mission_Area>
+    <Discipline_Area>
+<!-- this tag is left-justified because we get a text block out of gdal  -->
+<!-- and want to preserve its tabbing -->
+{gdal_discipline}
+      <img:Imaging>
+        <Local_Internal_Reference>
+          <local_identifier_reference>image</local_identifier_reference>
+          <local_reference_type>imaging_parameters_to_image_object</local_reference_type>
+        </Local_Internal_Reference>
+      <img:Optical_Filter>
+          <img:filter_name>D</img:filter_name>
+          <img:bandwidth unit="nm">50</img:bandwidth>
+          <img:center_filter_wavelength unit="nm">750</img:center_filter_wavelength>
+        </img:Optical_Filter>
+      </img:Imaging>
+      <msn:Mission_Information>
+        <msn:product_type_name>MDIM</msn:product_type_name>
+      </msn:Mission_Information>
+      <proc:Processing_Information>
+        <Local_Internal_Reference>
+          <local_identifier_reference>image</local_identifier_reference>
+          <local_reference_type>processing_information_to_data_object</local_reference_type>
+        </Local_Internal_Reference>
+        <proc:Process>
+          <proc:description>Conversion to PDS4 format</proc:description>
+          <proc:Software>
+            <proc:name>Planetary Data Reader + GDAL PDS / PDS4 drivers</proc:name>
+            <proc:description>
+              PDR is Million Concepts' planetary data and metadata reading and conversion suite.
+              It is used here along with GDAL, specifically its PDS and PDS4 drivers (principally written by
+              Trent Hare, Robert Soricone, and Evan Raoult).
+            </proc:description>
+          </proc:Software>
+        </proc:Process>
+      </proc:Processing_Information>
+    </Discipline_Area>
+  </Observation_Area>
+  <Reference_List>
+    <Internal_Reference>
+      <lidvid_reference>urn:nasa:pds:clementine:browse:{pds4_root}_browse::1.0</lidvid_reference>
+      <reference_type>data_to_browse</reference_type>
+      <comment>
+      JPEG browse image associated with this product. Depicts this tile, outlined in white,
+      against a portion of the Clementine basemap.
+      </comment>
+    </Internal_Reference>
+    <Source_Product_External>
+      <external_source_product_identifier>CLEM1-L-H-5-DIM-MOSAIC-V1.0:{product_id}</external_source_product_identifier>
+      <reference_type>data_to_derived_source_product</reference_type>
+      <curating_facility>IMG</curating_facility>
+      <description>
+        PDS3 version of this product.
+      </description>
+    </Source_Product_External>
+  </Reference_List>
+  <File_Area_Observational>
+    <File>
+      <file_name>{pds4_root}.tif</file_name>
+<!-- Note that product_creation_time in this label is based on the creation time of the original tile.  -->
+      <creation_date_time>{product_creation_time}</creation_date_time>
+    </File>
+{gdal_file_area}
+    <Special_Constants>
+        <missing_constant>0</missing_constant>
+        <high_instrument_saturation>255</high_instrument_saturation>
+        <high_representation_saturation>255</high_representation_saturation>
+        <valid_minimum>1</valid_minimum>
+        <low_instrument_saturation>0</low_instrument_saturation>
+        <low_representation_saturation>0</low_representation_saturation>
+      </Special_Constants>
+    </Array_3D_Image>
+  </File_Area_Observational>
+</Product_Observational>

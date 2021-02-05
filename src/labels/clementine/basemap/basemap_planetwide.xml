@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-model href="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1F00_1950.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1F00_1500.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/msn/v1/PDS4_MSN_1B00_1100.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1D00_1730.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1B00_1100.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://raw.githubusercontent.com/MillionConcepts/ldd-clementine/master/build/testing/PDS4_CLEMENTINE_1F00_1000.sch " schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<Product_Observational
+xmlns="http://pds.nasa.gov/pds4/pds/v1"
+xmlns:msn="http://pds.nasa.gov/pds4/msn/v1"
+xmlns:img="http://pds.nasa.gov/pds4/img/v1"
+xmlns:cart="http://pds.nasa.gov/pds4/cart/v1"
+xmlns:proc="http://pds.nasa.gov/pds4/proc/v1"
+xmlns:disp="http://pds.nasa.gov/pds4/disp/v1"
+xmlns:clementine="http://pds.nasa.gov/pds4/mission/clementine/v1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation=
+    "http://pds.nasa.gov/pds4/pds/v1     https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1F00.xsd
+    http://pds.nasa.gov/pds4/msn/v1     https://pds.nasa.gov/pds4/msn/v1/PDS4_MSN_1B00_1100.xsd
+    http://pds.nasa.gov/pds4/img/v1     https://pds.nasa.gov/pds4/img/v1/PDS4_IMG_1D00_1730.xsd
+    http://pds.nasa.gov/pds4/cart/v1     https://pds.nasa.gov/pds4/cart/v1/PDS4_CART_1F00_1950.xsd
+    http://pds.nasa.gov/pds4/disp/v1     https://pds.nasa.gov/pds4/disp/v1/PDS4_DISP_1F00_1500.xsd
+    http://pds.nasa.gov/pds4/proc/v1     https://pds.nasa.gov/pds4/proc/v1/PDS4_PROC_1B00_1100.xsd
+    http://pds.nasa.gov/pds4/mission/clementine/v1  https://raw.githubusercontent.com/MillionConcepts/ldd-clementine/master/build/testing/PDS4_CLEMENTINE_1F00_1000.xsd">
+  <Identification_Area>
+    <logical_identifier>urn:nasa:pds:clementine:data:basemap_planetwide</logical_identifier>
+    <version_id>1.0</version_id>
+    <title>
+      Clementine Basemap Product basemap_planetwide
+    </title>
+    <information_model_version>1.15.0.0</information_model_version>
+    <product_class>Product_Observational</product_class>
+    <Citation_Information>
+      <publication_year>2021</publication_year>
+      <description>
+        This is a sinusoidal projection of the entire moon from the the Clementine Basemap
+        Image Mosaic ("basemap"), formatted as a GeoTIFF file. The basemap is a digital image
+        model of the Moon generated from observations with Clementine's Ultraviolet /
+        Visible Camera (UVVIS), primarily using its 750-nm "B" filter.
+
+        Array values are in normalized DN (detector counts). The scaling factor
+        and value offset given in this label are intended to convert these into
+        unitless fractional reflectance value.
+
+        This product was originally formatted as an array in the binary format
+        sometimes referred to as 'PDS,' with an attached PDS3 label and a detached
+        ISIS 'qube' label. We have reformatted it as a GeoTIFF file with a detached
+        PDS4 label. It is otherwise unchanged.
+      </description>
+    </Citation_Information>
+    <Modification_History>
+      <Modification_Detail>
+        <modification_date>2021-01-21</modification_date>
+        <version_id>1.0</version_id>
+        <description>
+          Initial PDS4 version of this product.
+        </description>
+      </Modification_Detail>
+    </Modification_History>
+  </Identification_Area>
+  <Observation_Area>
+    <Time_Coordinates>
+      <start_date_time>1994-01-25T00:00:00Z</start_date_time>
+      <stop_date_time>1994-05-07T00:00:00Z</stop_date_time>
+    </Time_Coordinates>
+    <Primary_Result_Summary>
+      <purpose>Science</purpose>
+      <processing_level>Derived</processing_level>
+      <Science_Facets>
+        <wavelength_range>Near Infrared</wavelength_range>
+        <discipline_name>Imaging</discipline_name>
+      </Science_Facets>
+    </Primary_Result_Summary>
+    <Investigation_Area>
+      <name>DEEP SPACE PROGRAM SCIENCE EXPERIMENT</name>
+      <type>Mission</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:investigation:mission.deep_space_program_science_experiment::1.1</lidvid_reference>
+        <reference_type>data_to_investigation</reference_type>
+      </Internal_Reference>
+    </Investigation_Area>
+    <Observing_System>
+      <Observing_System_Component>
+        <name>CLEMENTINE 1</name>
+        <type>Host</type>
+        <Internal_Reference>
+          <lidvid_reference>urn:nasa:pds:context:instrument_host:spacecraft.clem1::1.1</lidvid_reference>
+          <reference_type>is_instrument_host</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+      <Observing_System_Component>
+        <name>ULTRAVIOLET/VISIBLE CAMERA</name>
+        <type>Instrument</type>
+        <Internal_Reference>
+          <lidvid_reference>urn:nasa:pds:context:instrument:uvvis.clem1::1.0</lidvid_reference>
+          <reference_type>is_instrument</reference_type>
+        </Internal_Reference>
+      </Observing_System_Component>
+    </Observing_System>
+    <Target_Identification>
+      <name>MOON</name>
+      <type>Satellite</type>
+      <Internal_Reference>
+        <lidvid_reference>urn:nasa:pds:context:target:satellite.earth.moon::1.1</lidvid_reference>
+        <reference_type>data_to_target</reference_type>
+      </Internal_Reference>
+    </Target_Identification>
+    <Mission_Area>
+      <clementine:Clementine_Parameters>
+        <clementine:producer_institution_name>UNITED STATES GEOLOGICAL SURVEY</clementine:producer_institution_name>
+      </clementine:Clementine_Parameters>
+    </Mission_Area>
+    <Discipline_Area>
+      <disp:Display_Settings>
+        <Local_Internal_Reference>
+          <local_identifier_reference>image</local_identifier_reference>
+          <local_reference_type>display_settings_to_array</local_reference_type>
+        </Local_Internal_Reference>
+        <disp:Display_Direction>
+          <disp:horizontal_display_axis>Sample</disp:horizontal_display_axis>
+          <disp:horizontal_display_direction>Left to Right</disp:horizontal_display_direction>
+          <disp:vertical_display_axis>Line</disp:vertical_display_axis>
+          <disp:vertical_display_direction>Top to Bottom</disp:vertical_display_direction>
+        </disp:Display_Direction>
+      </disp:Display_Settings>
+      <cart:Cartography>
+        <Local_Internal_Reference>
+          <local_identifier_reference>image</local_identifier_reference>
+          <local_reference_type>cartography_parameters_to_image_object</local_reference_type>
+        </Local_Internal_Reference>
+        <cart:Spatial_Domain>
+          <cart:Bounding_Coordinates>
+            <cart:west_bounding_coordinate unit="deg">-8.44008617731</cart:west_bounding_coordinate>
+            <cart:east_bounding_coordinate unit="deg">115.576818823</cart:east_bounding_coordinate>
+            <cart:north_bounding_coordinate unit="deg">90</cart:north_bounding_coordinate>
+            <cart:south_bounding_coordinate unit="deg">-90</cart:south_bounding_coordinate>
+          </cart:Bounding_Coordinates>
+        </cart:Spatial_Domain>
+        <cart:Spatial_Reference_Information>
+          <cart:Horizontal_Coordinate_System_Definition>
+            <cart:Planar>
+              <cart:Map_Projection>
+                <cart:map_projection_name>Sinusoidal</cart:map_projection_name>
+                <cart:Sinusoidal>
+                  <cart:longitude_of_central_meridian unit="deg">0</cart:longitude_of_central_meridian>
+                  <cart:latitude_of_projection_origin unit="deg">0</cart:latitude_of_projection_origin>
+                </cart:Sinusoidal>
+              </cart:Map_Projection>
+              <cart:Planar_Coordinate_Information>
+                <cart:planar_coordinate_encoding_method>Coordinate Pair</cart:planar_coordinate_encoding_method>
+                <cart:Coordinate_Representation>
+                  <cart:pixel_resolution_x unit="m/pixel">12500.0</cart:pixel_resolution_x>
+                  <cart:pixel_resolution_y unit="m/pixel">12500.0</cart:pixel_resolution_y>
+                  <cart:pixel_scale_x unit="pixel/deg">2.42586803393</cart:pixel_scale_x>
+                  <cart:pixel_scale_y unit="pixel/deg">2.42586803393</cart:pixel_scale_y>
+                </cart:Coordinate_Representation>
+              </cart:Planar_Coordinate_Information>
+              <cart:Geo_Transformation>
+                <cart:upperleft_corner_x unit="m">-5458203.07625</cart:upperleft_corner_x>
+                <cart:upperleft_corner_y unit="m">2729101.53875</cart:upperleft_corner_y>
+              </cart:Geo_Transformation>
+            </cart:Planar>
+            <cart:Geodetic_Model>
+              <cart:latitude_type>Planetocentric</cart:latitude_type>
+              <cart:spheroid_name>MOON</cart:spheroid_name>
+              <cart:a_axis_radius unit="m">1737400</cart:a_axis_radius>
+              <cart:b_axis_radius unit="m">1737400</cart:b_axis_radius>
+              <cart:c_axis_radius unit="m">1737400</cart:c_axis_radius>
+              <cart:longitude_direction>Positive East</cart:longitude_direction>
+            </cart:Geodetic_Model>
+          </cart:Horizontal_Coordinate_System_Definition>
+        </cart:Spatial_Reference_Information>
+      </cart:Cartography>
+      <img:Imaging>
+        <Local_Internal_Reference>
+          <local_identifier_reference>image</local_identifier_reference>
+          <local_reference_type>imaging_parameters_to_image_object</local_reference_type>
+        </Local_Internal_Reference>
+        <img:Optical_Filter>
+          <img:filter_name>B</img:filter_name>
+          <img:bandwidth unit="nm">10.0</img:bandwidth>
+          <img:center_filter_wavelength unit="nm">750.0</img:center_filter_wavelength>
+        </img:Optical_Filter>
+      </img:Imaging>
+      <msn:Mission_Information>
+        <msn:product_type_name>MDIM</msn:product_type_name>
+      </msn:Mission_Information>
+      <proc:Processing_Information>
+        <Local_Internal_Reference>
+          <local_identifier_reference>image</local_identifier_reference>
+          <local_reference_type>processing_information_to_data_object</local_reference_type>
+        </Local_Internal_Reference>
+        <proc:Process>
+          <proc:description>Conversion to PDS4 format</proc:description>
+          <proc:Software>
+            <proc:name>Planetary Data Reader + GDAL PDS / PDS4 drivers</proc:name>
+            <proc:description>
+              PDR is Million Concepts' planetary data and metadata reading and conversion suite.
+              It is used here along with GDAL, specifically its PDS and PDS4 drivers (principally written by
+              Trent Hare, Robert Soricone, and Evan Raoult).
+            </proc:description>
+          </proc:Software>
+        </proc:Process>
+      </proc:Processing_Information>
+    </Discipline_Area>
+  </Observation_Area>
+  <Reference_List>
+    <Internal_Reference>
+      <lidvid_reference>urn:nasa:pds:clementine:browse:basemap_planetwide::1.0</lidvid_reference>
+      <reference_type>data_to_browse</reference_type>
+      <comment>
+      JPEG browse image associated with this product.
+      </comment>
+    </Internal_Reference>
+    <Source_Product_External>
+      <external_source_product_identifier>CLEM1-L-U-5-DIM-BASEMAP-V1.0:BU00N000</external_source_product_identifier>
+      <reference_type>data_to_derived_source_product</reference_type>
+      <curating_facility>IMG</curating_facility>
+      <description>
+        PDS3 version of this product.
+      </description>
+    </Source_Product_External>
+  </Reference_List>
+  <File_Area_Observational>
+    <File>
+      <file_name>basemap_planetwide.tif</file_name>
+      <creation_date_time>1997-10-21T15:17:57Z</creation_date_time>
+    </File>
+    <Header>
+      <offset unit="byte">0</offset>
+      <object_length unit="byte">1455</object_length>
+      <parsing_standard_id>TIFF 6.0</parsing_standard_id>
+      <description>TIFF/GeoTIFF header. The TIFF/GeoTIFF format is used throughout the geospatial and science communities to share geographic image data. </description>
+    </Header>
+    <Array_3D_Image>
+      <local_identifier>image</local_identifier>
+      <offset unit="byte">1455</offset>
+      <axes>3</axes>
+      <axis_index_order>Last Index Fastest</axis_index_order>
+      <Element_Array>
+        <data_type>SignedLSB2</data_type>
+        <scaling_factor>0.00012028247</scaling_factor>
+        <value_offset>-0.00090128978</value_offset>
+      </Element_Array>
+      <Axis_Array>
+        <axis_name>Band</axis_name>
+        <elements>1</elements>
+        <sequence_number>1</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Line</axis_name>
+        <elements>437</elements>
+        <sequence_number>2</sequence_number>
+      </Axis_Array>
+      <Axis_Array>
+        <axis_name>Sample</axis_name>
+        <elements>873</elements>
+        <sequence_number>3</sequence_number>
+      </Axis_Array>
+    <Special_Constants>
+        <missing_constant>-32768</missing_constant>
+        <high_instrument_saturation>-32765</high_instrument_saturation>
+        <high_representation_saturation>-32764</high_representation_saturation>
+        <valid_minimum>-32752</valid_minimum>
+        <low_instrument_saturation>-32766</low_instrument_saturation>
+        <low_representation_saturation>-32767</low_representation_saturation>
+      </Special_Constants>
+    </Array_3D_Image>
+  </File_Area_Observational>
+</Product_Observational>

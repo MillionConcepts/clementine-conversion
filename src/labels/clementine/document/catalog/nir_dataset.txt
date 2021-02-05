@@ -1,0 +1,196 @@
+PDS_VERSION_ID                     = PDS3
+LABEL_REVISION_NOTE                = "
+            CHRIS ISBELL AND LISA GADDIS, 2007-05-01"
+RECORD_TYPE                        = STREAM
+SPACECRAFT_NAME                    = "CLEMENTINE 1"
+TARGET_NAME                        = MOON
+OBJECT                             = DATA_SET
+  DATA_SET_ID                      = "CLEM1-L-N-5-DIM-NIR-V1.0"
+
+  OBJECT                           = DATA_SET_INFORMATION
+    DATA_SET_NAME                  = "
+                           CLEMENTINE NIR DIGITAL IMAGE MODEL"
+    DATA_SET_COLLECTION_MEMBER_FLG = "N"
+    START_TIME                     = 1994-01-25
+    STOP_TIME                      = 1994-05-07
+    DATA_SET_RELEASE_DATE          = 2007-05-01
+    PRODUCER_FULL_NAME             = "LISA R. GADDIS"
+    DETAILED_CATALOG_FLAG          = "N"
+    DATA_OBJECT_TYPE               = "IMAGE"
+    DATA_SET_DESC                  = "
+
+	
+    Data Set Overview
+    =================
+      The Clementine NIR DIM Mosaic is a full-resolution (100 meters
+      per pixel),radiometrically and geometrically controlled,
+      photometrically modeled global mosaic produced by the U.S.
+      Geological Survey from Clementine EDR Data. Imaging data
+      acquired by the Near-Infrared Camera were used to create the
+      multi-band mosaic.
+
+      The NIR mosaic is mapped in the Sinusoidal Equal-Area
+      Projection and partitioned into 996 quadrangles (quads) or
+      “tiles” equivalent to those of the previously released 750-nm
+      UVVIS basemap (PDS CD volumes CL_3001 through CL_3015) and the
+      UVVIS DEM (PDS CD volumes CL_4001 through CL_4078). This
+      100 m/pixel version of the NIR DIM is presented on 13 DVD
+      volumes (equivalent to 78 ‘virtual CD’ volumes). Although the
+      tiling scheme is identical to the original basemap, each 30-
+      degree longitudinal section of the basemap now represents one DVD
+      volume (equivalent to 6 virtual CD volumes). For each full
+      resolution image product, subsampled enhanced color and
+      comparative ratio ‘browse’ images are provided in Joint
+      Photographic Experts Group (JPEG) format. Reduced-resolution
+      planet-wide NIR mosaics (e.g., at 0.5, 2.5, and 12.5 km/pixels)
+      will be made available online at the PDS Map-a-Planet Web site
+      (http://pdsmaps.wr.usgs.gov/maps.html) along with the full
+      resolution NIR mosaic.
+
+      In general, this design consists of rectangular tiles that
+      are roughly 2100 pixels on a side. The actual tile size varies
+      with latitude. Near the equator, each tile covers 7 degrees of
+      latitude and 6 degrees of longitude. A typical full-resolution
+      6-band tile requires ~58 megabytes of digital storage.
+
+    
+    Parameters
+    ==========
+      N/A
+
+
+    Processing
+    ==========
+      As was the case for the UVVIS mosaic, the U.S. Geological
+      Survey Integrated Software for Imagers and Spectrometers (ISIS)
+      processing system was used to generate the NIR mosaic. Because
+      the final steps of the NIR data processing followed the UVVIS
+      processing by several years, the same version of ISIS (v.2.0,
+      or 'Old ISIS') was frozen in place and used for both datasets.
+      ISIS cartographic processing for the NIR mosaic includes
+      radiometric correction, geometric control to the Clementine
+      750-nm basemap mosaic, spectral registration, photometric
+      normalization, and image mosaicking to produce near-seamless,
+      uniformly illuminated views of the surface of the Moon at 6
+      wavelengths. Radiometric correction applies 'flat fielding,'
+      dark current subtraction, non-linearity correction, and
+      conversion to radiometric units (usually radiance). Geometric
+      transformations tie each raw image with the ground control
+      network from the basemap mosaic and convert from raw image
+      coordinates to the Sinusoidal Equal-Area projection.
+      Photometric normalization is applied to balance brightness
+      variations due to illumination differences among the images in
+      a mosaic. The first four NIR bands (1100 to 2000 nm) have also
+      been normalized to reflectance based on the approach previously
+      applied to the calibrated UVVIS global mosaics. Images are then
+      mosaicked together to form a global map of continuous image
+      coverage for the entire planetary body.
+
+    Media/Format
+    ============
+      The Clementine NIR mosaic is delivered to the Planetary Data
+      System using DVD media. Formats are based on standards for
+      such products established by the Planetary Data System (PDS)
+      [PDSSR1992].  "
+
+  CONFIDENCE_LEVEL_NOTE            = "
+      Overview
+      ========
+      Both the Clementine NIR and UVVIS mosaics were geometrically
+      controlled to the previously published 750-nm Clementine
+      Basemap Mosaic (PDS volumes CL_3001 through CL_3015) by tying
+      individual NIR images that make up a color set to the
+      corresponding image used to produce the basemap mosaic. The
+      750nm basemap mosaic was geometrically controlled using the
+      methods described below. Although shortcomings have since been
+      identified, the 750-nm basemap mosaic significantly improved
+      the geometric control of the Moon from previous maps and ground
+      control points. On the basis of best-effort measurements of the
+      spacecraft orbit and pointing, UVVIS geometric distortions, and
+      time tags for each observation, the Clementine Spacecraft,
+      Planet Instrument, C-matrix, and Event kernels (SPICE) data
+      alone provide positional accuracy better than 1 kilometer over
+      most of the Moon.
+
+      The geometric processing goal of the basemap was for 95% of the
+      Moon (excluding the oblique observation gap fills) to have
+      better than 0.5 km/pixel absolute positional accuracy and to
+      adjust the camera angles so that all frames match neighboring
+      frames to within an accuracy of 2 pixels. To achieve these
+      goals, camera alignment and pointing data were required to be
+      accurate to a few hundredths of a degree. The absolute
+      alignment of the UVVIS was determined with respect to
+      spacecraft-fixed axes (A and B Star Tracker Camera quaternions)
+      by analyzing a major subset of the over 17,000 images of Vega,
+      over 6,000 images of the Southern Cross, and a few hundred
+      images of the Pleiades, taken during the approach to the Moon
+      and throughout the lunar mapping phase of the Clementine
+      mission. Multiple star images within a single picture were used
+      to determine the UVVIS focal length and optical distortion
+      parameter values.
+
+      Approximately 265,000 match points were collected at the USGS
+      from ~43,000 UVVIS 750 nm images providing global coverage.
+      Approximately 80% of these points were collected via autonomous
+      procedures, and the remaining 20% were collected manually. 
+      Streamlined procedures for the supervised collection of match
+      points were developed and applied, and these procedures saved
+      several person-years of effort. The automated success rate
+      exceeded 90% along each spacecraft orbit track, where the
+      overlap regions of successive images are highly correlated, but
+      failed when the overlap region is narrow and/or nearly
+      featureless. ('Failure' is defined as less than 3 points per
+      image with correlation coefficients greater than 0.85; thus,
+      many good match points were rejected because we could not be 
+      certain that the matches were valid without verification.)
+      Across-track matching was more difficult due to changes in
+      scale and illumination angle, but a fair success rate (~60%)
+      was achieved via the use of 'window-shaping' (local geometric
+      reprojections). The oblique gap-fill images were the most
+      difficult to match and required substantial human intervention.
+      Matching the polar regions was time-consuming because each
+      frame overlaps many other frames. Most match point locations
+      were found to a precision of 0.2 pixel.
+
+      The USGS match points were provided to Tim Colvin and Mert
+      Davies of the RAND Corporation for analytical triangulations.
+      Using these match points, control points from the Apollo
+      region, and the latest SPICE kernels from Navigation and
+      Ancillary Information Facility (NAIF) at JPL, RAND determined
+      improved camera orientation angles for the global set of UVVIS
+      images. A constant lunar radius of 1737.4 kilometers was
+      assumed, and this was later found to be a significant source of
+      error near the oblique gap fills. The analytical triangulation
+      is a least-squares formulation designed to adjust the latitude
+      and longitude of the control points and the camera orientation
+      angles to best fit the match points. The triangulation was
+      first computed on 'packets' of match points (each covering
+      about one-eighth of the Moon), then checked and rechecked at
+      the USGS via plots and test mosaics to fix and add match points
+      as needed. The final (global) analytical triangulation required
+      the solution of ~660,000 normal equations. The mean error is 
+      less than 1 pixel. This effort was by far the largest
+      analytical triangulation ever applied to a planetary body other
+      than Earth. The results defined the planimetric geometry of the
+      750-nm basemap, to which all systematic Clementine mosaic
+      products have been tied."
+
+  END_OBJECT                       = DATA_SET_INFORMATION
+
+  OBJECT                           = DATA_SET_TARGET
+    TARGET_NAME                    = MOON
+  END_OBJECT                       = DATA_SET_TARGET
+
+  OBJECT                           = DATA_SET_HOST
+    INSTRUMENT_HOST_ID             = CLEM1
+    INSTRUMENT_ID                  = UVVIS
+  END_OBJECT                       = DATA_SET_HOST
+
+ OBJECT                           = DATA_SET_REFERENCE_INFORMATION
+    REFERENCE_KEY_ID               = "PDSSR1992"
+  END_OBJECT                       = DATA_SET_REFERENCE_INFORMATION
+
+ END_OBJECT                         = DATA_SET
+
+END
+

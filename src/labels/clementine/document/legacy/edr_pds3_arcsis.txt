@@ -1,0 +1,769 @@
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                    CLEMENTINE EDR ARCHIVE SIS                                
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                              Prepared by:                                    
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                               Eric Eliason                                   
+                   Planetary Data System - Imaging Node                       
+                           Branch of Astrogeology                             
+                       United States Geological Survey                        
+                                                                              
+                                                                              
+                              Erick Malaret                                   
+                       Applied Coherent Technology                            
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                             October 1, 1994                                  
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+1. INTRODUCTION                                                               
+2. CLEMENTINE IMAGE ARCHIVE COLLECTION                                        
+2.1 RAW CLEMENTINE IMAGES                                                     
+2.2 REQUANTIZATION MATRICES FOR DATA DECOMPRESSION                            
+2.3 BROWSE IMAGES                                                             
+2.4 GEOMETRIC ELEMENTS                                                        
+2.5 RADIOMETRIC ELEMENTS                                                      
+2.6 INDEX ELEMENTS                                                            
+2.7 DOCUMENTATION ELEMENTS                                                    
+2.8 SOFTWARE ELEMENTS                                                         
+3. ARCHIVE DESIGN                                                             
+3.1 PDS STANDARDS                                                             
+3.2 "STATIC" AND "DYNAMIC" DATA VOLUMES                                       
+3.3 HANDLING ERRORS                                                           
+4. FILE NAMING CONVENTIONS                                                    
+5. DIRECTORY STRUCTURE AND CONTENTS FOR "STATIC" VOLUMES                      
+5.1 DIRECTORY CONTENTS                                                        
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+1. INTRODUCTION                                                               
+                                                                              
+This Software Interface Specification (SIS) describes the organization        
+and contents of the Clementine Archive Collection of Raw Imaging Data.        
+The archive collection consists of a single volume set that contains the      
+primary data products and ancillary data for the UV/Visible (UV/VIS),         
+Near-Infrared (NIR), Long Wavelength Infrared (LWIR), LIDAR High              
+Resolution (HiRes) and star-tracker cameras. The raw data are pristine        
+in the sense that they contain the artifacts, and radiometric and             
+geometric characteristics of unprocessed and uncorrected data. The only       
+processing performed on the data is to organize and format the data           
+according to Planetary Data System (PDS) standards.                           
+                                                                              
+The Clementine Archive Collection is a deliverable product to the             
+Planetary Data System and the scientific community that it supports. All      
+data formats are based on the PDS standard, version 3.0, as documented        
+in the PDS Standards Reference [JPL Document D-7669, November 1992,           
+available through the PDS]. Derived and processed images produced by the      
+active flight-operations team supported by the Naval Research laboratory      
+(NRL) or produced by the NASA Science Team are not addressed in this          
+SIS. Clementine derived products are expected to be generated primarily       
+by post-mission data analysis programs supported by NASA. These products      
+will be delivered to the PDS under a separate arrangement.                    
+                                                                              
+An overview of the ancillary data products that will accompany the            
+archive of EDR image data products is discussed. However, as of this          
+writing (October 1, 1994) the details associated with the ancillary data      
+volumes are not yet in place. The ancillary data products such as             
+calibration correction files, SPICE kernels, and prelaunch calibration        
+data, are still in preparation by the Lawrence Livermore National             
+Laboratory, NASA funded post-mission investigators, the PDS NAIF Node,        
+and the PDS Imaging Node. The ancillary data products are to be               
+organized on the "dynamic" data volumes of the archive. (Please see           
+section 3 for a discussion of "dynamic" data volumes.)                        
+                                                                              
+2. CLEMENTINE IMAGE ARCHIVE COLLECTION                                        
+                                                                              
+Archive-quality data sets include everything needed to understand and         
+utilize the data. The images archived by themselves are insufficient for      
+the science community to realize the full scientific potential of the         
+data. Thus, it is necessary to provide as part of the archive the             
+necessary ancillary data to perform colorimetric, photometric, and            
+cartographic processing. Software tools need to be included as part of        
+the archive to decompress, display, and calibrate the image data              
+products. Documentation is necessary to describe the data products,           
+imaging instruments, and mission operations. Table 1 summarizes the           
+elements required to fully utilize the image collection. Each element is      
+discussed individually.                                                       
+                                                                              
+The term "archive" describes the total data collection needed to fully        
+utilize the EDR image collection. The archive is stored on CD-ROM media       
+and is divided into static and dynamic data volumes. The static data          
+volumes contain the EDR image data products. The dynamic data volumes         
+contain the ancillary data necessary to utilize the image collection.         
+(Please see section 3. for a more detailed discussion on the contents         
+and organization of the static and dynamic data volumes that make up the      
+archive.)                                                                     
+                                                                              
+         Table 1 - Essential Elements of the Image Archive                    
+                                                                              
+         1. Primary Image Data Set. These are the raw images as               
+            acquired by the mission. Images remain in "lossy"                 
+            compressed format to reduce the data volume of the                
+            archive.                                                          
+                                                                              
+         2. Requantization matrices for data decompression.                   
+                                                                              
+         3. Browse Image Data Set. Sub-sampled images in an                   
+            uncompressed format for rapid browsing of the                     
+            image collection.                                                 
+                                                                              
+         4. Geometric Elements. Data and information characterizing           
+            the geometric properties of the imaging systems.                  
+                                                                              
+         5. Radiometric Elements. Data and information characterizing         
+            the radiometric properties of the imaging instruments.            
+                                                                              
+         6. Index Elements. Tables summarizing the properties and             
+            characteristics of all images in the archive.                     
+                                                                              
+         7. Documentation Elements. Computer readable files describing        
+            the mission, spacecraft, imaging instruments, mission             
+            operations, and software.                                         
+                                                                              
+         8. Computer Software Elements. Provides instrument-specific          
+            computer-processing capabilities for the images. Software         
+            allows general planetary science community to access the          
+            images without costly software development.                       
+                                                                              
+2.1 Raw Clementine Images                                                     
+                                                                              
+The primary data archived is the collection of raw planetary images           
+acquired by the Clementine mission. These data are pristine in the sense      
+that they contain the artifacts and the radiometric and geometric             
+characteristics of unprocessed and uncorrected data.  The only                
+processing performed on the data is to organize and format the data           
+according to PDS standards.                                                   
+                                                                              
+The Clementine images are compressed onboard the spacecraft using a           
+space-hardened Matra chip. The compression enables acquisition of many        
+more observations of the Moon. The compression technique performs             
+"lossy" compression and contains a Discrete Cosine Transform (DCT) in         
+the algorithm. The images remain in the compressed format when they are       
+archived to reduce the total volume of the archive collection.                
+                                                                              
+The Clementine images are constructed according to the data object            
+concepts developed by the PDS. By adopting the PDS formats, the               
+Clementine images will be consistent in content and organization with         
+the other planetary image collections that have been archived by the          
+PDS. The "Clementine EDR Image SIS" contains a description of the             
+EDR image data products.                                                      
+                                                                              
+2.2 Requantization Matrices for Data Decompression                            
+                                                                              
+The requantization matrix for the DCT compression algorithm is modified       
+throughout the course of a mapping cycle as the viewing conditions and        
+science requirements change. The requantization matrix used for an image      
+is carried as part of the image object within a compressed image file.        
+                                                                              
+2.3 Browse Images                                                             
+                                                                              
+A set of browse images is provided as part of the archive to facilitate       
+rapid viewing of the image collection. Browse images are used to              
+visually search for areas of interest. If a browse image shows a              
+potentially interesting scene, the image can be decompressed for more         
+detailed inspection. Browse images are not in a compressed format, but        
+they are reduced in size by averaging NxN pixel neighborhoods of the          
+original image. The average is stored as a single pixel in the browse         
+image. A browse image is stored in a secondary object in the image file.      
+                                                                              
+2.4 Geometric Elements                                                        
+                                                                              
+The geometric elements are an essential part of the archive; they             
+contain the data and information to characterize the geometric                
+properties of the imaging systems, and to fully describe the viewing          
+geometry of a scene. These data are essential to geodetic, cartographic,      
+and photometric applications.                                                 
+                                                                              
+The geometric elements are organized according to the SPICE kernel            
+concepts adopted by the Navigational Ancillary Information Facility           
+(NAIF) at the Jet Propulsion Laboratory. SPICE is an acronym for              
+Spacecraft, Planet, Instrument, C-matrix, and Event kernels.                  
+                                                                              
+The SPICE kernel data set will be provided on the dynamic data volumes        
+that accompany the EDR data products. SPICE kernels evolve and improve        
+as further analysis is done. The analysis could include correcting not-       
+yet-discovered errors and filling in missing items. It is recommended         
+that persons needing the most complete and accurate observation geometry      
+contact NAIF for the latest Clementine SPICE files.                           
+                                                                              
+The PDS data labels attached to the image data products are based on the      
+most up-to-date SPICE information available at the time of product            
+creation.                                                                     
+                                                                              
+2.5 Radiometric Elements                                                      
+                                                                              
+The data and information characterizing the radiometric properties of         
+the imaging systems are an essential part of the archive. These               
+ancillary data make it possible to perform colorimetric and photometric       
+processing on the image collection. Table 2 shows the data and                
+information required to characterize and correct for the radiometric          
+properties of the imaging data. The radiometric elements will be              
+provided on the dynamic data volumes that accompany the EDR data              
+products.                                                                     
+                                                                              
+           Table 2 - Radiometric Elements for the Image Archive               
+                                                                              
+  1. Pre-launch camera calibration data. These data are flat-field            
+     observations acquired under a variety of ambient temperature             
+     conditions, filter wheel settings, light level settings, and             
+     the full compliment camera mode settings.                                
+                                                                              
+  2. Derived calibration files for relative radiometric correction.           
+     These files contain gain and dark current corrections for                
+     intra-camera performance.                                                
+                                                                              
+  3. Derived coefficients for absolute radiometric calibration.               
+                                                                              
+  4. Tables describing camera sensitivity and dark current                    
+     drift.                                                                   
+                                                                              
+  5. Tables of camera blemishes and dead detector positions,                  
+     and fixed-pattern noise.                                                 
+                                                                              
+  6. Tables of spectral responsivity for each pass band.                      
+                                                                              
+The pre-launch calibration data consist of images acquired by the             
+imaging instruments in a controlled laboratory environment. The image         
+target is a flat-field of known radiance. The observations are made           
+under a variety of temperature conditions, filter wheel settings, and         
+camera mode settings. With these data, the performance of the camera can      
+be determined and radiometric correction files can be derived.                
+Additionally, these observations are used to characterize coherent- and       
+fixed-noise problems such as blemishes and dead detectors. The Lawrence       
+Livermore National Laboratory includes these data on the ancillary data       
+volumes that accompany the EDR data products.                                 
+                                                                              
+Calibration files for radiometric correction are included as part of the      
+archive. These files include dark current and gain correction files for       
+relative calibration (intra-camera correction), derived coefficients for      
+absolute radiometric correction, and tables that define camera                
+sensitivity and dark current drift. The calibration data files are to be      
+prepared by post-mission data analysis investigators and will be made         
+available as part of the ancillary data volumes that accompany the EDR        
+data products.                                                                
+                                                                              
+The camera modes, camera temperatures, exposure times, filter wheel           
+settings, and other parameters that effect the calibration of an image        
+are stored as part of the E-kernel of the SPICE system. This data is          
+available as part of the ancillary data volumes that accompany the EDR        
+data products.  Additionally, the information is provided in the PDS          
+labels of the image files and the index data tables that accompany the        
+data set.                                                                     
+                                                                              
+The tables of camera blemishes, dead detectors, fixed pattern noise, and      
+spectral band widths of the optical filters are stored as part of the I-      
+kernel of the SPICE system. This data are available as part of the            
+dynamic data volumes that will accompany the EDR data products.               
+                                                                              
+2.6 Index Elements                                                            
+                                                                              
+The index elements of the archive exist as summary tables describing the      
+camera characteristics and viewing geometry of the images in the              
+archive. Each static data volume contains an index file for the               
+images on the volume.                                                         
+                                                                              
+The index elements can be loaded into a catalog system for use in image       
+search and retrieval applications. The table is organized as a flat           
+file; each row is an image entry, and each column contains an attribute       
+of the image. Part of the index table acts as the E-kernel, containing        
+the camera settings such as filter wheel position, exposure duration,         
+camera modes, and camera temperatures. The index table also contains          
+"user friendly" geometric parameters that describe the viewing geometry       
+of an image scene. These parameters are stated in terms that an image         
+analyst is accustomed to seeing and include parameters such as sub-           
+spacecraft latitude and longitude; latitude and longitude of the center       
+and four corners of the image; solar-incidence, emission, and phase           
+angles; and solar azimuth. Other fields in the index tables include time      
+of observation, spacecraft clock time, orbit number, volume and               
+directory location  of the image in the archive, observational intent,        
+names of calibration files to be used for an image, and other ancillary       
+information.  The "user friendly" geometric parameters represent the          
+approximate viewing of an image scene and is intended only for image          
+search and retrieval. The primary and refined geometric data are stored       
+in the SPICE kernel files in the archive. Geometric processing software       
+extracts geometry data from the SPICE kernels and not the index table.        
+The geometric elements of the SPICE kernels are not appropriate for           
+search and retrieval methods in their primary form and therefore are not      
+included in the index tables.                                                 
+                                                                              
+2.7 Documentation Elements                                                    
+                                                                              
+Documentation, stored as computer readable files, is an important             
+supplement to the archive. The documentation includes mission,                
+spacecraft, and instrument descriptions; calibration reports; Flight          
+Operations and Science Team reports and memoranda; literature                 
+references; and descriptions of the data products and archive contents.       
+The documentation is critical for preservation of the knowledge of a          
+mission after the active mission operations has been included. The            
+documentation focuses on descriptions of aspects of the mission data          
+that are not published in technical journals and are not available            
+through standard published literature. These data are stored on the           
+static and dynamic data volumes that accompany the EDR image archive.         
+                                                                              
+2.8 Software Elements                                                         
+                                                                              
+The software elements provide processing capabilities that address the        
+unique data and instrument specific aspects of the Clementine images.         
+There are four required elements: 1) software for image decompression,        
+2) a processing capability for radiometric correction, 3) simple image        
+display capability, and 4) a software toolkit to characterize the             
+geometric properties of an image.                                             
+                                                                              
+Software for data decompression and simple image display exist on each        
+EDR data volume. The radiometric correction software will exist on the        
+dynamic data volumes when they are produced. The software that                
+characterize the geometric roperties of an image is available through         
+the PDS NAIF Node.                                                            
+                                                                              
+In order to serve a wide range of user communities with various levels        
+of programming proficiencies, the archive software is portable across         
+multiple computer platforms. The software exists as executable modules,       
+for systems commonly used by the NASA planetary community (UNIX/SUN,          
+IBM/PC, and Macintosh), and as source code. The source code can be            
+adapted to meet the needs of other groups with different computer             
+platforms. The source code also preserves the detailed decompression and      
+radiometric correction algorithms.                                            
+                                                                              
+The decompression and radiometric-correction programs output PDS              
+formatted image files so existing software systems, developed by other        
+organizations, can be used to display and access the images.                  
+                                                                              
+The SPICE software Toolkit, distributed by the NAIF facility at JPL,          
+provides the software capability for characterizing the geometric             
+properties of the imaging instruments, and the viewing geometry of a          
+scene. This toolkit is developed in FORTRAN and is portable across            
+several computer platforms.                                                   
+                                                                              
+The CLEMDCMP program, for decompressing a Clementine image, is found in       
+the <software> directory. This program has been developed and tested to       
+run on PC/MS-DOS, SUN/UNIX, and Macintosh environments. The CLIMDISP          
+program is include in the <software> directory tree for  image display        
+for IBM/PC platforms. XV has been included to display images in the           
+Sun/UNIX environment. IMAGE is also included to display images in the         
+Macintosh environments. The "M-SHELL" system for PC/WINDOWS, is planned       
+for inclusion on one of the ancillary data sets.                              
+                                                                              
+3. ARCHIVE DESIGN                                                             
+                                                                              
+3.1 PDS Standards                                                             
+                                                                              
+Data that comprise the Clementine Image Archive are formatted according       
+to the standards of the Planetary Data System standard, version 3.0 as        
+documented in the PDS Standards Reference manual [JPL Document D-7669].       
+                                                                              
+3.2  Static  and Dynamic Data volumes                                         
+                                                                              
+The Clementine data sets are placed into static and dynamic categories.       
+Static data sets, once produced and validated, are not subject to update      
+or modification. Dynamic data sets have the inherent property that they       
+continue to evolve and improve as the knowledge of the mission                
+parameters improve. These data sets are periodically updated or replaced      
+with new versions, and are likely to be updated by post-mission data          
+analysis programs. Examples of static data sets include the raw               
+compressed images, the ancillary data that describe the camera modes.         
+and errata files that describe problems encountered during production of      
+the CD-ROM volumes. Once the raw images have been received, validated,        
+and properly stored in an archive they will never change. Likewise, the       
+camera modes, once properly recorded, will not change. Examples of            
+dynamic data sets are calibration files for radiometric correction and        
+the C-kernel  containing the camera pointing matrix. Calibration files        
+continue to evolve as knowledge of the camera properties improves. The        
+C-kernel is updated in geodetic and cartographic applications.                
+                                                                              
+In the archive, the static and dynamic data sets are physically               
+separated into different volumes. The static data set, containing the         
+raw planetary data make up virtually the entire archive volume set. The       
+dynamic data sets (calibration files, and SPICE kernels) have modest          
+storage requirements and can be stored on one or two volumes. Once the        
+static volumes are created and validated, they need never be recreated        
+or updated--a desirable quality for the volumes that make up most of the      
+archive.  As the dynamic data sets are improved and updated, only the         
+limited number of volumes dedicated to the dynamic data need to be            
+redistributed. Mixing dynamic and static data sets on the same volumes        
+would cause considerable logistic problems in maintaining the archive.        
+                                                                              
+3.3 Handling Errors                                                           
+                                                                              
+It is inevitable that errors will be introduced into the archive even         
+with data validation procedures applied to the volumes. A plan is             
+required to handle errors discovered in data volumes that have already        
+been produced.                                                                
+                                                                              
+As errors are discovered, they are reported to the NRL Clementine data        
+processing facility. An ERRATA report file is maintained to track and         
+document all discovered errors. At the conclusion of the production of        
+the Clementine volume set, a final CD-ROM is prepared that contains           
+corrected files of all problem files.                                         
+                                                                              
+4. FILE NAMING CONVENTIONS                                                    
+                                                                              
+The file names developed for PDS data volumes are restricted to an 8          
+character file name and a 3 character extension name with a period            
+separating the file and extension names (this limitation is due to            
+limited file naming scheme of Microsoft DOS). The general form of a file      
+name is "msfxxxxy.rrr" for the Clementine imaging data. Table 3 provides      
+the detailed naming convention for lunar mapping phase of mission. Table      
+4 describes the file naming convention for non-lunar mapping phases.          
+                                                                              
+  Table 3 - File Name Convention, Lunar mapping phase: "msfxxxxy.rrr"         
+                                                                              
+            m = Mission Phase                                                 
+                P = Prelaunch                                                 
+                L = Lunar mapping                                             
+                E = Earth mapping (LEO and phasing loops)                     
+            s = Sensor                                                        
+                A = Star tracker A                                            
+                B = Star tracker B                                            
+                U = UV/VIS                                                    
+                H = Hi-Resolution sensor                                      
+                N = Near infrared sensor                                      
+                L = Long wavelength infrared sensor                           
+            f = Filter wheel position (A, B, C, D, E, F)                      
+            xxxx = Frame number within revolution                             
+            y = Latitude bin for lunar mapping observations. This             
+                character signifies a latitude range on the lunar             
+                surface where the observation was made. The                   
+                center latitude of the image defines the character:           
+                A = -90 to -80      M = 30 to 40                              
+                B = -80 to -70      N = 40 to 50                              
+                C = -70 to -60      O = 50 to 60                              
+                D = -60 to -50      P = 60 to 70                              
+                E = -50 to -40      Q = 70 to 80                              
+                F = -40 to -30      R = 80 to 90                              
+                G = -30 to -20                                                
+                H = -20 to -10      S = "unkown" targets                      
+                I = -10 to   0                                                
+                J =   0 to  10      T = Earth observations prior to           
+                K =  10 to  20          systematic mapping                    
+                L =  20 to  30      U = Sky observations prior to             
+                                        systematic mapping                    
+                                    V = Lunar observations prior to           
+                                        systematic mapping                    
+                                    W = Sky observations after                
+                                        systematic mapping                    
+                                    Y = Earth observations after              
+                                        systematic mapping                    
+                                    Z = Moon Observations after               
+                                        systematic mapping                    
+                                                                              
+Table 4 - File Name Convention, non-Lunar mapping phase: "msfxxxxy.rrr"       
+                                                                              
+                                                                              
+            m = Mission Phase                                                 
+                P = Prelaunch                                                 
+                L = Lunar mapping                                             
+                E = Low Earth Orbit (LEO) mapping phase                       
+            s = Sensor                                                        
+                A = Star tracker A                                            
+                B = Star tracker B                                            
+                U = UV/VIS                                                    
+                H = Hi-Resolution sensor                                      
+                N = Near infrared sensor                                      
+                L = Long wavelength infrared sensor                           
+            f = Filter wheel position (A, B, C, D, E, F)                      
+            xxxx = Frame sequence number within a down-load dump of           
+                the spacecraft's solid state data recorder. The               
+                The solid state data recorder, holding acquired images,       
+                is periodically down-loaded to Earth.                         
+                Images are numbered sequentially by time of observation.      
+            y = Alpha character. Each 100 sequential images of a camera       
+                are assigned an alpha character A-Z. This scheme used         
+                to place 100 images per subdirectory.                         
+            rrr  = Memory down-load sequence number. This number is           
+                incremented by one each time a down-load is made of           
+                the solid state data recorder within a mission phase.         
+                                                                              
+                                                                              
+                                                                              
+Examples of file names follow:                                                
+                                                                              
+LUA0323B.020 = Image was acquired during the Lunar mapping phase (L),         
+               by the UV/VIS camera (U), with filter wheel position (A)       
+               (blue filter), the image was the 323-rd image acquired         
+               during orbit 20. The image falls within the latitude           
+               range -80 to -70 (B).                                          
+                                                                              
+ENA0600B.001 = Image was acquire during the Low Earth Orbit phase             
+               of mission (E) by the Near-Infrared camera (N), with           
+               filter-wheel position A. It is the 600-th image acquired       
+               for the first dump (001) of spacecraft's solid state           
+               recorder. The image is in the second set of 100 images         
+               acquired by the NIR camera (B).                                
+                                                                              
+5. DIRECTORY STRUCTURE AND CONTENTS FOR STATIC VOLUMES                        
+                                                                              
+Figure 1 shows the directory structure overview for the static volumes.       
+Below the root directory are the  SOFTWARE, DOCUMENT, INDEX,  and orbit       
+directories. Below the SOFTWARE directory are subdirectories for storing      
+software for various hardware platforms. A detailed description of the        
+directory tree is provide in Table 5. An ERRATA directory may exist on        
+the final volume in order to hold any files that were improperly              
+processed in the volume set. Empty directories are not included on the        
+volume. For example, if a star tracker directory (example <LAXXXXXX>)         
+contains no files for an orbit, the directory will not appear on the          
+volume.                                                                       
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+             TABLE 5  Directory Structure Overview                            
+                                                                              
+                                <root>                                        
+                                  |                                           
+                                  |                                           
+  ________________________________|___________________________________        
+    |        |        |       |   |         |        |          |             
+    |        |        |       |   |         |        |          |             
+<SOFTWARE> <INDEX> <DOCUMENT> | <LUNxxx> <LUNxxx> <LUNxxx> <TIMELINE>         
+    |                         |    |         |        |                       
+    |_____________________<ERRATA> |         |        |                       
+       |        |        |         |        etc.     etc.                     
+       |        |        |         |                                          
+     <PCDOS>  <MAC>    <SUNOS>     |                                          
+       |        |        |         |                                          
+       |        |        |         |                                          
+       |       etc.     etc.       |                                          
+       |                           |                                          
+   ____|____________          _____|______________________________            
+   |      |        |          |     |    |      |     |          |            
+   |      |        |          |     |    |      |     |          |            
+ <BIN> <SOURCE>  <DOC>   <LAXXXXXX> |<LBXXXXXX> | <LHXXXXXX>  <LLXXXXXX>      
+                              |     |    |      |     |          |            
+                              |     |    |      |     |          |            
+                             etc.   |   etc.    |    etc.       etc.          
+                                    |           |                             
+                                <LUXXXXXX>  <LNXXXXXX>                        
+                                    |           |                             
+                                    |           |                             
+                                    |          etc.                           
+                                    |                                         
+                                    |                                         
+    ________________________________|__________________________________       
+    |          |        |           |          |           |       |          
+    |          |        |           |          |           |       |          
+<LUXXXXXA> <LUXXXXB> <LUXXXXXC> <LUXXXXXD> <LUXXXXXE> <LUXXXXXF>  etc.        
+                                                                              
+                                                                              
+                                                                              
+5.1 Directory Contents                                                        
+                                                                              
+<root> Directory                                                              
+                                                                              
+     AAREADME.TXT - General information file. Provides users with             
+     information about the Clementine image data products. Directs user       
+     to other documents on the volume containing more detailed                
+     information.                                                             
+                                                                              
+     VOLDESC.CAT  - PDS file containing labels that describe the volume       
+     data products. Information includes: production date, producer name      
+     and institution, volume ID, etc.                                         
+                                                                              
+     ERRATA.TXT - Text file for tracking and recording discovered errors      
+     in the Clementine image data products. (This is an optional file.)       
+                                                                              
+                                                                              
+<ERRATA> Directory                                                            
+                                                                              
+     The <ERRATA> directory tree is reserved for the last volume in the       
+     static volume set of the archive. The tree stores data files that        
+     correct files of previous files that had errors. The directory           
+     tree maintains the same structure as on other volumes.                   
+                                                                              
+<DOCUMENT> Directory                                                          
+                                                                              
+     The documentation files exist in several forms in order to               
+     facilitate access to the documents.                                      
+     <> Files with extension 'TXT' or 'ASC' are ASCII text files              
+        that can be read by virtually all text editors.                       
+     <> Files with extension 'DOC' were created with Microsoft-word.          
+     <> Files with extension 'EPS' are encapsulated PostScript format.        
+                                                                              
+                                                                              
+     DOCINFO.TXT - Description of the DOCUMENT directory                      
+                                                                              
+     VOLINFO.* - The files contain detailed descriptions of the               
+     Clementine mission, imaging instruments.                                 
+                                                                              
+                                                                              
+     EDRSIS.* - Contains the Software Interface Specification for the         
+     EDR Image data products. Different formats of EDRSIS exist.              
+                                                                              
+                                                                              
+     ARCSIS.* - Contains the Software Interface Specification for the         
+     Clementine Archive of EDR data products.                                 
+                                                                              
+<INDEX> Directory                                                             
+                                                                              
+     INDXINFO.TXT - Text file describing contents of <INDEX> directory        
+                                                                              
+     IMGINDX.TAB - The image index file is organized as a table: there        
+     is a row for each image on the volume; the columns contain               
+     parameters that describe the observation and camera states of the        
+     images. Information includes viewing geometry (such as latitude and      
+     longitude of the image center, sun and observation angles, etc.          
+     and camera state information such as filter wheel position,              
+     spacecraft  clock count, time of observation, image integration          
+     time  (effective exposure time), and camera modes.                       
+                                                                              
+     IMGINDX.LBL - Detached PDS label for IMGINDEX.TAB. The image index       
+     file is accompanied by a detached PDS label that describes its           
+     organization and contents.                                               
+                                                                              
+     IMGINDX.HDR - Header file, used for spread sheet applications            
+     for the image index file. This file contains a single line               
+     that gives heading names to each row in the index file.                  
+                                                                              
+     MISSINDX.TAB - Table of missing images. Image file names in this         
+     directory were lost during the active fight projects due to a            
+     variety problems including: images not properly transmitted to           
+     Earth, image files lost between ground receiving station and             
+     mission operations center. Images listed in this directory               
+     can not be recovered.                                                    
+                                                                              
+     MISSINDX.LBL - Detached PDS label that describes the MISSINDX.TAB        
+     file.                                                                    
+                                                                              
+     MISSINDX.HDR - Header file used for spread sheet applications            
+     for the missing image index file. This file contains a single line       
+     that gives heading names to each row in the missing image                
+     index file.                                                              
+                                                                              
+     REDOINDX.TAB - This index table may exist on a CD-ROM volume             
+     in the <index> directory. If an image could not be recovered             
+     from the telemetry archive before a volume was created, then             
+     this table contains a list of the image files that will be               
+     reprocessed for inclusion on the last volume. This file                  
+     is identical in format to the IMGINDX.TAB file.                          
+                                                                              
+     REDOINDX.LBL - Detached label for REDOINDX.TAB                           
+                                                                              
+     REDOINDX.HDR - Header file used for spread sheet applications            
+     for the image index file. This file contains a single line               
+     that gives heading names to each row in the index file.                  
+                                                                              
+                                                                              
+                                                                              
+<SOFTWARE> Directory                                                          
+                                                                              
+     The software directory and sub-directories contain source code,          
+     executable modules, and documentation for the programs available         
+     to access and display the Clementine Images. These are simple            
+     software tools and not meant to be comprehensive image                   
+     processing applications. Simple access and display tools are             
+     available for the SUN, PC, and MAC environments. Software for            
+     each subdirectory is located in subdirectories. Please refer             
+     to the  "SOFTINFO.TXT" files in the SOFTWARE directory tree for          
+     information about each software element included in the Clementine       
+     archive.                                                                 
+                                                                              
+     SOFTINFO.TXT - This file describes the contents of the SOFTWARE          
+     directory.                                                               
+                                                                              
+                                                                              
+<SOFTWARE.PCDOS>     - PC/DOS system                                          
+<SOFTWARE.MAC>       - Macintosh system                                       
+<SOFTWARE.SUNOS>     - SUN/UNIX system                                        
+                                                                              
+                                                                              
+<LUNxxx> - Data Directory                                                     
+                                                                              
+     These are the top level directories for the EDR image data               
+     products. The names of the data directories define the                   
+     mission phase (LUN=Lunar, LEO=Low Earth Orbit EPA= prelunar              
+     mapping phasing loops, EPB=postlunar mapping phasing loops).             
+     The "xxx" characters refer to the revolution number for lunar            
+     mapping phase, and solid state recorder  down-load dump  number          
+     for non-lunar mapping phases. The subdirectories under this              
+     directory divide the data by camera.                                     
+                                                                              
+                                                                              
+<LUNxxx.LAXXXXXX> - Subdirectory of Star tracker A camera images              
+<LUNxxx.LBXXXXXX> - Subdirectory of Star tracker B camera images              
+<LUNxxx.LHXXXXXX> - Subdirectory of Hi-Resolution camera images               
+<LUNxxx.LNXXXXXX> - Near Infrared camera images                               
+<LUNxxx.LLXXXXXX> - Long Wavelength Infrared camera images                    
+<LUNxxx.LUXXXXXX> - UV/Visible camera images                                  
+                                                                              
+                                                                              
+<LUNxxx.LAXXXXXX.LUXXXXXA>                                                    
+<LUNxxx.LAXXXXXX.LUXXXXXB>                                                    
+<LUNxxx.LAXXXXXX.LUXXXXXV>                                                    
+etc.                                                                          
+                                                                              
+     The directory tree is further subdivided by into additional              
+     subdirectories so that there are no more than 256                        
+     images per directory. For the lunar mapping phase of the mission,        
+     images acquired in a revolution are divided into 10 degree               
+     latitude bins. Each subdirectory contains all the data in a 10           
+     degree bin. (A=-90 to -80, B=-80 to -70, C=-70 to -60, etc.)             
+                                                                              
+<TIMELINE>                                                                    
+     This directory was added as part of the volume just when production      
+     of the volume series began. Because of the late addition of the          
+     files contained in this directory, they do not conform to                
+     PDS standards. Because these files are supplemental to the               
+     overall requirements of the volume design, it was decided that           
+     PDS requirements were not required.  The timeline data, provided         
+     in PDS compliant format, will be made available through the SPICE        
+     system on the Clementine ancillary CD-ROM series.                        
+                                                                              
+     TLINFO.TXT - Description of the time line data available for             
+     each lunar orbit.                                                        
+                                                                              
+     TLLUNxxx.XLS - Microsoft EXCEL spread sheet file of the                  
+     time line data for orbit 'xxx'. TLEPAxxx files for earth                 
+     phasing loop A data, TLEPBxxx files for earth phasing loop B             
+     data, TLLEOxxx for low earth orbit data.                                 

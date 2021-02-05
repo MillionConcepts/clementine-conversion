@@ -1,0 +1,207 @@
+PDS_VERSION_ID                        = PDS3
+
+OBJECT     = INSTRUMENT
+
+INSTRUMENT_HOST_ID                    = CLEM1
+INSTRUMENT_ID                         = HIRES
+
+
+OBJECT     = INSTINFO
+
+INSTRUMENT_NAME                 = "HIGH RESOLUTION CAMERA"
+INSTRUMENT_TYPE                 = CAMERA
+INSTRUMENT_DESC                 = "
+
+
+    Instrument Overview
+    ===================
+
+      The High Resolution Imaging (Hires) camera combines a 
+lightweight beryllium telescope with an image intensifier-coupled 
+frame transfer CCD imager. Image shuttering is accomplished 
+through voltage gating of the image intensifier.  Maximum 
+integration time is 733 milliseconds in 10.67 microsecond 
+increments.  Spectral response is limited in the system by the S-2 
+photocathode between 0.4 and 0.8 microns. Five spectral bands can 
+be selected from a filter wheel which is controlled through the 
+same serial-addressable synchronous interface (SASI).  A sixth 
+filter position is allocated to an opaque filter for the 
+protection of the photocathode and image intensifier.
+
+      The post-FPA electronics allow three gain states followed by 
+5 bits of offset that span 248 counts in the analog regime to 
+augment the basic 8-bit A/D conversion.  Images of the day side of 
+the moon used intensifier gate times with relatively low gain 
+settings on the order of 1 millisecond.  Lifetime concerns about 
+the photocathode and micro channel plates in the intensifier unit 
+drove operational settings to low exposures. This resulted in 
+photon shot noise significantly contributing to the overall noise 
+in the Hires sensor. Additionally, the image intensifier imposed a 
+nonuniformity on images. This yielded images that did not compress 
+well using the MATRA optimized rms algorithm. For this reason, 
+JPEG compression, which discards high spatial frequency detail, 
+was employed on the Hires images.
+
+      The Hires performance specifications are provided below.
+
+
+    Calibration
+    ===========
+
+      The radiometric calibration converts the digitized signal 
+received from the camera (DN value) into a quantity that is 
+proportional to the radiance reaching the sensor.  The sensitivity 
+of the CCD focal plane array varies across the field of view but 
+appears to be time invariant during the two month lunar 
+observation period.   However, reliable pre-flight calibrations 
+for the Hires camera are not available. The high shot noise due to 
+in-flight use of low gains to preserve the camera system's 
+lifetime, together with spurious 'honeycomb' nonuniformities 
+imposed by the intensifier tube make the task of finding reliable 
+in-flight calibrations most daunting, and have forced a more 
+empirical photometric calibration.
+
+      The Hires geometric and photometric calibrations were 
+referenced to the UVVIS Basemap Mosaic.  The geometric calibration 
+was achieved through a constrained registration of map-projected, 
+nadir-pointed Hires images against the UVVIS Basemap Mosaic, which 
+is the de facto lunar control network. An approximate photometric 
+calibration was performed on Hires mosaic tiles of sufficiently 
+limited extent (1.75 degrees of latitude) that the photometric 
+response was approximately constant.  Then, the linear stretch 
+which matches the underlying UVVIS Baseline Mosaic approximates 
+the photometric calibration of the Hires tile.
+
+
+
+    Operational Considerations
+    ==========================
+
+      The pole-to-pole lunar observations provided scenes with a 
+broad range of viewing conditions, ranging from bright 
+observations near zero phase angle at the equator to very low 
+light-level observations at the poles.  In order to properlyrecord 
+an observation with an optimal signal-to-noise ratio it is 
+important to adequately fill the 8-bit (255 levels) dynamic range 
+of the A/D camera output.  The integration time (exposure time) 
+and the gain and offset settings of the instrument were adjusted 
+to properly record each image.  During the systematic mapping, the 
+gain state of the camera was normally set to lower values for the 
+mid-latitude observations and set to higher levels (thereby 
+increasing the sensitivity of the A/D converter) at the higher 
+latitudes.  Integration times were rarely increased as 
+observations approached the poles, nominally being set to 1.067 
+ms.  Lunar observations were broken into 10 latitude bins.  Each 
+latitude bin nominally contained fixed gain and offset modes and 
+integration times for each camera/filter combination, although 
+occasional offlooking slews that fell within a bin other than that 
+corresponding to the subspacecraft point resulted in images with 
+differing acquisition settings.
+
+      The Clementine orbit was designed to provide overlapping 
+coverage in both the down-track (~15% overlap) and cross-track 
+(~10% overlap at the equator) directions.  The image overlap is 
+necessary to geometrically control images in cartographic 
+applications.
+
+
+    Operational Modes
+    =================
+      High Resolution Imaging (Hires) camera: The Hires camera 
+combines a lightweight beryllium telescope with an image 
+intensifier-coupled frame transfer CCD imager. Image shuttering is 
+accomplished through voltage gating of the image intensifier.  
+Maximum integration time is 733 milliseconds in  10.67 microsecond 
+increments. Spectral response is limited in the system by the S-2 
+photocathode between 0.4 and 0.8 microns. Five spectral bands can 
+be selected from a filter wheel which is controlled through the 
+same SASI interface. A sixth filter position is allocated to an 
+opaque filter for the image intensifier's protection.
+
+      The HIRES camera had four operating modes:
+
+      1.  Programmable integration time.  The range of integration 
+          times is 1-733 milliseconds.
+
+      2.  Gain Mode.  The gain mode represents the multiplicative 
+          constant applied to the image data passing through the 
+          A/D converter.  Three gain state settings were available 
+          (1,2,5). Gain setting 5, which represented the lowest 
+          setting, was used almost constantly during lunar 
+          observations due to lifetime considerations of the 
+          imaging system.
+
+       3.  Offset Mode.  The offset mode represents the additive 
+           constant applied to the image data passing through the 
+           A/D converter.
+
+       4.  Intensifier Gain  Mode.  The intensifier gain mode 
+           represents the multiplicative gain of the image 
+           intensifier.  The precise behavior of the gain is, 
+           however, not known.
+
+
+    Camera Specifications
+    =====================
+
+      Focal Plane Array:
+      -------------------
+      Type              Si Charge Coupled Device
+                        Thomson TH7863-CRU
+      Pixel format      288x384
+      Pixel size        23x23 microns
+      Readout rate      4MHz
+
+      Optics:
+      -------------------
+      Clear aperture    131 nm
+      Speed             F/9.5
+      
+      Imaging:
+      -------------------
+      Wavelength          0.4 to 0.8 microns
+      Field of view       0.4 deg. x 0.3 deg.
+      Pixel IFOV         18 microradians
+      Point spread        4 pixels
+      Filters           415 nm cw (+/- 20 nm)     ('A')
+                        560 nm cw (+/- 5)         ('B')
+                        650 nm cw (+/- 5)         ('C')
+                        750 nm cw (+/- 10)        ('D')
+                        400 to 800 nm broadband   ('E')
+                        (opaque)                  ('F')
+      
+      Image intensifier:
+      -------------------
+      Module                General Atomics 0131-Z12-2-009
+      Useful photocathode 
+       diameter               12 mm
+      Luminous gain         1000 fL/fC
+      Limiting resolution     40 lp/mm
+      Gain control             8 bits
+      
+      
+      
+      Camera Electronics:
+      -------------------
+      A/D resolution    8 bits
+      Frame rate        10 Hz
+      Readout time      27.4 ms
+      Integration time  0.2-733 ms
+      Digitization gain 150,350,1000 electrons/count
+      Offset control    248 gray levels
+      Power             9.5 W
+      
+      Mechanical:
+      Mass              1120 grams
+      Envelope          17.0 cm x 18.1 cm x 36.4 cm
+
+"
+END_OBJECT = INSTINFO
+
+OBJECT = INSTREFINFO
+REFERENCE_KEY_ID = "KORDASETAL1995"
+END_OBJECT = INSTREFINFO
+
+END_OBJECT = INSTRUMENT
+
+END

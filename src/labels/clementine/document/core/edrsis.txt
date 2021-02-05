@@ -1,0 +1,1587 @@
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                      CLEMENTINE EDR IMAGE SIS                                
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                              Prepared by:                                    
+                                                                              
+                                                                              
+                                                                              
+                              Eric Eliason                                    
+                  Planetary Data System - Imaging Node                        
+                        Branch of Astrogeology                                
+                    United States Geological Survey                           
+                                                                              
+                                                                              
+                            Erick Malaret                                     
+                     Applied Coherent Technology                              
+                                                                              
+                                                                              
+                           Nat Bachman                                        
+              Navigational Ancillary Information Facility                     
+                    Jet Propulsion Laboratory                                 
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                        October 1, 1994                                       
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                          Table of Contents                                   
+1. INTRODUCTION                                                               
+1.1 PURPOSE                                                                   
+1.2 SCOPE                                                                     
+1.3 APPLICABLE DOCUMENTS                                                      
+1.4 FUNCTIONAL DESCRIPTION                                                    
+1.4.1 DATA CONTENT SUMMARY                                                    
+1.4.2 DATA SOURCE AND TRANSFER METHOD                                         
+1.4.3 DATA RECIPIENTS AND UTILIZATION                                         
+1.5 ASSUMPTIONS AND CONSTRAINTS                                               
+2. ENVIRONMENT                                                                
+3. ACCESS                                                                     
+4. DETAILED INTERFACE SPECIFICATIONS                                          
+4.1 DATA PRODUCT IDENTIFICATION                                               
+4.2 STRUCTURE AND ORGANIZATION OVERVIEW                                       
+4.3 PDS LABEL STRUCTURE DEFINITION AND FORMAT                                 
+4.3.1 GEOMETRIC AND VIEWING PARAMETER ASSUMPTIONS                             
+4.3.2 PDS KEYWORD DEFINITIONS                                                 
+                                                                              
+APPENDIX I     -     SPICE Kernel Files Used In Clementine Data Products      
+APPENDIX II    -    Data Compression Coefficients                             
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+1. INTRODUCTION                                                               
+                                                                              
+1.1 PURPOSE                                                                   
+                                                                              
+This Software Interface Specification (SIS) describes the organization        
+and contents of the Clementine EDR (Experimental Data Record) Image data      
+products. There are six cameras onboard the Clementine spacecraft that        
+will produce image data: 1) A-Star-tracker camera (A-STAR), 2) B-Star-        
+tracker camera (B-STAR), 3) LIDAR High-resolution camera (HiRes), 4)          
+ultraviolet / Visible camera (UVVIS), 5) Near Infrared camera (NIR), and      
+6) the Long Wavelength Infrared Camera (LWIR).  The Clementine EDR Data       
+products are deliverable products to the Planetary Data System and the        
+scientific community that it supports. All data formats are based on the      
+PDS standard, version 3.0, as documented in the PDS Standards Reference       
+[JPL Document D-7669, November 1992, available through the PDS].              
+                                                                              
+1.2 SCOPE                                                                     
+                                                                              
+This specification is useful to those who wish to understand the format       
+and content of the Clementine EDR Image data products. Typically, these       
+individuals include software engineers, data analysts, and planetary          
+scientists. The SIS applies to the EDR data products produced during the      
+course of Clementine Mission operations.                                      
+                                                                              
+1.3 APPLICABLE DOCUMENTS                                                      
+                                                                              
+The Clementine EDR SIS is responsive to the following Documents:              
+                                                                              
+<> NASA Research Announcement, Science Team for the Clementine Mission        
+   Deep Space Program Science Experiment (DSPSE), January 1993,               
+   NRA-93-OSSA-2.                                                             
+                                                                              
+<> DSPSE Experiment Manifest, Naval Center for Space Technology, May          
+   1993 SSD-D-DS-018                                                          
+                                                                              
+<> Planetary Data System Standards Reference, 1992, JPL D-7669.               
+   Distributed by the Planetary Data System, Jet Propulsion Laboratory        
+                                                                              
+<> Planetary Science Data Dictionary Document, 1992, JPL D-7116.              
+   Distributed by the Planetary Data System, Jet Propulsion Laboratory        
+                                                                              
+1.4 FUNCTIONAL DESCRIPTION                                                    
+1.4.1 DATA CONTENT SUMMARY                                                    
+                                                                              
+Each Clementine EDR data product consists of a single camera                  
+observation.  The image data have been depacketized and reformatted with      
+standard PDS labels, but are otherwise "raw". Raw data contain the            
+geometric and radiometric characteristics of unprocessed and unrectified      
+data. To make full utilization of the data, it is necessary to perform        
+radiometric and geometric processing on the data products.                    
+                                                                              
+The imaging sensors are framing cameras using CCD technology. The Star        
+tracking cameras (A-STAR and B-STAR) are used for spacecraft navigation       
+and orientation. The science observation cameras (UVVIS, HIRES, NIR, and      
+LWIR) acquire images in a wide spectral range from 415 to 8750                
+nanometers. The UVVIS, HIRES, and NIR cameras have filter wheels that         
+allow images to be acquired under six spectral filters. The LWIR camera       
+has a single spectral filter. Table 1 shows the pixel dimensions of the       
+images acquired by each camera and the center wavelength of each filter       
+wheel position. Other than the image dimensions, the data products of         
+each camera are identically formatted.                                        
+                                                                              
+    TABLE-1  Characteristics of each camera showing the dimension             
+    of an image in lines (rows) and samples (columns), the                    
+    number of filter wheel positions, and the center wavelength of            
+    each filter.                                                              
+                                                                              
+     Camera Lines/Samps/filt/Wavelength(Nanometers)                           
+                                                                              
+     UVVIS   288   384  6   415,750,900,950,1000,650(broadband)               
+     NIR     256   256  6   1100,1250,1500,2000,2600,2780                     
+     LWIR    128   128  1   8750                                              
+     HIRES   288   384  6   415,560,650,750,650(broadband), opaque            
+     A-STAR  576   384  N/A (broad band, no filter wheel)                     
+     B-STAR  576   384  N/A (broad band, no filter wheel)                     
+     ______________________________________________________________           
+                                                                              
+1.4.2 DATA SOURCE AND TRANSFER METHOD                                         
+                                                                              
+Clementine imaging data products are produced by the Clementine Mission       
+Operations Center operated by the Naval Research Laboratory (NRL). The        
+"NRL-ACT-MGRAB" software converts the data to the proper PDS labeled          
+format.                                                                       
+                                                                              
+1.4.3 DATA RECIPIENTS AND UTILIZATION                                         
+                                                                              
+The Clementine EDR data products are made available to NRL scientists         
+and the NASA/Clementine Science team for initial evaluation and               
+validation. At the end of the evaluation and validation period, the data      
+are organized and stored on compact disc (CD) media and made available        
+to the PDS for distribution to the science community. These products          
+will be used for engineering support, direct science analysis, and            
+construction of other science products.                                       
+                                                                              
+1.5 ASSUMPTIONS AND CONSTRAINTS                                               
+                                                                              
+The Clementine EDR data products contain compressed image data.               
+Decompression will result in a raw image that is not corrected for            
+instrument signature, effects of spacecraft motion, or effects of             
+imaging geometry. Although there is enough information in the header to       
+perform some processing, for more sophisticated processing, ancillary         
+data will be required. Examples of ancillary files are calibration            
+files, viewing geometry files, (e.g. SPICE kernels), image index tables,      
+etc.                                                                          
+                                                                              
+2. ENVIRONMENT                                                                
+                                                                              
+The Clementine EDR data products are stored on CD media according to the      
+ISO 9660 Volume and Directory Standard. This standard is compatible on        
+virtually all modern hardware platforms including UNIX, IBM/PC, and           
+Macintosh computer environments.                                              
+                                                                              
+The file headers contained on the Clementine CD-ROMs do not include           
+extended attribute records (XAR). This means that VAX/VMS systems can         
+not readily access the files. Without XARs, record attributes can not be      
+associated with a file. VAX/VMS directory listings of these files will        
+show  "Record Attributes: None, Record Format: None" file                     
+characteristics.                                                              
+                                                                              
+3. ACCESS                                                                     
+                                                                              
+The primary barrier or access to the Clementine EDR data products is the      
+compressed format of the image data. Thus, decompression software is          
+available on the archive to perform decompression. This software              
+produces decompressed image files in a standard PDS format. The software      
+will run on a variety of computer platforms.                                  
+                                                                              
+4. DETAILED INTERFACE SPECIFICATIONS                                          
+                                                                              
+4.1 DATA PRODUCT IDENTIFICATION                                               
+                                                                              
+Each product will have a file name of the form "msfxxxxy.rrr". The file       
+name is unique across all Clementine EDR data products. For more              
+information on the file name refer to the PRODUCT_ID keyword definition       
+in section 4.3.2. The product also contains a data set id that                
+identifies the data set. For more information on the data set id see the      
+DATASET_ID keyword definition in section 4.3.2.                               
+                                                                              
+4.2 STRUCTURE AND ORGANIZATION OVERVIEW                                       
+                                                                              
+The Clementine EDR data products are constructed according to the data        
+object concepts developed by the PDS. By adopting the PDS format, the         
+Clementine EDR images are consistent in content and organization with         
+other planetary image collections. In the PDS standard, the EDR image         
+file is grouped into objects with PDS labels describing the objects. The      
+Clementine EDR data products contain 1) an image object (the primary          
+data), 2) a browse image object, and 3) an image histogram object. The        
+image object contains the observed image data. The image data will exist      
+in a compressed form (if the data are compressed on board the                 
+spacecraft), or an uncompressed form (if the data are not compressed on       
+the spacecraft). The browse image object contains an uncompressed image       
+of the original data that has been reduced in size by subsampling the         
+image array. The browse image provides the capability to rapidly view         
+the image collection at a reduced format. The image histogram object          
+contains the histogram of the image after decompression. The image            
+histogram object can be used to obtain statistical information about the      
+image.                                                                        
+                                                                              
+A description of the data compression coefficients used on the                
+Clementine images is described in Appendix II.                                
+                                                                              
+4.3 PDS LABEL STRUCTURE DEFINITION AND FORMAT                                 
+                                                                              
+The label area of the data file conforms to the PDS version 3 standards.      
+For more information on this standard consult the PDS Standards               
+Reference JPL D-7669 Document. The purpose of the PDS label is to             
+describe the data product and provide ancillary information about the         
+data product. An example of a PDS label is shown below:                       
+                                                                              
+        EXAMPLE PDS LABEL FOR THE CLEMENTINE EDR DATA PRODUCTS                
+                                                                              
+PDS_VERSION_ID   = PDS3                                                       
+/*** FILE FORMAT ***/                                                         
+RECORD_TYPE      = UNDEFINED                                                  
+/*** POINTERS TO START BYTE OFFSET OF OBJECTS IN FILE ***/                    
+^IMAGE_HISTOGRAM = 4788  <BYTES>                                              
+^BROWSE_IMAGE    = 5812  <BYTES>                                              
+^IMAGE           = 7540  <BYTES>                                              
+/*** GENERAL DATA DESCRIPTION PARAMETERS ***/                                 
+MISSION_NAME     = "DEEP SPACE PROGRAM SCIENCE EXPERIMENT"                    
+SPACECRAFT_NAME  = "CLEMENTINE 1"                                             
+DATA_SET_ID      = "CLEM1-L/E/Y-A/B/U/H/L/N-2-EDR-V1.0"                       
+PRODUCT_ID       = "LUC0538B.032"                                             
+ORIGINAL_PRODUCT_ID = "LUC00538.032"                                          
+PRODUCER_INSTITUTION_NAME = "NAVAL RESEARCH LABORATORY"                       
+PRODUCT_TYPE     = EDR                                                        
+EDR_SOFTWARE_NAME  = "NRL-ACT-MGRAB V1.2"                                     
+MISSION_PHASE_NAME = "LUNAR MAPPING"                                          
+DATA_QUALITY_ID    = "N/A"                                                    
+TARGET_NAME        = "MOON"                                                   
+REVOLUTION_NUMBER  = 032                                                      
+FRAME_SEQUENCE_NUMBER = 0538                                                  
+/*** TIME PARAMETERS ***/                                                     
+START_TIME = 1994-02-26T21:14:57.857Z                                         
+STOP_TIME  = "N/A"                                                            
+UNCORRECTED_START_TIME = 1994-02-26T21:14:57.859Z                             
+SPACECRAFT_CLOCK_START_COUNT = "N/A"                                          
+SPACECRAFT_CLOCK_STOP_COUNT  = "N/A"                                          
+PRODUCT_CREATION_TIME        = 1994-09-30T19:53:05                            
+/*** CAMERA RELATED PARAMETERS ***/                                           
+INSTRUMENT_NAME   = "ULTRAVIOLET/VISIBLE CAMERA"                              
+INSTRUMENT_ID     = "UVVIS"                                                   
+FILTER_NAME       = "C"                                                       
+CENTER_FILTER_WAVELENGTH = 900 <nm>                                           
+BANDWIDTH         = 20 <nm>                                                   
+GAIN_MODE_ID      = "2"                                                       
+MCP_GAIN_MODE_ID  = "N/A"                                                     
+OFFSET_MODE_ID    = "3"                                                       
+EXPOSURE_DURATION = 7.9296   <ms>                                             
+LENS_TEMPERATURE  =  267.63   <K>                                             
+FOCAL_PLANE_TEMPERATURE = 271.802  <K>                                        
+CRYOCOOLER_TEMPERATURE  = "N/A"                                               
+CRYOCOOLER_DURATION = "N/A"                                                   
+/*** J2000 (ALSO CALLED EME2000) IS THE INERTIAL REFERENCE SYSTEM   ***/      
+/*** USED TO SPECIFY OBSERVATIONAL GEOMETRY. LATITUDE AND LONGITUDE ***/      
+/*** COORDINATES OF TARGET ARE PLANETOCENTRIC. GEOMETRIC PARAMETERS ***/      
+/*** ARE BASED ON BEST AVAILABLE DATA AT TIME OF PRODUCT CREATION.  ***/      
+/*** REFER TO CLEMENTINE SPICE DATA BASE FOR THE MOST CURRENT       ***/      
+/*** OBSERVATIONAL GEOMETRY DATA.                                   ***/      
+/*** LINE-OF-SITE ON CELESTIAL SPHERE: Angles in <deg> ***/                   
+RIGHT_ASCENSION  = 238.60  <deg>                                              
+DECLINATION      = 61.62   <deg>                                              
+TWIST_ANGLE      = 300.70  <deg>                                              
+RETICLE_POINT_RA = ( 231.53, 237.89, 245.09, 239.49)                          
+RETICLE_POINT_DECLINATION = (  62.77,  58.14,  60.12,  65.09)                 
+/*** OBSERVATIONAL SEQUENCE INFORMATION ***/                                  
+SEQUENCE_TABLE_ID = "CEQ_03"                                                  
+/*** TARGET PARAMETERS: Position <km>, Velocity <km/s> ***/                   
+SC_TARGET_POSITION_VECTOR = (      -575.6,      -954.2,      2049.3)          
+SC_TARGET_VELOCITY_VECTOR = ( -1.4890,  0.2342, -0.7037)                      
+TARGET_CENTER_DISTANCE    = 2332.7      <km>                                  
+/*** TARGET WITHIN SENSOR FOV: Angles in <deg> ***/                           
+SLANT_DISTANCE   = 595.3       <km>                                           
+CENTER_LATITUDE  = -74.39  <deg>                                              
+CENTER_LONGITUDE = 11.00   <deg>                                              
+HORIZONTAL_PIXEL_SCALE = 0.152 <km>                                           
+VERTICAL_PIXEL_SCALE   = 0.152 <km>                                           
+SMEAR_MAGNITUDE  = 0.07   <pixels>                                            
+SMEAR_AZIMUTH    = 89.80   <deg>                                              
+NORTH_AZIMUTH    = 270.51  <deg>                                              
+RETICLE_POINT_LATITUDE  = ( -75.08, -75.09, -73.66, -73.64)                   
+RETICLE_POINT_LONGITUDE = (  14.76,   7.29,   7.57,  14.39)                   
+/*** SPACECRAFT POSITION WITH RESPECT TO CENTRAL BODY ***/                    
+SUB_SPACECRAFT_LATITUDE  = -74.38  <deg>                                      
+SUB_SPACECRAFT_LONGITUDE = 10.74   <deg>                                      
+SPACECRAFT_ALTITUDE    = 595.3    <km>                                        
+SUB_SPACECRAFT_AZIMUTH = 347.12  <deg>                                        
+/*** SPACECRAFT LOCATION: Position <km>, Velocity <km/s> ***/                 
+SPACECRAFT_SOLAR_DISTANCE = 148497945.3                                       
+SC_SUN_POSITION_VECTOR    = (-137837390.0,  50702496.3,  21948816.2)          
+SC_SUN_VELOCITY_VECTOR    = (-10.2690,-26.6845,-10.7240)                      
+/*** VIEWING AND LIGHTING GEOMETRY (SUN ON TARGET) ***/                       
+SOLAR_DISTANCE   = 148498461.7 <km>                                           
+SUB_SOLAR_AZIMUTH   = 295.12  <deg>                                           
+SUB_SOLAR_LATITUDE  = 1.53    <deg>                                           
+SUB_SOLAR_LONGITUDE = 346.24  <deg>                                           
+INCIDENCE_ANGLE  = 77.38   <deg>                                              
+PHASE_ANGLE      = 77.21   <deg>                                              
+EMISSION_ANGLE   = 0.28    <deg>                                              
+LOCAL_HOUR_ANGLE = 208.08  <deg>                                              
+/*** LIGHTING GEOMETRY FROM SECONDARY SOURCE ***/                             
+LIGHT_SOURCE_NAME     = "EARTH"                                               
+LIGHT_SOURCE_DISTANCE = 362703.5    <km>                                      
+SUB_LIGHT_SOURCE_AZIMUTH   = 283.08  <deg>                                    
+SUB_LIGHT_SOURCE_LATITUDE  = 6.08    <deg>                                    
+SUB_LIGHT_SOURCE_LONGITUDE = 357.76  <deg>                                    
+LIGHT_SOURCE_INCIDENCE_ANGLE = 81.16   <deg>                                  
+LIGHT_SOURCE_PHASE_ANGLE   = 81.04   <deg>                                    
+/*** DESCRIPTION OF OBJECTS CONTAINED IN THE FILE ***/                        
+OBJECT = IMAGE_HISTOGRAM                                                      
+  ITEMS      = 256                                                            
+  DATA_TYPE  = LSB_INTEGER                                                    
+  ITEM_BYTES = 4                                                              
+END_OBJECT                                                                    
+OBJECT = BROWSE_IMAGE                                                         
+  LINES           = 36                                                        
+  LINE_SAMPLES    = 48                                                        
+  SAMPLING_FACTOR = 8                                                         
+  SAMPLE_TYPE   = UNSIGNED_INTEGER                                            
+  SAMPLE_BITS   = 8                                                           
+END_OBJECT                                                                    
+OBJECT = IMAGE                                                                
+  ENCODING_TYPE = "CLEM-JPEG-1"                                               
+  ENCODING_COMPRESSION_RATIO = 3.05                                           
+  LINES        = 288                                                          
+  LINE_SAMPLES = 384                                                          
+  SAMPLE_TYPE  = UNSIGNED_INTEGER                                             
+  SAMPLE_BITS  = 8                                                            
+  MAXIMUM  = 255                                                              
+  MINIMUM  = 27                                                               
+  MEAN     = 119.269                                                          
+  STANDARD_DEVIATION = 48.200                                                 
+  CHECKSUM = 4816272                                                          
+END_OBJECT                                                                    
+END                                                                           
+                                                                              
+                                                                              
+4.3.1 GEOMETRIC AND VIEWING PARAMETER ASSUMPTIONS                             
+                                                                              
+Table 2 lists the computational assumptions for the geometric and             
+viewing data provided in the PDS label. There are two coordinate systems      
+in use: 1) the celestial reference system used for target and spacecraft      
+position and velocity vectors, and camera pointing; and 2) the planetary      
+coordinate system for geometry vectors and target location.  The              
+celestial coordinate system is J2000 (Mean of Earth equator and equinox       
+of J2000). The planetary coordinate system is planetocentric.                 
+                                                                              
+               TABLE 2. - COMPUTATIONAL ASSUMPTIONS                           
+                                                                              
+      <> The mid-point time of observation is used for the geometric          
+         element computations.                                                
+                                                                              
+      <> Label parameters reflect observed, not true, geometry.               
+         Therefore, light-time and stellar aberration corrections are         
+         used as appropriate.                                                 
+                                                                              
+      <> The inertial reference frame is J2000 (also called EME2000).         
+                                                                              
+      <> Latitudes and longitudes are planetocentric.                         
+                                                                              
+      <> The "sub-point" of a body on a target is defined by the surface      
+         intercept of the body-to-target-center vector.  This is not          
+         the closest point on the body to the observer.  This definition      
+         gives sub-point latitude and longitude that are independent of       
+         the reference ellipsoid.                                             
+                                                                              
+      <> Distances are in km, speeds in km/sec, angles, in degrees,           
+         angular rates in degrees/sec, unless otherwise noted.                
+                                                                              
+      <> Angle ranges are 0 to 360 degrees for azimuths and local hour        
+         angle. Longitudes range from 0 to 360 degrees                        
+         (positive to the East).  Latitudes range from -90 to 90              
+         degrees.                                                             
+                                                                              
+      <> Spice kernel files used in the geometric parameters is               
+         outlined in Appendix I.                                              
+                                                                              
+                                                                              
+4.3.2 PDS KEYWORD DEFINITIONS                                                 
+                                                                              
+The keywords are listed in the order in which they appear in the example      
+label shown above.                                                            
+                                                                              
+PDS_VERSION_ID = PDS3                                                         
+     The PDS_VERSION_ID data element represents the version                   
+     number of the PDS standards documents that is valid                      
+     when a data product label is created. PDS3 is used for                   
+     the Clementine Data products.                                            
+                                                                              
+RECORD_TYPE = UNDEFINED                                                       
+     The record_type element indicates the record format of a                 
+     file. The value UNDEFINED is used in the Clementine EDR                  
+     data products. There are no record attributes associated                 
+     with the file. The file can be thought of as a continuous                
+     stream of bytes with no record separators.                               
+                                                                              
+^IMAGE_HISTOGRAM  = xxxxx <BYTES>                                             
+      The image_histogram is a pointer to the image histogram object.         
+      The value contains the starting byte position in the file.              
+      (Pointers in the PDS standard assume the first byte in the array        
+      is byte position 1.)                                                    
+                                                                              
+^BROWSE_IMAGE = xxxxx <BYTES>                                                 
+      The parameter is the pointer to the browse image object. The            
+      value contains the starting byte position in the file. The browse       
+      image is an uncompressed sub-sampled image of the image contained       
+      in the IMAGE object.                                                    
+                                                                              
+^IMAGE = xxxx <BYTES>                                                         
+      The parameter is the pointer to the image object. The value             
+      contains the starting byte position in the file.                        
+                                                                              
+MISSION_NAME = "DEEP SPACE PROGRAM SCIENCE EXPERIMENT"                        
+     The mission_name element identifies a major planetary mission or         
+     project. A given planetary mission may be associated with one or         
+     more spacecraft.                                                         
+                                                                              
+SPACECRAFT_NAME = "CLEMENTINE 1"                                              
+     The spacecraft_name element provides the full, unabbreviated             
+     name of the spacecraft.                                                  
+                                                                              
+DATA_SET_ID = "CLEM1-/L/E/Y-A/B/U/H/L/N-2-EDR-V1.0"                           
+     The data_set_identification element uniquely identifies the              
+     data sets available on the volume. The EDR collection is made            
+     up of a single data set.                                                 
+     Targets include: L=Earth's Moon, E=Earth, Y=Sky,                         
+     Cameras include: A=A star tracker, B=B star tracker,                     
+                      U=UV/Vis, H=HiRes, L=longwave infrared,                 
+                      N=Nir infrared cameras.                                 
+                                                                              
+PRODUCT_ID = "msfxxxxy.rrr"                                                   
+     The product_id data element represents a permanent, unique               
+     identifier assigned to a data product by its producer.                   
+     The product_id is identical to the name of the EDR image file.           
+     Where: m = Mission Phase                                                 
+                P = Prelaunch                                                 
+                L = Lunar mapping                                             
+                E = Earth mapping (LEO and phasing loops)                     
+                A = First earth-moon orbital phasing loops                    
+                B = Second earth-moon orbital phasing loops.                  
+            s = Sensor                                                        
+                A = Star tracker A                                            
+                B = Star tracker B                                            
+                U = UV/Vis                                                    
+                H = Hi-Resolution sensor                                      
+                N = Near infrared sensor                                      
+                L = Long wavelength infrared sensor                           
+            f = Filter wheel position (A, B, C, D, E, F)                      
+            xxxx = Frame number within revolution                             
+            y = Latitude bin for lunar mapping observations. This             
+                character signifies a latitude range on the lunar             
+                surface where the observation was made. The                   
+                center latitude of the image defines the character:           
+                A = -90 to -80      M = 30 to 40                              
+                B = -80 to -70      N = 40 to 50                              
+                C = -70 to -60      O = 50 to 60                              
+                D = -60 to -50      P = 60 to 70                              
+                E = -50 to -40      Q = 70 to 80                              
+                F = -40 to -30      R = 80 to 90                              
+                G = -30 to -20                                                
+                H = -20 to -10      S = "unkown" targets                      
+                I = -10 to   0                                                
+                J =   0 to  10      T = Earth observations prior to           
+                K =  10 to  20          systematic mapping                    
+                L =  20 to  30      U = Sky observations prior to             
+                                        systematic mapping                    
+                                    V = Lunar observations prior to           
+                                        systematic mapping                    
+                                    W = Sky observations after                
+                                        systematic mapping                    
+                                    Y = Earth observations after              
+                                        systematic mapping                    
+                                    Z = Moon Observations after               
+                                        systematic mapping                    
+                                                                              
+                                                                              
+            rrr  = Revolution number (lunar mapping phase)                    
+                                                                              
+            For non-lunar mapping phase of the mission, the string            
+            "xxxxy.rrr" takes on a different meaning:                         
+            rrr = Data down load (dump) number within the mission             
+                  phase. The image data is periodically downloaded            
+                  from the spacecraft's solid state data recorder. This       
+                  field specifies a sequence number, starting with 1, of      
+                  a download sequence.                                        
+            xxxx = Image sequence number of within the download.              
+            y =   This field contains an alpha character A-Z. The             
+                  letter increases to the next alpha character after          
+                  each 100 images. This letter helps limit the number         
+                  of images that go into each subdirectory on the             
+                  CD-ROM.                                                     
+                                                                              
+ORIGINAL_PRODUCT_ID = "msfxxxxx.rrr"                                          
+     During active flight operations, the images were assigned                
+     temporary file names and product id's. This keyword contains the         
+     temporary product_id (and file name) given to the image. This field      
+     should be ignored by all new users of the Clementine data products.      
+     The format is similar to the PRODUCT_ID. The 'xxxxx' field               
+     represents a sequence number. There were several problems                
+     associated with this number. The sequence numbers refer to the           
+     order in which the data were send down from the spacecraft and           
+     not the order in which the images were acquired in orbit. Due to         
+     ground processing problems, the sequence numbers in the original         
+     product id have been shown to be unreliable.                             
+                                                                              
+PRODUCER_INSTITUTION_NAME = "NAVAL RESEARCH LABORATORY"                       
+     Organization responsible for developing the data products. The           
+     Naval Research Laboratory was responsible for the ground processing      
+     system for the Clementine Spacecraft.                                    
+                                                                              
+PRODUCT_TYPE = EDR                                                            
+     Image data products are identified as an EDR (Experimental Data          
+     Record). The images are unprocessed and contain all of the               
+     characteristics and artifacts of "raw" images as acquired by the         
+     spacecraft.                                                              
+                                                                              
+EDR_SOFTWARE_NAME = "NRL-ACT-MGRAB V1.2"                                      
+     Version number of the software system that created the data              
+     products.                                                                
+                                                                              
+MISSION_PHASE_NAME = "xxxxxxxx"                                               
+     Mission Phase names:                                                     
+     LOW EARTH ORBIT                                                          
+     LUNAR MAPPING                                                            
+     EARTH PHASING LOOP A                                                     
+     EARTH PHASING LOOP B                                                     
+                                                                              
+DATA_QUALITY_ID = "N/A"                                                       
+     Data Quality indicator. This keyword is reserved for future use.         
+     As processing of Clementine data proceeds, this keyword may              
+     be used to describe data quality information. No data quality            
+     parameters have currently been defined.                                  
+                                                                              
+TARGET_NAME = "xxxxxx"                                                        
+                                                                              
+     Observational target: MOON, EARTH, SKY                                   
+                                                                              
+     The TARGET body is determined by the PICGEO program algorithm:           
+                                                                              
+     1) For each possible target body (a target selection list is             
+     specified to the PICGEO program), it determines if the body is           
+     partly or entirely in the camera's field of view.                        
+                                                                              
+     2) If only one body is in the field of view, that body is the            
+     target body.                                                             
+                                                                              
+     3) If multiple bodies are in the field of view, and one or more          
+     bodies intersect the camera boresight, the closest one to the S/C        
+     is the target body.                                                      
+                                                                              
+     4) If multiple bodies are in the field of view, and no bodies            
+     intersect the camera boresight, the closest one to the S/C is the        
+     target body.                                                             
+                                                                              
+     5) If no bodies are in the camera's field of view, the target            
+     body is 'SKY'.                                                           
+                                                                              
+                                                                              
+REVOLUTION_NUMBER = xxx                                                       
+     The revolution number refers to an observational pass over the           
+     moon. The revolution number is incremented by one each time the          
+     spacecraft passes over the south pole prior to the beginning of          
+     data acquisition. REVOLUTION_NUMBER is used in lieu of orbit             
+     number because of the way the orbit number was defined by the            
+     mission. The orbit number is incremented at the equator on the           
+     sun lit side of the Moon. Thus, the orbit number is changed in           
+     the middle of an observational pass. This proved to be awkward           
+     in defining the data acquired by a single pass over the Moon.            
+                                                                              
+                                                                              
+FRAME_SEQUENCE_NUMBER = xxxxxx                                                
+     Sequential frame number of the image acquired during a pass over         
+     the Moon. For non-lunar mapping phase of mission the sequence            
+     number refers to the image sequence within a spacecraft memory           
+     download.                                                                
+                                                                              
+START_TIME = 1994-01-01T03:24:10.444Z                                         
+     Time of start of observation. This time refers to the start              
+     of the integration time of the camera. The value contained in this       
+     keyword reflects a "corrected time". A software problem onboard          
+     the spacecraft caused inaccurate times to be attached to an image.       
+     This value contains the best estimated time of the observation.          
+                                                                              
+STOP_TIME = "N/A"                                                             
+     This keyword is a required element for PDS data products and is          
+     included in the label for conformance to PDS standards.                  
+                                                                              
+UNCORRECTED_START_TIME = 1994-01-01T03:24:10.444Z                             
+     This keyword contains the time of the observation as sent down           
+     by the spacecraft. This time may be incorrect due to a software          
+     problem that existed onboard the spacecraft. The difference between      
+     the START_TIME and the UNCORRECTED_START_TIME is the estimated           
+     correction that was applied to the START_TIME.                           
+                                                                              
+SPACECRAFT_CLOCK_START_COUNT = "N/A"                                          
+     Clock count of the spacecraft computer at the start of the image         
+     observation. The computer clock count was not available for              
+     the data products. This keyword is a required element for PDS            
+     data products and is included for conformance to the standard.           
+                                                                              
+SPACECRAFT_CLOCK_STOP_COUNT = "N/A"                                           
+     Clock count of the spacecraft computer at the end of the image           
+     observation. The computer clock count was not available for              
+     the data products. This keyword is a required element for PDS            
+     data products and is included for conformance to the standard.           
+                                                                              
+PRODUCT_CREATION_TIME = 1994-02-26T21:17:06                                   
+      Date and time for which the EDR product was created.                    
+                                                                              
+INSTRUMENT_NAME = "xxxxxxxx"                                                  
+      Name of camera:                                                         
+      NEAR INFRARED CAMERA                                                    
+      LIDAR HIGH-RESOLUTION IMAGER                                            
+      ULTRAVIOLET/VISIBLE CAMERA                                              
+      LONG WAVELENGTH INFRARED CAMERA                                         
+      A STAR TRACKER CAMERA                                                   
+      B STAR TRACKER CAMERA                                                   
+                                                                              
+INSTRUMENT_ID = "xxxxxx"                                                      
+      A-STAR (A star tracker camera)                                          
+      B-STAR (B star tracker camera)                                          
+      HIRES  (HiResolution camera)                                            
+      UVVIS  (Ultra Violet/Visible camera)                                    
+      LWIR   (Long wavelength infrared camera)                                
+      NIR    (Near Infrared camera)                                           
+                                                                              
+FILTER_NAME = "xx"                                                            
+      Filter name. The filter names are assigned alpha letters                
+      to designate the filter position. The CENTER_FILTER_WAVELENGTH          
+      parameter defines the central wavelength of the filter. Values          
+      for each camera are shown, center wavelength and bandwidth are          
+      given in nanometers.                                                    
+      Camera/Filter/Center/Bandwidth                                          
+       UVVIS  A -    415   40                                                 
+              B -    750   10                                                 
+              C -    900   20                                                 
+              D -    950   30                                                 
+              E -   1000   30                                                 
+              F -    650  550 (BROADBAND FILTER)                              
+       NIR    A -   1100   60                                                 
+              B -   1250   60                                                 
+              C -   1500   60                                                 
+              D -   2000   60                                                 
+              E -   2600   60                                                 
+              F -   2780   60                                                 
+       HIRES  A -    415   40                                                 
+              B -    560   50                                                 
+              C -    650   50                                                 
+              D -    750   50                                                 
+              E -    650  350 (BROADBAND FILTER)                              
+              F -    N/A  N/A (OPAQUE FILTER)                                 
+       LWIR   A -   8750 1500                                                 
+       A-STAR A -    N/A  N/A (BROADBAND, NO FILTER WHEEL)                    
+       B-STAR A -    N/A  N/A (BROADBAND, NO FILTER WHEEL)                    
+                                                                              
+CENTER_FILTER_WAVELENGTH = xxxx <nm>                                          
+     The center_filter_wavelength element provides the mid point              
+     wavelength value between the minimum and maximum instrument              
+     filter wavelength values.                                                
+                                                                              
+BANDWIDTH = xxxx <nm>                                                         
+     The bandwidth element provides a measure of the spectral                 
+     width of a filter (nanometers). For a root-mean-square detector          
+     this is the effective bandwidth of the filter i.e., the full             
+     width of an ideal square filter having a flat response over the          
+     bandwidth and zero response elsewhere.                                   
+                                                                              
+GAIN_MODE_ID = "xxx"                                                          
+     Gain mode of the Camera. Mode that defines the sensitivity of            
+     the detector.                                                            
+                                                                              
+MCP_GAIN_MODE_ID = "xxx"                                                      
+     Micro Channel Plate (MCP) gain mode. This keyword is applicable          
+     only to the HIRES camera.                                                
+                                                                              
+OFFSET_MODE_ID = "xxx"                                                        
+     Mode specifies the analog value that is subtracted from the              
+     video signal prior to the Analog/digital converters.                     
+                                                                              
+EXPOSURE_DURATION = xxxx <ms>                                                 
+     Exposure duration (integration time) of the image observation            
+     expressed in milliseconds.                                               
+                                                                              
+LENS_TEMPERATURE = xxx.xx <K>                                                 
+     Temperature of the camera lens in degrees Kelvin at the                  
+     time the observation was made. This parameter is "N/A"                   
+     for the HIRES camera because not temperature sensor was                  
+     available at the lens.                                                   
+                                                                              
+FOCAL_PLANE_TEMPERATURE = xxx.xx <K>                                          
+     Temperature of the focal plane array in degrees Kelvin                   
+     at the time the observation was made.                                    
+                                                                              
+CRYOCOOLER_TEMPERATURE = xxx.xx <K>                                           
+     Temperature of the Cryocooler at time observation was made.              
+     This field applicable only to the NIR and LWIR cameras.                  
+                                                                              
+CRYOCOOLER_DURATION = xxxx <s>                                                
+     Time that has transpired since the cryocooler was turned on.             
+     This field applicable only to the NIR and LWIR cameras.                  
+                                                                              
+RIGHT_ASCENSION = xxxx.xxx <deg>                                              
+     The right ascension of the camera boresight. The values are              
+     specified relative to the J2000 inertial reference frame.                
+                                                                              
+DECLINATION = xxxx.xxx <deg>                                                  
+     The declination of the camera boresight. The values are                  
+     specified relative to the J2000 inertial reference frame.                
+                                                                              
+TWIST_ANGLE = xxxx.xxx <deg>                                                  
+     The element TWIST_ANGLE provides the angle of rotation about             
+     optical axis relative to celestial coordinates.  The                     
+     right ascension, declination, and twist angles define the                
+     pointing direction of the scan platform.                                 
+                                                                              
+RETICLE_POINT_RA = (xxxx.xx, xxxx.xx, xxxx.xx, xxxx.xx)                       
+RETICLE_POINT_DECLINATION = (xxxx.xx, xxxx.xx, xxxx.xx, xxxx.xx)              
+     These parameters refer to the right ascension and declination            
+     of the principle points of the camera. For the Clementine                
+     cameras the principle points are defined as the upper                    
+     left pixel of the camera (line 1, sample 1), the upper right             
+     pixel (line 1 , last sample), lower left (last line, sample 1),          
+     and lower right(last line, last sample). The reticule point              
+     RA and DEC are expressed in degrees.                                     
+                                                                              
+SEQUENCE_TABLE_ID  = "xxx"                                                    
+     This parameter contains the image acquisition sequence code that         
+     specifies the camera/filter image sequencing for a set of                
+     observations. The ID indicates the order in which cameras are            
+     shuttered and the order for which filters are used in the                
+     set of observations. The sequence tables will be defined in the          
+     ancillary CD-ROM data products that accompany the Clementine EDR         
+     archive.                                                                 
+                                                                              
+SC_TARGET_POSITION_VECTOR = (xxxxxxxx.xx, yyyyyyyyyy.yy, zzzzzzzz.zz)         
+     x-, y-, and z- components of the position vector from observer to        
+     target center expressed in J2000 coordinates, and corrected for          
+     light time and stellar aberration, evaluated at epoch at which           
+     image was taken. Units are expressed in kilometers.                      
+                                                                              
+SC_TARGET_VELOCITY_VECTOR = (xxxxxxx.xx, yyyyyyyy.yy, zzzzzxxxz.zz)           
+     x-, y-, and z- components of velocity vector of target relative to       
+     observer, expressed in J2000 coordinates, and corrected for light        
+     time, evaluated at epoch at which image was taken. Units                 
+     are expressed in kilometers/second.                                      
+                                                                              
+TARGET_CENTER_DISTANCE = xxxx.xxx <km>                                        
+     The target_center_distance element provides the distance                 
+     between the spacecraft and the center of the named target,               
+     expressed in kilometers.                                                 
+                                                                              
+                                                                              
+SLANT_DISTANCE = xxxx.xxx <km>                                                
+     Distance from spacecraft to camera boresight intercept point on          
+     surface expressed in kilometers.                                         
+                                                                              
+CENTER_LATITUDE  = xxxx.xxx <deg>                                             
+CENTER_LONGITUDE = xxxx.xxx <deg>                                             
+     Planetocentric latitude and longitude of camera boresight intercept      
+     point.                                                                   
+                                                                              
+HORIZONTAL_PIXEL_SCALE = xxxxx.xxxx <km>                                      
+VERTICAL_PIXEL_SCALE   = xxxxx.xxxx <km>                                      
+     Distance, measured along horizontal and vertical directions, along       
+     target surface between intercept points defined by centers of left       
+     and right edges of pixel-sized region in FOV centered at camera          
+     boresight. Defined only when boresight intercepts surface. Units         
+     are in kilometers.                                                       
+                                                                              
+SMEAR_MAGNITUDE = xxxx.xx <pixels>                                            
+     Norm of velocity vector of camera boresight intercept point              
+     projected on target, multiplied by the exposure duration                 
+     with the scale of the image factored to obtain the smear                 
+     in pixels. Spacecraft rotation is taken into account. (Units             
+     are in pixels.)                                                          
+                                                                              
+SMEAR_AZIMUTH =  xxxxx.xx <deg>                                               
+     Azimuth of smear velocity vector.  The reference line for the angle      
+     extends from the center of the image to the right edge of the            
+     image. The angle increases in the clock-wise direction.  The angle       
+     is measured to the "image" of the smear velocity vector in the           
+     camera's focal plane.  This image is computed by orthogonally            
+     projecting the smear vector onto the image plane and then applying       
+     whatever transformations are required to orient the result properly      
+     with respect to the image.  The specific transformations to be           
+     performed are given by the camera's I-kernel.                            
+                                                                              
+NORTH_AZIMUTH = xxxxx.xxx <deg>                                               
+     Analogs to smear azimuth, but applies to the target north pole           
+     direction vector.                                                        
+                                                                              
+RETICLE_POINT_LATITUDE = (xxxx.xx, xxxx.xx, xxxx.xx, xxxx.xx)                 
+RETICLE_POINT_LONGITUDE = (xxxx.xx, xxxx.xx, xxxx.xx, xxxx.xx)                
+     Latitudes and longitudes of the surface intercept points of the          
+     principle points of the camera. (see RETICLE_POINT_RA for                
+     definition of the reticule points for Clementine. The units              
+     are expressed in degrees.                                                
+                                                                              
+SUB_SPACECRAFT_LATITUDE = xxxx.xxx <deg>                                      
+SUB_SPACECRAFT_LONGITUDE= xxxx.xxx <deg>                                      
+     Planetocentric latitude and longitude of spacecraft-to-centerbody-       
+     center surface intercept vector. These parameters and the                
+     SPACECRAFT_ALTITUDE, SUB_SPACECRAFT_AZIMUTH parameters described         
+     below are relative to the central body for which the spacecraft          
+     is orbiting and not the target of the observation.                       
+                                                                              
+SPACECRAFT_ALTITUDE = xxxxxxx.xxx <km>                                        
+     Altitude of spacecraft above reference ellipsoid.  Distance is           
+     measured to closest point on ellipsoid.                                  
+                                                                              
+SUB_SPACECRAFT_AZIMUTH = xxxxxxxx.xxx <deg>                                   
+     Azimuth angle of sub-spacecraft point in image.  Method of               
+     measurement is same as for smear azimuth (see above).                    
+                                                                              
+SPACECRAFT_SOLAR_DISTANCE = xxxxxxxx.xxxx <km>                                
+     Analogous to "target center distance," but Sun replaces target body      
+     in computation.                                                          
+                                                                              
+SC_SUN_POSITION_VECTOR = (xxxxxxx.xx, yyyyyy.yy, zzzzzzz.zz)                  
+     x-, y-, and z- components of position vector from observer to sun,       
+     center expressed in J2000 coordinates, and corrected for light time      
+     and stellar aberration, evaluated at epoch at which image was            
+     taken. Units are kilometers.                                             
+                                                                              
+SC_SUN_VELOCITY_VECTOR = (xxxxxxxx.xx, yyyyyyy.yy, zzzzzzz.zz)                
+     x-, y-, and z- components of velocity vector of sun relative to          
+     observer, expressed in J2000 coordinates, and corrected for light        
+     time, evaluated at epoch at which image was taken. Units are             
+     kilometers/second.                                                       
+                                                                              
+SOLAR_DISTANCE = xxxxxxxx.xx <km>                                             
+     Distance from target body center to Sun.  The Sun position used is       
+     that described above.                                                    
+                                                                              
+SUB_SOLAR_AZIMUTH = xxxxx.xx <deg>                                            
+     Azimuth of the apparent sub-solar point, as seen by the spacecraft.      
+     This point is the surface intercept of the target-center-to-Sun          
+     vector, evaluated at the camera epoch minus one-way light time from      
+     target to spacecraft at that epoch spacecraft at that epoch.             
+     Azimuth is measured as described above.  Target body position            
+     relative to the spacecraft is corrected for light-time and stellar       
+     aberration.  Target body orientation is corrected for light-time.        
+                                                                              
+SUB_SOLAR_LATITUDE  = xxxx.xx <deg>                                           
+SUB_SOLAR_LONGITUDE = xxxx.xx <deg>                                           
+     Planetocentric latitude and longitude of the apparent sub-solar          
+     point.                                                                   
+                                                                              
+INCIDENCE_ANGLE = xxxx.xx <deg>                                               
+PHASE_ANGLE     = xxxx.xx <deg>                                               
+EMISSION_ANGLE  = xxxx.xx <deg>                                               
+     These angles are measured at the camera boresight intercept point.       
+     The target-Sun vector is the same as that used in the sub-solar          
+     point computation.  The spacecraft-target vector is the same as          
+     that used in the camera boresight intercept computation.                 
+     The INCIDENCE ANGLE is the angle between the target-Sun vector and       
+     the local vertical vector at the boresight intercept.                    
+     The PHASE ANGLE is measured between the boresight intercept-to-Sun       
+     vector and the negative of the boresight vector.                         
+     The EMISSION ANGLE is measured between the negative of the               
+     boresight vector and the local vertical vector at the boresight          
+     intercept.                                                               
+                                                                              
+LOCAL_HOUR_ANGLE = xxxx.xx <deg>                                              
+     The angle from the negative of the target-body-to-Sun vector to the      
+     projection of the negative of the spacecraft-to-target vector onto       
+     the target's instantaneous orbital plane.  Both vectors are              
+     computed as in the sub-spacecraft point computation.  The angle is       
+     measured in a counterclockwise direction when viewed from North of       
+     the ecliptic plane.                                                      
+                                                                              
+LIGHT_SOURCE_NAME = "xxxxx"                                                   
+     Name of secondary light source.                                          
+     EARTH when making lunar observations                                     
+     MOON when making earth observations                                      
+                                                                              
+LIGHT_SOURCE_DISTANCE = xxxxxx.xxx <km>                                       
+     Distance from target body center and secondary light source center.      
+                                                                              
+SUB_LIGHT_SOURCE_AZIMUTH = xxxx.xx <deg>                                      
+     Analogs to sub solar azimuth but using secondary light source            
+     instead of sun.                                                          
+                                                                              
+SUB_LIGHT_SOURCE_LATITUDE  = xxxx.xx <deg>                                    
+SUB_LIGHT_SOURCE_LONGITUDE = xxxx.xx <deg>                                    
+     Analogs to sub solar latitude and longitude but using secondary          
+     light source instead of sun.                                             
+                                                                              
+LIGHT_SOURCE_INCIDENCE_ANGLE = xxxx.xx <deg>                                  
+LIGHT_SOURCE_PHASE_ANGLE = xxxx.xx <deg>                                      
+     Analogs to incidence and phase angles but using secondary light          
+     source instead of sun.                                                   
+                                                                              
+OBJECT = IMAGE_HISTOGRAM                                                      
+ ITEMS     =  256                                                             
+ DATA_TYPE =  LSB_INTEGER                                                     
+ ITEM_BYTES = 8                                                               
+END_OBJECT                                                                    
+     These keywords describe the histogram object.                            
+                                                                              
+OBJECT = BROWSE_IMAGE                                                         
+ LINES         = xxxx                                                         
+ LINE_SAMPLES  = xxxx                                                         
+ SAMPLING_FACTOR = 8                                                          
+ SAMPLE_TYPE   = UNSIGNED_INTEGER                                             
+ SAMPLE_BITS   = 8                                                            
+END_OBJECT                                                                    
+     These keywords describe the browse image object. The browse              
+     image is an uncompressed subsampled version of the image.                
+     SAMPLING_FACTOR refers to the subsampling of every N-th pixel            
+     in the line and sample direction. The pixel values in the                
+     NxN array are averaged before subsampling.                               
+                                                                              
+OBJECT = IMAGE                                                                
+ ENCODING_TYPE = "CLEM-JPEG-0"                                                
+ ENCODING_COMPRESSION_RATIO = xxxx.xx                                         
+ LINES         = xxxx                                                         
+ LINE_SAMPLES  = xxxx                                                         
+ SAMPLE_TYPE   = UNSIGNED_INTEGER                                             
+ SAMPLE_BITS   = 8                                                            
+ MAXIMUM       = xxx                                                          
+ MINIMUM       = xxx                                                          
+ MEAN          = xxx                                                          
+ STANDARD_DEVIATION = xxxx.xxx                                                
+ CHECKSUM = xxxxxxxx                                                          
+END_OBJECT                                                                    
+END                                                                           
+                                                                              
+These keywords describe the image object. Data are in a compressed            
+form, the huffman table, and DCT coefficients are stored in the               
+object. Access to this object is through the decompression software.          
+MINIMUM, MAXIMUM, MEAN, and STANDARD_DEVIATION refers to the DN values        
+of the image array. The CHECKSUM parameter refers to the sum of the           
+bytes in the object in compressed form. The ENCODING_COMPRESSION_RATIO        
+specifies the compression factor of the data. There are three permitted       
+values for the ENCODING_TYPE: "N/A" indicates the image was not               
+compressed on the spacecraft and so the data are not in a compressed          
+format. "CLEM-JPEG-0" and "CLEM-JPEG-1" indicates the data were               
+compressed onboard the spacecraft and the data are stored in a                
+compressed form. See Appendix II for a description of the two data            
+decompression forms.                                                          
+                                                                              
+                                                                              
+                                                                              
+APPENDIX I -  SPICE Kernel Files Used In Clementine Data Products             
+                                                                              
+The following SPICE kernel files were inputs to the Picture Geometry          
+program (PICGEO) used to compute the geometric quantities found in the        
+PDS image labels and the Image Index files (IMGINDX.TAB) archived in          
+this volume set. Improvements to some of these fundamental ancillary          
+data will be made as further analysis of Clementine data continues, so        
+the geometric quantities found in the labels should not be used for           
+precision science data analyses.                                              
+                                                                              
+clemdef.bsp:                                                                  
+Clementine spacecraft trajectory file. The ephemeris in this file was         
+produced by the Naval Research Laboratory, based on orbit solutions           
+provided by the Goddard Space Flight Center Flight Dynamics Facility.         
+The NRL data, given in the SERF form, were converted to the SPICE SPK         
+format using the serf2spk utility provided by NAIF.                           
+                                                                              
+de245.bsp:                                                                    
+JPL planetary and lunar ephemeris file, in SPICE SPK format.                  
+                                                                              
+clemdef.bck:                                                                  
+Clementine spacecraft orientation file. The pointing in this file is          
+discrete, stored every 5 seconds during periods of imaging and every 60       
+seconds during periods of non-imaging. There are gaps in coverage. The        
+pointing data in this file were NOT corrected for known discrepancies         
+between A- and B- star tracker alignment. The data are in SPICE CK            
+format.                                                                       
+                                                                              
+dspse002.tsc:                                                                 
+Clementine spacecraft clock coefficients file, in SPICE SCLK format.          
+                                                                              
+pck00003.tpc:                                                                 
+Planetary constants kernel file, in the SPICE text-PcK format. This was       
+used for modeling the size, shape and orientation of the earth, and the       
+size and shape (not orientation) of the moon.                                 
+                                                                              
+de245l.bpc:                                                                   
+Lunar orientation model using numerically integrated physical                 
+librations. This model uses the mean earth axes, not the principal axes       
+used in the IAU publications from which the pck00003.tpc data were            
+obtained. The difference between these two models is thought to be            
+several hundred meters.                                                       
+                                                                              
+naif0003.tls:                                                                 
+NAIF leapseconds kernel file, used for converting between Universal Time      
+Coordinated (UTC) and Barycentric Dynamical Time (TDB, also called            
+Ephemeris Time, or ET).                                                       
+                                                                              
+The seven instrument kernel files below contain the instrument mounting       
+alignment relative to the spacecraft, and the following instrument            
+geometric parameters: focal length, focal plane dimension, pixel size,        
+and the coefficient of radially symmetric optical distortion.  ASTAR and      
+BSTAR are the A- and B- star trackers that provided spacecraft attitude       
+reference as well as scientific images.                                       
+                                                                              
+  hires005.ti:    HIRES instrument kernel file.                               
+                                                                              
+  uvvis005.ti:    UVVIS instrument kernel file.                               
+                                                                              
+  lwir005.ti:     LWIR instrument kernel file.                                
+                                                                              
+  nir005.ti:      NIR instrument kernel file.                                 
+                                                                              
+  lidar002.ti:    LIDAR instrument kernel file.                               
+                                                                              
+  astar004.ti:    ASTAR instrument kernel file.                               
+                                                                              
+  bstar004.ti:    BSTAR instrument kernel file.                               
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+APPENDIX II - Data Compression Coefficients                                   
+                                                                              
+The Clementine Data Handling Unit (DHU) permits 4 data compression            
+parameter sets to be loaded at any given time, i.e. Sets 0-3. These data      
+compression parameter sets are used to drive the MATRA compression chip.      
+This chip permits the real time compression of images using a                 
+compression scheme that is similar to the JPEG standard  but not              
+identical.                                                                    
+                                                                              
+Each data compression parameter set is composed of:                           
+      TabQ table        - which contains 64 values                            
+      Huffman Table     - which contains the huffman encoding constants,      
+      TabF  vector      - which contains a vector with 16 possible            
+                          scaling constants to use.                           
+                                                                              
+During the Clementine mission:                                                
+                                                                              
+<> Set 0 corresponded to MATRA's default data compression parameter set.      
+   The ENCODING_TYPE = "CLEM-JPEG-0" signifies Set 0 parameters               
+   were used in the compression.                                              
+                                                                              
+<> Set 1 corresponded to a flat quantization table for all frequencies.       
+   This is the set that was primarily used during the whole mission.          
+   The ENCODING_TYPE = "CLEM-JPEG-1" signifies Set 1 parameters               
+   were used in the compression.                                              
+                                                                              
+<> Sets 2-3 were identical to Set 1.  If needed they were going to be         
+   modified during flight.   After a number of quick studies, using           
+   data from the first few orbits around the Moon, it was decided that        
+   this was not needed.                                                       
+                                                                              
+                                                                              
+BASIC DIFFERENCE BETWEEN STANDARD JPEG AND THE MATRA IMPLEMENTATION           
+                                                                              
+Standard JPEG Frequency Quantization Scheme                                   
+                                                                              
+In the standard JPEG algorithm the frequency coefficients X(u,v) [using       
+here a  notation similar to the one used in the English version of the        
+MATRA chip manual] are transformed by the following equation before the       
+frequency coefficients are Huffman encoded:                                   
+                                                                              
+      Xq(u,v) = int9bit[X(u,v)/q(u,v)]  (1)                                   
+                                                                              
+                                                                              
+where,                                                                        
+                                                                              
+X(u,v)   is a 12 bit signed number representing the DCT coefficient           
+         at the frequency indices (u,v).                                      
+q(u,v)   quantization table coefficient at the frequency index (u,v),         
+         this is an 8 bit positive number (1-255).                            
+                                                                              
+In the decompression stage the value of X(u,v) is reconstructed from the      
+following equation:                                                           
+                                                                              
+        Xr(u,v) = int9bit[X(u,v)/q(u,v)].q(u,v)                               
+                                                                              
+Equation (1) is a lossy operation due to the integer truncation.              
+                                                                              
+For the set of lunar test images we have been working with a small value      
+of q(u,v), say q(u,v)=1,  results in compression ratios close to the          
+original CLEMENTINE baseline requirement of 4 to 1.  Hence we were            
+particular interested in looking at what is the smaller value of q'(u,v)      
+that can be represented by the MATRA chip hardware.                           
+                                                                              
+                                                                              
+MATRA's Implementations of the JPEG Frequency Quantization Scheme             
+                                                                              
+In the MATRA chip  the desired  quantization coefficient factor, q(u,v),      
+is approximated in hardware using an effective  q'(u,v), i.e.                 
+                                                                              
+ Xq'(u,v) = int9bit[X(u,v)/q'(u,v)]                                           
+          = int9bit[int8bit[ ((TABF*TABQ(u,v))/64))/4094)).X(u,v)] (2)        
+                                                                              
+                                                                              
+where:                                                                        
+TABF       is an 8 bit positive quantity used for scaling purposes,           
+TABQ (u,v) is a derived 8 bit positive number defined by                      
+                                                                              
+   TABQ=int8bit[255*10/q(u,v)]                                                
+                                                                              
+                                                                              
+In other words, in the MATRA chip a desired JPEG quantization                 
+coefficient value, q(u,v), is implemented as an  effective q'(u,v) value      
+of:                                                                           
+                                                                              
+    q'(u,v)= 4094/(int8bit[TABF.TABQ/64])                                     
+           = 4094/(int8bit[(TABF/64).int8bit[(255*10)/q(u,v)])                
+             >= 4                                                             
+                                                                              
+                                                                              
+Notice that since TABF and TABQ are 8 bit positive numbers it follows         
+that  4 <= q'(u,v).                                                           
+                                                                              
+Hence,  the minimum effective quantization table coefficient value            
+achievable in the MATRA chip is four.                                         
+                                                                              
+The following Table summarizes  the data compression parameter sets           
+loaded to the Clementine Spacecraft during Mission Operations.  Note          
+that only set 0 and 1 are distinct.                                           
+                                                                              
+                                                                              
+                                                                              
+TabF      Set0 Set1 Set2 Set3                                                 
+TABF(00)  FFh  FFh  FFh  FFh                                                  
+TABF(01)  FFh  FFh  FFh  FFh                                                  
+TABF(02)  FFh  FFh  FFh  FFh                                                  
+TABF(03)  FFh  FFh  FFh  FFh                                                  
+TABF(04)  BDh  BDh  BDh  BDh                                                  
+TABF(05)  8dh  8dh  8dh  8dh                                                  
+TABF(06)  6Fh  6Fh  6Fh  6Fh                                                  
+TABF(07)  59h  59h  59h  59h                                                  
+TABF(08)  4Bh  4Bh  4Bh  4Bh                                                  
+TABF(09)  3fh  3fh  3fh  3fh                                                  
+TABF(10)  37h  37h  37h  37h                                                  
+TABF(11)  30h  30h  30h  30h                                                  
+TABF(12)  2Bh  2Bh  2Bh  2Bh                                                  
+TABF(13)  2bh  2bh  2bh  2bh                                                  
+TABF(14)  26h  26h  26h  26h                                                  
+TABF(15)  23h  23h  23h  23h                                                  
+                                                                              
+TabQ Value                                                                    
+Q      Set0  S1  S2  S3                                                       
+Q(0,0)  9Fh  FF  FF  FF                                                       
+Q(0,1)  D4h  FF  FF  FF                                                       
+Q(0,2)  B6h  FF  FF  FF                                                       
+Q(0,3)  B6h  FF  FF  FF                                                       
+Q(0,4)  8Eh  FF  FF  FF                                                       
+Q(0,5)  6Ah  FF  FF  FF                                                       
+Q(0,6)  34h  FF  FF  FF                                                       
+Q(0,7)  23h  FF  FF  FF                                                       
+Q(1,0)  E8h  FF  FF  FF                                                       
+Q(1,1)  D4h  FF  FF  FF                                                       
+Q(1,2)  C4h  FF  FF  FF                                                       
+Q(1,3)  96h  FF  FF  FF                                                       
+Q(1,4)  74h  FF  FF  FF                                                       
+Q(1,5)  49h  FF  FF  FF                                                       
+Q(1,6)  28h  FF  FF  FF                                                       
+Q(1,7)  1Ch  FF  FF  FF                                                       
+Q(2,0)  FFh  FF  FF  FF                                                       
+Q(2,1)  B6h  FF  FF  FF                                                       
+Q(2,2)  9Fh  FF  FF  FF                                                       
+Q(2,3)  74h  FF  FF  FF                                                       
+Q(2,4)  45h  FF  FF  FF                                                       
+Q(2,5)  2Eh  FF  FF  FF                                                       
+Q(2,6)  21h  FF  FF  FF                                                       
+Q(2,7)  1Bh  FF  FF  FF                                                       
+Q(3,0)  9Fh  FF  FF  FF                                                       
+Q(3,1)  86h  FF  FF  FF                                                       
+Q(3,2)  6Ah  FF  FF  FF                                                       
+Q(3,3)  58h  FF  FF  FF                                                       
+Q(3,4)  2Eh  FF  FF  FF                                                       
+Q(3,5)  28h  FF  FF  FF                                                       
+Q(3,6)  1Dh  FF  FF  FF                                                       
+Q(3,7)  1Ah  FF  FF  FF                                                       
+Q(4,0)  6Ah  FF  FF  FF                                                       
+Q(4,1)  62h  FF  FF  FF                                                       
+Q(4,2)  40h  FF  FF  FF                                                       
+Q(4,3)  32h  FF  FF  FF                                                       
+Q(4,4)  26h  FF  FF  FF                                                       
+Q(4,5)  1Fh  FF  FF  FF                                                       
+Q(4,6)  19h  FF  FF  FF                                                       
+Q(4,7)  17h  FF  FF  FF                                                       
+Q(5,0)  40h  FF  FF  FF                                                       
+Q(5,1)  2Ch  FF  FF  FF                                                       
+Q(5,2)  2Dh  FF  FF  FF                                                       
+Q(5,3)  1Dh  FF  FF  FF                                                       
+Q(5,4)  17h  FF  FF  FF                                                       
+Q(5,5)  19h  FF  FF  FF                                                       
+Q(5,6)  15h  FF  FF  FF                                                       
+Q(5,7)  1Ah  FF  FF  FF                                                       
+Q(6,0)  32h  FF  FF  FF                                                       
+Q(6,1)  2Ah  FF  FF  FF                                                       
+Q(6,2)  25h  FF  FF  FF                                                       
+Q(6,3)  20h  FF  FF  FF                                                       
+Q(6,4)  19h  FF  FF  FF                                                       
+Q(6,5)  17h  FF  FF  FF                                                       
+Q(6,6)  15h  FF  FF  FF                                                       
+Q(6,7)  19h  FF  FF  FF                                                       
+Q(7,0)  2Ah  FF  FF  FF                                                       
+Q(7,1)  2Eh  FF  FF  FF                                                       
+Q(7,2)  2Eh  FF  FF  FF                                                       
+Q(7,3)  29h  FF  FF  FF                                                       
+Q(7,4)  21h  FF  FF  FF                                                       
+Q(7,5)  1Ch  FF  FF  FF                                                       
+Q(7,6)  19h  FF  FF  FF                                                       
+Q(7,7)  1Ah  FF  FF  FF                                                       
+                                                                              
+                                                                              
+Huf Tab Set0 Set1 Set2 Set3                                                   
+VLC(00)  04h  04h  04h  04h                                                   
+VLC(01)  05h  05h  05h  05h                                                   
+VLC(02)  00h  00h  00h  00h                                                   
+VLC(03)  00h  00h  00h  00h                                                   
+VLC(04)  00h  00h  00h  00h                                                   
+VLC(05)  00h  00h  00h  00h                                                   
+VLC(06)  00h  00h  00h  00h                                                   
+VLC(07)  00h  00h  00h  00h                                                   
+VLC(08)  00h  00h  00h  00h                                                   
+VLC(09)  00h  00h  00h  00h                                                   
+VLC(10)  00h  00h  00h  00h                                                   
+VLC(11)  00h  00h  00h  00h                                                   
+VLC(12)  00h  00h  00h  00h                                                   
+VLC(13)  00h  00h  00h  00h                                                   
+VLC(14)  00h  00h  00h  00h                                                   
+VLC(15)  00h  00h  00h  00h                                                   
+VLC(16)  00h  00h  00h  00h                                                   
+VLC(17)  00h  00h  00h  00h                                                   
+VLC(18)  00h  00h  00h  00h                                                   
+VLC(19)  00h  00h  00h  00h                                                   
+VLC(20)  00h  00h  00h  00h                                                   
+VLC(21)  00h  00h  00h  00h                                                   
+VLC(22)  00h  00h  00h  00h                                                   
+VLC(23)  00h  00h  00h  00h                                                   
+VLC(24)  00h  00h  00h  00h                                                   
+VLC(25)  00h  00h  00h  00h                                                   
+VLC(26)  00h  00h  00h  00h                                                   
+VLC(27)  00h  00h  00h  00h                                                   
+VLC(28)  00h  00h  00h  00h                                                   
+VLC(29)  00h  00h  00h  00h                                                   
+VLC(30)  10h  10h  10h  10h                                                   
+VLC(31)  2Fh  2Fh  2Fh  2Fh                                                   
+VLC(32)  02h  02h  02h  02h                                                   
+VLC(33)  00h  00h  00h  00h                                                   
+VLC(34)  04h  04h  04h  04h                                                   
+VLC(35)  03h  03h  03h  03h                                                   
+VLC(36)  05h  05h  05h  05h                                                   
+VLC(37)  1Bh  1Bh  1Bh  1Bh                                                   
+VLC(38)  06h  06h  06h  06h                                                   
+VLC(39)  17h  17h  17h  17h                                                   
+VLC(40)  06h  06h  06h  06h                                                   
+VLC(41)  37h  37h  37h  37h                                                   
+VLC(42)  07h  07h  07h  07h                                                   
+VLC(43)  2Fh  2Fh  2Fh  2Fh                                                   
+VLC(44)  07h  07h  07h  07h                                                   
+VLC(45)  6Fh  6Fh  6Fh  6Fh                                                   
+VLC(46)  08h  08h  08h  08h                                                   
+VLC(47)  9Fh  9Fh  9Fh  9Fh                                                   
+VLC(48)  08h  08h  08h  08h                                                   
+VLC(49)  5Fh  5Fh  5Fh  5Fh                                                   
+VLC(50)  09h  09h  09h  09h                                                   
+VLC(51)  1Fh  1Fh  1Fh  1Fh                                                   
+VLC(52)  09h  09h  09h  09h                                                   
+VLC(53)  9Fh  9Fh  9Fh  9Fh                                                   
+VLC(54)  09h  09h  09h  09h                                                   
+VLC(55)  5Fh  5Fh  5Fh  5Fh                                                   
+VLC(56)  0Ah  0Ah  0Ah  0Ah                                                   
+VLC(57)  5Fh  5Fh  5Fh  5Fh                                                   
+VLC(58)  0Bh  0Bh  0Bh  0Bh                                                   
+VLC(59)  5Fh  5Fh  5Fh  5Fh                                                   
+VLC(60)  0Fh  0Fh  0Fh  0Fh                                                   
+VLC(61)  03h  03h  03h  03h                                                   
+VLC(62)  10h  10h  10h  10h                                                   
+VLC(63)  AFh  AFh  AFh  AFh                                                   
+VLC(64)  02h  02h  02h  02h                                                   
+VLC(65)  02h  02h  02h  02h                                                   
+VLC(66)  06h  06h  06h  06h                                                   
+VLC(67)  27h  27h  27h  27h                                                   
+VLC(68)  08h  08h  08h  08h                                                   
+VLC(69)  1Fh  1Fh  1Fh  1Fh                                                   
+VLC(70)  09h  09h  09h  09h                                                   
+VLC(71)  EFh  EFh  EFh  EFh                                                   
+VLC(72)  0Ah  0Ah  0Ah  0Ah                                                   
+VLC(73)  1Fh  1Fh  1Fh  1Fh                                                   
+VLC(74)  0Ah  0Ah  0Ah  0Ah                                                   
+VLC(75)  9Fh  9Fh  9Fh  9Fh                                                   
+VLC(76)  0Bh  0Bh  0Bh  0Bh                                                   
+VLC(77)  1Fh  1Fh  1Fh  1Fh                                                   
+VLC(78)  0Bh  0Bh  0Bh  0Bh                                                   
+VLC(79)  9Fh  9Fh  9Fh  9Fh                                                   
+VLC(80)  0Ch  0Ch  0Ch  0Ch                                                   
+VLC(81)  EFh  EFh  EFh  EFh                                                   
+VLC(82)  10h  10h  10h  10h                                                   
+VLC(83)  7Dh  7Dh  7Dh  7Dh                                                   
+VLC(84)  10h  10h  10h  10h                                                   
+VLC(85)  E3h  E3h  E3h  E3h                                                   
+VLC(86)  10h  10h  10h  10h                                                   
+VLC(87)  0Bh  0Bh  0Bh  0Bh                                                   
+VLC(88)  10h  10h  10h  10h                                                   
+VLC(89)  9Bh  9Bh  9Bh  9Bh                                                   
+VLC(90)  10h  10h  10h  10h                                                   
+VLC(91)  47h  47h  47h  47h                                                   
+VLC(92)  10h  10h  10h  10h                                                   
+VLC(93)  D7h  D7h  D7h  D7h                                                   
+VLC(94)  10h  10h  10h  10h                                                   
+VLC(95)  6Fh  6Fh  6Fh  6Fh                                                   
+VLC(96)  03h  03h  03h  03h                                                   
+VLC(97)  01h  01h  01h  01h                                                   
+VLC(98)  07h  07h  07h  07h                                                   
+VLC(99)  4Fh  4Fh  4Fh  4Fh                                                   
+VLC(100)  0Ah  0Ah  0Ah  0Ah                                                  
+VLC(101)  EFh  EFh  EFh  EFh                                                  
+VLC(102)  0Bh  0Bh  0Bh  0Bh                                                  
+VLC(103)  EFh  EFh  EFh  EFh                                                  
+VLC(104)  10h  10h  10h  10h                                                  
+VLC(105)  69h  69h  69h  69h                                                  
+VLC(106)  10h  10h  10h  10h                                                  
+VLC(107)  79h  79h  79h  79h                                                  
+VLC(108)  10h  10h  10h  10h                                                  
+VLC(109)  65h  65h  65h  65h                                                  
+VLC(110)  10h  10h  10h  10h                                                  
+VLC(111)  75h  75h  75h  75h                                                  
+VLC(112)  10h  10h  10h  10h                                                  
+VLC(113)  6Dh  6Dh  6Dh  6Dh                                                  
+VLC(114)  10h  10h  10h  10h                                                  
+VLC(115)  FDh  FDh  FDh  FDh                                                  
+VLC(116)  10h  10h  10h  10h                                                  
+VLC(117)  13h  13h  13h  13h                                                  
+VLC(118)  10h  10h  10h  10h                                                  
+VLC(119)  8Bh  8Bh  8Bh  8Bh                                                  
+VLC(120)  10h  10h  10h  10h                                                  
+VLC(121)  5Bh  5Bh  5Bh  5Bh                                                  
+VLC(122)  10h  10h  10h  10h                                                  
+VLC(123)  C7h  C7h  C7h  C7h                                                  
+VLC(124)  10h  10h  10h  10h                                                  
+VLC(125)  37h  37h  37h  37h                                                  
+VLC(126)  10h  10h  10h  10h                                                  
+VLC(127)  EFh  EFh  EFh  EFh                                                  
+VLC(128)  04h  04h  04h  04h                                                  
+VLC(129)  0Dh  0Dh  0Dh  0Dh                                                  
+VLC(130)  09h  09h  09h  09h                                                  
+VLC(131)  6Fh  6Fh  6Fh  6Fh                                                  
+VLC(132)  0Ch  0Ch  0Ch  0Ch                                                  
+VLC(133)  6Fh  6Fh  6Fh  6Fh                                                  
+VLC(134)  10h  10h  10h  10h                                                  
+VLC(135)  F1h  F1h  F1h  F1h                                                  
+VLC(136)  10h  10h  10h  10h                                                  
+VLC(137)  E9h  E9h  E9h  E9h                                                  
+VLC(138)  10h  10h  10h  10h                                                  
+VLC(139)  F9h  F9h  F9h  F9h                                                  
+VLC(140)  10h  10h  10h  10h                                                  
+VLC(141)  E5h  E5h  E5h  E5h                                                  
+VLC(142)  10h  10h  10h  10h                                                  
+VLC(143)  F5h  F5h  F5h  F5h                                                  
+VLC(144)  10h  10h  10h  10h                                                  
+VLC(145)  EDh  EDh  EDh  EDh                                                  
+VLC(146)  10h  10h  10h  10h                                                  
+VLC(147)  03h  03h  03h  03h                                                  
+VLC(148)  10h  10h  10h  10h                                                  
+VLC(149)  93h  93h  93h  93h                                                  
+VLC(150)  10h  10h  10h  10h                                                  
+VLC(151)  4Bh  4Bh  4Bh  4Bh                                                  
+VLC(152)  10h  10h  10h  10h                                                  
+VLC(153)  DBh  DBh  DBh  DBh                                                  
+VLC(154)  10h  10h  10h  10h                                                  
+VLC(155)  27h  27h  27h  27h                                                  
+VLC(156)  10h  10h  10h  10h                                                  
+VLC(157)  B7h  B7h  B7h  B7h                                                  
+VLC(158)  10h  10h  10h  10h                                                  
+VLC(159)  1Fh  1Fh  1Fh  1Fh                                                  
+VLC(160)  05h  05h  05h  05h                                                  
+VLC(161)  0Bh  0Bh  0Bh  0Bh                                                  
+VLC(162)  0Bh  0Bh  0Bh  0Bh                                                  
+VLC(163)  6Fh  6Fh  6Fh  6Fh                                                  
+VLC(164)  10h  10h  10h  10h                                                  
+VLC(165)  91h  91h  91h  91h                                                  
+VLC(166)  10h  10h  10h  10h                                                  
+VLC(167)  09h  09h  09h  09h                                                  
+VLC(168)  10h  10h  10h  10h                                                  
+VLC(169)  19h  19h  19h  19h                                                  
+VLC(170)  10h  10h  10h  10h                                                  
+VLC(171)  05h  05h  05h  05h                                                  
+VLC(172)  10h  10h  10h  10h                                                  
+VLC(173)  15h  15h  15h  15h                                                  
+VLC(174)  10h  10h  10h  10h                                                  
+VLC(175)  0Dh  0Dh  0Dh  0Dh                                                  
+VLC(176)  10h  10h  10h  10h                                                  
+VLC(177)  1Dh  1Dh  1Dh  1Dh                                                  
+VLC(178)  10h  10h  10h  10h                                                  
+VLC(179)  83h  83h  83h  83h                                                  
+VLC(180)  10h  10h  10h  10h                                                  
+VLC(181)  53h  53h  53h  53h                                                  
+VLC(182)  10h  10h  10h  10h                                                  
+VLC(183)  CBh  CBh  CBh  CBh                                                  
+VLC(184)  10h  10h  10h  10h                                                  
+VLC(185)  3Bh  3Bh  3Bh  3Bh                                                  
+VLC(186)  10h  10h  10h  10h                                                  
+VLC(187)  A7h  A7h  A7h  A7h                                                  
+VLC(188)  10h  10h  10h  10h                                                  
+VLC(189)  77h  77h  77h  77h                                                  
+VLC(190)  10h  10h  10h  10h                                                  
+VLC(191)  9Fh  9Fh  9Fh  9Fh                                                  
+VLC(192)  06h  06h  06h  06h                                                  
+VLC(193)  07h  07h  07h  07h                                                  
+VLC(194)  10h  10h  10h  10h                                                  
+VLC(195)  21h  21h  21h  21h                                                  
+VLC(196)  10h  10h  10h  10h                                                  
+VLC(197)  51h  51h  51h  51h                                                  
+VLC(198)  10h  10h  10h  10h                                                  
+VLC(199)  89h  89h  89h  89h                                                  
+VLC(200)  10h  10h  10h  10h                                                  
+VLC(201)  99h  99h  99h  99h                                                  
+VLC(202)  10h  10h  10h  10h                                                  
+VLC(203)  85h  85h  85h  85h                                                  
+VLC(204)  10h  10h  10h  10h                                                  
+VLC(205)  95h  95h  95h  95h                                                  
+VLC(206)  10h  10h  10h  10h                                                  
+VLC(207)  8Dh  8Dh  8Dh  8Dh                                                  
+VLC(208)  10h  10h  10h  10h                                                  
+VLC(209)  9Dh  9Dh  9Dh  9Dh                                                  
+VLC(210)  10h  10h  10h  10h                                                  
+VLC(211)  43h  43h  43h  43h                                                  
+VLC(212)  10h  10h  10h  10h                                                  
+VLC(213)  D3h  D3h  D3h  D3h                                                  
+VLC(214)  10h  10h  10h  10h                                                  
+VLC(215)  2Bh  2Bh  2Bh  2Bh                                                  
+VLC(216)  10h  10h  10h  10h                                                  
+VLC(217)  BBh  BBh  BBh  BBh                                                  
+VLC(218)  10h  10h  10h  10h                                                  
+VLC(219)  67h  67h  67h  67h                                                  
+VLC(220)  10h  10h  10h  10h                                                  
+VLC(221)  F7h  F7h  F7h  F7h                                                  
+VLC(222)  10h  10h  10h  10h                                                  
+VLC(223)  5Fh  5Fh  5Fh  5Fh                                                  
+VLC(224)  07h  07h  07h  07h                                                  
+VLC(225)  0Fh  0Fh  0Fh  0Fh                                                  
+VLC(226)  10h  10h  10h  10h                                                  
+VLC(227)  A1h  A1h  A1h  A1h                                                  
+VLC(228)  10h  10h  10h  10h                                                  
+VLC(229)  D1h  D1h  D1h  D1h                                                  
+VLC(230)  10h  10h  10h  10h                                                  
+VLC(231)  49h  49h  49h  49h                                                  
+VLC(232)  10h  10h  10h  10h                                                  
+VLC(233)  59h  59h  59h  59h                                                  
+VLC(234)  10h  10h  10h  10h                                                  
+VLC(235)  45h  45h  45h  45h                                                  
+VLC(236)  10h  10h  10h  10h                                                  
+VLC(237)  55h  55h  55h  55h                                                  
+VLC(238)  10h  10h  10h  10h                                                  
+VLC(239)  4Dh  4Dh  4Dh  4Dh                                                  
+VLC(240)  10h  10h  10h  10h                                                  
+VLC(241)  5Dh  5Dh  5Dh  5Dh                                                  
+VLC(242)  10h  10h  10h  10h                                                  
+VLC(243)  C3h  C3h  C3h  C3h                                                  
+VLC(244)  10h  10h  10h  10h                                                  
+VLC(245)  33h  33h  33h  33h                                                  
+VLC(246)  10h  10h  10h  10h                                                  
+VLC(247)  ABh  ABh  ABh  ABh                                                  
+VLC(248)  10h  10h  10h  10h                                                  
+VLC(249)  7Bh  7Bh  7Bh  7Bh                                                  
+VLC(250)  10h  10h  10h  10h                                                  
+VLC(251)  E7h  E7h  E7h  E7h                                                  
+VLC(252)  10h  10h  10h  10h                                                  
+VLC(253)  0Fh  0Fh  0Fh  0Fh                                                  
+VLC(254)  10h  10h  10h  10h                                                  
+VLC(255)  DFh  DFh  DFh  DFh                                                  
+VLC(256)  0Ah  0Ah  0Ah  0Ah                                                  
+VLC(257)  6Fh  6Fh  6Fh  6Fh                                                  
+VLC(258)  10h  10h  10h  10h                                                  
+VLC(259)  61h  61h  61h  61h                                                  
+VLC(260)  10h  10h  10h  10h                                                  
+VLC(261)  31h  31h  31h  31h                                                  
+VLC(262)  10h  10h  10h  10h                                                  
+VLC(263)  C9h  C9h  C9h  C9h                                                  
+VLC(264)  10h  10h  10h  10h                                                  
+VLC(265)  D9h  D9h  D9h  D9h                                                  
+VLC(266)  10h  10h  10h  10h                                                  
+VLC(267)  C5h  C5h  C5h  C5h                                                  
+VLC(268)  10h  10h  10h  10h                                                  
+VLC(269)  D5h  D5h  D5h  D5h                                                  
+VLC(270)  10h  10h  10h  10h                                                  
+VLC(271)  CDh  CDh  CDh  CDh                                                  
+VLC(272)  10h  10h  10h  10h                                                  
+VLC(273)  DDh  DDh  DDh  DDh                                                  
+VLC(274)  10h  10h  10h  10h                                                  
+VLC(275)  23h  23h  23h  23h                                                  
+VLC(276)  10h  10h  10h  10h                                                  
+VLC(277)  B3h  B3h  B3h  B3h                                                  
+VLC(278)  10h  10h  10h  10h                                                  
+VLC(279)  6Bh  6Bh  6Bh  6Bh                                                  
+VLC(280)  10h  10h  10h  10h                                                  
+VLC(281)  FBh  FBh  FBh  FBh                                                  
+VLC(282)  10h  10h  10h  10h                                                  
+VLC(283)  17h  17h  17h  17h                                                  
+VLC(284)  10h  10h  10h  10h                                                  
+VLC(285)  8Fh  8Fh  8Fh  8Fh                                                  
+VLC(286)  10h  10h  10h  10h                                                  
+VLC(287)  3Fh  3Fh  3Fh  3Fh                                                  
+VLC(288)  03h  03h  03h  03h                                                  
+VLC(289)  02h  02h  02h  02h                                                  
+VLC(290)  03h  03h  03h  03h                                                  
+VLC(291)  06h  06h  06h  06h                                                  
+VLC(292)  03h  03h  03h  03h                                                  
+VLC(293)  01h  01h  01h  01h                                                  
+VLC(294)  02h  02h  02h  02h                                                  
+VLC(295)  00h  00h  00h  00h                                                  
+VLC(296)  03h  03h  03h  03h                                                  
+VLC(297)  05h  05h  05h  05h                                                  
+VLC(298)  03h  03h  03h  03h                                                  
+VLC(299)  03h  03h  03h  03h                                                  
+VLC(300)  04h  04h  04h  04h                                                  
+VLC(301)  07h  07h  07h  07h                                                  
+VLC(302)  05h  05h  05h  05h                                                  
+VLC(303)  0Fh  0Fh  0Fh  0Fh                                                  
+VLC(304)  06h  06h  06h  06h                                                  
+VLC(305)  1Fh  1Fh  1Fh  1Fh                                                  
+VLC(306)  07h  07h  07h  07h                                                  
+VLC(307)  3Fh  3Fh  3Fh  3Fh                                                  
+VLC(308)  00h  00h  00h  00h                                                  
+VLC(309)  00h  00h  00h  00h                                                  
+VLC(310)  00h  00h  00h  00h                                                  
+VLC(311)  00h  00h  00h  00h                                                  
+VLC(312)  00h  00h  00h  00h                                                  
+VLC(313)  00h  00h  00h  00h                                                  
+VLC(314)  00h  00h  00h  00h                                                  
+VLC(315)  00h  00h  00h  00h                                                  
+VLC(316)  00h  00h  00h  00h                                                  
+VLC(317)  00h  00h  00h  00h                                                  
+VLC(318)  00h  00h  00h  00h                                                  
+VLC(319)  00h  00h  00h  00h                                                  
+                                                                              
+                                                                              
