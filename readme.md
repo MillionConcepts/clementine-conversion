@@ -184,13 +184,14 @@ We have some additional notes on performance considerations in some notebooks.
 
 ## authorship and acknowledgments
 
-The contents of this repository were produced by [Million Concepts,
-LLC](https://www.millionconcepts.com) under contract from the United States Geological
-Survey. This document, along with most of the software and other materials in
-this repository, was written by Michael St. Clair. ```pdr``` was created by
-Chase Million and predates this project, although some  portions of the fork
-included in this repository were specifically written by Chase and Michael for
-this project. Adam Ianno also made significant contributions to this project.
+The contents of this repository were produced by [Million
+Concepts](https://www.millionconcepts.com) under contract from the United
+States Geological Survey. This document,<sup>[4](#footnote4)</sup> along with
+most of the software and other materials in this repository, was written by
+Michael St. Clair. ```pdr``` was created by Chase Million and predates this
+project, although some  portions of the fork included in this repository were
+specifically written by Chase and Michael for this project. Adam Ianno also
+made significant contributions to this project.
 
 This software relies on too much other software to individually cite it all,
 but we would like to specifically call attention to:
@@ -229,3 +230,7 @@ It is less a pleasure to manipulate raw data in bespoke formats using decades-ol
 unmaintained software.
 
 <a name="footnote3">3</a>: Erlang would probably be good for this.
+
+<a name="footnote4">4</a>: Please note that this document is largely
+rehearsed, with appropriate changes, in our [CH-1 M3 Conversion
+repository](https://github.com/MillionConcepts/m3-conversion)
