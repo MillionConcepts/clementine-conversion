@@ -1,0 +1,18 @@
+name: clem_conversion
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - more-itertools
+  - astropy
+  - sh
+  - numpy
+  - pandas
+  - pvl=0.3.0
+  - gdal
+  - fs
+  - pillow
+  - toolz
+  - python=3.9
+  - jupyter
+prefix: /home/michael/anaconda3/envs/clem_conversion
