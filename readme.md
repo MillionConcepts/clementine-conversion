@@ -55,7 +55,8 @@ conversion process, we recommend that users have a copy on hand.
 environment produced by Microsoft.
 * One index file used by the software is not included in this repository 
 because it is too large to be stored on GitHub. In lieu of a permanent 
-solution, we are currently serving it [from Google Drive](https://drive.google.com/file/d/1cnQ0yCiL7aL0LR-uR3lqU0RWsleKw3_D).
+solution, we are currently serving it [from Google 
+Drive](https://drive.google.com/file/d/1cnQ0yCiL7aL0LR-uR3lqU0RWsleKw3_D).
 After decompression, place it in /src/clementine/directories.
 * This is not, and is not intended to be, a ready-to-go installable application
 or general-purpose library. Users will likely need to make modifications for
@@ -105,9 +106,7 @@ ADD LINK TO OFFICIAL VERSION WHEN PUBLISHED**
 
 ### /readmes
 
-Copies of our readme files from the bundle to provide context for this
-software. The data and browse readmes can be considered informal  
-specifications for the outputs of this software.
+Copies of our readme files from the bundle to provide context for this software. The data and browse readmes can be considered informal specifications for the outputs of this software.
 
 ### /src
 
