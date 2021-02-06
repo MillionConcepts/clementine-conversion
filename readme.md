@@ -44,8 +44,8 @@ misleading.
 ### tips for use
 
 * We recommend using the Anaconda distribution of Python and creating a
-```conda``` environment using the provided
-[environment.yml](/src/environment.yml) file. 
+```conda``` environment using the provided [environment.yml](/src/environment.yml) 
+file. 
 * Using this code to decompress Clementine EDR products in CLEM-JPEG format 
 requires [DOSBOX](https://www.dosbox.com/). Also, while the [PDS4 Validate
 Tool](https://nasa-pds.github.io/validate/) is not required to perform the
@@ -75,8 +75,8 @@ several hundred gigabytes in volume and contains over 10 million files; GitHub
 is not an appropriate platform from which to serve the archive. Users who
 simply wish to access data in the bundle should go to IMG's servers: **TODO:
 LINK GOES HERE WHEN LIVE.**  Similarly, this repository is not a mirror of the
-input PDS3 data sets. PDS3 products to use this software on
-can be found on [volumes CL_0001 through CL_6022 in this
+input PDS3 data sets. PDS3 products to use this software on can be found on 
+[volumes CL_0001 through CL_6022 in this
 directory](https://pds-imaging.jpl.nasa.gov/data/clementine/), also hosted by
 IMG.
 
@@ -233,4 +233,4 @@ unmaintained software.
 
 <a name="footnote4">4</a>: Please note that this document is largely
 rehearsed, with appropriate changes, in our [CH-1 M3 Conversion
-repository](https://github.com/MillionConcepts/m3-conversion)
+repository](https://github.com/MillionConcepts/m3-conversion).
