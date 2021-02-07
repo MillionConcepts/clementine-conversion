@@ -50,6 +50,8 @@ file.
 requires [DOSBOX](https://www.dosbox.com/). Also, while the [PDS4 Validate
 Tool](https://nasa-pds.github.io/validate/) is not required to perform the
 conversion process, we recommend that users have a copy on hand.
+* ```pdr``` includes ```pds4_tools``` as a dependency. It is not distributed
+via ```conda```. It can be installed with ```pip```.
 * This software will work on macOS or Linux. We recommend that Windows users use
 [Windows Subsystem for Linux](https://ubuntu.com/wsl), a virtualized Linux
 environment produced by Microsoft.
