@@ -15,3 +15,4 @@ dependencies:
   - toolz
   - python=3.9
   - jupyter
+  - rasterio
