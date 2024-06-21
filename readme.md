@@ -18,10 +18,8 @@ taken using the Ultraviolet/Visible Camera (UVVIS)'s 750-nm filter)
 images taken using the High-Resolution Camera (HIRES)'s 750-nm
 filter)
 
-**All contents of this repository should be regarded with skepticism. The 
-products they were used to produce have not yet been reviewed by the PDS.
-We will do our best to update this repository to reflect the results of PDS
-peer review, but it should currently be regarded as preliminary.**
+[IMG-USGS hosts the completed PDS4 bundle.](https://pdsimage2.wr.usgs.gov/Clementine/PDS4/)
+
 
 ### purpose of this repository
 
@@ -76,12 +74,12 @@ Please file GitHub issues.
 This repository is not a mirror of the output PDS4 bundle. The bundle is
 several hundred gigabytes in volume and contains over 10 million files; GitHub
 is not an appropriate platform from which to serve the archive. Users who
-simply wish to access data in the bundle should go to IMG's servers: **TODO:
-LINK GOES HERE WHEN LIVE.**  Similarly, this repository is not a mirror of the
-input PDS3 data sets. PDS3 products to use this software on can be found on 
-[volumes CL_0001 through CL_6022 in this
-directory](https://pds-imaging.jpl.nasa.gov/data/clementine/), also hosted by
-IMG.
+simply wish to access data in the bundle 
+[may retrieve it from IMG](https://pdsimage2.wr.usgs.gov/Clementine/PDS4/).
+
+Similarly, this repository is not a mirror of the
+input PDS3 data sets. They can be found in 
+[volumes CL_0001 through CL_6022 of this directory](https://pdsimage2.wr.usgs.gov/Clementine/PDS3/).
 
 It does not exhaustively explain every step of the conversion and labeling
 process. This is primarily because much of the process took place manually.
@@ -100,15 +98,15 @@ such as Adobe Acrobat and LibreOffice; it is impossible to include methods to
 exactly replicate these processes.
 
 Finally, it does not include the Clementine mission dictionary developed for this
-conversion process. This dictionary is currently hosted in [a Million Concepts
-GitHub Repository](https://github.com/MillionConcepts/ldd-clementine). **TODO:
-ADD LINK TO OFFICIAL VERSION WHEN PUBLISHED**
+conversion process. It is available from the 
+[central PDS mission dictionary page](https://pds.nasa.gov/datastandards/dictionaries/index-missions.shtml).
 
 ## directory of contents
 
 ### /readmes
 
-Copies of our readme files from the bundle to provide context for this software. The data and browse readmes can be considered informal specifications for the outputs of this software.
+Copies of our readme files from the bundle to provide context for this software. 
+The data and browse readmes can be considered informal specifications for the outputs of this software.
 
 ### /src
 
